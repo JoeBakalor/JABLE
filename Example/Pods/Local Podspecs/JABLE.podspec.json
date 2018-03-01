@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "summary": "A short description of JABLE.",
   "description": "TODO: Add long description of the pod here.",
-  "homepage": "https://github.com/jmbakalor@gmail.com/JABLE",
+  "homepage": "https://github.com/jmb2k6/JABLE",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
@@ -12,7 +12,7 @@
     "jmbakalor@gmail.com": "jmbakalor@gmail.com"
   },
   "source": {
-    "git": "https://github.com/jmbakalor@gmail.com/JABLE.git",
+    "git": "https://github.com/jmb2k6/JABLE.git",
     "tag": "0.1.0"
   },
   "platforms": {
