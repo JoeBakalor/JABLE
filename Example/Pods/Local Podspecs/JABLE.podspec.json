@@ -1,8 +1,8 @@
 {
   "name": "JABLE",
   "version": "0.1.0",
-  "summary": "A short description of JABLE.",
-  "description": "TODO: Add long description of the pod here.",
+  "summary": "JABLE is a full feature BLE Central mode library",
+  "description": "TODO: JBLE is a BLE central mode library that provides automation for GATT discovery and interaction",
   "homepage": "https://github.com/jmb2k6/JABLE",
   "license": {
     "type": "MIT",
