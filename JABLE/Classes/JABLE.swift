@@ -9,7 +9,7 @@
 import Foundation
 import CoreBluetooth
 
-protocol JABLEDelegate{
+public protocol JABLEDelegate{
     
     func ready()
     func foundPeripheral(peripheral: CBPeripheral)
