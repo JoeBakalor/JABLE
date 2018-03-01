@@ -1,0 +1,22 @@
+{
+  "name": "JABLE",
+  "version": "0.1.0",
+  "summary": "A short description of JABLE.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/jmbakalor@gmail.com/JABLE",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "jmbakalor@gmail.com": "jmbakalor@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/jmbakalor@gmail.com/JABLE.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "JABLE/Classes/**/*"
+}

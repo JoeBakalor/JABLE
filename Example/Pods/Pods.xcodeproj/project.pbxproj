@@ -1,0 +1,724 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		21F14C704CEBED58D035E59E80E2AF78 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		477DBD4A1667A0F39E9AF50BD465C72D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		5C4E1363CECA5B8F4024060E7FA24D6D /* Pods-JABLE_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B66A3BB17A6DEC2FB9AB94B635359D8E /* Pods-JABLE_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		784D10964E2FF5825499C7D66AAF85BE /* Pods-JABLE_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7C64A9B6136ED458F1680A8B1AECAAE1 /* Pods-JABLE_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8E1DF22CD9FCAE4665B60F78649AD4F6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		9F06FC2B479144C739DC0EC854B265E9 /* JABLE-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6C96096477A0243F185DC934215B161F /* JABLE-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BBAAFB6214DA43EBB9BEF8AE21D2E6F2 /* Pods-JABLE_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A84DFD11B429C8466D8C6610712708C9 /* Pods-JABLE_Tests-dummy.m */; };
+		D2DF2C70CE221CD2DD68E510AF7DCB0E /* Pods-JABLE_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3775EE673E197AB81EDD361D23AFF78C /* Pods-JABLE_Example-dummy.m */; };
+		E54192C3437929E124B0A902C1DB43AE /* JABLE-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BDEE61366D2800EB841159B82F880961 /* JABLE-dummy.m */; };
+		F99098A3ED1A37B780E4F2FF92B02C3D /* ReplaceMe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107853FDA42E0E2D668C5C50EA58A232 /* ReplaceMe.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5A347ADB31B741C18C025B52E804918D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 00D507E63855D37C50D8BE40F8E8732A;
+			remoteInfo = JABLE;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		01744EA8A18505CBF765B80BC0096DF5 /* Pods-JABLE_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JABLE_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		06855DA61282655F2C8DB3A0DA910900 /* Pods-JABLE_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-JABLE_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		0888D1661C8D8A9BF503D558E97ECC6A /* Pods-JABLE_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JABLE_Example.release.xcconfig"; sourceTree = "<group>"; };
+		107853FDA42E0E2D668C5C50EA58A232 /* ReplaceMe.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ReplaceMe.swift; path = JABLE/Classes/ReplaceMe.swift; sourceTree = "<group>"; };
+		13E6CE4CD7E1D9933951291D8A4FFED5 /* Pods-JABLE_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-JABLE_Tests-frameworks.sh"; sourceTree = "<group>"; };
+		3775EE673E197AB81EDD361D23AFF78C /* Pods-JABLE_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-JABLE_Example-dummy.m"; sourceTree = "<group>"; };
+		398DB5C69482C90729B14B38E2C016B3 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		427879A0076EB7FBB4B3B6C6ABD8A8C7 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4343D1BD374CB1D4C1020031389A7CFD /* Pods-JABLE_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-JABLE_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		43AC2ABC7528A0228AD0375E361955E7 /* JABLE.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = JABLE.xcconfig; sourceTree = "<group>"; };
+		4870007E4078F81A05409B899E6DAA45 /* Pods-JABLE_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JABLE_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		4C89CCF203BC0083171BEE8217F6FE1B /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		52060D075E981AD68018B727B742C3BD /* Pods-JABLE_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-JABLE_Example-acknowledgements.plist"; sourceTree = "<group>"; };
+		549346880E063DF8538793BC8EEE6C40 /* JABLE.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; path = JABLE.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		66F6C93228C8E024E166B29BC903F60A /* Pods-JABLE_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-JABLE_Example-resources.sh"; sourceTree = "<group>"; };
+		6C96096477A0243F185DC934215B161F /* JABLE-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "JABLE-umbrella.h"; sourceTree = "<group>"; };
+		7228794CB179D370380515F4AE3ECDFA /* Pods_JABLE_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_JABLE_Example.framework; path = "Pods-JABLE_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		76A9FBF4A994EFDE8CBE9072D37017FE /* JABLE-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "JABLE-prefix.pch"; sourceTree = "<group>"; };
+		7C64A9B6136ED458F1680A8B1AECAAE1 /* Pods-JABLE_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-JABLE_Example-umbrella.h"; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		95D245960F9DBE3480ECEC224B1DC413 /* Pods-JABLE_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-JABLE_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
+		A84DFD11B429C8466D8C6610712708C9 /* Pods-JABLE_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-JABLE_Tests-dummy.m"; sourceTree = "<group>"; };
+		AB6D4DEEF9223EE79F0B1494A949365B /* Pods-JABLE_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-JABLE_Example-frameworks.sh"; sourceTree = "<group>"; };
+		B19E64F9C3CBC0B0D415BF8AA42A4CD3 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B66A3BB17A6DEC2FB9AB94B635359D8E /* Pods-JABLE_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-JABLE_Tests-umbrella.h"; sourceTree = "<group>"; };
+		BDEE61366D2800EB841159B82F880961 /* JABLE-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "JABLE-dummy.m"; sourceTree = "<group>"; };
+		CD5E0D9A40F183F5940F4F76CC0D44CF /* Pods-JABLE_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-JABLE_Tests-resources.sh"; sourceTree = "<group>"; };
+		D225202873EE71191BAB5272BD62F2B5 /* Pods-JABLE_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-JABLE_Tests.modulemap"; sourceTree = "<group>"; };
+		E3421D7B05826CAC6A88D2DD9583DE42 /* JABLE.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = JABLE.modulemap; sourceTree = "<group>"; };
+		F05E186F76055AC2AAB01EED03560FBB /* Pods_JABLE_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_JABLE_Tests.framework; path = "Pods-JABLE_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F9E07A87D1C649DAE7659EC46AAC6E3E /* JABLE.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = JABLE.framework; path = JABLE.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FCAE192D1325A260C417303CB6E2D12D /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FCC97A6059D9BB7FDEB74BEA43821096 /* Pods-JABLE_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-JABLE_Example.modulemap"; sourceTree = "<group>"; };
+		FF08A7178CF3C7B54FA2B22BAB760E4F /* Pods-JABLE_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JABLE_Example.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2543EF707F178F9D29C16F4288C7E765 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				21F14C704CEBED58D035E59E80E2AF78 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		36CC898F59B63B775E98E870F9D8862E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8E1DF22CD9FCAE4665B60F78649AD4F6 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BE1CA702CE411DF3ED7C5E7F7C365DBE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				477DBD4A1667A0F39E9AF50BD465C72D /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		073B1B735FC7B8C8E38F92D91D9F4EE3 /* Pods-JABLE_Tests */ = {
+			isa = PBXGroup;
+			children = (
+				B19E64F9C3CBC0B0D415BF8AA42A4CD3 /* Info.plist */,
+				D225202873EE71191BAB5272BD62F2B5 /* Pods-JABLE_Tests.modulemap */,
+				4343D1BD374CB1D4C1020031389A7CFD /* Pods-JABLE_Tests-acknowledgements.markdown */,
+				95D245960F9DBE3480ECEC224B1DC413 /* Pods-JABLE_Tests-acknowledgements.plist */,
+				A84DFD11B429C8466D8C6610712708C9 /* Pods-JABLE_Tests-dummy.m */,
+				13E6CE4CD7E1D9933951291D8A4FFED5 /* Pods-JABLE_Tests-frameworks.sh */,
+				CD5E0D9A40F183F5940F4F76CC0D44CF /* Pods-JABLE_Tests-resources.sh */,
+				B66A3BB17A6DEC2FB9AB94B635359D8E /* Pods-JABLE_Tests-umbrella.h */,
+				01744EA8A18505CBF765B80BC0096DF5 /* Pods-JABLE_Tests.debug.xcconfig */,
+				4870007E4078F81A05409B899E6DAA45 /* Pods-JABLE_Tests.release.xcconfig */,
+			);
+			name = "Pods-JABLE_Tests";
+			path = "Target Support Files/Pods-JABLE_Tests";
+			sourceTree = "<group>";
+		};
+		363A1657890AF123B7F8500F0C9A0D26 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				6F4507AABA284E07025E5A23A2F42D97 /* Pods-JABLE_Example */,
+				073B1B735FC7B8C8E38F92D91D9F4EE3 /* Pods-JABLE_Tests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		45902487D6597D5C6F26BD73BA1F5B0F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F9E07A87D1C649DAE7659EC46AAC6E3E /* JABLE.framework */,
+				7228794CB179D370380515F4AE3ECDFA /* Pods_JABLE_Example.framework */,
+				F05E186F76055AC2AAB01EED03560FBB /* Pods_JABLE_Tests.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		557F566F7293DE771C17B98491EBF49A /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				549346880E063DF8538793BC8EEE6C40 /* JABLE.podspec */,
+				398DB5C69482C90729B14B38E2C016B3 /* LICENSE */,
+				4C89CCF203BC0083171BEE8217F6FE1B /* README.md */,
+			);
+			name = Pod;
+			sourceTree = "<group>";
+		};
+		57174F138BA3FF5F90948444D152CCF1 /* JABLE */ = {
+			isa = PBXGroup;
+			children = (
+				107853FDA42E0E2D668C5C50EA58A232 /* ReplaceMe.swift */,
+				557F566F7293DE771C17B98491EBF49A /* Pod */,
+				A677CEDA494624EBEF77F32CEACE422C /* Support Files */,
+			);
+			name = JABLE;
+			path = ../..;
+			sourceTree = "<group>";
+		};
+		6F4507AABA284E07025E5A23A2F42D97 /* Pods-JABLE_Example */ = {
+			isa = PBXGroup;
+			children = (
+				427879A0076EB7FBB4B3B6C6ABD8A8C7 /* Info.plist */,
+				FCC97A6059D9BB7FDEB74BEA43821096 /* Pods-JABLE_Example.modulemap */,
+				06855DA61282655F2C8DB3A0DA910900 /* Pods-JABLE_Example-acknowledgements.markdown */,
+				52060D075E981AD68018B727B742C3BD /* Pods-JABLE_Example-acknowledgements.plist */,
+				3775EE673E197AB81EDD361D23AFF78C /* Pods-JABLE_Example-dummy.m */,
+				AB6D4DEEF9223EE79F0B1494A949365B /* Pods-JABLE_Example-frameworks.sh */,
+				66F6C93228C8E024E166B29BC903F60A /* Pods-JABLE_Example-resources.sh */,
+				7C64A9B6136ED458F1680A8B1AECAAE1 /* Pods-JABLE_Example-umbrella.h */,
+				FF08A7178CF3C7B54FA2B22BAB760E4F /* Pods-JABLE_Example.debug.xcconfig */,
+				0888D1661C8D8A9BF503D558E97ECC6A /* Pods-JABLE_Example.release.xcconfig */,
+			);
+			name = "Pods-JABLE_Example";
+			path = "Target Support Files/Pods-JABLE_Example";
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				DA418C3B218BF8967368FE47AACD256F /* Development Pods */,
+				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				45902487D6597D5C6F26BD73BA1F5B0F /* Products */,
+				363A1657890AF123B7F8500F0C9A0D26 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		A677CEDA494624EBEF77F32CEACE422C /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				FCAE192D1325A260C417303CB6E2D12D /* Info.plist */,
+				E3421D7B05826CAC6A88D2DD9583DE42 /* JABLE.modulemap */,
+				43AC2ABC7528A0228AD0375E361955E7 /* JABLE.xcconfig */,
+				BDEE61366D2800EB841159B82F880961 /* JABLE-dummy.m */,
+				76A9FBF4A994EFDE8CBE9072D37017FE /* JABLE-prefix.pch */,
+				6C96096477A0243F185DC934215B161F /* JABLE-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/JABLE";
+			sourceTree = "<group>";
+		};
+		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D35AF013A5F0BAD4F32504907A52519E /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D35AF013A5F0BAD4F32504907A52519E /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		DA418C3B218BF8967368FE47AACD256F /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				57174F138BA3FF5F90948444D152CCF1 /* JABLE */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		57B2A1266E3273797A7738C14DD5344C /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5C4E1363CECA5B8F4024060E7FA24D6D /* Pods-JABLE_Tests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		71DE45561AF94225F7D3798126281284 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9F06FC2B479144C739DC0EC854B265E9 /* JABLE-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A9CDBE5508716771CE551A525EE38F2A /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				784D10964E2FF5825499C7D66AAF85BE /* Pods-JABLE_Example-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		00D507E63855D37C50D8BE40F8E8732A /* JABLE */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E90E3308D48C8C35B38021523F1CD3B1 /* Build configuration list for PBXNativeTarget "JABLE" */;
+			buildPhases = (
+				C42F341838F025DEF9FB587C48E12A68 /* Sources */,
+				BE1CA702CE411DF3ED7C5E7F7C365DBE /* Frameworks */,
+				71DE45561AF94225F7D3798126281284 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = JABLE;
+			productName = JABLE;
+			productReference = F9E07A87D1C649DAE7659EC46AAC6E3E /* JABLE.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		2930C448F43D14ECF8F99D5B6909FF42 /* Pods-JABLE_Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9365773903F8562F778771D9EEF0D759 /* Build configuration list for PBXNativeTarget "Pods-JABLE_Tests" */;
+			buildPhases = (
+				30EF8D8FD1567BCD4A5BBBF4633D06CF /* Sources */,
+				36CC898F59B63B775E98E870F9D8862E /* Frameworks */,
+				57B2A1266E3273797A7738C14DD5344C /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-JABLE_Tests";
+			productName = "Pods-JABLE_Tests";
+			productReference = F05E186F76055AC2AAB01EED03560FBB /* Pods_JABLE_Tests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		9B73A46BCF1159743A532EBA61D191A4 /* Pods-JABLE_Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4FC3BEAB2775E00F66D8F532869EBE89 /* Build configuration list for PBXNativeTarget "Pods-JABLE_Example" */;
+			buildPhases = (
+				7F2A6E7CF34F203B18BF8FC8D7444DC0 /* Sources */,
+				2543EF707F178F9D29C16F4288C7E765 /* Frameworks */,
+				A9CDBE5508716771CE551A525EE38F2A /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6021213975BF1A078A2AD8E3D5DB2F35 /* PBXTargetDependency */,
+			);
+			name = "Pods-JABLE_Example";
+			productName = "Pods-JABLE_Example";
+			productReference = 7228794CB179D370380515F4AE3ECDFA /* Pods_JABLE_Example.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = 45902487D6597D5C6F26BD73BA1F5B0F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				00D507E63855D37C50D8BE40F8E8732A /* JABLE */,
+				9B73A46BCF1159743A532EBA61D191A4 /* Pods-JABLE_Example */,
+				2930C448F43D14ECF8F99D5B6909FF42 /* Pods-JABLE_Tests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		30EF8D8FD1567BCD4A5BBBF4633D06CF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BBAAFB6214DA43EBB9BEF8AE21D2E6F2 /* Pods-JABLE_Tests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7F2A6E7CF34F203B18BF8FC8D7444DC0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D2DF2C70CE221CD2DD68E510AF7DCB0E /* Pods-JABLE_Example-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C42F341838F025DEF9FB587C48E12A68 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E54192C3437929E124B0A902C1DB43AE /* JABLE-dummy.m in Sources */,
+				F99098A3ED1A37B780E4F2FF92B02C3D /* ReplaceMe.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6021213975BF1A078A2AD8E3D5DB2F35 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = JABLE;
+			target = 00D507E63855D37C50D8BE40F8E8732A /* JABLE */;
+			targetProxy = 5A347ADB31B741C18C025B52E804918D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		03FAE6AF4D30F4F1A3747607179B4EB8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0888D1661C8D8A9BF503D558E97ECC6A /* Pods-JABLE_Example.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-JABLE_Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-JABLE_Example/Pods-JABLE_Example.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_JABLE_Example;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		3368D33F0BAEF5CFAD1CB9CBAA9A9045 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 01744EA8A18505CBF765B80BC0096DF5 /* Pods-JABLE_Tests.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-JABLE_Tests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-JABLE_Tests/Pods-JABLE_Tests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_JABLE_Tests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		33DA7F43A1D2FA3C74A8C8FC246E1FA6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		342750BB58ECE424070988AF8C02FEC8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 43AC2ABC7528A0228AD0375E361955E7 /* JABLE.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/JABLE/JABLE-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/JABLE/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/JABLE/JABLE.modulemap";
+				PRODUCT_NAME = JABLE;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		49E4AC9DED0E01653C43602DA29ADD9A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FF08A7178CF3C7B54FA2B22BAB760E4F /* Pods-JABLE_Example.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-JABLE_Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-JABLE_Example/Pods-JABLE_Example.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_JABLE_Example;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		6B2F82DF7099DE8167644AF42508D36E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 43AC2ABC7528A0228AD0375E361955E7 /* JABLE.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/JABLE/JABLE-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/JABLE/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/JABLE/JABLE.modulemap";
+				PRODUCT_NAME = JABLE;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		731DC216E1A58545B559F6E0A2418060 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		81F4D5A130D2E9C26A318AE5182D01B5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4870007E4078F81A05409B899E6DAA45 /* Pods-JABLE_Tests.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-JABLE_Tests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-JABLE_Tests/Pods-JABLE_Tests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_JABLE_Tests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				33DA7F43A1D2FA3C74A8C8FC246E1FA6 /* Debug */,
+				731DC216E1A58545B559F6E0A2418060 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4FC3BEAB2775E00F66D8F532869EBE89 /* Build configuration list for PBXNativeTarget "Pods-JABLE_Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				49E4AC9DED0E01653C43602DA29ADD9A /* Debug */,
+				03FAE6AF4D30F4F1A3747607179B4EB8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9365773903F8562F778771D9EEF0D759 /* Build configuration list for PBXNativeTarget "Pods-JABLE_Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3368D33F0BAEF5CFAD1CB9CBAA9A9045 /* Debug */,
+				81F4D5A130D2E9C26A318AE5182D01B5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E90E3308D48C8C35B38021523F1CD3B1 /* Build configuration list for PBXNativeTarget "JABLE" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6B2F82DF7099DE8167644AF42508D36E /* Debug */,
+				342750BB58ECE424070988AF8C02FEC8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}
