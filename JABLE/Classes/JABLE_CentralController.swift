@@ -129,7 +129,7 @@ extension JABLE_CentralController
     
     func discoverCharacteristics(forService service: CBService,with uuids: [CBUUID]?){
         if let gattClient = _gattClientInstance{
-            gattClient.startServiceDiscovery(services: uuids)
+            gattClient.startCharacteristicDiscovery(forService: service, forCharacteristics: nil)
         }
     }
     
@@ -371,33 +371,6 @@ extension JABLE_CentralController: CBCentralManagerDelegate
          //  CBAdvertisementDataSolicitedServiceUUIDsKey
          //  CBAdvertisementDataTxPowerLevelKey
          */
-        if true{
-            print("ADVERTISEMENT DATA = \(advertisementData)")
-            //Advertisment Data Keys
-            let connectable           = advertisementData["kCBAdvDataIsConnectable"] as? NSNumber
-            print("CONNECTABLE = \(String(describing: connectable))")
-            
-            let manufacturerData      = advertisementData["kCBAdvDataManufacturerData"] as? NSData
-            print("MANUFACTURER DATA = \(String(describing: manufacturerData))")
-            
-            let overflowServiceUUIDs  = advertisementData["kCBAdvDataOverflowServiceUUIDs"] as? [CBUUID]
-            print("OVERFLOW SERVICE UUIDS = \(String(describing: overflowServiceUUIDs))")
-            
-            let serviceData           = advertisementData["kCBAdvDataServiceData"] as? [CBUUID : NSData]
-            print("SERVICE DATA = \(String(describing: serviceData))")
-            
-            let services              = advertisementData["kCBAdvDataServiceUUIDs"] as? [UUID]
-            print("SERVICES = \(String(describing: services))")
-            
-            let solicitedServiceUUIDs = advertisementData["kCBAdvDataSolicitedServiceUUIDs"] as? [CBUUID]
-            print("SOLICITED SERVICE UUIDS = \(String(describing: solicitedServiceUUIDs))")
-            
-            let txPowerLevel          = advertisementData["kCBAdvDataTxPowerLevel"] as? NSNumber
-            print("TX POWER LEVEL = \(String(describing: txPowerLevel))")
-            
-            let localName             = advertisementData["kCBAdvDataLocalName"] as? String
-            print("LOCAL NAME = \(String(describing: localName))")
-        }
         
         //Call GAP Event delegate method
         _gapEventDelegate.centralController(foundPeripheral: peripheral, with: advertisementData, rssi: RSSI.intValue)
@@ -432,7 +405,7 @@ extension JABLE_CentralController: CBCentralManagerDelegate
                 break
             case CBManagerState.poweredOn:
                 _gapEventDelegate.centralController(updatedBluetoothStatusTo: .on)
-                print("does this get called")
+
                 break
             case CBManagerState.resetting:
                 _gapEventDelegate.centralController(updatedBluetoothStatusTo: .resetting)

@@ -21,7 +21,7 @@ protocol GattUpdateDelegate{
     @objc optional func gattUpdated(descriptorValueFor descriptor: CBDescriptor)
 }
 
-protocol GattDiscoveryCompletionDelegate{
+public protocol GattDiscoveryCompletionDelegate{
     func gattDiscoveryCompleted()
 }
 

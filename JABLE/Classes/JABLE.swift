@@ -11,22 +11,48 @@ import CoreBluetooth
 
 public protocol JABLEDelegate{
     
-    func ready()
-    func foundPeripheral(peripheral: CBPeripheral)
-    func gattDiscoveryCompleted()
+    func jable(isReady: Void)
+    func jable(foundPeripheral peripheral: CBPeripheral, advertisementData: FriendlyAdvdertismentData)
+    func jable(completedGattDiscovery: Void)
     
-    func rssiUpdated(to rssi: Int)
-    func foundServices(services: [CBService])
-    func foundCharacteristics(forService service: CBService, characteristics: [CBCharacteristic])
-    func foundDescriptors(forCharacteristic characteristic: CBCharacteristic, descriptors: [CBDescriptor])
+    func jable(updatedRssi rssi: Int)
+    func jable(foundServices services: [CBService])
+    func jable(foundCharacteristicsFor service: CBService, characteristics: [CBCharacteristic])
+    func jable(foundDescriptorsFor characteristic: CBCharacteristic, descriptors: [CBDescriptor])
     
-    func valueUpdated(forCharacteristic characteristic: CBCharacteristic, value: Data)
-    func valueUpdated(forDescriptor descriptor: CBDescriptor, value: Data)
+    func jable(updatedCharacteristicValueFor characteristic: CBCharacteristic, value: Data)
+    func jable(updatedDescriptorValueFor descriptor: CBDescriptor, value: Data)
+    
+    func jable(connected: Void)
+    func jable(disconnected: Void)
     
 }
 
+public struct FriendlyAdvdertismentData: CustomStringConvertible{
+    public var connectable: Bool?
+    public var manufacturerData: NSData?
+    public var overflowServiceUUIDs: [CBUUID]?
+    public var serviceData: [CBUUID: NSData]?
+    public var services: [UUID]?
+    public var solicitedServiceUUIDs: [CBUUID]?
+    public var transmitPowerLevel: NSNumber?
+    public var localName: String?
+    public var rssi: Int?
+    
+    public var description: String{
+        return ("\n\r   Conectable: \(self.connectable)\n\r   Manufacturer Data: \(self.manufacturerData)\n\r   Overflow Service UUIDs: \(self.overflowServiceUUIDs)\n\r   ServiceData: \(self.serviceData)\n\r   Services: \(self.services)\n\r   Solicited Service UUIDs: \(self.solicitedServiceUUIDs)\n\r   Transmit Power Level: \(self.transmitPowerLevel)\n\r   Local Name: \(localName)\n\r   RSSI: \(self.rssi)\n")
+    }
+    
+}
+
+struct JABLEScanFilter{
+    var name: String?
+    
+}
+
+
 //MARK: Use JABLE when GATT structure is known
-public class JABLE: NSObject, GattDiscoveryCompletionDelegate
+open class JABLE: NSObject, GattDiscoveryCompletionDelegate, JABLE_API
 {
     fileprivate var _connectedPeripheral: CBPeripheral?
     fileprivate var _gattDiscoveryDelegate: GattDiscoveryDelegate?
@@ -38,7 +64,7 @@ public class JABLE: NSObject, GattDiscoveryCompletionDelegate
     
     
     //CLASS INITIALIZATION
-    init(jableDelegate: JABLEDelegate, gattProfile: inout JABLE_GATT.JABLE_GATTProfile?, autoGattDiscovery: Bool)
+    public init(jableDelegate: JABLEDelegate, gattProfile: inout JABLE_GATT.JABLE_GATTProfile?, autoGattDiscovery: Bool)
     {
         super.init()
         
@@ -62,17 +88,14 @@ public class JABLE: NSObject, GattDiscoveryCompletionDelegate
         
     }
     
-    func gattDiscoveryCompleted() {
+    public func gattDiscoveryCompleted() {
         print("Gatt discovery completed")
-        _jableDelegate.gattDiscoveryCompleted()
+        _jableDelegate.jable(completedGattDiscovery: ())//gattDiscoveryFinished()
     }
     
-}
-
-//MARK: JABLE_API API
-extension JABLE: JABLE_API
-{
-    func RSSI() {
+    //MARK: JABLE API
+    
+    public func RSSI() {
         
     }
     
@@ -93,7 +116,7 @@ extension JABLE: JABLE_API
      Additional details
      
      */
-    func startScanningForPeripherals(withServiceUUIDs uuids: [CBUUID]?)
+    public func startScanningForPeripherals(withServiceUUIDs uuids: [CBUUID]?)
     {
         _jableCentralController.startScanningForPeripherals(withServiceUUIDS: uuids)
     }
@@ -115,7 +138,7 @@ extension JABLE: JABLE_API
      Additional details
      
      */
-    func stopScanning()
+    public func stopScanning()
     {
         _jableCentralController.stopScanning()
     }
@@ -139,7 +162,7 @@ extension JABLE: JABLE_API
      Additional details
      
      */
-    func connect(toPeripheral peripheral: CBPeripheral, withTimeout timeout: Int)
+    public func connect(toPeripheral peripheral: CBPeripheral, withTimeout timeout: Int)
     {
         _jableCentralController.attemptConnection(toPeriperal: peripheral, timeout: timeout)
     }
@@ -187,7 +210,7 @@ extension JABLE: JABLE_API
      Additional details
      
      */
-    func discoverServices(with uuids: [CBUUID]?)
+    public func discoverServices(with uuids: [CBUUID]?)
     {
         guard _connectedPeripheral != nil else { return }
         _jableCentralController.discoverServices(with: uuids)
@@ -213,7 +236,7 @@ extension JABLE: JABLE_API
      Additional details
      
      */
-    func discoverCharacteristics(forService service: CBService, withUUIDS uuids: [CBUUID]?)
+    public func discoverCharacteristics(forService service: CBService, withUUIDS uuids: [CBUUID]?)
     {
         guard _connectedPeripheral != nil else { return /*ERROR*/ }
         _jableCentralController.discoverCharacteristics(forService: service, with: uuids)
@@ -363,38 +386,51 @@ extension JABLE: GapEventDelegate
 {
     internal func centralController(foundPeripheral peripheral: CBPeripheral, with advertisementData: [String : Any], rssi RSSI: Int)
     {
+        var friendlyAdvertisementData = FriendlyAdvdertismentData()
         if true{
-            print("ADVERTISEMENT DATA = \(advertisementData)")
+            //print("ADVERTISEMENT DATA = \(advertisementData)")
             //Advertisment Data Keys
             let connectable           = advertisementData["kCBAdvDataIsConnectable"] as? NSNumber
-            print("CONNECTABLE = \(String(describing: connectable))")
+            //print("CONNECTABLE = \(String(describing: connectable))")
+            friendlyAdvertisementData.connectable = connectable == 1 ? true : false
             
             let manufacturerData      = advertisementData["kCBAdvDataManufacturerData"] as? NSData
-            print("MANUFACTURER DATA = \(String(describing: manufacturerData))")
+            //print("MANUFACTURER DATA = \(String(describing: manufacturerData))")
+            friendlyAdvertisementData.manufacturerData = manufacturerData
             
             let overflowServiceUUIDs  = advertisementData["kCBAdvDataOverflowServiceUUIDs"] as? [CBUUID]
-            print("OVERFLOW SERVICE UUIDS = \(String(describing: overflowServiceUUIDs))")
+            //print("OVERFLOW SERVICE UUIDS = \(String(describing: overflowServiceUUIDs))")
+            friendlyAdvertisementData.overflowServiceUUIDs = overflowServiceUUIDs
             
             let serviceData           = advertisementData["kCBAdvDataServiceData"] as? [CBUUID : NSData]
-            print("SERVICE DATA = \(String(describing: serviceData))")
+            //print("SERVICE DATA = \(String(describing: serviceData))")
+            friendlyAdvertisementData.serviceData = serviceData
             
             let services              = advertisementData["kCBAdvDataServiceUUIDs"] as? [UUID]
-            print("SERVICES = \(String(describing: services))")
+            //print("SERVICES = \(String(describing: services))")
+            friendlyAdvertisementData.services = services
             
             let solicitedServiceUUIDs = advertisementData["kCBAdvDataSolicitedServiceUUIDs"] as? [CBUUID]
-            print("SOLICITED SERVICE UUIDS = \(String(describing: solicitedServiceUUIDs))")
+            //print("SOLICITED SERVICE UUIDS = \(String(describing: solicitedServiceUUIDs))")
+            friendlyAdvertisementData.solicitedServiceUUIDs = solicitedServiceUUIDs
             
             let txPowerLevel          = advertisementData["kCBAdvDataTxPowerLevel"] as? NSNumber
-            print("TX POWER LEVEL = \(String(describing: txPowerLevel))")
+            //print("TX POWER LEVEL = \(String(describing: txPowerLevel))")
+            friendlyAdvertisementData.transmitPowerLevel = txPowerLevel
             
             let localName             = advertisementData["kCBAdvDataLocalName"] as? String
-            print("LOCAL NAME = \(String(describing: localName))")
+//            print("LOCAL NAME = \(String(describing: localName))")
+            friendlyAdvertisementData.localName = localName
+            
+            friendlyAdvertisementData.rssi = RSSI
         }
+        _jableDelegate.jable(foundPeripheral: peripheral, advertisementData: friendlyAdvertisementData)
     }
     
     internal func centralController(connectedTo peripheral: CBPeripheral)
     {
         _connectedPeripheral = peripheral
+        _jableDelegate.jable(connected: ())
         if _autoDiscovery{
             _jableCentralController.startScanningForPeripherals(withServiceUUIDS: nil)
         }
@@ -408,6 +444,7 @@ extension JABLE: GapEventDelegate
     internal func centralController(disconnectedFrom peripheral: CBPeripheral, with error: Error?)
     {
         print("Peripheral Disconnected")
+        _jableDelegate.jable(disconnected: ())//disconnected()
         _connectedPeripheral = nil
         
     }
@@ -415,9 +452,10 @@ extension JABLE: GapEventDelegate
     internal func centralController(updatedBluetoothStatusTo status: BluetoothState)
     {
         print("Updated Bluetooth Status to \(status)")
+        
         switch status{
         case .off: print("radio off")
-        case .on: print("radio on"); _jableDelegate.ready()
+        case .on: _jableDelegate.jable(isReady: ())//ready()
         case .resetting: print("radio resetting")
         case .unauthorized: print("unauthorized")
         case .unsupported: print("unsupported")
@@ -456,7 +494,7 @@ extension JABLE: GATTEventDelegate
     
     internal func gattClient(updatedRssiFor peripheral: CBPeripheral, rssi: Int, error: Error?)
     {
-        _jableDelegate.rssiUpdated(to: rssi)
+        _jableDelegate.jable(updatedRssi: rssi)//rssiUpdated(to: rssi)
     }
 }
 
@@ -468,6 +506,7 @@ extension JABLE: GATTDiscoveryDelegate
         
         if let discoveredServices = services{
             print("Found services: \(discoveredServices)")
+            _jableDelegate.jable(foundServices: discoveredServices)//foundServices(services: discoveredServices)
         }
         
     }
@@ -476,6 +515,7 @@ extension JABLE: GATTDiscoveryDelegate
     {
         if let discoveredCharacteristics = characteristics{
             print("Found characteristics: \(discoveredCharacteristics)")
+            _jableDelegate.jable(foundCharacteristicsFor: service, characteristics: discoveredCharacteristics)
         }
     }
     
