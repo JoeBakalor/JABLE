@@ -24,7 +24,7 @@ public protocol JABLEDelegate{
     func jable(updatedDescriptorValueFor descriptor: CBDescriptor, value: Data)
     
     func jable(connected: Void)
-    func jable(disconnected: Void)
+    func jable(disconnectedWithReason reason: Error?)
     
 }
 
@@ -40,14 +40,49 @@ public struct FriendlyAdvdertismentData: CustomStringConvertible{
     public var rssi: Int?
     
     public var description: String{
-        return ("\n\r   Conectable: \(self.connectable)\n\r   Manufacturer Data: \(self.manufacturerData)\n\r   Overflow Service UUIDs: \(self.overflowServiceUUIDs)\n\r   ServiceData: \(self.serviceData)\n\r   Services: \(self.services)\n\r   Solicited Service UUIDs: \(self.solicitedServiceUUIDs)\n\r   Transmit Power Level: \(self.transmitPowerLevel)\n\r   Local Name: \(localName)\n\r   RSSI: \(self.rssi)\n")
+        let noValue = "NO VALUE"
+        let connectablePrintValue           = self.connectable != nil ? "\(self.connectable!)" : noValue
+        let manufacturerDataPrintValue      = self.manufacturerData != nil ? "\(self.manufacturerData!)" : noValue
+        let overflowServiceUUIDsPrintValue  = self.overflowServiceUUIDs != nil ? "\(self.overflowServiceUUIDs!)" : noValue
+        let serviceDataPrintValue           = self.serviceData != nil ? "\(self.serviceData!)" : noValue
+        let servicesPrintValue              = self.services != nil ? "\(self.services!)" : noValue
+        let solicitedServiceUUIDsPrintValue = self.solicitedServiceUUIDs != nil ? "\(self.solicitedServiceUUIDs!)" : noValue
+        let transmitPowerLevelPrintValue    = self.transmitPowerLevel != nil ? "\(self.transmitPowerLevel!)" : noValue
+        let localNamePrintValue             = self.localName != nil ? "\(self.localName!)" : noValue
+        let rssiPrintValue                  = self.rssi != nil ? "\(self.rssi!)" : noValue
+        
+        return ("\n\r   Conectable: \(connectablePrintValue)\n\r   Manufacturer Data: \(manufacturerDataPrintValue)\n\r   Overflow Service UUIDs: \(overflowServiceUUIDsPrintValue)\n\r   ServiceData: \(serviceDataPrintValue)\n\r   Services: \(servicesPrintValue)\n\r   Solicited Service UUIDs: \(solicitedServiceUUIDsPrintValue)\n\r   Transmit Power Level: \(transmitPowerLevelPrintValue)\n\r   Local Name: \(localNamePrintValue)\n\r   RSSI: \(rssiPrintValue)\n")
     }
-    
 }
 
-struct JABLEScanFilter{
-    var name: String?
+public struct JABLEScanFilter{
+    public var name: String?
+    public var rssiGreaterThan: Int?
+    public var devicesHasName: Bool?
+    public var connectableDeviceOnly: Bool?
+    public init(_name: String?, _rssiGreaterThan: Int?, _deviceHasName: Bool?, _connectableDeviceOnly: Bool?){
+        self.name = _name
+        self.rssiGreaterThan = _rssiGreaterThan
+        self.devicesHasName = _deviceHasName
+        self.connectableDeviceOnly = _connectableDeviceOnly
+    }
+}
+
+public struct JABLECharacteristicProperties{
+    public var read = false//characteristic.properties.contains(.read)
+    public var write = false//characteristic.properties.contains(.write)
+    public var indicate = false//characteristic.properties.contains(.indicate)
+    public var notify = false//characteristic.properties.contains(.notify)
     
+    public var broadcast = false//characteristic.properties.contains(.broadcast)
+    public var writeWithoutResponse = false//characteristic.properties.contains(.writeWithoutResponse)
+    
+    public var indicateEncryptionRequired = false//characteristic.properties.contains(.indicateEncryptionRequired)
+    public var authenticatedSignedWrites = false//characteristic.properties.contains(.authenticatedSignedWrites)
+    
+    public var extendedProperties = false//characteristic.properties.contains(.extendedProperties)
+    public var notifyEncryptionRequired = false//characteristic.properties.contains(.notifyEncryptionRequired)
+
 }
 
 
@@ -61,6 +96,7 @@ open class JABLE: NSObject, GattDiscoveryCompletionDelegate, JABLE_API
     fileprivate var _jableDelegate: JABLEDelegate!
     fileprivate var _autoDiscovery: Bool = false
     fileprivate var _serviceDiscoveryUuids: [CBUUID] = []
+    fileprivate var _scanFilter: JABLEScanFilter?
     
     
     //CLASS INITIALIZATION
@@ -88,6 +124,10 @@ open class JABLE: NSObject, GattDiscoveryCompletionDelegate, JABLE_API
         
     }
     
+    public func addScanFilter(filter: JABLEScanFilter){
+        _scanFilter = filter
+    }
+    
     public func gattDiscoveryCompleted() {
         print("Gatt discovery completed")
         _jableDelegate.jable(completedGattDiscovery: ())//gattDiscoveryFinished()
@@ -96,6 +136,7 @@ open class JABLE: NSObject, GattDiscoveryCompletionDelegate, JABLE_API
     //MARK: JABLE API
     
     public func RSSI() {
+        _jableCentralController.checkRssi()
         
     }
     
@@ -185,7 +226,7 @@ open class JABLE: NSObject, GattDiscoveryCompletionDelegate, JABLE_API
      Additional details
      
      */
-    func diconnect()
+    public func diconnect()
     {
         guard _connectedPeripheral != nil else { return }
         _jableCentralController.disconnect()
@@ -259,7 +300,7 @@ open class JABLE: NSObject, GattDiscoveryCompletionDelegate, JABLE_API
      Additional details
      
      */
-    func write(value: Data, toCharacteristic characteristic: CBCharacteristic)
+    public func write(value: Data, toCharacteristic characteristic: CBCharacteristic)
     {
         guard _connectedPeripheral != nil else { return /*ERROR*/ }
         _jableCentralController.writeCharacteristic(value: value, characteristic: characteristic)
@@ -305,7 +346,8 @@ open class JABLE: NSObject, GattDiscoveryCompletionDelegate, JABLE_API
      Additional details
      
      */
-    func read(valueFor characteristic: CBCharacteristic){
+    public func read(valueFor characteristic: CBCharacteristic)
+    {
         guard _connectedPeripheral != nil else { return /*ERROR*/ }
         _jableCentralController.readValue(forCharacteristic: characteristic)
     }
@@ -327,7 +369,42 @@ open class JABLE: NSObject, GattDiscoveryCompletionDelegate, JABLE_API
      Additional details
      
      */
-    func enableNotifications(forCharacteristic characteristic: CBCharacteristic)
+    public func getCharacteristicProperties(forCharacteristic characteristic: CBCharacteristic) -> JABLECharacteristicProperties
+    {
+        var properties = JABLECharacteristicProperties()
+        
+        properties.broadcast = characteristic.properties.contains(.broadcast)
+        properties.extendedProperties = characteristic.properties.contains(.extendedProperties)
+        properties.indicate = characteristic.properties.contains(.indicate)
+        properties.notify = characteristic.properties.contains(.notify)
+        properties.notifyEncryptionRequired = characteristic.properties.contains(.notifyEncryptionRequired)
+        properties.indicateEncryptionRequired = characteristic.properties.contains(.indicateEncryptionRequired)
+        properties.read = characteristic.properties.contains(.read)
+        properties.write = characteristic.properties.contains(.write)
+        properties.writeWithoutResponse = characteristic.properties.contains(.writeWithoutResponse)
+        properties.authenticatedSignedWrites = characteristic.properties.contains(.authenticatedSignedWrites)
+        
+        return properties
+    }
+    
+    /**
+     Description
+     
+     - Author:
+     Joe Bakalor
+     
+     - returns:
+     Nothing
+     
+     - throws:
+     nothing
+     
+     - parmeters:
+     
+     Additional details
+     
+     */
+    public func enableNotifications(forCharacteristic characteristic: CBCharacteristic)
     {
         guard _connectedPeripheral != nil else { return /*ERROR*/ }
         _jableCentralController.enableNotifications(forCharacteristic: characteristic)
@@ -350,7 +427,7 @@ open class JABLE: NSObject, GattDiscoveryCompletionDelegate, JABLE_API
      Additional details
      
      */
-    func disableNotifications(forCharacteristic characteristic: CBCharacteristic)
+    public func disableNotifications(forCharacteristic characteristic: CBCharacteristic)
     {
         guard _connectedPeripheral != nil else { return /*ERROR*/ }
         _jableCentralController.disableNotifications(forCharacteristic: characteristic)
@@ -424,6 +501,32 @@ extension JABLE: GapEventDelegate
             
             friendlyAdvertisementData.rssi = RSSI
         }
+        
+        if let filterName = _scanFilter?.name{ // Check if filter is present
+            guard let locaName = friendlyAdvertisementData.localName else { return } // Check for valid name or quit
+            guard filterName == locaName else { return }
+        }
+        
+        if let connectable = _scanFilter?.connectableDeviceOnly{
+            guard let isConnectable = friendlyAdvertisementData.connectable else {return}
+            guard connectable == isConnectable else { return }
+        }
+        
+        if let rssi = _scanFilter?.rssiGreaterThan{
+            print("JABLE RSSI = \(rssi)")
+            if let returnedRSSI = friendlyAdvertisementData.rssi{
+                guard rssi <= returnedRSSI else { return }
+            }
+        }
+        
+        if let hasName = _scanFilter?.devicesHasName{
+            if !hasName{
+                if friendlyAdvertisementData.localName == nil{
+                    return
+                }
+            }
+        }
+        
         _jableDelegate.jable(foundPeripheral: peripheral, advertisementData: friendlyAdvertisementData)
     }
     
@@ -444,7 +547,7 @@ extension JABLE: GapEventDelegate
     internal func centralController(disconnectedFrom peripheral: CBPeripheral, with error: Error?)
     {
         print("Peripheral Disconnected")
-        _jableDelegate.jable(disconnected: ())//disconnected()
+        _jableDelegate.jable(disconnectedWithReason: error)
         _connectedPeripheral = nil
         
     }
@@ -469,6 +572,9 @@ extension JABLE: GATTEventDelegate
 {
     internal func gattClient(recievedNewValueFor characteristic: CBCharacteristic, value: Data?, error: Error?)
     {
+        if let data = value{
+            _jableDelegate.jable(updatedCharacteristicValueFor: characteristic, value: data)
+        }
         
     }
     

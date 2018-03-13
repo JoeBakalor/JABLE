@@ -276,6 +276,7 @@ public extension JABLE_GattClient
         let updatedValue = characteristic.value
         
         //cString(describing: all d)elegate methods
+        print("JABLE_GattClient: Char value updated")
         _gattEventDelegate?.gattClient(recievedNewValueFor: characteristic, value: updatedValue, error: error)
     }
     

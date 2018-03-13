@@ -43,7 +43,6 @@ public class JABLE_CentralController: NSObject
     var peripheralPendingConnection       : CBPeripheral?
     var connectedPeripheral               : CBPeripheral?
     var gattClient                        : JABLE_GattClient?
-    
     var delegate                          : GapEventDelegate?
     
     //Private variable declarations

@@ -12,7 +12,21 @@ import JABLE
 
 let bleManager = BLEManager()
 
-class BLEManager: NSObject{
+protocol PeripheralScanDelegate{
+    func updatedPeripheralList(peripherals: [(peripheral: CBPeripheral, advData: FriendlyAdvdertismentData)])
+}
+
+protocol PeripheralConnectionDelegate {
+    func connected()
+}
+
+@objc
+protocol GattDiscoveryDelegate{
+    @objc optional func foundServices(services: [CBService])
+    @objc optional func foundCharacteristics(characteristics: [CBCharacteristic])
+}
+
+class BLEManager: JABLE{
     
     enum ScanStatus{
         case scanning
@@ -20,134 +34,153 @@ class BLEManager: NSObject{
         case pendingStart
     }
     
+    //  Instance variables
+    private var _bleManager: JABLE!
+    private var _gatt: JABLE_GATT.JABLE_GATTProfile?
+    
+    //  State variables
     var _scanStatus = ScanStatus.stopped
     var _ready: Bool = false
-    var _bleManager: JABLE!
-    var _gatt: JABLE_GATT.JABLE_GATTProfile?
-    var _connectionCount = 0
     
-    override init() {
-        super.init()
-        _bleManager = JABLE(jableDelegate: self, gattProfile: &_gatt, autoGattDiscovery: false)
+    //  Protocol instances
+    private var _peripheralScanDelegate: PeripheralScanDelegate?
+    private var _peripheralConnectionDelegate: PeripheralConnectionDelegate?
+    private var _gattDiscoveryDelegate: GattDiscoveryDelegate?
+    
+    //  Internal reference variables
+    private var _discoveredPeripherals: [(peripheral: CBPeripheral, advData: FriendlyAdvdertismentData)] = []
+    private var _currentlySelectedService: CBService?
+    private var _currentlySelectedCharacteristic: CBCharacteristic?
+    
+    init() {
+        super.init(jableDelegate: self, gattProfile: &_gatt, autoGattDiscovery: false)
+    }
+}
+
+//MARK:
+extension BLEManager{
+    
+    func setSelectedService(selectedService: CBService){
+        _currentlySelectedService = selectedService
     }
     
+    func setSelectedCharacteristic(selectedCharacteristic: CBCharacteristic){
+        _currentlySelectedCharacteristic = selectedCharacteristic
+    }
+    
+    func setPeripheralScanDelegate(peripheralScanDelegate: PeripheralScanDelegate){
+        _peripheralScanDelegate = peripheralScanDelegate
+    }
+    
+    func setPeripheralConnectionDelegate(peripheralConnectionDelegate: PeripheralConnectionDelegate){
+        _peripheralConnectionDelegate = peripheralConnectionDelegate
+    }
+    
+    func setGattDiscoveryDelegate(gattDiscoveryDelegate: GattDiscoveryDelegate){
+        _gattDiscoveryDelegate = gattDiscoveryDelegate
+    }
+}
+
+
+extension BLEManager
+{
     func startScanning(){
-        
         guard _ready == true else {_scanStatus = .pendingStart;  return}
         _bleManager.startScanningForPeripherals(withServiceUUIDs: nil)
     }
     
+    func connect(peripheral: CBPeripheral){
+        _bleManager.connect(toPeripheral: peripheral, withTimeout: 5)
+    }
+    
+    func discoverServcices(){
+        _bleManager.discoverServices(with: nil)
+    }
+    
+    func discoverCharacteristics(){
+        if let service = _currentlySelectedService{
+            _bleManager.discoverCharacteristics(forService: service, withUUIDS: nil)
+        }
+    }
 }
 
-extension BLEManager: JABLEDelegate{
-    func jable(isReady: Void) {
-        
-    }
-    
-    func jable(foundPeripheral peripheral: CBPeripheral, advertisementData: FriendlyAdvdertismentData) {
-        
-    }
-    
-    func jable(completedGattDiscovery: Void) {
-        
-    }
-    
+extension BLEManager: JABLEDelegate
+{
     func jable(updatedRssi rssi: Int) {
-        
     }
     
-    func jable(foundServices services: [CBService]) {
-        
-    }
-    
-    func jable(foundCharacteristicsFor service: CBService, characteristics: [CBCharacteristic]) {
-        
-    }
-    
-    func jable(foundDescriptorsFor characteristic: CBCharacteristic, descriptors: [CBDescriptor]) {
-        
-    }
-    
-    func jable(updatedCharacteristicValueFor characteristic: CBCharacteristic, value: Data) {
-        
-    }
-    
-    func jable(updatedDescriptorValueFor descriptor: CBDescriptor, value: Data) {
-        
+    func jable(isReady: Void) {
+        _ready = true
+        guard _scanStatus == .pendingStart else {return}
     }
     
     func jable(connected: Void) {
-        
+        print("Connected")
+        _peripheralConnectionDelegate?.connected()
     }
     
     func jable(disconnected: Void) {
-         
+        print("")
     }
     
-    
-    /*func foundPeripheral(peripheral: CBPeripheral, advertismentData: FriendlyAdvdertismentData) {
-        _bleManager.stopScanning()
-        _scanStatus = .stopped
-        _bleManager.connect(toPeripheral: peripheral, withTimeout: 5)
-        print("BLEManager: Found Peripheral: \(peripheral)\r\nAdvertisment Data: \n\(advertismentData)\n\r")
+    func jable(foundPeripheral peripheral: CBPeripheral, advertisementData: FriendlyAdvdertismentData){
         
+        //  Check for duplicate, if duplicate then update data
+        var duplicate = false
         
+        let new = _discoveredPeripherals.map({ (oldPeripheral, oldAdvDa)  -> (CBPeripheral, FriendlyAdvdertismentData) in
+            if oldPeripheral == peripheral{// duplicate found
+                
+                duplicate = true
+                return (peripheral, advertisementData)
+                
+            }else{//  not a duplicate
+                
+                return (oldPeripheral, oldAdvDa)
+            }
+        })
+        
+        //  Use new list if duplicate else append new peripheral
+        guard duplicate == false else { print("Duplicate found"); _discoveredPeripherals = new; return}
+        _discoveredPeripherals.append((peripheral: peripheral, advertisementData))
+        _peripheralScanDelegate?.updatedPeripheralList(peripherals: _discoveredPeripherals)
     }
     
     func ready() {
-        print("JABLE Ready")
         _ready = true
         guard _scanStatus == .pendingStart else {return}
-        _scanStatus = .scanning
-        _bleManager.startScanningForPeripherals(withServiceUUIDs: nil)
     }
     
-    func gattDiscoveryCompleted() {
-        
+    func jable(completedGattDiscovery: Void){
     }
     
-    func rssiUpdated(to rssi: Int) {
-        
+    func jable(foundServices services: [CBService]){//foundServices(services: [CBService]) {
+        print("BLEManager: found services")
+        _gattDiscoveryDelegate?.foundServices!(services: services)
     }
     
-    func foundServices(services: [CBService]) {
-        
-        print("Found Services: \(services)")
-        
+    func jable(foundCharacteristicsFor service: CBService, characteristics: [CBCharacteristic]){
+        print("BLEManager: found characteristic")
+        _gattDiscoveryDelegate?.foundCharacteristics!(characteristics: characteristics)
     }
     
-    func foundCharacteristics(forService service: CBService, characteristics: [CBCharacteristic]) {
-        
+    func jable(foundDescriptorsFor characteristic: CBCharacteristic, descriptors: [CBDescriptor]){
     }
     
-    func foundDescriptors(forCharacteristic characteristic: CBCharacteristic, descriptors: [CBDescriptor]) {
-        
+    func jable(updatedCharacteristicValueFor characteristic: CBCharacteristic, value: Data){
     }
     
-    func valueUpdated(forCharacteristic characteristic: CBCharacteristic, value: Data) {
-        
+    func jable(updatedDescriptorValueFor descriptor: CBDescriptor, value: Data){
     }
-    
-    func valueUpdated(forDescriptor descriptor: CBDescriptor, value: Data) {
-        
-    }
-    
-    func connected(){
-        print("Connected")
-        _connectionCount += 1
-        print("Connection Count = \(_connectionCount)")
-        _bleManager.startScanningForPeripherals(withServiceUUIDs: nil)
-        //_bleManager.discoverServices(with: nil)
-    }
-    
-    func disconnected(){
-        _connectionCount -= 1
-        print("Connection Count = \(_connectionCount)")
-        if _scanStatus != .scanning{
-            _bleManager.startScanningForPeripherals(withServiceUUIDs: nil)
-        }
-    }*/
     
 }
+
+
+
+
+
+
+
+
 
 
