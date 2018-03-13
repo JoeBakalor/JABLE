@@ -40,6 +40,13 @@ public class JABLE_GATT: NSObject{
         var uuid: CBUUID
         var enableNotifications: Bool = false
         var descriptors: [descriptor]?
+        
+        public init(characteristic: CBCharacteristic?, uuid: CBUUID, enableNotifications: Bool, descriptors: [descriptor]?){
+            self.characteristic = characteristic
+            self.uuid = uuid
+            self.enableNotifications = enableNotifications
+            self.descriptors = descriptors
+        }
     }
     
     //
@@ -57,11 +64,19 @@ public class JABLE_GATT: NSObject{
     public struct JABLE_Service {
         var service: service?
         var characteristics: [characteristic]?
+        
+        public init(service: service?, characteristics: [characteristic]?){
+            self.service = service
+            self.characteristics = characteristics
+        }
     }
     
     //
     public struct JABLE_GATTProfile {
         var services: [JABLE_Service]
+        public init(services: [JABLE_Service]){
+            self.services = services
+        }
     }
     
     fileprivate var _gattProfile: JABLE_GATTProfile?

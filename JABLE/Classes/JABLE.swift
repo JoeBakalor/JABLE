@@ -38,6 +38,9 @@ public struct FriendlyAdvdertismentData: CustomStringConvertible{
     public var transmitPowerLevel: NSNumber?
     public var localName: String?
     public var rssi: Int?
+    public var timeStamp: Date?
+    public var seen: Int = 0
+    public var advIntervalEstimate: Double?
     
     public var description: String{
         let noValue = "NO VALUE"
@@ -50,8 +53,10 @@ public struct FriendlyAdvdertismentData: CustomStringConvertible{
         let transmitPowerLevelPrintValue    = self.transmitPowerLevel != nil ? "\(self.transmitPowerLevel!)" : noValue
         let localNamePrintValue             = self.localName != nil ? "\(self.localName!)" : noValue
         let rssiPrintValue                  = self.rssi != nil ? "\(self.rssi!)" : noValue
+        let timeStampPrintValue             = self.timeStamp != nil ? "\(self.timeStamp!)" : noValue
+        let advIntervalEstimatePrintValue   = self.advIntervalEstimate != nil ? "\(self.advIntervalEstimate!)" : noValue
         
-        return ("\n\r   Conectable: \(connectablePrintValue)\n\r   Manufacturer Data: \(manufacturerDataPrintValue)\n\r   Overflow Service UUIDs: \(overflowServiceUUIDsPrintValue)\n\r   ServiceData: \(serviceDataPrintValue)\n\r   Services: \(servicesPrintValue)\n\r   Solicited Service UUIDs: \(solicitedServiceUUIDsPrintValue)\n\r   Transmit Power Level: \(transmitPowerLevelPrintValue)\n\r   Local Name: \(localNamePrintValue)\n\r   RSSI: \(rssiPrintValue)\n")
+        return ("\n\r   Conectable: \(connectablePrintValue)\n\r   Manufacturer Data: \(manufacturerDataPrintValue)\n\r   Overflow Service UUIDs: \(overflowServiceUUIDsPrintValue)\n\r   ServiceData: \(serviceDataPrintValue)\n\r   Services: \(servicesPrintValue)\n\r   Solicited Service UUIDs: \(solicitedServiceUUIDsPrintValue)\n\r   Transmit Power Level: \(transmitPowerLevelPrintValue)\n\r   Local Name: \(localNamePrintValue)\n\r   RSSI: \(rssiPrintValue)\n\r  Adv Estimate: \(advIntervalEstimatePrintValue)")
     }
 }
 
@@ -500,6 +505,8 @@ extension JABLE: GapEventDelegate
             friendlyAdvertisementData.localName = localName
             
             friendlyAdvertisementData.rssi = RSSI
+            
+            friendlyAdvertisementData.timeStamp = Date()
         }
         
         if let filterName = _scanFilter?.name{ // Check if filter is present
@@ -630,5 +637,21 @@ extension JABLE: GATTDiscoveryDelegate
         
     }
     
+}
+
+
+
+/*===============================================================================================================================*/
+extension Date
+{
+    var formatted: String
+    {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "hh:mm:ss.SS' "//use HH for 24 hour scale and hh for 12 hour scale
+        formatter.timeZone = TimeZone.autoupdatingCurrent//(forSecondsFromGMT: 4)
+        formatter.calendar = Calendar(identifier: Calendar.Identifier.iso8601)
+        formatter.locale = Locale(identifier: "en_US_POSIX")
+        return formatter.string(from: self)
+    }
 }
 

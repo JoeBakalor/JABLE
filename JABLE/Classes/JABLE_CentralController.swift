@@ -209,12 +209,12 @@ extension JABLE_CentralController
         guard let uuids = UUIDS else {
             
             //Otherwise scan for all peripherals
-            _centralManager.scanForPeripherals(withServices: nil, options: [CBCentralManagerOptionShowPowerAlertKey: true])
+            _centralManager.scanForPeripherals(withServices: nil, options: [CBCentralManagerOptionShowPowerAlertKey: true, CBCentralManagerScanOptionAllowDuplicatesKey: true])
             return
         }
         
         //Scan for peripherals with included services
-        _centralManager.scanForPeripherals(withServices: uuids, options: [CBCentralManagerOptionShowPowerAlertKey: true])
+        _centralManager.scanForPeripherals(withServices: uuids, options: [CBCentralManagerOptionShowPowerAlertKey: true, CBCentralManagerScanOptionAllowDuplicatesKey: true])
     }
     
     /**
