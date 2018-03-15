@@ -205,15 +205,17 @@ extension JABLE_CentralController
      */
     func startScanningForPeripherals(withServiceUUIDS UUIDS: [CBUUID]?)
     {
+        
         //Check if service UUIDs have been specified
         guard let uuids = UUIDS else {
-            
+            print("JABLE_CentralController: START SCANNING")
             //Otherwise scan for all peripherals
             _centralManager.scanForPeripherals(withServices: nil, options: [CBCentralManagerOptionShowPowerAlertKey: true, CBCentralManagerScanOptionAllowDuplicatesKey: true])
             return
         }
         
         //Scan for peripherals with included services
+        
         _centralManager.scanForPeripherals(withServices: uuids, options: [CBCentralManagerOptionShowPowerAlertKey: true, CBCentralManagerScanOptionAllowDuplicatesKey: true])
     }
     
@@ -372,6 +374,7 @@ extension JABLE_CentralController: CBCentralManagerDelegate
          */
         
         //Call GAP Event delegate method
+        print("JABLE_CentralController: FOUND PERIPHERAL")
         _gapEventDelegate.centralController(foundPeripheral: peripheral, with: advertisementData, rssi: RSSI.intValue)
     }
     

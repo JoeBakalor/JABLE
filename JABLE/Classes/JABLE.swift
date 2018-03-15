@@ -97,18 +97,21 @@ open class JABLE: NSObject, GattDiscoveryCompletionDelegate, JABLE_API
     fileprivate var _connectedPeripheral: CBPeripheral?
     fileprivate var _gattDiscoveryDelegate: GattDiscoveryDelegate?
     fileprivate var _jableCentralController: JABLE_CentralController!
-    fileprivate var _jableGattProfile: JABLE_GATT?
+    var _jableGattProfile: JABLE_GATT?
     fileprivate var _jableDelegate: JABLEDelegate!
     fileprivate var _autoDiscovery: Bool = false
     fileprivate var _serviceDiscoveryUuids: [CBUUID] = []
     fileprivate var _scanFilter: JABLEScanFilter?
+    fileprivate var _unprocessedServices: [CBService]?
     
     
+    var test: JABLE_GATT.JABLE_GATTProfile?
     //CLASS INITIALIZATION
     public init(jableDelegate: JABLEDelegate, gattProfile: inout JABLE_GATT.JABLE_GATTProfile?, autoGattDiscovery: Bool)
     {
         super.init()
         
+        test = gattProfile
         //Set JABLE delegate
         _jableDelegate = jableDelegate
         
@@ -127,6 +130,7 @@ open class JABLE: NSObject, GattDiscoveryCompletionDelegate, JABLE_API
             _serviceDiscoveryUuids.append((includedService.service?.uuid)!)
         }
         
+        print("JABLE: Start Scanning")
     }
     
     public func addScanFilter(filter: JABLEScanFilter){
@@ -210,6 +214,7 @@ open class JABLE: NSObject, GattDiscoveryCompletionDelegate, JABLE_API
      */
     public func connect(toPeripheral peripheral: CBPeripheral, withTimeout timeout: Int)
     {
+        print("JABLE: ATTEMPT CONNECTION")
         _jableCentralController.attemptConnection(toPeriperal: peripheral, timeout: timeout)
     }
     
@@ -468,6 +473,7 @@ extension JABLE: GapEventDelegate
 {
     internal func centralController(foundPeripheral peripheral: CBPeripheral, with advertisementData: [String : Any], rssi RSSI: Int)
     {
+        print("JABLE: FOUND PERIPHERAL")
         var friendlyAdvertisementData = FriendlyAdvdertismentData()
         if true{
             //print("ADVERTISEMENT DATA = \(advertisementData)")
@@ -542,7 +548,8 @@ extension JABLE: GapEventDelegate
         _connectedPeripheral = peripheral
         _jableDelegate.jable(connected: ())
         if _autoDiscovery{
-            _jableCentralController.startScanningForPeripherals(withServiceUUIDS: nil)
+            print("JABLE: START AUTO GATT DISCOVERY")
+            _jableCentralController.discoverServices(with: nil)//.startScanningForPeripherals(withServiceUUIDS: nil)
         }
     }
     
@@ -582,7 +589,6 @@ extension JABLE: GATTEventDelegate
         if let data = value{
             _jableDelegate.jable(updatedCharacteristicValueFor: characteristic, value: data)
         }
-        
     }
     
     internal func gattClient(wroteValueFor characteristic: CBCharacteristic, error: Error?)
@@ -616,9 +622,17 @@ extension JABLE: GATTDiscoveryDelegate
 {
     internal func gattClient(foundServices services: [CBService]?, forPeripheral peripheral: CBPeripheral, error: Error?)
     {
+        guard _autoDiscovery == false else {
+            guard let _services = services else { return }
+            //  Provide sercices to GATT profile for assignment
+            _jableGattProfile?.central(didFind: _services)
+            //_jableCentralController.discoverCharacteristics(forService: _services[0], with: nil)
+            _unprocessedServices = _services
+            processGattServices()
+            return
+        }
         
         if let discoveredServices = services{
-            print("Found services: \(discoveredServices)")
             _jableDelegate.jable(foundServices: discoveredServices)//foundServices(services: discoveredServices)
         }
         
@@ -626,10 +640,30 @@ extension JABLE: GATTDiscoveryDelegate
     
     internal func gattClient(foundCharacteristics characteristics: [CBCharacteristic]?, forService service: CBService, error: Error?)
     {
+        guard _autoDiscovery == false else {
+            guard let _characteristics = characteristics else { return }
+            //  Provide characteristics to GATT profile for assignment
+            _jableGattProfile?.central(didFind: _characteristics, forService: service)
+            processGattServices()
+            return
+        }
+        
         if let discoveredCharacteristics = characteristics{
-            print("Found characteristics: \(discoveredCharacteristics)")
             _jableDelegate.jable(foundCharacteristicsFor: service, characteristics: discoveredCharacteristics)
         }
+    }
+    
+    internal func processGattServices(){
+        guard let unprocessedServices = _unprocessedServices else { return }
+        
+        guard unprocessedServices.count > 0 else {
+            _jableDelegate.jable(completedGattDiscovery: ())
+            print("JABLE: Auto GATT Discovery completed")
+            print("JABLE: \(_jableGattProfile?._gattProfile)")
+            return
+        }
+        _jableCentralController.discoverCharacteristics(forService: unprocessedServices.first!, with: nil)
+        _unprocessedServices?.removeFirst()
     }
     
     internal func gattClient(foundDescriptors discriptors: [CBDescriptor]?, forCharacteristic: CBCharacteristic, error: Error?)

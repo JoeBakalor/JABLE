@@ -29,15 +29,15 @@ public class JABLE_GattExample: NSObject{
         super.init()
         
         
-        let serviceOne = JABLE_GATT.service(service: primaryService, uuid: JABLE_PRIMARY_SERVICE_UUID)
-        let characteristicOne = JABLE_GATT.characteristic(characteristic: RGBLedCharacteristic, uuid: JABLE_RGB_LED_CHARACTERISTIC_UUID, enableNotifications: false, descriptors: nil)
-        let characteristicTwo = JABLE_GATT.characteristic(characteristic: accelRpmGyroCharacteristic, uuid: JABLE_ACCEL_RPM_GYRO_CHARACTERISTIC_UUID, enableNotifications: false, descriptors: nil)
-        let characteristicThree = JABLE_GATT.characteristic(characteristic: tempCharacteristic, uuid: JABLE_TEMP_CHARACTERISTIC_UUID, enableNotifications: false, descriptors: nil)
-        let services = JABLE_GATT.JABLE_Service(service: serviceOne, characteristics: [characteristicOne, characteristicTwo, characteristicThree])
+        /*var serviceOne = JABLE_GATT.service(service: &primaryService, uuid: JABLE_PRIMARY_SERVICE_UUID)
+        let characteristicOne = JABLE_GATT.characteristic(characteristic: &RGBLedCharacteristic, uuid: JABLE_RGB_LED_CHARACTERISTIC_UUID, enableNotifications: false, descriptors: nil)
+        let characteristicTwo = JABLE_GATT.characteristic(characteristic: &accelRpmGyroCharacteristic, uuid: JABLE_ACCEL_RPM_GYRO_CHARACTERISTIC_UUID, enableNotifications: false, descriptors: nil)
+        let characteristicThree = JABLE_GATT.characteristic(characteristic: &tempCharacteristic, uuid: JABLE_TEMP_CHARACTERISTIC_UUID, enableNotifications: false, descriptors: nil)
+        let services = JABLE_GATT.JABLE_Service(service: &serviceOne, characteristics: [characteristicOne, characteristicTwo, characteristicThree])
         
         jableGattProfile = JABLE_GATT.JABLE_GATTProfile(services: [services])
         
-        bleController = JABLE(jableDelegate: self as! JABLEDelegate, gattProfile: &jableGattProfile, autoGattDiscovery: true)
+        bleController = JABLE(jableDelegate: self as! JABLEDelegate, gattProfile: &jableGattProfile, autoGattDiscovery: true)*/
         
     }
     
