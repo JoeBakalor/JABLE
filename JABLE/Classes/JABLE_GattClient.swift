@@ -283,6 +283,7 @@ public extension JABLE_GattClient
     //VALUE WAS WRITTEN TO CHARACTERISTIC
     func peripheral(_ peripheral: CBPeripheral, didWriteValueFor characteristic: CBCharacteristic, error: Error?)
     {
+        //print("JABLE_GattClient: Wrote value for \(characteristic)")
         //call delegate method
         _gattEventDelegate?.gattClient(wroteValueFor: characteristic, error: error)
     }

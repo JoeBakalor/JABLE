@@ -312,6 +312,7 @@ open class JABLE: NSObject, GattDiscoveryCompletionDelegate, JABLE_API
      */
     public func write(value: Data, toCharacteristic characteristic: CBCharacteristic)
     {
+        print("JABLE: Attempt write to \(characteristic)")
         guard _connectedPeripheral != nil else { return /*ERROR*/ }
         _jableCentralController.writeCharacteristic(value: value, characteristic: characteristic)
     }
@@ -638,8 +639,8 @@ extension JABLE: GATTDiscoveryDelegate
         
     }
     
-    internal func gattClient(foundCharacteristics characteristics: [CBCharacteristic]?, forService service: CBService, error: Error?)
-    {
+    internal func gattClient(foundCharacteristics characteristics: [CBCharacteristic]?, forService service: CBService, error: Error?){
+        
         guard _autoDiscovery == false else {
             guard let _characteristics = characteristics else { return }
             //  Provide characteristics to GATT profile for assignment
@@ -655,11 +656,10 @@ extension JABLE: GATTDiscoveryDelegate
     
     internal func processGattServices(){
         guard let unprocessedServices = _unprocessedServices else { return }
-        
         guard unprocessedServices.count > 0 else {
             _jableDelegate.jable(completedGattDiscovery: ())
             print("JABLE: Auto GATT Discovery completed")
-            print("JABLE: \(_jableGattProfile?._gattProfile)")
+            //print("JABLE: \(_jableGattProfile?._gattProfile)")
             return
         }
         _jableCentralController.discoverCharacteristics(forService: unprocessedServices.first!, with: nil)
