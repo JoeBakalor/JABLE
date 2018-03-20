@@ -69,12 +69,13 @@ public class JABLE_CentralController: NSObject
      Nothing
      
      - parameters:
-     Nothing
+        - gapEventDelegate: The delegate to recieve GAP events
      
      Additional details
      
      */
     init(gapEventDelegate: GapEventDelegate, gattEventDelegate: GATTEventDelegate, gattDiscoveryDelegate: GATTDiscoveryDelegate){
+        
         super.init()
         
         //Set internal reference to GAP Event Delegate
@@ -115,49 +116,189 @@ extension JABLE_CentralController
      
      */
     @available(iOS 10.0, *)
-    func getCBManagerState() -> CBManagerState
-    {
+    func getCBManagerState() -> CBManagerState{
+        
         return _centralManager.state
     }
     
+    /**
+     Stop scanning for peripherals
+     
+     - Author:
+     Joe Bakalor
+     
+     - returns:
+     Nothing
+     
+     - throws:
+     Nothing
+     
+     - parameters:
+     Nothing
+     
+     Additional details
+     
+     */
     func discoverServices(with uuids: [CBUUID]?){
+        
         if let gattClient = _gattClientInstance{
+            
             gattClient.startServiceDiscovery(services: uuids)
         }
     }
     
+    /**
+     Stop scanning for peripherals
+     
+     - Author:
+     Joe Bakalor
+     
+     - returns:
+     Nothing
+     
+     - throws:
+     Nothing
+     
+     - parameters:
+     Nothing
+     
+     Additional details
+     
+     */
     func discoverCharacteristics(forService service: CBService,with uuids: [CBUUID]?){
+        
         if let gattClient = _gattClientInstance{
+            
             gattClient.startCharacteristicDiscovery(forService: service, forCharacteristics: nil)
         }
     }
     
+    /**
+     Stop scanning for peripherals
+     
+     - Author:
+     Joe Bakalor
+     
+     - returns:
+     Nothing
+     
+     - throws:
+     Nothing
+     
+     - parameters:
+     Nothing
+     
+     Additional details
+     
+     */
     func readValue(forCharacteristic characteristic: CBCharacteristic){
+        
         if _connectedPeripheral != nil{
+            
             _connectedPeripheral?.readValue(for: characteristic)
         }
     }
     
+    /**
+     Stop scanning for peripherals
+     
+     - Author:
+     Joe Bakalor
+     
+     - returns:
+     Nothing
+     
+     - throws:
+     Nothing
+     
+     - parameters:
+     Nothing
+     
+     Additional details
+     
+     */
     func writeCharacteristic(value: Data, characteristic: CBCharacteristic){
+        
         if _connectedPeripheral != nil{
+            
             _connectedPeripheral?.writeValue(value, for: characteristic, type: .withResponse)
         }
     }
     
+    /**
+     Stop scanning for peripherals
+     
+     - Author:
+     Joe Bakalor
+     
+     - returns:
+     Nothing
+     
+     - throws:
+     Nothing
+     
+     - parameters:
+     Nothing
+     
+     Additional details
+     
+     */
     func writeDescriptor(value: Data, descriptor: CBDescriptor){
+        
         if _connectedPeripheral != nil{
+            
             _connectedPeripheral?.writeValue(value, for: descriptor)
         }
     }
     
+    /**
+     Stop scanning for peripherals
+     
+     - Author:
+     Joe Bakalor
+     
+     - returns:
+     Nothing
+     
+     - throws:
+     Nothing
+     
+     - parameters:
+     Nothing
+     
+     Additional details
+     
+     */
     func enableNotifications(forCharacteristic characteristic: CBCharacteristic){
+        
         if _connectedPeripheral != nil{
+            
             _connectedPeripheral?.setNotifyValue(true, for: characteristic)
         }
     }
     
+    /**
+     Stop scanning for peripherals
+     
+     - Author:
+     Joe Bakalor
+     
+     - returns:
+     Nothing
+     
+     - throws:
+     Nothing
+     
+     - parameters:
+     Nothing
+     
+     Additional details
+     
+     */
     func disableNotifications(forCharacteristic characteristic: CBCharacteristic){
+        
         if _connectedPeripheral != nil{
+            
             _connectedPeripheral?.setNotifyValue(false, for: characteristic)
         }
     }
@@ -181,7 +322,9 @@ extension JABLE_CentralController
      
      */
     func checkRssi(){
+        
         if let peripheral = _connectedPeripheral{
+            
             peripheral.readRSSI()
         }
     }
@@ -203,11 +346,11 @@ extension JABLE_CentralController
      Additional details
      
      */
-    func startScanningForPeripherals(withServiceUUIDS UUIDS: [CBUUID]?)
-    {
+    func startScanningForPeripherals(withServiceUUIDS UUIDS: [CBUUID]?){
         
         //Check if service UUIDs have been specified
         guard let uuids = UUIDS else {
+            
             print("JABLE_CentralController: START SCANNING")
             //Otherwise scan for all peripherals
             _centralManager.scanForPeripherals(withServices: nil, options: [CBCentralManagerOptionShowPowerAlertKey: true, CBCentralManagerScanOptionAllowDuplicatesKey: true])
@@ -237,8 +380,8 @@ extension JABLE_CentralController
      Additional details
      
      */
-    func stopScanning()
-    {
+    func stopScanning(){
+        
         _centralManager.stopScan()
     }
     
@@ -261,8 +404,8 @@ extension JABLE_CentralController
      Additional details
      
      */
-    func attemptConnection(toPeriperal peripheral: CBPeripheral, timeout: Int)
-    {
+    func attemptConnection(toPeriperal peripheral: CBPeripheral, timeout: Int){
+        
         //Save reference to peripheral we are trying to connect
         _peripheralPendingConnection = peripheral
         
@@ -293,9 +436,10 @@ extension JABLE_CentralController
      Additional details
      
      */
-    func disconnect()
-    {
+    func disconnect(){
+        
         if let peripheral = _connectedPeripheral {
+            
             _centralManager.cancelPeripheralConnection(peripheral)
         }
     }
@@ -312,19 +456,20 @@ extension JABLE_CentralController
      - throws:
      nothing
      
-     - parameters:
+     - parameters
      - peripheral: The peripheral to connect to disconnect from or cancel connection attempt to.
      
      Additional details
      
      */
-    func getConnectedPeripherals(withServices services: [CBUUID]?)
-    {
+    func getConnectedPeripherals(withServices services: [CBUUID]?){
         
     }
     
     @objc fileprivate func _cancelConnectionAttempt(){
+        
         if let pendingPeripheral = _peripheralPendingConnection{
+            
             _centralManager.cancelPeripheralConnection(pendingPeripheral)
         }
     }
@@ -348,8 +493,8 @@ extension JABLE_CentralController: CBCentralManagerDelegate
     }
     
     //CALLED WHEN PERIPHERAL DISCONNECTION OCCURS
-    public func centralManager(_ central: CBCentralManager, didDisconnectPeripheral peripheral: CBPeripheral, error: Error?)
-    {
+    public func centralManager(_ central: CBCentralManager, didDisconnectPeripheral peripheral: CBPeripheral, error: Error?){
+        
         print("Disconnected with ERROR: \(String(describing: error))")
         
         //Set connected to peripheral to nil
@@ -360,8 +505,8 @@ extension JABLE_CentralController: CBCentralManagerDelegate
     }
     
     //CALLED FOR EACH PERIPHERAL DISCOVERED
-    public func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String : Any], rssi RSSI: NSNumber)
-    {
+    public func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String : Any], rssi RSSI: NSNumber){
+        
         //Advertisment Data Keys
         /*
          //  CBAdvertisementDataIsConnectable
@@ -374,13 +519,13 @@ extension JABLE_CentralController: CBCentralManagerDelegate
          */
         
         //Call GAP Event delegate method
-        print("JABLE_CentralController: FOUND PERIPHERAL")
+        //print("JABLE_CentralController: FOUND PERIPHERAL")
         _gapEventDelegate.centralController(foundPeripheral: peripheral, with: advertisementData, rssi: RSSI.intValue)
     }
     
     //  CALLED WHEN CONNECTION ATTEMPT TO PERIPHERAL FAILS
-    public func centralManager(_ central: CBCentralManager, didFailToConnect peripheral: CBPeripheral, error: Error?)
-    {
+    public func centralManager(_ central: CBCentralManager, didFailToConnect peripheral: CBPeripheral, error: Error?){
+        
         //Set pending peripheral connection to nil
         _peripheralPendingConnection = nil
         
@@ -389,10 +534,10 @@ extension JABLE_CentralController: CBCentralManagerDelegate
         
     }
     
-    public func centralManagerDidUpdateState(_ central: CBCentralManager)
-    {
-        if #available(iOS 10.0, *)
-        {
+    public func centralManagerDidUpdateState(_ central: CBCentralManager){
+        
+        if #available(iOS 10.0, *){
+            
             switch (central.state)
             {
             case CBManagerState.poweredOff:

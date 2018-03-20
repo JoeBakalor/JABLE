@@ -97,7 +97,7 @@ open class JABLE: NSObject, GattDiscoveryCompletionDelegate, JABLE_API
     fileprivate var _connectedPeripheral: CBPeripheral?
     fileprivate var _gattDiscoveryDelegate: GattDiscoveryDelegate?
     fileprivate var _jableCentralController: JABLE_CentralController!
-    var _jableGattProfile: JABLE_GATT?
+    fileprivate var _jableGattProfile: JABLE_GATT?
     fileprivate var _jableDelegate: JABLEDelegate!
     fileprivate var _autoDiscovery: Bool = false
     fileprivate var _serviceDiscoveryUuids: [CBUUID] = []
@@ -105,13 +105,38 @@ open class JABLE: NSObject, GattDiscoveryCompletionDelegate, JABLE_API
     fileprivate var _unprocessedServices: [CBService]?
     
     
-    var test: JABLE_GATT.JABLE_GATTProfile?
-    //CLASS INITIALIZATION
-    public init(jableDelegate: JABLEDelegate, gattProfile: inout JABLE_GATT.JABLE_GATTProfile?, autoGattDiscovery: Bool)
-    {
+    //var test: JABLE_GATT.JABLE_GATTProfile?
+
+    /**
+     JABLE initialization
+     
+     - Author:
+     Joe Bakalor
+     
+     - returns:
+     Nothing
+     
+     - throws:
+     nothing
+     
+     - parameters:
+     
+        - jableDelegate:      Delegate to receive all JABLE generated events
+     
+        - gattProfile:        Reference to the GATT profile that should be populated upon GATT discovery
+     
+        - autoGattDiscovery:  Set to true to enable automatic service and characteristic discovery using
+                              the provide GATT profile
+     
+     Additional details
+     
+     */
+    public init(jableDelegate: JABLEDelegate, gattProfile: inout JABLE_GATT.JABLE_GATTProfile?, autoGattDiscovery: Bool){
+        
         super.init()
         
-        test = gattProfile
+        //test = gattProfile
+        
         //Set JABLE delegate
         _jableDelegate = jableDelegate
         
@@ -130,23 +155,53 @@ open class JABLE: NSObject, GattDiscoveryCompletionDelegate, JABLE_API
             _serviceDiscoveryUuids.append((includedService.service?.uuid)!)
         }
         
-        print("JABLE: Start Scanning")
+        print("JABLE: Started")
     }
     
+    /**
+     Add scan filter to peripheral scan results
+     
+     - Author:
+     Joe Bakalor
+     
+     - returns:
+     Nothing
+     
+     - throws:
+     nothing
+     
+     - parameters:
+     
+        - filter: JABLEScanFilter defining what peripherals should be removed from scan results
+     
+     Additional details
+     
+     */
     public func addScanFilter(filter: JABLEScanFilter){
+        
         _scanFilter = filter
     }
     
-    public func gattDiscoveryCompleted() {
-        print("Gatt discovery completed")
-        _jableDelegate.jable(completedGattDiscovery: ())//gattDiscoveryFinished()
-    }
     
-    //MARK: JABLE API
-    
+    /**
+     Initiate RSSI update
+     
+     - Author:
+     Joe Bakalor
+     
+     - returns:
+     Nothing
+     
+     - throws:
+     Nothing
+     
+     Additional details:  This will trigger and RSSI read on the connected peripheral.  When completed the
+                          didUpdateRssi delegate method will be called
+     
+     */
     public func RSSI() {
-        _jableCentralController.checkRssi()
         
+        _jableCentralController.checkRssi()
     }
     
     /**
@@ -161,13 +216,13 @@ open class JABLE: NSObject, GattDiscoveryCompletionDelegate, JABLE_API
      - throws:
      nothing
      
-     - parmeters:
+     - parameters:
      
      Additional details
      
      */
-    public func startScanningForPeripherals(withServiceUUIDs uuids: [CBUUID]?)
-    {
+    public func startScanningForPeripherals(withServiceUUIDs uuids: [CBUUID]?){
+        
         _jableCentralController.startScanningForPeripherals(withServiceUUIDS: uuids)
     }
     
@@ -183,13 +238,13 @@ open class JABLE: NSObject, GattDiscoveryCompletionDelegate, JABLE_API
      - throws:
      nothing
      
-     - parmeters:
+     - parameters:
      
      Additional details
      
      */
-    public func stopScanning()
-    {
+    public func stopScanning(){
+        
         _jableCentralController.stopScanning()
     }
     
@@ -207,13 +262,13 @@ open class JABLE: NSObject, GattDiscoveryCompletionDelegate, JABLE_API
      - throws:
      nothing
      
-     - parmeters:
+     - parameters:
      
      Additional details
      
      */
-    public func connect(toPeripheral peripheral: CBPeripheral, withTimeout timeout: Int)
-    {
+    public func connect(toPeripheral peripheral: CBPeripheral, withTimeout timeout: Int){
+        
         print("JABLE: ATTEMPT CONNECTION")
         _jableCentralController.attemptConnection(toPeriperal: peripheral, timeout: timeout)
     }
@@ -231,13 +286,13 @@ open class JABLE: NSObject, GattDiscoveryCompletionDelegate, JABLE_API
      - throws:
      nothing
      
-     - parmeters:
+     - parameters:
      
      Additional details
      
      */
-    public func diconnect()
-    {
+    public func diconnect(){
+        
         guard _connectedPeripheral != nil else { return }
         _jableCentralController.disconnect()
     }
@@ -256,13 +311,13 @@ open class JABLE: NSObject, GattDiscoveryCompletionDelegate, JABLE_API
      - throws:
      nothing
      
-     - parmeters:
+     - parameters:
      
      Additional details
      
      */
-    public func discoverServices(with uuids: [CBUUID]?)
-    {
+    public func discoverServices(with uuids: [CBUUID]?){
+        
         guard _connectedPeripheral != nil else { return }
         _jableCentralController.discoverServices(with: uuids)
         
@@ -282,13 +337,13 @@ open class JABLE: NSObject, GattDiscoveryCompletionDelegate, JABLE_API
      - throws:
      nothing
      
-     - parmeters:
+     - parameters:
      
      Additional details
      
      */
-    public func discoverCharacteristics(forService service: CBService, withUUIDS uuids: [CBUUID]?)
-    {
+    public func discoverCharacteristics(forService service: CBService, withUUIDS uuids: [CBUUID]?){
+        
         guard _connectedPeripheral != nil else { return /*ERROR*/ }
         _jableCentralController.discoverCharacteristics(forService: service, with: uuids)
     }
@@ -305,13 +360,13 @@ open class JABLE: NSObject, GattDiscoveryCompletionDelegate, JABLE_API
      - throws:
      nothing
      
-     - parmeters:
+     - parameters:
      
      Additional details
      
      */
-    public func write(value: Data, toCharacteristic characteristic: CBCharacteristic)
-    {
+    public func write(value: Data, toCharacteristic characteristic: CBCharacteristic){
+        
         print("JABLE: Attempt write to \(characteristic)")
         guard _connectedPeripheral != nil else { return /*ERROR*/ }
         _jableCentralController.writeCharacteristic(value: value, characteristic: characteristic)
@@ -329,13 +384,13 @@ open class JABLE: NSObject, GattDiscoveryCompletionDelegate, JABLE_API
      - throws:
      nothing
      
-     - parmeters:
+     - parameters:
      
      Additional details
      
      */
-    func write(value: Data, toDescriptor descriptor: CBDescriptor)
-    {
+    func write(value: Data, toDescriptor descriptor: CBDescriptor){
+        
         guard _connectedPeripheral != nil else { return /*ERROR*/ }
         _jableCentralController.writeDescriptor(value: value, descriptor: descriptor)
     }
@@ -352,13 +407,13 @@ open class JABLE: NSObject, GattDiscoveryCompletionDelegate, JABLE_API
      - throws:
      nothing
      
-     - parmeters:
+     - parameters:
      
      Additional details
      
      */
-    public func read(valueFor characteristic: CBCharacteristic)
-    {
+    public func read(valueFor characteristic: CBCharacteristic){
+        
         guard _connectedPeripheral != nil else { return /*ERROR*/ }
         _jableCentralController.readValue(forCharacteristic: characteristic)
     }
@@ -375,13 +430,13 @@ open class JABLE: NSObject, GattDiscoveryCompletionDelegate, JABLE_API
      - throws:
      nothing
      
-     - parmeters:
+     - parameters:
      
      Additional details
      
      */
-    public func getCharacteristicProperties(forCharacteristic characteristic: CBCharacteristic) -> JABLECharacteristicProperties
-    {
+    public func getCharacteristicProperties(forCharacteristic characteristic: CBCharacteristic) -> JABLECharacteristicProperties{
+        
         var properties = JABLECharacteristicProperties()
         
         properties.broadcast = characteristic.properties.contains(.broadcast)
@@ -410,13 +465,13 @@ open class JABLE: NSObject, GattDiscoveryCompletionDelegate, JABLE_API
      - throws:
      nothing
      
-     - parmeters:
+     - parameters:
      
      Additional details
      
      */
-    public func enableNotifications(forCharacteristic characteristic: CBCharacteristic)
-    {
+    public func enableNotifications(forCharacteristic characteristic: CBCharacteristic){
+        
         guard _connectedPeripheral != nil else { return /*ERROR*/ }
         _jableCentralController.enableNotifications(forCharacteristic: characteristic)
     }
@@ -433,13 +488,14 @@ open class JABLE: NSObject, GattDiscoveryCompletionDelegate, JABLE_API
      - throws:
      nothing
      
-     - parmeters:
+     - parameters:
+        - characteristic: The characteristic to disable notifications for
      
      Additional details
      
      */
-    public func disableNotifications(forCharacteristic characteristic: CBCharacteristic)
-    {
+    public func disableNotifications(forCharacteristic characteristic: CBCharacteristic){
+        
         guard _connectedPeripheral != nil else { return /*ERROR*/ }
         _jableCentralController.disableNotifications(forCharacteristic: characteristic)
     }
@@ -457,13 +513,11 @@ open class JABLE: NSObject, GattDiscoveryCompletionDelegate, JABLE_API
      - throws:
      nothing
      
-     - parmeters:
-     
      Additional details
      
      */
-    func updateRSSI()
-    {
+    public func updateRSSI(){
+        
         guard _connectedPeripheral != nil else { return /*ERROR*/ }
         _jableCentralController.checkRssi()
     }
@@ -472,11 +526,13 @@ open class JABLE: NSObject, GattDiscoveryCompletionDelegate, JABLE_API
 //MARK: GAP EVENT DELEGATE METHODS
 extension JABLE: GapEventDelegate
 {
-    internal func centralController(foundPeripheral peripheral: CBPeripheral, with advertisementData: [String : Any], rssi RSSI: Int)
-    {
-        print("JABLE: FOUND PERIPHERAL")
+    
+    internal func centralController(foundPeripheral peripheral: CBPeripheral, with advertisementData: [String : Any], rssi RSSI: Int){
+        
+        //print("JABLE: FOUND PERIPHERAL")
         var friendlyAdvertisementData = FriendlyAdvdertismentData()
         if true{
+            
             //print("ADVERTISEMENT DATA = \(advertisementData)")
             //Advertisment Data Keys
             let connectable           = advertisementData["kCBAdvDataIsConnectable"] as? NSNumber
@@ -509,32 +565,37 @@ extension JABLE: GapEventDelegate
             
             let localName             = advertisementData["kCBAdvDataLocalName"] as? String
 //            print("LOCAL NAME = \(String(describing: localName))")
+            
             friendlyAdvertisementData.localName = localName
-            
             friendlyAdvertisementData.rssi = RSSI
-            
             friendlyAdvertisementData.timeStamp = Date()
         }
         
         if let filterName = _scanFilter?.name{ // Check if filter is present
+            
             guard let locaName = friendlyAdvertisementData.localName else { return } // Check for valid name or quit
             guard filterName == locaName else { return }
         }
         
         if let connectable = _scanFilter?.connectableDeviceOnly{
+            
             guard let isConnectable = friendlyAdvertisementData.connectable else {return}
             guard connectable == isConnectable else { return }
         }
         
         if let rssi = _scanFilter?.rssiGreaterThan{
+            
             print("JABLE RSSI = \(rssi)")
             if let returnedRSSI = friendlyAdvertisementData.rssi{
+                
                 guard rssi <= returnedRSSI else { return }
             }
         }
         
         if let hasName = _scanFilter?.devicesHasName{
+            
             if !hasName{
+                
                 if friendlyAdvertisementData.localName == nil{
                     return
                 }
@@ -544,31 +605,34 @@ extension JABLE: GapEventDelegate
         _jableDelegate.jable(foundPeripheral: peripheral, advertisementData: friendlyAdvertisementData)
     }
     
-    internal func centralController(connectedTo peripheral: CBPeripheral)
-    {
+    internal func centralController(connectedTo peripheral: CBPeripheral){
+        
         _connectedPeripheral = peripheral
         _jableDelegate.jable(connected: ())
         if _autoDiscovery{
+            
             print("JABLE: START AUTO GATT DISCOVERY")
             _jableCentralController.discoverServices(with: nil)//.startScanningForPeripherals(withServiceUUIDS: nil)
         }
     }
     
-    internal func centralController(failedToConnectTo peripheral: CBPeripheral, with error: Error?)
-    {
+    internal func centralController(failedToConnectTo peripheral: CBPeripheral, with error: Error?){
+        
+        print("Peripheral Disconnected")
+        _jableDelegate.jable(disconnectedWithReason: error)
         _connectedPeripheral = nil
     }
     
-    internal func centralController(disconnectedFrom peripheral: CBPeripheral, with error: Error?)
-    {
+    internal func centralController(disconnectedFrom peripheral: CBPeripheral, with error: Error?){
+        
         print("Peripheral Disconnected")
         _jableDelegate.jable(disconnectedWithReason: error)
         _connectedPeripheral = nil
         
     }
     
-    internal func centralController(updatedBluetoothStatusTo status: BluetoothState)
-    {
+    internal func centralController(updatedBluetoothStatusTo status: BluetoothState){
+        
         print("Updated Bluetooth Status to \(status)")
         
         switch status{
@@ -585,35 +649,32 @@ extension JABLE: GapEventDelegate
 //MARK: GATT EVENT DELEGATE METHODS
 extension JABLE: GATTEventDelegate
 {
-    internal func gattClient(recievedNewValueFor characteristic: CBCharacteristic, value: Data?, error: Error?)
-    {
+    internal func gattClient(recievedNewValueFor characteristic: CBCharacteristic, value: Data?, error: Error?){
+        
         if let data = value{
+            
             _jableDelegate.jable(updatedCharacteristicValueFor: characteristic, value: data)
         }
     }
     
-    internal func gattClient(wroteValueFor characteristic: CBCharacteristic, error: Error?)
-    {
+    internal func gattClient(wroteValueFor characteristic: CBCharacteristic, error: Error?){
         
     }
     
-    internal func gattClient(updatedNotificationStatusFor characteristic: CBCharacteristic, error: Error?)
-    {
+    internal func gattClient(updatedNotificationStatusFor characteristic: CBCharacteristic, error: Error?){
         
     }
     
-    internal func gattClient(recievedNewValueForD descriptor: CBDescriptor, value: Any?, error: Error?)
-    {
+    internal func gattClient(recievedNewValueForD descriptor: CBDescriptor, value: Any?, error: Error?){
         
     }
     
-    internal func gattClient(wroteValueForD descriptor: CBDescriptor, error: Error?)
-    {
+    internal func gattClient(wroteValueForD descriptor: CBDescriptor, error: Error?){
         
     }
     
-    internal func gattClient(updatedRssiFor peripheral: CBPeripheral, rssi: Int, error: Error?)
-    {
+    internal func gattClient(updatedRssiFor peripheral: CBPeripheral, rssi: Int, error: Error?){
+        
         _jableDelegate.jable(updatedRssi: rssi)//rssiUpdated(to: rssi)
     }
 }
@@ -621,9 +682,16 @@ extension JABLE: GATTEventDelegate
 //MARK: GATT DISCOVERY DELEGATE METHODS
 extension JABLE: GATTDiscoveryDelegate
 {
-    internal func gattClient(foundServices services: [CBService]?, forPeripheral peripheral: CBPeripheral, error: Error?)
-    {
+    public func gattDiscoveryCompleted() {
+        
+        print("Gatt discovery completed")
+        _jableDelegate.jable(completedGattDiscovery: ())//gattDiscoveryFinished()
+    }
+    
+    internal func gattClient(foundServices services: [CBService]?, forPeripheral peripheral: CBPeripheral, error: Error?){
+        
         guard _autoDiscovery == false else {
+            
             guard let _services = services else { return }
             //  Provide sercices to GATT profile for assignment
             _jableGattProfile?.central(didFind: _services)
@@ -642,6 +710,7 @@ extension JABLE: GATTDiscoveryDelegate
     internal func gattClient(foundCharacteristics characteristics: [CBCharacteristic]?, forService service: CBService, error: Error?){
         
         guard _autoDiscovery == false else {
+            
             guard let _characteristics = characteristics else { return }
             //  Provide characteristics to GATT profile for assignment
             _jableGattProfile?.central(didFind: _characteristics, forService: service)
@@ -650,13 +719,16 @@ extension JABLE: GATTDiscoveryDelegate
         }
         
         if let discoveredCharacteristics = characteristics{
+            
             _jableDelegate.jable(foundCharacteristicsFor: service, characteristics: discoveredCharacteristics)
         }
     }
     
     internal func processGattServices(){
+        
         guard let unprocessedServices = _unprocessedServices else { return }
         guard unprocessedServices.count > 0 else {
+            
             _jableDelegate.jable(completedGattDiscovery: ())
             print("JABLE: Auto GATT Discovery completed")
             //print("JABLE: \(_jableGattProfile?._gattProfile)")
@@ -666,8 +738,7 @@ extension JABLE: GATTDiscoveryDelegate
         _unprocessedServices?.removeFirst()
     }
     
-    internal func gattClient(foundDescriptors discriptors: [CBDescriptor]?, forCharacteristic: CBCharacteristic, error: Error?)
-    {
+    internal func gattClient(foundDescriptors discriptors: [CBDescriptor]?, forCharacteristic: CBCharacteristic, error: Error?){
         
     }
     
@@ -676,16 +747,16 @@ extension JABLE: GATTDiscoveryDelegate
 
 
 /*===============================================================================================================================*/
-extension Date
-{
-    var formatted: String
-    {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "hh:mm:ss.SS' "//use HH for 24 hour scale and hh for 12 hour scale
-        formatter.timeZone = TimeZone.autoupdatingCurrent//(forSecondsFromGMT: 4)
-        formatter.calendar = Calendar(identifier: Calendar.Identifier.iso8601)
-        formatter.locale = Locale(identifier: "en_US_POSIX")
-        return formatter.string(from: self)
-    }
-}
+//extension Date
+//{
+//    var formatted: String
+//    {
+//        let formatter = DateFormatter()
+//        formatter.dateFormat = "hh:mm:ss.SS' "//use HH for 24 hour scale and hh for 12 hour scale
+//        formatter.timeZone = TimeZone.autoupdatingCurrent//(forSecondsFromGMT: 4)
+//        formatter.calendar = Calendar(identifier: Calendar.Identifier.iso8601)
+//        formatter.locale = Locale(identifier: "en_US_POSIX")
+//        return formatter.string(from: self)
+//    }
+//}
 
