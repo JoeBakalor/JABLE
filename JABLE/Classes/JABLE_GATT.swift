@@ -31,12 +31,14 @@ public class JABLE_GATT: NSObject{
     
     //
     public struct descriptor{
+        
         var descriptor: CBDescriptor?
         var uuid:  CBUUID
     }
     
     //
     public typealias CharacteristicCompletion = (CBCharacteristic) -> Void
+    
     public struct characteristic{
         public var characteristic: CBCharacteristic?// = UnsafeMutablePointer<CBCharacteristic?>.allocate(capacity: 1)
         public var uuid: CBUUID
@@ -45,6 +47,7 @@ public class JABLE_GATT: NSObject{
         public var descriptors: [descriptor]?
         
         public init(characteristic: inout CBCharacteristic?, uuid: CBUUID, enableNotifications: Bool, descriptors: [descriptor]?, characteristicCompletion: CharacteristicCompletion?){
+            
             self.characteristic = characteristic
             self.uuid = uuid
             self.enableNotifications = enableNotifications
@@ -56,11 +59,13 @@ public class JABLE_GATT: NSObject{
     //
     public typealias ServiceCompletion = (CBService) -> Void
     public struct service{
+        
         public var service: CBService?//CBService?// = UnsafeMutablePointer<CBService?>.allocate(capacity: 1)
         public var uuid: CBUUID
         var serviceCompletion: ServiceCompletion?
         
         public init(service: inout CBService?, uuid: CBUUID, assigner: @escaping ServiceCompletion){
+            
             self.service = service
             self.uuid = uuid
             self.serviceCompletion = assigner
@@ -69,10 +74,12 @@ public class JABLE_GATT: NSObject{
     
     //
     public struct JABLE_Service {
+        
         public var service: service?
         public var characteristics: [characteristic]?
         
         public init(service: service?, characteristics: [characteristic]?){
+            
             self.service = service
             self.characteristics = characteristics
         }
@@ -80,8 +87,10 @@ public class JABLE_GATT: NSObject{
      
     //
     public struct JABLE_GATTProfile {
+        
         public var services: [JABLE_Service]
         public init(services: [JABLE_Service]){
+            
             self.services = services
         }
     }
@@ -92,7 +101,8 @@ public class JABLE_GATT: NSObject{
     
     
     //Initialize class with pointer to gatt profile and central contoller instance
-    init(gattProfile: inout JABLE_GATTProfile, gattDiscoveryCompetionDelegate: GattDiscoveryCompletionDelegate){//}, controller: JABLE){
+    init(gattProfile: inout JABLE_GATTProfile, gattDiscoveryCompetionDelegate: GattDiscoveryCompletionDelegate){
+        
         super.init()
         _gattProfile = gattProfile
         _gattDiscoveryCompletionDelegate = gattDiscoveryCompetionDelegate
@@ -163,11 +173,9 @@ extension JABLE_GATT: GattDiscoveryDelegate{
 extension JABLE_GATT: GattUpdateDelegate{
     
     func gattUpdated(characteristicValueFor characteristic: CBCharacteristic) {
-        
     }
     
     func gattUpdated(descriptorValueFor descriptor: CBDescriptor) {
-        
     }
     
 }

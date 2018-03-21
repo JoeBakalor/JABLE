@@ -128,7 +128,10 @@ open class JABLE: NSObject, GattDiscoveryCompletionDelegate, JABLE_API
         - autoGattDiscovery:  Set to true to enable automatic service and characteristic discovery using
                               the provide GATT profile
      
-     Additional details
+     JABLE provides central mode functionality inlcuding GAP and GAP event management, GATT a GATT event managment
+     in a single library making BLE integration easier than managing and adopting multiple delegate protocols.  JABLE
+     automatically manages peripheral connectivity and decreases the number of parameters required to interact with
+     a peripheral GATT profile.  JABLE also provide automated GATT profile discovery
      
      */
     public init(jableDelegate: JABLEDelegate, gattProfile: inout JABLE_GATT.JABLE_GATTProfile?, autoGattDiscovery: Bool){
@@ -158,6 +161,26 @@ open class JABLE: NSObject, GattDiscoveryCompletionDelegate, JABLE_API
         print("JABLE: Started")
     }
     
+    
+    /**
+     Read the name of the currently connected peripheral
+     
+     - Author:
+     Joe Bakalor
+     
+     - returns:
+     The name of the currently connected peripheral or NA if invalid
+     
+     - throws:
+     nothing
+     
+     Only one scan filter supported currently
+     */
+    public func peripheralName() -> String{
+        guard let peripheral = _connectedPeripheral else { return "NA"}
+        guard let name = peripheral.name else { return "NA"}
+        return name
+    }
     /**
      Add scan filter to peripheral scan results
      
@@ -171,10 +194,9 @@ open class JABLE: NSObject, GattDiscoveryCompletionDelegate, JABLE_API
      nothing
      
      - parameters:
-     
         - filter: JABLEScanFilter defining what peripherals should be removed from scan results
      
-     Additional details
+     Only one scan filter supported currently
      
      */
     public func addScanFilter(filter: JABLEScanFilter){
@@ -195,17 +217,17 @@ open class JABLE: NSObject, GattDiscoveryCompletionDelegate, JABLE_API
      - throws:
      Nothing
      
-     Additional details:  This will trigger and RSSI read on the connected peripheral.  When completed the
-                          didUpdateRssi delegate method will be called
-     
+     This will trigger an RSSI read on the connected peripheral.  When completed the
+     didUpdateRssi delegate method will be called
      */
     public func RSSI() {
         
         _jableCentralController.checkRssi()
     }
     
+    
     /**
-     Description
+     Initiate scanning for bluetooth low energy peripherals
      
      - Author:
      Joe Bakalor
@@ -214,11 +236,13 @@ open class JABLE: NSObject, GattDiscoveryCompletionDelegate, JABLE_API
      Nothing
      
      - throws:
-     nothing
+     Nothing
      
      - parameters:
+        - uuids: service uuids that peripherals should contain. Specify nil to scan for all peripherals
      
-     Additional details
+     Starts scanning for advertising BLE peripherals that include the specified service UUIDs in their
+     advertisment data
      
      */
     public func startScanningForPeripherals(withServiceUUIDs uuids: [CBUUID]?){
@@ -226,8 +250,9 @@ open class JABLE: NSObject, GattDiscoveryCompletionDelegate, JABLE_API
         _jableCentralController.startScanningForPeripherals(withServiceUUIDS: uuids)
     }
     
+    
     /**
-     Description
+     Stop scanning for BLE peripherals
      
      - Author:
      Joe Bakalor
@@ -236,11 +261,7 @@ open class JABLE: NSObject, GattDiscoveryCompletionDelegate, JABLE_API
      Nothing
      
      - throws:
-     nothing
-     
-     - parameters:
-     
-     Additional details
+     Nothing
      
      */
     public func stopScanning(){
@@ -248,10 +269,9 @@ open class JABLE: NSObject, GattDiscoveryCompletionDelegate, JABLE_API
         _jableCentralController.stopScanning()
     }
     
-    //CONNECT TO SPECIFIED PERIPHERAL USING TIMEOUT(SECONDS)
-    //DISCONNECT FROM CONNECTED PERIPHERAL
+
     /**
-     Description
+     Connect to specified peripheral using the timeout value provided
      
      - Author:
      Joe Bakalor
@@ -260,12 +280,13 @@ open class JABLE: NSObject, GattDiscoveryCompletionDelegate, JABLE_API
      Nothing
      
      - throws:
-     nothing
+     Nothing
      
      - parameters:
+        - peripheral: the peripheral to connect to
+        - timeout: the timeout value in seconds
      
-     Additional details
-     
+     After timeout expires, the connection will be terminated if it is still pending
      */
     public func connect(toPeripheral peripheral: CBPeripheral, withTimeout timeout: Int){
         
@@ -273,9 +294,9 @@ open class JABLE: NSObject, GattDiscoveryCompletionDelegate, JABLE_API
         _jableCentralController.attemptConnection(toPeriperal: peripheral, timeout: timeout)
     }
     
-    //DISCONNECT FROM CONNECTED PERIPHERAL
+
     /**
-     Description
+     Disconnect from the currently connected peripheral
      
      - Author:
      Joe Bakalor
@@ -286,21 +307,17 @@ open class JABLE: NSObject, GattDiscoveryCompletionDelegate, JABLE_API
      - throws:
      nothing
      
-     - parameters:
-     
-     Additional details
+     If there is not a valid connection, nothing
      
      */
     public func diconnect(){
-        
         guard _connectedPeripheral != nil else { return }
         _jableCentralController.disconnect()
     }
     
-    //DISCOVER SERVICES FOR CONNECTED PERIPHERAL. OPTIONALLY PROVIDE LIST OF SERVICE
-    //UUIDS TO DISCOVER. TO DISCOVER ALL, SPECIFY NIL
+
     /**
-     Description
+     Discover services on the connected BLE peripheral
      
      - Author:
      Joe Bakalor
@@ -312,6 +329,7 @@ open class JABLE: NSObject, GattDiscoveryCompletionDelegate, JABLE_API
      nothing
      
      - parameters:
+     - uuids:
      
      Additional details
      
@@ -682,17 +700,20 @@ extension JABLE: GATTEventDelegate
 //MARK: GATT DISCOVERY DELEGATE METHODS
 extension JABLE: GATTDiscoveryDelegate
 {
+    //  Called by JABLE_GattClient
     public func gattDiscoveryCompleted() {
         
         print("Gatt discovery completed")
         _jableDelegate.jable(completedGattDiscovery: ())//gattDiscoveryFinished()
     }
     
+    //  Called by JABLE_GattClient
     internal func gattClient(foundServices services: [CBService]?, forPeripheral peripheral: CBPeripheral, error: Error?){
         
         guard _autoDiscovery == false else {
             
             guard let _services = services else { return }
+            
             //  Provide sercices to GATT profile for assignment
             _jableGattProfile?.central(didFind: _services)
             //_jableCentralController.discoverCharacteristics(forService: _services[0], with: nil)
@@ -707,13 +728,17 @@ extension JABLE: GATTDiscoveryDelegate
         
     }
     
+    
+    //  Called by JABLE_GattClient
     internal func gattClient(foundCharacteristics characteristics: [CBCharacteristic]?, forService service: CBService, error: Error?){
         
         guard _autoDiscovery == false else {
             
             guard let _characteristics = characteristics else { return }
+            
             //  Provide characteristics to GATT profile for assignment
             _jableGattProfile?.central(didFind: _characteristics, forService: service)
+            
             processGattServices()
             return
         }
@@ -724,9 +749,11 @@ extension JABLE: GATTDiscoveryDelegate
         }
     }
     
+    
     internal func processGattServices(){
         
         guard let unprocessedServices = _unprocessedServices else { return }
+        
         guard unprocessedServices.count > 0 else {
             
             _jableDelegate.jable(completedGattDiscovery: ())
@@ -738,6 +765,7 @@ extension JABLE: GATTDiscoveryDelegate
         _unprocessedServices?.removeFirst()
     }
     
+    //  Called by JABLE_GattClient
     internal func gattClient(foundDescriptors discriptors: [CBDescriptor]?, forCharacteristic: CBCharacteristic, error: Error?){
         
     }
