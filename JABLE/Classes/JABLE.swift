@@ -90,6 +90,7 @@ public struct JABLECharacteristicProperties{
 
 }
 
+let useImproved = true
 
 //MARK: Use JABLE when GATT structure is known
 open class JABLE: NSObject, GattDiscoveryCompletionDelegate, JABLE_API
@@ -103,6 +104,7 @@ open class JABLE: NSObject, GattDiscoveryCompletionDelegate, JABLE_API
     fileprivate var _serviceDiscoveryUuids: [CBUUID] = []
     fileprivate var _scanFilter: JABLEScanFilter?
     fileprivate var _unprocessedServices: [CBService]?
+    fileprivate var _unprocessedCharacteristics: [CBCharacteristic]?
     
     
     //var test: JABLE_GATT.JABLE_GATTProfile?
@@ -134,7 +136,7 @@ open class JABLE: NSObject, GattDiscoveryCompletionDelegate, JABLE_API
      a peripheral GATT profile.  JABLE also provide automated GATT profile discovery
      
      */
-    public init(jableDelegate: JABLEDelegate, gattProfile: inout JABLE_GATT.JABLE_GATTProfile?, autoGattDiscovery: Bool){
+    /*public init(jableDelegate: JABLEDelegate, gattProfile: inout JABLE_GATT.JABLE_GATTProfile?, autoGattDiscovery: Bool){
         
         super.init()
         
@@ -156,6 +158,33 @@ open class JABLE: NSObject, GattDiscoveryCompletionDelegate, JABLE_API
         
         for includedService in (gattProfile?.services)!{
             _serviceDiscoveryUuids.append((includedService.service?.uuid)!)
+        }
+        
+        print("JABLE: Started")
+    }*/
+    
+    public init(jableDelegate: JABLEDelegate, gattProfile: inout JABLE_GATT.JABLE_GATTProfile?, autoGattDiscovery: Bool){
+        
+        super.init()
+        
+        //test = gattProfile
+        
+        //Set JABLE delegate
+        _jableDelegate = jableDelegate
+        
+        //INIT CENTRAL CONTROLLER WITHOUT GATT STRUCTURE, WE WILL DO THIS OURSELVES
+        _jableCentralController = JABLE_CentralController(gapEventDelegate: self, gattEventDelegate: self, gattDiscoveryDelegate: self)
+        
+        
+        //Check if auto gatt discovery is enabled and gatt profile is not nil
+        guard autoGattDiscovery == true && gattProfile != nil else { return }
+        
+        //Initialize JABLE_GATT
+        _autoDiscovery = true
+        _jableGattProfile = JABLE_GATT(gattProfile: &gattProfile!, gattDiscoveryCompetionDelegate: self)//JABLE_GATT(gattProfile: &gattProfile!, gattDiscoveryCompetionDelegate: self)//, controller: self)
+        
+        for includedService in (gattProfile?.services)!{
+            _serviceDiscoveryUuids.append(includedService.uuid)
         }
         
         print("JABLE: Started")
@@ -311,6 +340,7 @@ open class JABLE: NSObject, GattDiscoveryCompletionDelegate, JABLE_API
      
      */
     public func diconnect(){
+        
         guard _connectedPeripheral != nil else { return }
         _jableCentralController.disconnect()
     }
@@ -714,6 +744,15 @@ extension JABLE: GATTDiscoveryDelegate
             
             guard let _services = services else { return }
             
+            /*guard useImproved else{
+                //  Provide sercices to GATT profile for assignment
+                _jableGattProfile?.central(didFind: _services)
+                //_jableCentralController.discoverCharacteristics(forService: _services[0], with: nil)
+                _unprocessedServices = _services
+                processGattServices()
+                return
+            }*/
+            
             //  Provide sercices to GATT profile for assignment
             _jableGattProfile?.central(didFind: _services)
             //_jableCentralController.discoverCharacteristics(forService: _services[0], with: nil)
@@ -737,9 +776,15 @@ extension JABLE: GATTDiscoveryDelegate
             guard let _characteristics = characteristics else { return }
             
             //  Provide characteristics to GATT profile for assignment
-            _jableGattProfile?.central(didFind: _characteristics, forService: service)
+            /*guard useImproved else {
+                _jableGattProfile?.central(didFind: _characteristics, forService: service)
+                processGattServices()
+                return
+            }*/
             
+            _jableGattProfile?.central(didFind: _characteristics, forService: service)
             processGattServices()
+            
             return
         }
         

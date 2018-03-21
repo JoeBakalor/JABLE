@@ -18,30 +18,39 @@ let JABLE_TEMP_CHARACTERISTIC_UUID = CBUUID(string: "2A6E")
 public class JABLE_GattExample: NSObject{
     
     //Create access variables
-    var bleController: JABLE!
-    var primaryService: CBService?
-    var RGBLedCharacteristic: CBCharacteristic?
-    var accelRpmGyroCharacteristic: CBCharacteristic?
-    var tempCharacteristic: CBCharacteristic?
-    var jableGattProfile: JABLE_GATT.JABLE_GATTProfile?
+    var primaryService                  : CBService?
+        var RGBLedCharacteristic        : CBCharacteristic?
+        var accelRpmGyroCharacteristic  : CBCharacteristic?
+        var tempCharacteristic          : CBCharacteristic?
+    
+    //var jableGattProfile: JABLE_GATT.JABLE_GATTProfile?
     
     override init() {
         super.init()
         
-        
+        //let serviceOne = JABLE_GATT.serviceNew
         /*var serviceOne = JABLE_GATT.service(service: &primaryService, uuid: JABLE_PRIMARY_SERVICE_UUID)
         let characteristicOne = JABLE_GATT.characteristic(characteristic: &RGBLedCharacteristic, uuid: JABLE_RGB_LED_CHARACTERISTIC_UUID, enableNotifications: false, descriptors: nil)
         let characteristicTwo = JABLE_GATT.characteristic(characteristic: &accelRpmGyroCharacteristic, uuid: JABLE_ACCEL_RPM_GYRO_CHARACTERISTIC_UUID, enableNotifications: false, descriptors: nil)
         let characteristicThree = JABLE_GATT.characteristic(characteristic: &tempCharacteristic, uuid: JABLE_TEMP_CHARACTERISTIC_UUID, enableNotifications: false, descriptors: nil)
         let services = JABLE_GATT.JABLE_Service(service: &serviceOne, characteristics: [characteristicOne, characteristicTwo, characteristicThree])
         
-        jableGattProfile = JABLE_GATT.JABLE_GATTProfile(services: [services])
-        
-        bleController = JABLE(jableDelegate: self as! JABLEDelegate, gattProfile: &jableGattProfile, autoGattDiscovery: true)*/
+        jableGattProfile = JABLE_GATT.JABLE_GATTProfile(services: [services])*/
         
     }
     
 }
 
+
+class GattItem<T>
+{
+    typealias gattAssigner = (T) -> Void
+    var gattItem: T
+
+    
+    init(_ item: T){
+        gattItem = item
+    }
+}
 
 
