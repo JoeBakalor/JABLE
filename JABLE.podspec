@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'JABLE'
-  s.version          = '0.2.0'
+  s.version          = '0.3.0'
   s.summary          = 'JABLE is a full feature BLE Central mode library'
 
 # This description is used to generate tags and improve search results.
