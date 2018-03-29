@@ -44,6 +44,26 @@ public class JABLE_GattClient: NSObject, CBPeripheralDelegate
     
     //CLASS INITIALIZATION - ONLY SETUP TO MANAGE A SINGLE PERIPHERAL AT A TIME BUT
     //POSSIBLE TO CREATE ADDITIONAL INSTANCES OF THIS CLASS FOR EACH PERIPHERAL
+    /**
+     Initilize JABLE_GattClient for managing peripheral GATT interactions
+     
+     - Author:
+     Joe Bakalor
+     
+     - returns:
+     Nothing
+     
+     - throws:
+     nothing
+     
+     - parameters:
+        - peripheral: the peripheral to create a gatt client instance for
+        - gattEventDelegate: the delegate to recieve GATT events
+        - gattDiscoveryDelegate: the delegate to reviece GATT discovery process events
+     
+     Additional details
+     
+     */
     init(withPeripheral peripheral: CBPeripheral, gattEventDelegate: GATTEventDelegate?, gattDiscoveryDelegate: GATTDiscoveryDelegate?){
         
         super.init()

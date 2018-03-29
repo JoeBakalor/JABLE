@@ -70,6 +70,8 @@ public class JABLE_CentralController: NSObject
      
      - parameters:
         - gapEventDelegate: The delegate to recieve GAP events
+        - gattEventDelegate: The delegate to recieve GATT events
+        - gattDiscoveryDelegate: The delegate to recieve GATT discovery process events
      
      Additional details
      
@@ -358,7 +360,6 @@ extension JABLE_CentralController
         }
         
         //Scan for peripherals with included services
-        
         _centralManager.scanForPeripherals(withServices: uuids, options: [CBCentralManagerOptionShowPowerAlertKey: true, CBCentralManagerScanOptionAllowDuplicatesKey: true])
     }
     
@@ -544,19 +545,23 @@ extension JABLE_CentralController: CBCentralManagerDelegate
                 print("CBManager Powered Off")
                 _gapEventDelegate.centralController(updatedBluetoothStatusTo: .off)
                 break
+                
             case CBManagerState.unauthorized:
                 _gapEventDelegate.centralController(updatedBluetoothStatusTo: .unauthorized)
                 break
+                
             case CBManagerState.unknown:
                 _gapEventDelegate.centralController(updatedBluetoothStatusTo: .unknown)
                 break
+                
             case CBManagerState.poweredOn:
                 _gapEventDelegate.centralController(updatedBluetoothStatusTo: .on)
-
                 break
+                
             case CBManagerState.resetting:
                 _gapEventDelegate.centralController(updatedBluetoothStatusTo: .resetting)
                 break
+                
             case CBManagerState.unsupported:
                 _gapEventDelegate.centralController(updatedBluetoothStatusTo: .unsupported)
                 break

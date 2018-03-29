@@ -15,6 +15,7 @@
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		690A7030DBAD99E49C7C6740 /* Pods_JABLE_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FC2750518340E756D300C24 /* Pods_JABLE_Tests.framework */; };
 		CF64C77D2772D693CACAB7CF /* Pods_JABLE_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA3CF0D40C583C7E8FCA9794 /* Pods_JABLE_Example.framework */; };
+		E05D1EF520654B0800E9385A /* GattExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05D1EF420654B0800E9385A /* GattExample.swift */; };
 		E0A4301E204A03640008F6F0 /* BLEManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A4301D204A03640008F6F0 /* BLEManager.swift */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +48,7 @@
 		AB861AC1599CEF598F3F7AB7 /* Pods-JABLE_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JABLE_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-JABLE_Example/Pods-JABLE_Example.release.xcconfig"; sourceTree = "<group>"; };
 		C48E591B0D127861D29AE2E1 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		DA3CF0D40C583C7E8FCA9794 /* Pods_JABLE_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JABLE_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E05D1EF420654B0800E9385A /* GattExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GattExample.swift; sourceTree = "<group>"; };
 		E0A4301D204A03640008F6F0 /* BLEManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLEManager.swift; sourceTree = "<group>"; };
 		F277B0CE5E00AB8DA00BF97F /* Pods-JABLE_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JABLE_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JABLE_Tests/Pods-JABLE_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -115,6 +117,7 @@
 		607FACD21AFB9204008FA782 /* Example for JABLE */ = {
 			isa = PBXGroup;
 			children = (
+				E05D1EF320654AED00E9385A /* New Group */,
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
@@ -160,6 +163,14 @@
 				C48E591B0D127861D29AE2E1 /* LICENSE */,
 			);
 			name = "Podspec Metadata";
+			sourceTree = "<group>";
+		};
+		E05D1EF320654AED00E9385A /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				E05D1EF420654B0800E9385A /* GattExample.swift */,
+			);
+			name = "New Group";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -375,6 +386,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E05D1EF520654B0800E9385A /* GattExample.swift in Sources */,
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
 				E0A4301E204A03640008F6F0 /* BLEManager.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
