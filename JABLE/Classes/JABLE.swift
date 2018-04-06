@@ -136,7 +136,7 @@ open class JABLE: NSObject, GattDiscoveryCompletionDelegate, JABLE_API
      a peripheral GATT profile.  JABLE also provide automated GATT profile discovery
      
      */
-    public init(jableDelegate: JABLEDelegate, gattProfile: inout JABLE_GATT.JABLE_GATTProfile?, autoGattDiscovery: Bool){
+    public init(jableDelegate: JABLEDelegate?, gattProfile: inout JABLE_GATT.JABLE_GATTProfile?, autoGattDiscovery: Bool){
         
         super.init()
         
@@ -163,6 +163,9 @@ open class JABLE: NSObject, GattDiscoveryCompletionDelegate, JABLE_API
         print("JABLE: Started")
     }
     
+    public func setJableDelegate(jableDelegate: JABLEDelegate){
+        _jableDelegate = jableDelegate
+    }
     
     /**
      Read the name of the currently connected peripheral

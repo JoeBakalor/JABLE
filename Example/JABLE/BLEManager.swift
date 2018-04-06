@@ -52,8 +52,11 @@ class BLEManager: JABLE{
     private var _currentlySelectedService: CBService?
     private var _currentlySelectedCharacteristic: CBCharacteristic?
     
+
+    
     init() {
-        super.init(jableDelegate: self, gattProfile: &_gatt, autoGattDiscovery: false)
+        super.init(jableDelegate: nil, gattProfile: &_gatt, autoGattDiscovery: false)
+        super.setJableDelegate(jableDelegate: self)
     }
 }
 
@@ -106,6 +109,10 @@ extension BLEManager
 
 extension BLEManager: JABLEDelegate
 {
+    func jable(disconnectedWithReason reason: Error?) {
+        
+    }
+    
     func jable(updatedRssi rssi: Int) {
     }
     

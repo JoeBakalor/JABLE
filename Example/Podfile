@@ -1,7 +1,7 @@
 use_frameworks!
 
 target 'JABLE_Example' do
-  pod 'JABLE', :path => '../'
+  pod 'JABLE', :path => '/Users/jbak688/Library/Mobile Documents/com~apple~CloudDocs/iOS Development/CodeLibraries/Pods/JABLE'
 
   target 'JABLE_Tests' do
     inherit! :search_paths
