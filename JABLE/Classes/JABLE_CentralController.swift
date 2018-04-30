@@ -56,6 +56,8 @@ public class JABLE_CentralController: NSObject
     fileprivate var _gattDiscoveryDelegate: GATTDiscoveryDelegate!
     fileprivate var _gattEventDelegate: GATTEventDelegate!
     
+    /**/
+    
     /**
      JABLE_CentralController initialization
      
@@ -353,7 +355,7 @@ extension JABLE_CentralController
         //Check if service UUIDs have been specified
         guard let uuids = UUIDS else {
             
-            print("JABLE_CentralController: START SCANNING")
+            //print("JABLE_CentralController: START SCANNING")
             //Otherwise scan for all peripherals
             _centralManager.scanForPeripherals(withServices: nil, options: [CBCentralManagerOptionShowPowerAlertKey: true, CBCentralManagerScanOptionAllowDuplicatesKey: true])
             return

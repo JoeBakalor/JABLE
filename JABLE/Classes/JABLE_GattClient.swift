@@ -284,7 +284,7 @@ public extension JABLE_GattClient
     func peripheral(_ peripheral: CBPeripheral, didDiscoverCharacteristicsFor service: CBService, error: Error?){
         
         let foundCharacteristics = service.characteristics
-        print("Found Characteristics")
+        print("Found Characteristics\n")
         //call delegate method
         _gattDiscoveryDelegate?.gattClient(foundCharacteristics: foundCharacteristics, forService: service, error: error)
     }

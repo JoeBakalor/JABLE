@@ -23,7 +23,8 @@ public protocol JABLEDelegate{
     func jable(updatedCharacteristicValueFor characteristic: CBCharacteristic, value: Data)
     func jable(updatedDescriptorValueFor descriptor: CBDescriptor, value: Data)
     
-    func jable(connected: Void)
+    //func jable(connected: Void)
+    func jable(connectedTo peripheral: CBPeripheral)
     func jable(disconnectedWithReason reason: Error?)
     
 }
@@ -95,6 +96,7 @@ let useImproved = true
 //MARK: Use JABLE when GATT structure is known
 open class JABLE: NSObject, GattDiscoveryCompletionDelegate, JABLE_API
 {
+    
     fileprivate var _connectedPeripheral: CBPeripheral?
     fileprivate var _gattDiscoveryDelegate: GattDiscoveryDelegate?
     fileprivate var _jableCentralController: JABLE_CentralController!
@@ -163,6 +165,13 @@ open class JABLE: NSObject, GattDiscoveryCompletionDelegate, JABLE_API
         print("JABLE: Started")
     }
     
+    public func setNewGatt(gattProfile: inout JABLE_GATT.JABLE_GATTProfile?){
+        
+        _jableGattProfile = nil
+        _jableGattProfile = JABLE_GATT(gattProfile: &gattProfile!, gattDiscoveryCompetionDelegate: self)
+    
+    }
+    
     public func setJableDelegate(jableDelegate: JABLEDelegate){
         _jableDelegate = jableDelegate
     }
@@ -205,7 +214,6 @@ open class JABLE: NSObject, GattDiscoveryCompletionDelegate, JABLE_API
      
      */
     public func addScanFilter(filter: JABLEScanFilter){
-        
         _scanFilter = filter
     }
     
@@ -298,7 +306,15 @@ open class JABLE: NSObject, GattDiscoveryCompletionDelegate, JABLE_API
         print("JABLE: ATTEMPT CONNECTION")
         _jableCentralController.attemptConnection(toPeriperal: peripheral, timeout: timeout)
     }
-    
+
+    /**/
+//    public func connect(toPeripheral peripheral: CBPeripheral, withTimeout timeout: Int, andDiscover gatt: inout GattProfile){
+//
+//        _jableGattProfile = JABLE_GATT(gattProfile: &gatt.gattProfile!, gattDiscoveryCompetionDelegate: self)
+//        _autoDiscovery = true
+//        print("JABLE: ATTEMPT CONNECTION")
+//        _jableCentralController.attemptConnection(toPeriperal: peripheral, timeout: timeout)
+//    }
 
     /**
      Disconnect from the currently connected peripheral
@@ -632,7 +648,7 @@ extension JABLE: GapEventDelegate
     internal func centralController(connectedTo peripheral: CBPeripheral){
         
         _connectedPeripheral = peripheral
-        _jableDelegate.jable(connected: ())
+        _jableDelegate.jable(connectedTo: peripheral)//jable(connectedTo peripheral: peripheral)
         if _autoDiscovery{
             
             print("JABLE: START AUTO GATT DISCOVERY")
@@ -709,7 +725,7 @@ extension JABLE: GATTDiscoveryDelegate
     //  Called by JABLE_GattClient
     public func gattDiscoveryCompleted() {
         
-        print("Gatt discovery completed")
+        print("Gatt discovery completed\n")
         _jableDelegate.jable(completedGattDiscovery: ())//gattDiscoveryFinished()
     }
     
@@ -762,7 +778,7 @@ extension JABLE: GATTDiscoveryDelegate
         guard unprocessedServices.count > 0 else {
             
             _jableDelegate.jable(completedGattDiscovery: ())
-            print("JABLE: Auto GATT Discovery completed")
+            //print("JABLE: Auto GATT Discovery completed")
             //print("JABLE: \(_jableGattProfile?._gattProfile)")
             return
         }

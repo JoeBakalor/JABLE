@@ -29,6 +29,10 @@ public func assignTo<T>(_ item: UnsafeMutablePointer<T>) -> (T) -> Void{
     return {item.pointee = $0}
 }
 
+public protocol GattProfile{
+    var gattProfile: JABLE_GATT.JABLE_GATTProfile! { get set }
+}
+
 //MARK: BASE CLASS
 public class JABLE_GATT: NSObject{
     
@@ -113,7 +117,7 @@ extension JABLE_GATT: GattDiscoveryDelegate{
                     //Assign service
                     //Completion should probably not be optional but we will see
                     _gattProfile?.services[index].completion!(Service)//?.services[index].service?.completion?(Service) //= Service
-                    print("JABLE_GATT_Improved: ASSIGNED SERVICE \(Service.uuid)")
+                    print("JABLE_GATT: ASSIGNED SERVICE \(Service.uuid)")
                 }
             }
         }
@@ -143,7 +147,7 @@ extension JABLE_GATT: GattDiscoveryDelegate{
                             
                             //Assign characteristic
                             _gattProfile?.services[serviceIndex].characteristics?[characteristicIndex].completion?(Characteristic)
-                            print("JABLE_GATT_Improved: ASSIGNED CHARACTERISTIC \(Characteristic.uuid)")
+                            print("JABLE_GATT: ASSIGNED CHARACTERISTIC \(Characteristic.uuid)")
                         }
                     }
                 }
