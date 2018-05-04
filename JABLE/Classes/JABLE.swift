@@ -25,7 +25,7 @@ public protocol JABLEDelegate{
     
     //func jable(connected: Void)
     func jable(connectedTo peripheral: CBPeripheral)
-    func jable(disconnectedWithReason reason: Error?)//test
+    func jable(disconnectedWithReason reason: Error?, from peripheral: CBPeripheral)//test
     
 }
 
@@ -659,14 +659,14 @@ extension JABLE: GapEventDelegate
     internal func centralController(failedToConnectTo peripheral: CBPeripheral, with error: Error?){
         
         print("Peripheral Disconnected")
-        _jableDelegate.jable(disconnectedWithReason: error)
+        _jableDelegate.jable(disconnectedWithReason: error, from: peripheral)
         _connectedPeripheral = nil
     }
     
     internal func centralController(disconnectedFrom peripheral: CBPeripheral, with error: Error?){
         
         print("Peripheral Disconnected")
-        _jableDelegate.jable(disconnectedWithReason: error)
+        _jableDelegate.jable(disconnectedWithReason: error, from: peripheral)
         _connectedPeripheral = nil
         
     }
