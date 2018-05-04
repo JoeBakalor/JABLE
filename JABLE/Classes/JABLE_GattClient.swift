@@ -18,7 +18,7 @@ struct DebugConfiguration{
 
 //MARK: GATT Event Delegate Protocol Definition
 protocol GATTEventDelegate: class{
-    func gattClient(recievedNewValueFor characteristic: CBCharacteristic, value: Data?, error: Error?)
+    func gattClient(recievedNewValueFor characteristic: CBCharacteristic, value: Data?, error: Error?, onPeripheral peripheral: CBPeripheral)
     func gattClient(wroteValueFor characteristic: CBCharacteristic, error: Error?)
     func gattClient(updatedNotificationStatusFor characteristic: CBCharacteristic, error: Error?)
     
@@ -294,9 +294,13 @@ public extension JABLE_GattClient
         
         let updatedValue = characteristic.value
         
-        //cString(describing: all d)elegate methods
-        print("JABLE_GattClient: Char value updated")
-        _gattEventDelegate?.gattClient(recievedNewValueFor: characteristic, value: updatedValue, error: error)
+        if let gattEventDelegate = _gattEventDelegate{
+            //print("Gatt event delegate valid")
+            gattEventDelegate.gattClient(recievedNewValueFor: characteristic, value: updatedValue, error: error, onPeripheral: peripheral)
+        }else {
+            //print("Gatt event delegate invalid")
+        }
+        //_gattEventDelegate?.gattClient(recievedNewValueFor: characteristic, value: updatedValue, error: error)
     }
     
     //VALUE WAS WRITTEN TO CHARACTERISTIC

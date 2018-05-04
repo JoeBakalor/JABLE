@@ -56,7 +56,8 @@ public class JABLE_CentralController: NSObject
     fileprivate var _gattDiscoveryDelegate: GATTDiscoveryDelegate!
     fileprivate var _gattEventDelegate: GATTEventDelegate!
     
-    /**/
+    /* ADDING ABILITY TO MANAGE MORE THAN ONE CONNECTION AT A TIME */
+    fileprivate var _gattClientInstances: [JABLE_GattClient] = []
     
     /**
      JABLE_CentralController initialization
@@ -485,7 +486,12 @@ extension JABLE_CentralController: CBCentralManagerDelegate
     public func centralManager(_ central: CBCentralManager, didConnect peripheral: CBPeripheral)
     {
         //Initialize internal GATT Client instance
+        
         _gattClientInstance = JABLE_GattClient(withPeripheral: peripheral, gattEventDelegate: _gattEventDelegate , gattDiscoveryDelegate: _gattDiscoveryDelegate)
+        
+        //_gattClientInstances.append(JABLE_GattClient(withPeripheral: peripheral, gattEventDelegate: _gattEventDelegate , gattDiscoveryDelegate: _gattDiscoveryDelegate))
+        
+        print("Number of GATT Client instances: \(_gattClientInstances.count)")
         
         //Save reference to connected peripheral and set pending peripheral to nil
         _connectedPeripheral = peripheral

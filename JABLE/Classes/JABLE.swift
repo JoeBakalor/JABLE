@@ -15,12 +15,12 @@ public protocol JABLEDelegate{
     func jable(foundPeripheral peripheral: CBPeripheral, advertisementData: FriendlyAdvdertismentData)
     func jable(completedGattDiscovery: Void)
     
-    func jable(updatedRssi rssi: Int)
+    func jable(updatedRssi rssi: Int, forPeripheral peripheral: CBPeripheral)
     func jable(foundServices services: [CBService])
     func jable(foundCharacteristicsFor service: CBService, characteristics: [CBCharacteristic])
     func jable(foundDescriptorsFor characteristic: CBCharacteristic, descriptors: [CBDescriptor])
     
-    func jable(updatedCharacteristicValueFor characteristic: CBCharacteristic, value: Data)
+    func jable(updatedCharacteristicValueFor characteristic: CBCharacteristic, value: Data, onPeripheral peripheral: CBPeripheral)
     func jable(updatedDescriptorValueFor descriptor: CBDescriptor, value: Data)
     
     //func jable(connected: Void)
@@ -689,11 +689,11 @@ extension JABLE: GapEventDelegate
 //MARK: GATT EVENT DELEGATE METHODS
 extension JABLE: GATTEventDelegate
 {
-    internal func gattClient(recievedNewValueFor characteristic: CBCharacteristic, value: Data?, error: Error?){
+    internal func gattClient(recievedNewValueFor characteristic: CBCharacteristic, value: Data?, error: Error?, onPeripheral peripheral: CBPeripheral){
         
         if let data = value{
             
-            _jableDelegate.jable(updatedCharacteristicValueFor: characteristic, value: data)
+            _jableDelegate.jable(updatedCharacteristicValueFor: characteristic, value: data, onPeripheral: peripheral)
         }
     }
     
@@ -715,7 +715,7 @@ extension JABLE: GATTEventDelegate
     
     internal func gattClient(updatedRssiFor peripheral: CBPeripheral, rssi: Int, error: Error?){
         
-        _jableDelegate.jable(updatedRssi: rssi)//rssiUpdated(to: rssi)
+        _jableDelegate.jable(updatedRssi: rssi, forPeripheral: peripheral)//rssiUpdated(to: rssi)
     }
 }
 
