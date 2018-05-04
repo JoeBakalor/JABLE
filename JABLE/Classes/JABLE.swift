@@ -25,7 +25,7 @@ public protocol JABLEDelegate{
     
     //func jable(connected: Void)
     func jable(connectedTo peripheral: CBPeripheral)
-    func jable(disconnectedWithReason reason: Error?)
+    func jable(disconnectedWithReason reason: Error?)//test
     
 }
 
