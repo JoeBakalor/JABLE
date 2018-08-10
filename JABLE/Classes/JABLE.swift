@@ -97,7 +97,10 @@ let useImproved = true
 open class JABLE: NSObject, GattDiscoveryCompletionDelegate, JABLE_API
 {
     
+    
     fileprivate var _connectedPeripheral: CBPeripheral?
+    fileprivate var _connectedPeripherals: CBPeripheral?
+    
     fileprivate var _gattDiscoveryDelegate: GattDiscoveryDelegate?
     fileprivate var _jableCentralController: JABLE_CentralController!
     fileprivate var _jableGattProfile: JABLE_GATT?
@@ -107,7 +110,7 @@ open class JABLE: NSObject, GattDiscoveryCompletionDelegate, JABLE_API
     fileprivate var _scanFilter: JABLEScanFilter?
     fileprivate var _unprocessedServices: [CBService]?
     fileprivate var _unprocessedCharacteristics: [CBCharacteristic]?
-    
+    fileprivate var _discoveringServicesFor: CBPeripheral?
     
     //var test: JABLE_GATT.JABLE_GATTProfile?
 
@@ -356,10 +359,10 @@ open class JABLE: NSObject, GattDiscoveryCompletionDelegate, JABLE_API
      Additional details
      
      */
-    public func discoverServices(with uuids: [CBUUID]?){
+    public func discoverServices(with uuids: [CBUUID]?, for peripheral: CBPeripheral){
         
         guard _connectedPeripheral != nil else { return }
-        _jableCentralController.discoverServices(with: uuids)
+        _jableCentralController.discoverServices(with: uuids, for: peripheral)
         
     }
     
@@ -382,10 +385,10 @@ open class JABLE: NSObject, GattDiscoveryCompletionDelegate, JABLE_API
      Additional details
      
      */
-    public func discoverCharacteristics(forService service: CBService, withUUIDS uuids: [CBUUID]?){
+    public func discoverCharacteristics(forService service: CBService, withUUIDS uuids: [CBUUID]?, for peripheral: CBPeripheral){
         
         guard _connectedPeripheral != nil else { return /*ERROR*/ }
-        _jableCentralController.discoverCharacteristics(forService: service, with: uuids)
+        _jableCentralController.discoverCharacteristics(forService: service, with: uuids, for: peripheral)
     }
     
     /**
@@ -650,9 +653,9 @@ extension JABLE: GapEventDelegate
         _connectedPeripheral = peripheral
         _jableDelegate.jable(connectedTo: peripheral)//jable(connectedTo peripheral: peripheral)
         if _autoDiscovery{
-            
+            _discoveringServicesFor = peripheral
             print("JABLE: START AUTO GATT DISCOVERY")
-            _jableCentralController.discoverServices(with: nil)//.startScanningForPeripherals(withServiceUUIDS: nil)
+            _jableCentralController.discoverServices(with: nil, for: peripheral)//.startScanningForPeripherals(withServiceUUIDS: nil)
         }
     }
     
@@ -667,6 +670,7 @@ extension JABLE: GapEventDelegate
         
         print("Peripheral Disconnected")
         _jableDelegate.jable(disconnectedWithReason: error, from: peripheral)
+        //_connectedPeripherals = _connectedPeripherals.filt
         _connectedPeripheral = nil
         
     }
@@ -692,13 +696,13 @@ extension JABLE: GATTEventDelegate
     internal func gattClient(recievedNewValueFor characteristic: CBCharacteristic, value: Data?, error: Error?, onPeripheral peripheral: CBPeripheral){
         
         if let data = value{
-            
+            //print("JABLE: UPDATED CHARACTERISTIC \(characteristic.uuid)")
             _jableDelegate.jable(updatedCharacteristicValueFor: characteristic, value: data, onPeripheral: peripheral)
         }
     }
     
     internal func gattClient(wroteValueFor characteristic: CBCharacteristic, error: Error?){
-        
+        print("Wrote value for characteristic: \(characteristic) error \(error)")
     }
     
     internal func gattClient(updatedNotificationStatusFor characteristic: CBCharacteristic, error: Error?){
@@ -726,6 +730,7 @@ extension JABLE: GATTDiscoveryDelegate
     public func gattDiscoveryCompleted() {
         
         print("Gatt discovery completed\n")
+        _discoveringServicesFor = nil
         _jableDelegate.jable(completedGattDiscovery: ())//gattDiscoveryFinished()
     }
     
@@ -782,8 +787,11 @@ extension JABLE: GATTDiscoveryDelegate
             //print("JABLE: \(_jableGattProfile?._gattProfile)")
             return
         }
-        _jableCentralController.discoverCharacteristics(forService: unprocessedServices.first!, with: nil)
-        _unprocessedServices?.removeFirst()
+        if let peripheral = _discoveringServicesFor{
+            _jableCentralController.discoverCharacteristics(forService: unprocessedServices.first!, with: nil, for: peripheral)
+            _unprocessedServices?.removeFirst()
+        }
+
     }
     
     //  Called by JABLE_GattClient

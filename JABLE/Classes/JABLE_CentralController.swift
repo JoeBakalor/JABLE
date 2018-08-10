@@ -57,7 +57,8 @@ public class JABLE_CentralController: NSObject
     fileprivate var _gattEventDelegate: GATTEventDelegate!
     
     /* ADDING ABILITY TO MANAGE MORE THAN ONE CONNECTION AT A TIME */
-    fileprivate var _gattClientInstances: [JABLE_GattClient] = []
+    /*  Keep track of JABLE_GattClient Instances for each peripheral */
+    fileprivate var _gattClientInstances: [CBPeripheral: JABLE_GattClient] = [:]
     
     /**
      JABLE_CentralController initialization
@@ -144,9 +145,9 @@ extension JABLE_CentralController
      Additional details
      
      */
-    func discoverServices(with uuids: [CBUUID]?){
+    func discoverServices(with uuids: [CBUUID]?, for peripheral: CBPeripheral){
         
-        if let gattClient = _gattClientInstance{
+        if let gattClient = _gattClientInstances[peripheral]{
             
             gattClient.startServiceDiscovery(services: uuids)
         }
@@ -170,9 +171,11 @@ extension JABLE_CentralController
      Additional details
      
      */
-    func discoverCharacteristics(forService service: CBService,with uuids: [CBUUID]?){
+    func discoverCharacteristics(forService service: CBService,with uuids: [CBUUID]?, for peripheral: CBPeripheral){
         
-        if let gattClient = _gattClientInstance{
+        
+        /*  This is going to work with multiple client instances.  We will have to */
+        if let gattClient = _gattClientInstances[peripheral]{
             
             gattClient.startCharacteristicDiscovery(forService: service, forCharacteristics: nil)
         }
@@ -486,8 +489,11 @@ extension JABLE_CentralController: CBCentralManagerDelegate
     public func centralManager(_ central: CBCentralManager, didConnect peripheral: CBPeripheral)
     {
         //Initialize internal GATT Client instance
+
+        //_gattClientInstance = JABLE_GattClient(withPeripheral: peripheral, gattEventDelegate: _gattEventDelegate , gattDiscoveryDelegate: _gattDiscoveryDelegate)
         
-        _gattClientInstance = JABLE_GattClient(withPeripheral: peripheral, gattEventDelegate: _gattEventDelegate , gattDiscoveryDelegate: _gattDiscoveryDelegate)
+        
+        _gattClientInstances[peripheral] = JABLE_GattClient(withPeripheral: peripheral, gattEventDelegate: _gattEventDelegate , gattDiscoveryDelegate: _gattDiscoveryDelegate)
         
         //_gattClientInstances.append(JABLE_GattClient(withPeripheral: peripheral, gattEventDelegate: _gattEventDelegate , gattDiscoveryDelegate: _gattDiscoveryDelegate))
         
@@ -511,6 +517,8 @@ extension JABLE_CentralController: CBCentralManagerDelegate
         
         //Call GAP Event delegate method
         _gapEventDelegate.centralController(disconnectedFrom: peripheral, with: error)
+        
+        _gattClientInstances = _gattClientInstances.filter{ $0.key != peripheral }
     }
     
     //CALLED FOR EACH PERIPHERAL DISCOVERED
