@@ -9,6 +9,7 @@
 import Foundation
 import CoreBluetooth
 
+/*DDD*/
 public protocol JABLEDelegate{
     
     func jable(isReady: Void)
