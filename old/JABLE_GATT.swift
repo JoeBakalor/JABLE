@@ -8,15 +8,13 @@
 import Foundation
 import CoreBluetooth
 
-@objc
-protocol GattDiscoveryDelegate{
+@objc protocol GattDiscoveryDelegate{
     func central(didFind services: [CBService])
     func central(didFind characteristics: [CBCharacteristic], forService service: CBService)
     @objc optional func central(didFind descriptors: [CBDescriptor], forCharacteristic: CBCharacteristic)
 }
 
-@objc
-protocol GattUpdateDelegate{
+@objc protocol GattUpdateDelegate{
     @objc optional func gattUpdated(characteristicValueFor characteristic: CBCharacteristic)
     @objc optional func gattUpdated(descriptorValueFor descriptor: CBDescriptor)
 }

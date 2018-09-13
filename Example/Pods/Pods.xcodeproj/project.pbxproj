@@ -22,6 +22,22 @@
 		D2DF2C70CE221CD2DD68E510AF7DCB0E /* Pods-JABLE_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3775EE673E197AB81EDD361D23AFF78C /* Pods-JABLE_Example-dummy.m */; };
 		E05D1D502063F32000E9385A /* JABLE_SIGServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05D1D4F2063F32000E9385A /* JABLE_SIGServices.swift */; };
 		E07C3FD30AF486DF7D11997E919842C6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		E0ECBE422148252400646224 /* JABLEService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0ECBE412148252400646224 /* JABLEService.swift */; };
+		E0ECBE442148254300646224 /* JABLECharacteristic.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0ECBE432148254300646224 /* JABLECharacteristic.swift */; };
+		E0ECBE462148256000646224 /* JABLEGatt.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0ECBE452148256000646224 /* JABLEGatt.swift */; };
+		E0ECBE482148259E00646224 /* JABLEGattProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0ECBE472148259E00646224 /* JABLEGattProfile.swift */; };
+		E0ECBE4A2148286B00646224 /* GattDiscoveryAgent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0ECBE492148286B00646224 /* GattDiscoveryAgent.swift */; };
+		E0ECBE4D214828D500646224 /* JABLEDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0ECBE4C214828D500646224 /* JABLEDescriptor.swift */; };
+		E0ECBE4F2148324800646224 /* JABLEapi.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0ECBE4E2148324800646224 /* JABLEapi.swift */; };
+		E0ECBE51214833E200646224 /* FriendlyAdvertisment.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0ECBE50214833E200646224 /* FriendlyAdvertisment.swift */; };
+		E0ECBE542148347100646224 /* JABLEDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0ECBE532148347100646224 /* JABLEDelegate.swift */; };
+		E0ECBE562148364700646224 /* CharacteristicProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0ECBE552148364700646224 /* CharacteristicProperties.swift */; };
+		E0ECBE582148367400646224 /* JABLENew.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0ECBE572148367400646224 /* JABLENew.swift */; };
+		E0ECBE5A214887E400646224 /* GattExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0ECBE59214887E400646224 /* GattExample.swift */; };
+		E0ECBE5C214897A100646224 /* GattDiscoveryProcess.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0ECBE5B214897A100646224 /* GattDiscoveryProcess.swift */; };
+		E0ECBE6121493E7A00646224 /* JABLEStates.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0ECBE6021493E7A00646224 /* JABLEStates.swift */; };
+		E0ECBE652149403500646224 /* ConnectionOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0ECBE642149403500646224 /* ConnectionOptions.swift */; };
+		E0ECBE682149428F00646224 /* JABLEiDManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0ECBE672149428F00646224 /* JABLEiDManager.swift */; };
 		FDA4A9FDA24C7E3AF556DCE2DE893EEE /* JABLE-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1C2AD39D302C28A04DE4CFDD39E82107 /* JABLE-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
@@ -40,7 +56,7 @@
 		06855DA61282655F2C8DB3A0DA910900 /* Pods-JABLE_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-JABLE_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		0888D1661C8D8A9BF503D558E97ECC6A /* Pods-JABLE_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JABLE_Example.release.xcconfig"; sourceTree = "<group>"; };
 		08D846AF878B279FD201B9C71D49C063 /* JABLE.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = JABLE.xcconfig; sourceTree = "<group>"; };
-		0E636D5B02C560F497BAEB263B4C610E /* JABLE_API.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JABLE_API.swift; path = JABLE/Classes/JABLE_API.swift; sourceTree = "<group>"; };
+		0E636D5B02C560F497BAEB263B4C610E /* JABLE_API.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JABLE_API.swift; sourceTree = "<group>"; };
 		13E6CE4CD7E1D9933951291D8A4FFED5 /* Pods-JABLE_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-JABLE_Tests-frameworks.sh"; sourceTree = "<group>"; };
 		1C2AD39D302C28A04DE4CFDD39E82107 /* JABLE-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "JABLE-umbrella.h"; sourceTree = "<group>"; };
 		3058453AE207B0203477D787408747A5 /* JABLE-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "JABLE-dummy.m"; sourceTree = "<group>"; };
@@ -48,7 +64,7 @@
 		427879A0076EB7FBB4B3B6C6ABD8A8C7 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4343D1BD374CB1D4C1020031389A7CFD /* Pods-JABLE_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-JABLE_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		4870007E4078F81A05409B899E6DAA45 /* Pods-JABLE_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JABLE_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		4BB3A25B9199AE538F7ECD9332E5BCCA /* JABLE_GATT.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JABLE_GATT.swift; path = JABLE/Classes/JABLE_GATT.swift; sourceTree = "<group>"; };
+		4BB3A25B9199AE538F7ECD9332E5BCCA /* JABLE_GATT.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JABLE_GATT.swift; sourceTree = "<group>"; };
 		52060D075E981AD68018B727B742C3BD /* Pods-JABLE_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-JABLE_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		633F877185FD147FF9EF21D49254F97E /* JABLE.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = JABLE.modulemap; sourceTree = "<group>"; };
 		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
@@ -62,21 +78,37 @@
 		A84DFD11B429C8466D8C6610712708C9 /* Pods-JABLE_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-JABLE_Tests-dummy.m"; sourceTree = "<group>"; };
 		A9875CC4199574BFAECEDC48DCDDBBAC /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AA07851782F4AD1F1087BE914313A5BB /* JABLE-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "JABLE-prefix.pch"; sourceTree = "<group>"; };
-		AB4A179D2D0F957023F035C4E34270BF /* JABLE_CentralController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JABLE_CentralController.swift; path = JABLE/Classes/JABLE_CentralController.swift; sourceTree = "<group>"; };
+		AB4A179D2D0F957023F035C4E34270BF /* JABLE_CentralController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JABLE_CentralController.swift; sourceTree = "<group>"; };
 		AB6D4DEEF9223EE79F0B1494A949365B /* Pods-JABLE_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-JABLE_Example-frameworks.sh"; sourceTree = "<group>"; };
 		B19E64F9C3CBC0B0D415BF8AA42A4CD3 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B66A3BB17A6DEC2FB9AB94B635359D8E /* Pods-JABLE_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-JABLE_Tests-umbrella.h"; sourceTree = "<group>"; };
-		CA282B9E08F6B607910ED0507D5327FB /* JABLE_GattExample.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JABLE_GattExample.swift; path = JABLE/Classes/JABLE_GattExample.swift; sourceTree = "<group>"; };
+		CA282B9E08F6B607910ED0507D5327FB /* JABLE_GattExample.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JABLE_GattExample.swift; sourceTree = "<group>"; };
 		CD5E0D9A40F183F5940F4F76CC0D44CF /* Pods-JABLE_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-JABLE_Tests-resources.sh"; sourceTree = "<group>"; };
 		D225202873EE71191BAB5272BD62F2B5 /* Pods-JABLE_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-JABLE_Tests.modulemap"; sourceTree = "<group>"; };
-		E05D1D4F2063F32000E9385A /* JABLE_SIGServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JABLE_SIGServices.swift; path = JABLE/Classes/JABLE_SIGServices.swift; sourceTree = "<group>"; };
+		E05D1D4F2063F32000E9385A /* JABLE_SIGServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JABLE_SIGServices.swift; sourceTree = "<group>"; };
+		E0ECBE412148252400646224 /* JABLEService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JABLEService.swift; sourceTree = "<group>"; };
+		E0ECBE432148254300646224 /* JABLECharacteristic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JABLECharacteristic.swift; sourceTree = "<group>"; };
+		E0ECBE452148256000646224 /* JABLEGatt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JABLEGatt.swift; sourceTree = "<group>"; };
+		E0ECBE472148259E00646224 /* JABLEGattProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JABLEGattProfile.swift; sourceTree = "<group>"; };
+		E0ECBE492148286B00646224 /* GattDiscoveryAgent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GattDiscoveryAgent.swift; sourceTree = "<group>"; };
+		E0ECBE4C214828D500646224 /* JABLEDescriptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JABLEDescriptor.swift; sourceTree = "<group>"; };
+		E0ECBE4E2148324800646224 /* JABLEapi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JABLEapi.swift; sourceTree = "<group>"; };
+		E0ECBE50214833E200646224 /* FriendlyAdvertisment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendlyAdvertisment.swift; sourceTree = "<group>"; };
+		E0ECBE532148347100646224 /* JABLEDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JABLEDelegate.swift; sourceTree = "<group>"; };
+		E0ECBE552148364700646224 /* CharacteristicProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacteristicProperties.swift; sourceTree = "<group>"; };
+		E0ECBE572148367400646224 /* JABLENew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JABLENew.swift; sourceTree = "<group>"; };
+		E0ECBE59214887E400646224 /* GattExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GattExample.swift; sourceTree = "<group>"; };
+		E0ECBE5B214897A100646224 /* GattDiscoveryProcess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GattDiscoveryProcess.swift; sourceTree = "<group>"; };
+		E0ECBE6021493E7A00646224 /* JABLEStates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JABLEStates.swift; sourceTree = "<group>"; };
+		E0ECBE642149403500646224 /* ConnectionOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionOptions.swift; sourceTree = "<group>"; };
+		E0ECBE672149428F00646224 /* JABLEiDManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JABLEiDManager.swift; sourceTree = "<group>"; };
 		F05E186F76055AC2AAB01EED03560FBB /* Pods_JABLE_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JABLE_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F583A7C2D6FC2927AE02D8B110C85FC6 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		F9E07A87D1C649DAE7659EC46AAC6E3E /* JABLE.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JABLE.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		FC4CBC53E798D1CA1E54539DA4E1EEA4 /* JABLE_GattClient.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JABLE_GattClient.swift; path = JABLE/Classes/JABLE_GattClient.swift; sourceTree = "<group>"; };
+		FC4CBC53E798D1CA1E54539DA4E1EEA4 /* JABLE_GattClient.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JABLE_GattClient.swift; sourceTree = "<group>"; };
 		FCC97A6059D9BB7FDEB74BEA43821096 /* Pods-JABLE_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-JABLE_Example.modulemap"; sourceTree = "<group>"; };
 		FF08A7178CF3C7B54FA2B22BAB760E4F /* Pods-JABLE_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JABLE_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		FFEFC30F2D303AD753981F721A950590 /* JABLE.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JABLE.swift; path = JABLE/Classes/JABLE.swift; sourceTree = "<group>"; };
+		FFEFC30F2D303AD753981F721A950590 /* JABLE.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JABLE.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,13 +207,8 @@
 		798B48FDBA5D9640D420091A20F22EF1 /* JABLE */ = {
 			isa = PBXGroup;
 			children = (
-				FFEFC30F2D303AD753981F721A950590 /* JABLE.swift */,
-				AB4A179D2D0F957023F035C4E34270BF /* JABLE_CentralController.swift */,
-				FC4CBC53E798D1CA1E54539DA4E1EEA4 /* JABLE_GattClient.swift */,
-				4BB3A25B9199AE538F7ECD9332E5BCCA /* JABLE_GATT.swift */,
-				CA282B9E08F6B607910ED0507D5327FB /* JABLE_GattExample.swift */,
-				E05D1D4F2063F32000E9385A /* JABLE_SIGServices.swift */,
-				0E636D5B02C560F497BAEB263B4C610E /* JABLE_API.swift */,
+				E0ECBE4B2148289800646224 /* NEW */,
+				E0ECBE5D2148996300646224 /* old */,
 				7251FFCB79A47724821CCCF2A73C3EAD /* Pod */,
 				ED17E28FD63B15F63D8BF39C3807EB2A /* Support Files */,
 			);
@@ -222,6 +249,83 @@
 				6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */,
 			);
 			name = iOS;
+			sourceTree = "<group>";
+		};
+		E0ECBE4B2148289800646224 /* NEW */ = {
+			isa = PBXGroup;
+			children = (
+				E0ECBE572148367400646224 /* JABLENew.swift */,
+				E0ECBE522148343900646224 /* GATT */,
+				E0ECBE66214940B900646224 /* GAP */,
+				E0ECBE69214942EF00646224 /* States */,
+				E0ECBE6321493EF400646224 /* Protocols */,
+				E0ECBE6221493EDA00646224 /* Helpers */,
+			);
+			path = NEW;
+			sourceTree = "<group>";
+		};
+		E0ECBE522148343900646224 /* GATT */ = {
+			isa = PBXGroup;
+			children = (
+				E0ECBE492148286B00646224 /* GattDiscoveryAgent.swift */,
+				E0ECBE5B214897A100646224 /* GattDiscoveryProcess.swift */,
+				E0ECBE432148254300646224 /* JABLECharacteristic.swift */,
+				E0ECBE4C214828D500646224 /* JABLEDescriptor.swift */,
+				E0ECBE412148252400646224 /* JABLEService.swift */,
+				E0ECBE472148259E00646224 /* JABLEGattProfile.swift */,
+			);
+			path = GATT;
+			sourceTree = "<group>";
+		};
+		E0ECBE5D2148996300646224 /* old */ = {
+			isa = PBXGroup;
+			children = (
+				E0ECBE452148256000646224 /* JABLEGatt.swift */,
+				4BB3A25B9199AE538F7ECD9332E5BCCA /* JABLE_GATT.swift */,
+				CA282B9E08F6B607910ED0507D5327FB /* JABLE_GattExample.swift */,
+				E05D1D4F2063F32000E9385A /* JABLE_SIGServices.swift */,
+				FC4CBC53E798D1CA1E54539DA4E1EEA4 /* JABLE_GattClient.swift */,
+				0E636D5B02C560F497BAEB263B4C610E /* JABLE_API.swift */,
+				FFEFC30F2D303AD753981F721A950590 /* JABLE.swift */,
+				AB4A179D2D0F957023F035C4E34270BF /* JABLE_CentralController.swift */,
+				E0ECBE59214887E400646224 /* GattExample.swift */,
+			);
+			path = old;
+			sourceTree = "<group>";
+		};
+		E0ECBE6221493EDA00646224 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				E0ECBE50214833E200646224 /* FriendlyAdvertisment.swift */,
+				E0ECBE552148364700646224 /* CharacteristicProperties.swift */,
+				E0ECBE672149428F00646224 /* JABLEiDManager.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		E0ECBE6321493EF400646224 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				E0ECBE4E2148324800646224 /* JABLEapi.swift */,
+				E0ECBE532148347100646224 /* JABLEDelegate.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		E0ECBE66214940B900646224 /* GAP */ = {
+			isa = PBXGroup;
+			children = (
+				E0ECBE642149403500646224 /* ConnectionOptions.swift */,
+			);
+			path = GAP;
+			sourceTree = "<group>";
+		};
+		E0ECBE69214942EF00646224 /* States */ = {
+			isa = PBXGroup;
+			children = (
+				E0ECBE6021493E7A00646224 /* JABLEStates.swift */,
+			);
+			path = States;
 			sourceTree = "<group>";
 		};
 		ED17E28FD63B15F63D8BF39C3807EB2A /* Support Files */ = {
@@ -361,14 +465,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E0ECBE482148259E00646224 /* JABLEGattProfile.swift in Sources */,
 				CF7D48F4BE4EBEE2268B1C4935FD5AD3 /* JABLE-dummy.m in Sources */,
+				E0ECBE652149403500646224 /* ConnectionOptions.swift in Sources */,
 				9D164822182A59754E0BEB57ADA7BD47 /* JABLE.swift in Sources */,
+				E0ECBE5A214887E400646224 /* GattExample.swift in Sources */,
+				E0ECBE4D214828D500646224 /* JABLEDescriptor.swift in Sources */,
+				E0ECBE462148256000646224 /* JABLEGatt.swift in Sources */,
 				E05D1D502063F32000E9385A /* JABLE_SIGServices.swift in Sources */,
+				E0ECBE5C214897A100646224 /* GattDiscoveryProcess.swift in Sources */,
+				E0ECBE51214833E200646224 /* FriendlyAdvertisment.swift in Sources */,
 				C9890C125935A52F67EDF9FBC6A79968 /* JABLE_API.swift in Sources */,
+				E0ECBE562148364700646224 /* CharacteristicProperties.swift in Sources */,
 				9ADAC389045E883DE6E77D714E492EAA /* JABLE_CentralController.swift in Sources */,
+				E0ECBE682149428F00646224 /* JABLEiDManager.swift in Sources */,
+				E0ECBE6121493E7A00646224 /* JABLEStates.swift in Sources */,
+				E0ECBE4A2148286B00646224 /* GattDiscoveryAgent.swift in Sources */,
+				E0ECBE422148252400646224 /* JABLEService.swift in Sources */,
 				051542D89E38754E5B6898ACFA413BC3 /* JABLE_GATT.swift in Sources */,
+				E0ECBE582148367400646224 /* JABLENew.swift in Sources */,
+				E0ECBE4F2148324800646224 /* JABLEapi.swift in Sources */,
+				E0ECBE542148347100646224 /* JABLEDelegate.swift in Sources */,
 				39C8BCE6615F60403B0F53299CEB4A55 /* JABLE_GattClient.swift in Sources */,
 				BA0F423A5E9464EDA8DBFE2963059FCA /* JABLE_GattExample.swift in Sources */,
+				E0ECBE442148254300646224 /* JABLECharacteristic.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

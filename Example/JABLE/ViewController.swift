@@ -7,18 +7,16 @@
 //
 
 import UIKit
+import JABLE
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var collectionView: UICollectionView!
+    var viewModel: DeviceDiscoveryViewModel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        //bleManager.startScanning()
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        viewModel = DeviceDiscoveryViewModel(collectionView: collectionView)
     }
 
 }

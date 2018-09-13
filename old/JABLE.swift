@@ -75,30 +75,13 @@ public struct JABLEScanFilter{
     }
 }
 
-public struct JABLECharacteristicProperties{
-    public var read = false//characteristic.properties.contains(.read)
-    public var write = false//characteristic.properties.contains(.write)
-    public var indicate = false//characteristic.properties.contains(.indicate)
-    public var notify = false//characteristic.properties.contains(.notify)
-    
-    public var broadcast = false//characteristic.properties.contains(.broadcast)
-    public var writeWithoutResponse = false//characteristic.properties.contains(.writeWithoutResponse)
-    
-    public var indicateEncryptionRequired = false//characteristic.properties.contains(.indicateEncryptionRequired)
-    public var authenticatedSignedWrites = false//characteristic.properties.contains(.authenticatedSignedWrites)
-    
-    public var extendedProperties = false//characteristic.properties.contains(.extendedProperties)
-    public var notifyEncryptionRequired = false//characteristic.properties.contains(.notifyEncryptionRequired)
 
-}
 
 let useImproved = true
 
 //MARK: Use JABLE when GATT structure is known
 open class JABLE: NSObject, GattDiscoveryCompletionDelegate, JABLE_API
 {
-    
-    
     fileprivate var _connectedPeripheral: CBPeripheral?
     fileprivate var _connectedPeripherals: CBPeripheral?
     
@@ -479,21 +462,9 @@ open class JABLE: NSObject, GattDiscoveryCompletionDelegate, JABLE_API
      Additional details
      
      */
-    public func getCharacteristicProperties(forCharacteristic characteristic: CBCharacteristic) -> JABLECharacteristicProperties{
+    public func getCharacteristicProperties(forCharacteristic characteristic: CBCharacteristic) -> CharacteristicProperties{
         
-        var properties = JABLECharacteristicProperties()
-        
-        properties.broadcast = characteristic.properties.contains(.broadcast)
-        properties.extendedProperties = characteristic.properties.contains(.extendedProperties)
-        properties.indicate = characteristic.properties.contains(.indicate)
-        properties.notify = characteristic.properties.contains(.notify)
-        properties.notifyEncryptionRequired = characteristic.properties.contains(.notifyEncryptionRequired)
-        properties.indicateEncryptionRequired = characteristic.properties.contains(.indicateEncryptionRequired)
-        properties.read = characteristic.properties.contains(.read)
-        properties.write = characteristic.properties.contains(.write)
-        properties.writeWithoutResponse = characteristic.properties.contains(.writeWithoutResponse)
-        properties.authenticatedSignedWrites = characteristic.properties.contains(.authenticatedSignedWrites)
-        
+        let properties = CharacteristicProperties(characteristic: characteristic)
         return properties
     }
     

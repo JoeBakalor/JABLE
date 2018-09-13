@@ -16,6 +16,8 @@ class Tests: XCTestCase {
     func testExample() {
         // This is an example of a functional test case.
         XCTAssert(true, "Pass")
+        let onePoundBags = getOnePoundBags(totalWieght: 4, fiveBoundBags: 1, onePoundBags: 9)
+        print("Number of one pound bags: \(onePoundBags)")
     }
     
     func testPerformanceExample() {
@@ -24,5 +26,18 @@ class Tests: XCTestCase {
             // Put the code you want to measure the time of here.
         }
     }
+}
+
+
+func createPackage(small: Int, big: Int, goal: Int) -> Int {
+    guard (Double(small) - Double(goal).truncatingRemainder(dividingBy: 5)) > 0 else { return -1}
+    return Int(Double(goal).truncatingRemainder(dividingBy: 5))
     
+}
+
+
+
+func getOnePoundBags(totalWieght: Double, fiveBoundBags: Double, onePoundBags: Double) -> Double {
+    guard onePoundBags - totalWieght.truncatingRemainder(dividingBy: 5) > 0 else { return -1}
+    return totalWieght.truncatingRemainder(dividingBy: 5)
 }

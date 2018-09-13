@@ -1,15 +1,9 @@
 //
-//  GattExample.swift
-//  JABLE_Example
+//  JABLEGattExample.swift
+//  JABLE
 //
-//  Created by Joe Bakalor on 3/23/18.
-//  Copyright © 2018 CocoaPods. All rights reserved.
+//  Created by Joe Bakalor on 9/11/18.
 //
-
-import Foundation
-import CoreBluetooth
-import JABLE
-
 
 import Foundation
 import CoreBluetooth
@@ -32,12 +26,9 @@ let UUID_CHARACTERISTIC_RX               = CBUUID(string: "00005002-C356-78AB-3C
 
 class GattExample: JABLEGattProfile{
     
-    var temperature                     : Bindable<Float?>      = Bindable(nil)
-    var humidity                        : Bindable<Float?>      = Bindable(nil)
-    var accelerometer                   : Bindable<[Float]?>    = Bindable(nil)
-    var gyroscope                       : Bindable<[Float]?>    = Bindable(nil)
-    var magnetometer                    : Bindable<[Float]?>    = Bindable(nil)
-    var txCharacteristc                 : Bindable<Any?>        = Bindable(nil)
+    var temperature: Bindable<Float?> = Bindable(nil)
+    var humidity: Bindable<Float?> = Bindable(nil)
+    var acceleration: Bindable<[Float]?> = Bindable(nil)
     
     var environmentalService            : CBService?
     var temperatureCharacteristic       : CBCharacteristic?
@@ -87,7 +78,6 @@ class GattExample: JABLEGattProfile{
         )
     }
 }
-
 
 
 
