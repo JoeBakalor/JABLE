@@ -16,6 +16,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = UIColor.JableDarkGray
         viewModel = DeviceDiscoveryViewModel(collectionView: collectionView)
     }
 

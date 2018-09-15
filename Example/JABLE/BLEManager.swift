@@ -19,7 +19,6 @@ class BLEManager: NSObject{
         jable.setDelegate(delegate: self)
         jable.startLookingForPeripherals(withServiceUUIDs: nil)
         let timer = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(stop), userInfo: nil, repeats: false)
-        
     }
     
     @objc func stop(){

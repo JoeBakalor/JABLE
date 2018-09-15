@@ -1,16 +1,23 @@
 PODS:
-  - JABLE (0.1.0)
+  - CorePlot (2.2)
+  - JABLE (0.3.0)
 
 DEPENDENCIES:
-  - JABLE (from `../`)
+  - CorePlot (~> 2.2)
+  - JABLE (from `/Users/jbak688/Library/Mobile Documents/com~apple~CloudDocs/iOS Development/CodeLibraries/Pods/JABLE`)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - CorePlot
 
 EXTERNAL SOURCES:
   JABLE:
-    :path: ../
+    :path: "/Users/jbak688/Library/Mobile Documents/com~apple~CloudDocs/iOS Development/CodeLibraries/Pods/JABLE"
 
 SPEC CHECKSUMS:
-  JABLE: 23ead5b4a5352ed2e37e7e4a69e9267cefa565b7
+  CorePlot: cbe0c6e14220705e32e06a89c7d6a5a908b7d7d8
+  JABLE: 1eb6b8fb4de185efdfd23dbb3b14f76a77d00eff
 
-PODFILE CHECKSUM: d21bc950ab150c4982ca46364cef235749f480bc
+PODFILE CHECKSUM: f542396ae26b97010553c86000f4b6f30fde9da1
 
-COCOAPODS: 1.4.0
+COCOAPODS: 1.5.3

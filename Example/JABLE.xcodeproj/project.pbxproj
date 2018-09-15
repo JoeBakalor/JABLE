@@ -15,10 +15,17 @@
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		690A7030DBAD99E49C7C6740 /* Pods_JABLE_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FC2750518340E756D300C24 /* Pods_JABLE_Tests.framework */; };
 		CF64C77D2772D693CACAB7CF /* Pods_JABLE_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA3CF0D40C583C7E8FCA9794 /* Pods_JABLE_Example.framework */; };
+		E01A7F26214D846A00271C14 /* PeripheralScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01A7F25214D846A00271C14 /* PeripheralScanViewController.swift */; };
+		E01A7F2B214D84C000271C14 /* PeripheralScanViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01A7F2A214D84C000271C14 /* PeripheralScanViewModel.swift */; };
+		E03BC7E2214ABCD400291840 /* JablePlotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03BC7E1214ABCD400291840 /* JablePlotView.swift */; };
+		E03BC7E4214AF43E00291840 /* ScatterPlotController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03BC7E3214AF43E00291840 /* ScatterPlotController.swift */; };
+		E03BC7E5214AF54400291840 /* ScatterPlotController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03BC7E3214AF43E00291840 /* ScatterPlotController.swift */; };
+		E03BC7E9214C32E200291840 /* JablePlotStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03BC7E8214C32E100291840 /* JablePlotStyles.swift */; };
 		E05B92F021495FE200815B41 /* JableCollectionViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05B92EF21495FE200815B41 /* JableCollectionViewManager.swift */; };
 		E05B92F4214979BD00815B41 /* DeviceDiscoveryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05B92F3214979BD00815B41 /* DeviceDiscoveryViewModel.swift */; };
 		E05D1EF520654B0800E9385A /* GattExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05D1EF420654B0800E9385A /* GattExample.swift */; };
 		E0A4301E204A03640008F6F0 /* BLEManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A4301D204A03640008F6F0 /* BLEManager.swift */; };
+		E0DEB637214AAB6600A743D8 /* ColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DEB636214AAB6600A743D8 /* ColorExtensions.swift */; };
 		E0ECBE5F2149342F00646224 /* Bindable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0ECBE5E2149342F00646224 /* Bindable.swift */; };
 		E0ECBE6C214957E700646224 /* JableTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0ECBE6B214957E700646224 /* JableTableViewCell.swift */; };
 /* End PBXBuildFile section */
@@ -52,10 +59,16 @@
 		AB861AC1599CEF598F3F7AB7 /* Pods-JABLE_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JABLE_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-JABLE_Example/Pods-JABLE_Example.release.xcconfig"; sourceTree = "<group>"; };
 		C48E591B0D127861D29AE2E1 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		DA3CF0D40C583C7E8FCA9794 /* Pods_JABLE_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JABLE_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E01A7F25214D846A00271C14 /* PeripheralScanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeripheralScanViewController.swift; sourceTree = "<group>"; };
+		E01A7F2A214D84C000271C14 /* PeripheralScanViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeripheralScanViewModel.swift; sourceTree = "<group>"; };
+		E03BC7E1214ABCD400291840 /* JablePlotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JablePlotView.swift; sourceTree = "<group>"; };
+		E03BC7E3214AF43E00291840 /* ScatterPlotController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScatterPlotController.swift; sourceTree = "<group>"; };
+		E03BC7E8214C32E100291840 /* JablePlotStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JablePlotStyles.swift; sourceTree = "<group>"; };
 		E05B92EF21495FE200815B41 /* JableCollectionViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JableCollectionViewManager.swift; sourceTree = "<group>"; };
 		E05B92F3214979BD00815B41 /* DeviceDiscoveryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceDiscoveryViewModel.swift; sourceTree = "<group>"; };
 		E05D1EF420654B0800E9385A /* GattExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GattExample.swift; sourceTree = "<group>"; };
 		E0A4301D204A03640008F6F0 /* BLEManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLEManager.swift; sourceTree = "<group>"; };
+		E0DEB636214AAB6600A743D8 /* ColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtensions.swift; sourceTree = "<group>"; };
 		E0ECBE5E2149342F00646224 /* Bindable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bindable.swift; sourceTree = "<group>"; };
 		E0ECBE6B214957E700646224 /* JableTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JableTableViewCell.swift; sourceTree = "<group>"; };
 		F277B0CE5E00AB8DA00BF97F /* Pods-JABLE_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JABLE_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JABLE_Tests/Pods-JABLE_Tests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -125,10 +138,12 @@
 		607FACD21AFB9204008FA782 /* Example for JABLE */ = {
 			isa = PBXGroup;
 			children = (
-				E0ECBE6A214957AE00646224 /* JableUI */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
-				E05D1EF320654AED00E9385A /* New Group */,
+				E03BC7E0214AB8F800291840 /* MVVM */,
+				E0F35E10214AAADC0032F8F7 /* Extensions */,
+				E0ECBE6A214957AE00646224 /* JableUI */,
 				E0A4301D204A03640008F6F0 /* BLEManager.swift */,
+				E05D1EF420654B0800E9385A /* GattExample.swift */,
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
 				E05B92F3214979BD00815B41 /* DeviceDiscoveryViewModel.swift */,
 				607FACD31AFB9204008FA782 /* Supporting Files */,
@@ -176,12 +191,37 @@
 			name = "Podspec Metadata";
 			sourceTree = "<group>";
 		};
-		E05D1EF320654AED00E9385A /* New Group */ = {
+		E01A7F27214D847200271C14 /* PeripheralScan */ = {
 			isa = PBXGroup;
 			children = (
-				E05D1EF420654B0800E9385A /* GattExample.swift */,
+				E01A7F29214D84AA00271C14 /* View Model */,
+				E01A7F28214D849D00271C14 /* View Controller */,
 			);
-			name = "New Group";
+			path = PeripheralScan;
+			sourceTree = "<group>";
+		};
+		E01A7F28214D849D00271C14 /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E01A7F25214D846A00271C14 /* PeripheralScanViewController.swift */,
+			);
+			path = "View Controller";
+			sourceTree = "<group>";
+		};
+		E01A7F29214D84AA00271C14 /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+				E01A7F2A214D84C000271C14 /* PeripheralScanViewModel.swift */,
+			);
+			path = "View Model";
+			sourceTree = "<group>";
+		};
+		E03BC7E0214AB8F800291840 /* MVVM */ = {
+			isa = PBXGroup;
+			children = (
+				E01A7F27214D847200271C14 /* PeripheralScan */,
+			);
+			path = MVVM;
 			sourceTree = "<group>";
 		};
 		E0ECBE6A214957AE00646224 /* JableUI */ = {
@@ -189,8 +229,19 @@
 			children = (
 				E0ECBE6B214957E700646224 /* JableTableViewCell.swift */,
 				E05B92EF21495FE200815B41 /* JableCollectionViewManager.swift */,
+				E03BC7E1214ABCD400291840 /* JablePlotView.swift */,
+				E03BC7E3214AF43E00291840 /* ScatterPlotController.swift */,
+				E03BC7E8214C32E100291840 /* JablePlotStyles.swift */,
 			);
 			name = JableUI;
+			sourceTree = "<group>";
+		};
+		E0F35E10214AAADC0032F8F7 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E0DEB636214AAB6600A743D8 /* ColorExtensions.swift */,
+			);
+			name = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -204,8 +255,7 @@
 				607FACCC1AFB9204008FA782 /* Sources */,
 				607FACCD1AFB9204008FA782 /* Frameworks */,
 				607FACCE1AFB9204008FA782 /* Resources */,
-				2E4B12C93E1DF35FC1D9917F /* [CP] Embed Pods Frameworks */,
-				C3D9612C76669B43B22E039E /* [CP] Copy Pods Resources */,
+				85AB84634681A733AC9D74AE /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -224,8 +274,6 @@
 				607FACE11AFB9204008FA782 /* Sources */,
 				607FACE21AFB9204008FA782 /* Frameworks */,
 				607FACE31AFB9204008FA782 /* Resources */,
-				4FE871B48CC29346CD8D0B53 /* [CP] Embed Pods Frameworks */,
-				B8DF643D35EBDC196028ACFC /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -300,24 +348,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		2E4B12C93E1DF35FC1D9917F /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-JABLE_Example/Pods-JABLE_Example-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/JABLE/JABLE.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JABLE.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JABLE_Example/Pods-JABLE_Example-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		2FEBEA5BFF8B549E50C73E64 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -354,49 +384,24 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		4FE871B48CC29346CD8D0B53 /* [CP] Embed Pods Frameworks */ = {
+		85AB84634681A733AC9D74AE /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-JABLE_Example/Pods-JABLE_Example-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/CorePlot/CorePlot.framework",
+				"${BUILT_PRODUCTS_DIR}/JABLE/JABLE.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CorePlot.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JABLE.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JABLE_Tests/Pods-JABLE_Tests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B8DF643D35EBDC196028ACFC /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JABLE_Tests/Pods-JABLE_Tests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C3D9612C76669B43B22E039E /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JABLE_Example/Pods-JABLE_Example-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JABLE_Example/Pods-JABLE_Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -406,13 +411,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E01A7F26214D846A00271C14 /* PeripheralScanViewController.swift in Sources */,
 				E0ECBE5F2149342F00646224 /* Bindable.swift in Sources */,
+				E03BC7E9214C32E200291840 /* JablePlotStyles.swift in Sources */,
 				E05D1EF520654B0800E9385A /* GattExample.swift in Sources */,
 				E05B92F021495FE200815B41 /* JableCollectionViewManager.swift in Sources */,
+				E01A7F2B214D84C000271C14 /* PeripheralScanViewModel.swift in Sources */,
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
+				E03BC7E4214AF43E00291840 /* ScatterPlotController.swift in Sources */,
 				E0A4301E204A03640008F6F0 /* BLEManager.swift in Sources */,
+				E0DEB637214AAB6600A743D8 /* ColorExtensions.swift in Sources */,
 				E05B92F4214979BD00815B41 /* DeviceDiscoveryViewModel.swift in Sources */,
 				E0ECBE6C214957E700646224 /* JableTableViewCell.swift in Sources */,
+				E03BC7E2214ABCD400291840 /* JablePlotView.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -422,6 +433,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				607FACEC1AFB9204008FA782 /* Tests.swift in Sources */,
+				E03BC7E5214AF54400291840 /* ScatterPlotController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
