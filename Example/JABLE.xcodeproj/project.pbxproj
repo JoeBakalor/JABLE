@@ -17,6 +17,13 @@
 		CF64C77D2772D693CACAB7CF /* Pods_JABLE_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA3CF0D40C583C7E8FCA9794 /* Pods_JABLE_Example.framework */; };
 		E01A7F26214D846A00271C14 /* PeripheralScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01A7F25214D846A00271C14 /* PeripheralScanViewController.swift */; };
 		E01A7F2B214D84C000271C14 /* PeripheralScanViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01A7F2A214D84C000271C14 /* PeripheralScanViewModel.swift */; };
+		E01A7F45214DA49E00271C14 /* AppNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01A7F44214DA49E00271C14 /* AppNavigationController.swift */; };
+		E01A7F47214DA4E600271C14 /* MenuLevelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01A7F46214DA4E600271C14 /* MenuLevelController.swift */; };
+		E01A7F49214DA52E00271C14 /* SideNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01A7F48214DA52E00271C14 /* SideNavigationViewController.swift */; };
+		E01A7F4B214DA5B500271C14 /* SideNavigationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01A7F4A214DA5B500271C14 /* SideNavigationTableViewCell.swift */; };
+		E01A7F4D214DA63100271C14 /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01A7F4C214DA63100271C14 /* ContainerViewController.swift */; };
+		E01A7F4F214DA70900271C14 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01A7F4E214DA70900271C14 /* HomeViewController.swift */; };
+		E01A7F56214FD21C00271C14 /* GattProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01A7F55214FD21C00271C14 /* GattProfileViewController.swift */; };
 		E03BC7E2214ABCD400291840 /* JablePlotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03BC7E1214ABCD400291840 /* JablePlotView.swift */; };
 		E03BC7E4214AF43E00291840 /* ScatterPlotController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03BC7E3214AF43E00291840 /* ScatterPlotController.swift */; };
 		E03BC7E5214AF54400291840 /* ScatterPlotController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03BC7E3214AF43E00291840 /* ScatterPlotController.swift */; };
@@ -61,6 +68,13 @@
 		DA3CF0D40C583C7E8FCA9794 /* Pods_JABLE_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JABLE_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E01A7F25214D846A00271C14 /* PeripheralScanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeripheralScanViewController.swift; sourceTree = "<group>"; };
 		E01A7F2A214D84C000271C14 /* PeripheralScanViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeripheralScanViewModel.swift; sourceTree = "<group>"; };
+		E01A7F44214DA49E00271C14 /* AppNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppNavigationController.swift; sourceTree = "<group>"; };
+		E01A7F46214DA4E600271C14 /* MenuLevelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuLevelController.swift; sourceTree = "<group>"; };
+		E01A7F48214DA52E00271C14 /* SideNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideNavigationViewController.swift; sourceTree = "<group>"; };
+		E01A7F4A214DA5B500271C14 /* SideNavigationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideNavigationTableViewCell.swift; sourceTree = "<group>"; };
+		E01A7F4C214DA63100271C14 /* ContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
+		E01A7F4E214DA70900271C14 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		E01A7F55214FD21C00271C14 /* GattProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GattProfileViewController.swift; sourceTree = "<group>"; };
 		E03BC7E1214ABCD400291840 /* JablePlotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JablePlotView.swift; sourceTree = "<group>"; };
 		E03BC7E3214AF43E00291840 /* ScatterPlotController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScatterPlotController.swift; sourceTree = "<group>"; };
 		E03BC7E8214C32E100291840 /* JablePlotStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JablePlotStyles.swift; sourceTree = "<group>"; };
@@ -139,13 +153,10 @@
 			isa = PBXGroup;
 			children = (
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
+				E01A7F43214DA43D00271C14 /* AppNavigation */,
 				E03BC7E0214AB8F800291840 /* MVVM */,
-				E0F35E10214AAADC0032F8F7 /* Extensions */,
-				E0ECBE6A214957AE00646224 /* JableUI */,
 				E0A4301D204A03640008F6F0 /* BLEManager.swift */,
 				E05D1EF420654B0800E9385A /* GattExample.swift */,
-				607FACD71AFB9204008FA782 /* ViewController.swift */,
-				E05B92F3214979BD00815B41 /* DeviceDiscoveryViewModel.swift */,
 				607FACD31AFB9204008FA782 /* Supporting Files */,
 			);
 			name = "Example for JABLE";
@@ -155,6 +166,10 @@
 		607FACD31AFB9204008FA782 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				E05B92F3214979BD00815B41 /* DeviceDiscoveryViewModel.swift */,
+				607FACD71AFB9204008FA782 /* ViewController.swift */,
+				E0ECBE6A214957AE00646224 /* JableUI */,
+				E0F35E10214AAADC0032F8F7 /* Extensions */,
 				607FACD41AFB9204008FA782 /* Info.plist */,
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
@@ -191,13 +206,13 @@
 			name = "Podspec Metadata";
 			sourceTree = "<group>";
 		};
-		E01A7F27214D847200271C14 /* PeripheralScan */ = {
+		E01A7F27214D847200271C14 /* Peripheral Scan View */ = {
 			isa = PBXGroup;
 			children = (
 				E01A7F29214D84AA00271C14 /* View Model */,
 				E01A7F28214D849D00271C14 /* View Controller */,
 			);
-			path = PeripheralScan;
+			path = "Peripheral Scan View";
 			sourceTree = "<group>";
 		};
 		E01A7F28214D849D00271C14 /* View Controller */ = {
@@ -216,10 +231,56 @@
 			path = "View Model";
 			sourceTree = "<group>";
 		};
+		E01A7F3F214D8A5500271C14 /* Home View */ = {
+			isa = PBXGroup;
+			children = (
+				E01A7F53214DAA2F00271C14 /* View Controller */,
+			);
+			path = "Home View";
+			sourceTree = "<group>";
+		};
+		E01A7F43214DA43D00271C14 /* AppNavigation */ = {
+			isa = PBXGroup;
+			children = (
+				E01A7F44214DA49E00271C14 /* AppNavigationController.swift */,
+				E01A7F46214DA4E600271C14 /* MenuLevelController.swift */,
+				E01A7F48214DA52E00271C14 /* SideNavigationViewController.swift */,
+				E01A7F4A214DA5B500271C14 /* SideNavigationTableViewCell.swift */,
+				E01A7F4C214DA63100271C14 /* ContainerViewController.swift */,
+			);
+			path = AppNavigation;
+			sourceTree = "<group>";
+		};
+		E01A7F52214DAA1C00271C14 /* Gatt Profile View */ = {
+			isa = PBXGroup;
+			children = (
+				E01A7F54214FD20900271C14 /* View Controller */,
+			);
+			path = "Gatt Profile View";
+			sourceTree = "<group>";
+		};
+		E01A7F53214DAA2F00271C14 /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E01A7F4E214DA70900271C14 /* HomeViewController.swift */,
+			);
+			path = "View Controller";
+			sourceTree = "<group>";
+		};
+		E01A7F54214FD20900271C14 /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E01A7F55214FD21C00271C14 /* GattProfileViewController.swift */,
+			);
+			path = "View Controller";
+			sourceTree = "<group>";
+		};
 		E03BC7E0214AB8F800291840 /* MVVM */ = {
 			isa = PBXGroup;
 			children = (
-				E01A7F27214D847200271C14 /* PeripheralScan */,
+				E01A7F3F214D8A5500271C14 /* Home View */,
+				E01A7F27214D847200271C14 /* Peripheral Scan View */,
+				E01A7F52214DAA1C00271C14 /* Gatt Profile View */,
 			);
 			path = MVVM;
 			sourceTree = "<group>";
@@ -415,13 +476,20 @@
 				E0ECBE5F2149342F00646224 /* Bindable.swift in Sources */,
 				E03BC7E9214C32E200291840 /* JablePlotStyles.swift in Sources */,
 				E05D1EF520654B0800E9385A /* GattExample.swift in Sources */,
+				E01A7F56214FD21C00271C14 /* GattProfileViewController.swift in Sources */,
 				E05B92F021495FE200815B41 /* JableCollectionViewManager.swift in Sources */,
+				E01A7F47214DA4E600271C14 /* MenuLevelController.swift in Sources */,
+				E01A7F4B214DA5B500271C14 /* SideNavigationTableViewCell.swift in Sources */,
 				E01A7F2B214D84C000271C14 /* PeripheralScanViewModel.swift in Sources */,
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
 				E03BC7E4214AF43E00291840 /* ScatterPlotController.swift in Sources */,
 				E0A4301E204A03640008F6F0 /* BLEManager.swift in Sources */,
+				E01A7F45214DA49E00271C14 /* AppNavigationController.swift in Sources */,
+				E01A7F4D214DA63100271C14 /* ContainerViewController.swift in Sources */,
 				E0DEB637214AAB6600A743D8 /* ColorExtensions.swift in Sources */,
 				E05B92F4214979BD00815B41 /* DeviceDiscoveryViewModel.swift in Sources */,
+				E01A7F4F214DA70900271C14 /* HomeViewController.swift in Sources */,
+				E01A7F49214DA52E00271C14 /* SideNavigationViewController.swift in Sources */,
 				E0ECBE6C214957E700646224 /* JableTableViewCell.swift in Sources */,
 				E03BC7E2214ABCD400291840 /* JablePlotView.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,

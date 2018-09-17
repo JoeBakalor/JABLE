@@ -7,6 +7,7 @@
 
 import Foundation
 import CoreBluetooth
+//import JABLE
 
 public protocol JABLEDelegateNew{
     
@@ -48,7 +49,7 @@ public protocol JABLEDelegateNew{
      
      If nil is provided as the service uuid parameter, the scan results will include all peripherls found
      */
-    func jable(foundPeripheral peripheral: CBPeripheral, advertisementData: FriendlyAdvdertisment)
+    func jable(foundPeripheral peripheral: CBPeripheral, advertisementData: FriendlyAdvertisement)
     
     /**
      Intitiate scan for peripherals

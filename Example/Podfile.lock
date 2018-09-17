@@ -12,12 +12,13 @@ SPEC REPOS:
 
 EXTERNAL SOURCES:
   JABLE:
+    :branch: develop
     :path: "/Users/jbak688/Library/Mobile Documents/com~apple~CloudDocs/iOS Development/CodeLibraries/Pods/JABLE"
 
 SPEC CHECKSUMS:
   CorePlot: cbe0c6e14220705e32e06a89c7d6a5a908b7d7d8
   JABLE: 1eb6b8fb4de185efdfd23dbb3b14f76a77d00eff
 
-PODFILE CHECKSUM: f542396ae26b97010553c86000f4b6f30fde9da1
+PODFILE CHECKSUM: cdb93d4bc12485637f1e272d964fe8c0a207db3b
 
 COCOAPODS: 1.5.3

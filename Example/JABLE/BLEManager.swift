@@ -8,8 +8,8 @@ class BLEManager: NSObject{
     
     private var jable: JABLENew!
     
-    var discoveredPeripherals: Bindable<[FriendlyAdvdertisment]> = Bindable([])
-    var _discoveredPeripherals: [FriendlyAdvdertisment] = []
+    var discoveredPeripherals: Bindable<[FriendlyAdvdertisement]> = Bindable([])
+    var _discoveredPeripherals: [FriendlyAdvdertisement] = []
     var bleDiscoveryDelegate: BLEDiscoveryDelegate?
     
     override init() {
@@ -28,7 +28,7 @@ class BLEManager: NSObject{
 }
 
 protocol BLEDiscoveryDelegate{
-    func didDiscoveryNewPeripheral(advData: FriendlyAdvdertisment)
+    func didDiscoveryNewPeripheral(advData: FriendlyAdvdertisement)
 }
 
 
@@ -38,7 +38,7 @@ extension BLEManager: JABLEDelegateNew{
         
     }
     
-    func jable(foundPeripheral peripheral: CBPeripheral, advertisementData: FriendlyAdvdertisment) {
+    func jable(foundPeripheral peripheral: CBPeripheral, advertisementData: FriendlyAdvertisement) {
         
         bleDiscoveryDelegate?.didDiscoveryNewPeripheral(advData: advertisementData)
         print("Found peripheral: \(advertisementData)")

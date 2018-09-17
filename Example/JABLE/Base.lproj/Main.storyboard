@@ -13,7 +13,7 @@
         <!--Peripheral Scan View Controller-->
         <scene sceneID="wtN-bv-dkh">
             <objects>
-                <viewController id="upG-cj-Kqc" customClass="PeripheralScanViewController" customModule="JABLE_Example" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="peripheralScanViewController" id="upG-cj-Kqc" customClass="PeripheralScanViewController" customModule="JABLE_Example" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="mFh-zH-eOa"/>
                         <viewControllerLayoutGuide type="bottom" id="NT7-4J-f3r"/>
@@ -60,10 +60,28 @@
             </objects>
             <point key="canvasLocation" x="1416.8" y="155.17241379310346"/>
         </scene>
-        <!--View Controller-->
+        <!--Gatt Profile View Controller-->
+        <scene sceneID="zWS-We-fmq">
+            <objects>
+                <viewController storyboardIdentifier="gattProfileViewController" id="UFf-2R-TVM" customClass="GattProfileViewController" customModule="JABLE_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="VSJ-Ay-dZW"/>
+                        <viewControllerLayoutGuide type="bottom" id="AVc-zI-njU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="rsQ-qC-rXG">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tdj-tn-O2s" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1447" y="-565"/>
+        </scene>
+        <!--Side Navigation View Controller New-->
         <scene sceneID="5VJ-Zt-N1v">
             <objects>
-                <viewController id="5IA-GJ-2Bn" sceneMemberID="viewController">
+                <viewController id="5IA-GJ-2Bn" customClass="SideNavigationViewControllerNew" customModule="JABLE_Example" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="PcT-Wo-SV6"/>
                         <viewControllerLayoutGuide type="bottom" id="3uh-7X-vbE"/>
@@ -83,7 +101,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WRb-qA-l2X" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2292" y="155"/>
+            <point key="canvasLocation" x="534" y="-564"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="hwg-sL-lOB">

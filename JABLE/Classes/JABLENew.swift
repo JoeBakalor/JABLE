@@ -21,6 +21,9 @@ public class JABLENew: NSObject{
         var serviceUUIDs: [CBUUID]?
     }
     
+    /*  Helper classes */
+    private let scanResultsManager = ScanResultManager()
+    
     /*  Pending state variables */
     private var pendingScanRequest: ScanRequest?
     private var peripheralPendingReconnection: PeripheralConnection?
@@ -34,13 +37,14 @@ public class JABLENew: NSObject{
     private var connectedPeripherals: [JABLEPeripheralID: PeripheralConnection] = [:]
     private var centralController: CBCentralManager?
     private var activeGattDiscoveryProcess: GattDiscoveryProcess?
+    private var pendingGattDiscoveryProcesses: [GattDiscoveryProcess] = []
     private var jableIsReady = false
     
     /*  Timers */
     private var connectionTimeoutTimer: Timer?
     private var reconnectionTimeoutTimer: Timer?
     
-    /*   Manage and assign peripheral IDs */
+    /*  Manage and assign peripheral IDs */
     private var jableIDManager: JABLEiDManager!
     
     public override init() {
@@ -60,6 +64,12 @@ extension JABLENew: JABLEapi{
     }
     
     public func setup(gattProfile: JABLEGattProfile, forPeripheral peripheral: CBPeripheral) {
+        
+        guard activeGattDiscoveryProcess == nil else {
+            pendingGattDiscoveryProcesses.append(GattDiscoveryProcess(gatt: gattProfile, peripheral: peripheral))
+            return
+        }
+        
         activeGattDiscoveryProcess = GattDiscoveryProcess(gatt: gattProfile, peripheral: peripheral)
         peripheral.discoverServices(nil)
         
@@ -77,8 +87,9 @@ extension JABLENew: JABLEapi{
             else {
                 centralController?.scanForPeripherals(
                     withServices: nil,
-                    options: [CBCentralManagerOptionShowPowerAlertKey: true,
-                              CBCentralManagerScanOptionAllowDuplicatesKey: false])
+                    options: [
+                        CBCentralManagerOptionShowPowerAlertKey: true,
+                        CBCentralManagerScanOptionAllowDuplicatesKey: false])
             return
             }
         
@@ -98,7 +109,7 @@ extension JABLENew: JABLEapi{
         
         guard peripheralPendingConnection == nil && peripheralPendingReconnection == nil
             else {
-            peripheralsToConnectQueue.append(PeripheralConnection(peripheral: peripheral, connectionOptions: connectionOptions))
+                peripheralsToConnectQueue.append(PeripheralConnection(peripheral: peripheral, connectionOptions: connectionOptions))
             return
             }
         
@@ -197,7 +208,7 @@ extension JABLENew: CBCentralManagerDelegate{
     
     public func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String : Any], rssi RSSI: NSNumber) {
         
-        let advData = FriendlyAdvdertisment(advertisementData: advertisementData, rssi: Int(truncating: RSSI), peripheral: peripheral)
+        let advData = FriendlyAdvdertisement(advertisementData: advertisementData, rssi: Int(truncating: RSSI), peripheral: peripheral)
         jableDelegate?.jable(foundPeripheral: peripheral, advertisementData: advData)
         
     }

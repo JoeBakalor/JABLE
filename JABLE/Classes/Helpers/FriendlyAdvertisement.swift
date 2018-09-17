@@ -8,7 +8,7 @@
 import Foundation
 import CoreBluetooth
 
-public struct FriendlyAdvdertisment: CustomStringConvertible{
+public struct FriendlyAdvertisement: CustomStringConvertible{
     public var connectable: Bool?
     public var manufacturerData: NSData?
     public var overflowServiceUUIDs: [CBUUID]?

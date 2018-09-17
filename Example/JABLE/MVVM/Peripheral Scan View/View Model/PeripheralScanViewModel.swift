@@ -11,8 +11,8 @@ import JABLE
 
 class PeripheralScanViewModel: NSObject{
     
-    var bleManager: BLEManager!
-    var jableCollectionViewManager: JableCollectionViewManager!
+    private var bleManager: BLEManager!
+    private weak var jableCollectionViewManager: JableCollectionViewManager!
     weak var collectionView: UICollectionView?
     
     init(collectionView: UICollectionView) {
