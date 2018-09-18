@@ -11,7 +11,7 @@ import JABLE
 
 class JableCollectionViewCell: UICollectionViewCell {
     
-    var cellData: FriendlyAdvdertisment?{
+    var cellData: FriendlyAdvertisement?{
         didSet{
             if let advData = cellData{
                 self.nameLabel.text = advData.localName != nil ? " Name: \(advData.localName!)" : " Name: no name advertised"
@@ -152,6 +152,7 @@ class JableCollectionViewCell: UICollectionViewCell {
     }
     
     override func prepareForReuse() {
+        super.prepareForReuse()
         nameScrollView.scrollsToTop = true
         connectableScrollView.scrollsToTop = true
         manufactureDataScrollView.scrollsToTop = true

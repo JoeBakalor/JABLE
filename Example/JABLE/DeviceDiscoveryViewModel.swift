@@ -34,7 +34,7 @@ class DeviceDiscoveryViewModel: NSObject{
 }
 extension DeviceDiscoveryViewModel: BLEDiscoveryDelegate{
     
-    func didDiscoveryNewPeripheral(advData: FriendlyAdvdertisment) {
+    func didDiscoveryNewPeripheral(advData: FriendlyAdvertisement) {
         jableCollectionViewManager.data.append(advData)
     }
 }

@@ -19,19 +19,6 @@ class SideNavigationViewControllerNew: UIViewController, UITableViewDelegate, UI
     let titles = [
         "Peripheral Scan",
         "GATT Profile",
-        //"My Inventions",
-        //"Browse Projects",
-        //"Browse Lessons",
-        //"Log out",
-        //"Help",
-        //"Bluebirds",
-        //"Update"
-        //"Browse Projects",
-        //"Browse Lessons",
-        //"Log out",
-        //"Help"
-        //"Devices",
-        //"Update"
     ]
     
     let tableView = UITableView()
@@ -96,7 +83,7 @@ class SideNavigationViewControllerNew: UIViewController, UITableViewDelegate, UI
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch indexPath.section{
         case 0: return 200 * 0.5
-        default: return 60
+        default: return 30
         }
     }
     
@@ -106,22 +93,18 @@ class SideNavigationViewControllerNew: UIViewController, UITableViewDelegate, UI
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-
-            let cell = SideNavigationTableViewCell()
-            cell.titleText = titles[indexPath.row]
-            return cell
+        let cell = SideNavigationTableViewCell()
+        cell.titleText = titles[indexPath.row]
+        return cell
         
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        switch indexPath.section {
-        case 0: break
-        default:
-            switch indexPath.row{
-            case 0: delegate?.peripheralScanRequested()
-            case 1: delegate?.gattProfileRequested()
-            default: break
-            }
+        print("Side menu item selected ")
+        switch indexPath.row{
+        case 0: delegate?.peripheralScanRequested()
+        case 1: delegate?.gattProfileRequested()
+        default: break
         }
     }
     

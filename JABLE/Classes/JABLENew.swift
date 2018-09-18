@@ -208,7 +208,7 @@ extension JABLENew: CBCentralManagerDelegate{
     
     public func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String : Any], rssi RSSI: NSNumber) {
         
-        let advData = FriendlyAdvdertisement(advertisementData: advertisementData, rssi: Int(truncating: RSSI), peripheral: peripheral)
+        let advData = FriendlyAdvertisement(advertisementData: advertisementData, rssi: Int(truncating: RSSI), peripheral: peripheral)
         jableDelegate?.jable(foundPeripheral: peripheral, advertisementData: advData)
         
     }
@@ -228,6 +228,7 @@ extension JABLENew: CBCentralManagerDelegate{
                         peripheralsToConnectQueue.append(PeripheralConnection(
                             peripheral: peripheral,
                             connectionOptions: (connectedPeripherals[id]?.connectionOptions)!))
+                        
                     } else {
                         
                         peripheralPendingReconnection = PeripheralConnection(

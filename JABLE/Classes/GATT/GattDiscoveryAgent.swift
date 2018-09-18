@@ -8,36 +8,6 @@
 import Foundation
 import CoreBluetooth
 
-
-class Bindable<T>{
-    
-    var isAvailable: Bool = true
-    
-    typealias Listener = (T) -> Void
-    var listener: Listener?
-    
-    var value: T{
-        didSet{
-            listener?(value)
-        }
-    }
-    
-    init(_ value: T){
-        self.value = value
-    }
-    
-    func bind(listener: Listener?){
-        self.listener = listener
-        listener?(value)
-        
-        if listener != nil {
-            isAvailable = false
-        } else {
-            isAvailable = true
-        }
-    }
-}
-
 public class GattDiscoveryAgent: NSObject{
 
     var gattDiscoveryCompleted: Bindable<Bool> =  Bindable(false)

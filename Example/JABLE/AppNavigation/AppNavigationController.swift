@@ -100,10 +100,12 @@ extension AppNavigationController: TeknestNavigation {
     }
     
     func peripheralScanRequested() {
+        print("Peripheral scan view requested ")
         load(UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "peripheralScanViewController"))
     }
     
     func gattProfileRequested() {
+        print("Gatt profile view requested ")
         load(UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "gattProfileViewController"))
     }
     

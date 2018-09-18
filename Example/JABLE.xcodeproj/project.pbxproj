@@ -21,7 +21,6 @@
 		E01A7F47214DA4E600271C14 /* MenuLevelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01A7F46214DA4E600271C14 /* MenuLevelController.swift */; };
 		E01A7F49214DA52E00271C14 /* SideNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01A7F48214DA52E00271C14 /* SideNavigationViewController.swift */; };
 		E01A7F4B214DA5B500271C14 /* SideNavigationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01A7F4A214DA5B500271C14 /* SideNavigationTableViewCell.swift */; };
-		E01A7F4D214DA63100271C14 /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01A7F4C214DA63100271C14 /* ContainerViewController.swift */; };
 		E01A7F4F214DA70900271C14 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01A7F4E214DA70900271C14 /* HomeViewController.swift */; };
 		E01A7F56214FD21C00271C14 /* GattProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01A7F55214FD21C00271C14 /* GattProfileViewController.swift */; };
 		E03BC7E2214ABCD400291840 /* JablePlotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03BC7E1214ABCD400291840 /* JablePlotView.swift */; };
@@ -72,7 +71,6 @@
 		E01A7F46214DA4E600271C14 /* MenuLevelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuLevelController.swift; sourceTree = "<group>"; };
 		E01A7F48214DA52E00271C14 /* SideNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideNavigationViewController.swift; sourceTree = "<group>"; };
 		E01A7F4A214DA5B500271C14 /* SideNavigationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideNavigationTableViewCell.swift; sourceTree = "<group>"; };
-		E01A7F4C214DA63100271C14 /* ContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
 		E01A7F4E214DA70900271C14 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		E01A7F55214FD21C00271C14 /* GattProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GattProfileViewController.swift; sourceTree = "<group>"; };
 		E03BC7E1214ABCD400291840 /* JablePlotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JablePlotView.swift; sourceTree = "<group>"; };
@@ -246,7 +244,6 @@
 				E01A7F46214DA4E600271C14 /* MenuLevelController.swift */,
 				E01A7F48214DA52E00271C14 /* SideNavigationViewController.swift */,
 				E01A7F4A214DA5B500271C14 /* SideNavigationTableViewCell.swift */,
-				E01A7F4C214DA63100271C14 /* ContainerViewController.swift */,
 			);
 			path = AppNavigation;
 			sourceTree = "<group>";
@@ -485,7 +482,6 @@
 				E03BC7E4214AF43E00291840 /* ScatterPlotController.swift in Sources */,
 				E0A4301E204A03640008F6F0 /* BLEManager.swift in Sources */,
 				E01A7F45214DA49E00271C14 /* AppNavigationController.swift in Sources */,
-				E01A7F4D214DA63100271C14 /* ContainerViewController.swift in Sources */,
 				E0DEB637214AAB6600A743D8 /* ColorExtensions.swift in Sources */,
 				E05B92F4214979BD00815B41 /* DeviceDiscoveryViewModel.swift in Sources */,
 				E01A7F4F214DA70900271C14 /* HomeViewController.swift in Sources */,

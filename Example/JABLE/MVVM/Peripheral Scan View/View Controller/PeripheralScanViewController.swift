@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PeripheralScanViewController: UIViewController {
+class PeripheralScanViewController: MenuLevelViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
     var viewModel: DeviceDiscoveryViewModel!

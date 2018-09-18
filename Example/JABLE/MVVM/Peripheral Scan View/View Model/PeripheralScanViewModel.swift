@@ -26,7 +26,7 @@ class PeripheralScanViewModel: NSObject{
 
 extension PeripheralScanViewModel: BLEDiscoveryDelegate{
     
-    func didDiscoveryNewPeripheral(advData: FriendlyAdvdertisment) {
+    func didDiscoveryNewPeripheral(advData: FriendlyAdvertisement) {
         jableCollectionViewManager.data.append(advData)
     }
     

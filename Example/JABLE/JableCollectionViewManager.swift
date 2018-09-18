@@ -14,7 +14,7 @@ class JableCollectionViewManager: NSObject{
     
     private weak var collectionView: UICollectionView?
     
-    var data: [FriendlyAdvdertisment] = []
+    var data: [FriendlyAdvertisement] = []
     
     init(collectionView: UICollectionView) {
         super.init()

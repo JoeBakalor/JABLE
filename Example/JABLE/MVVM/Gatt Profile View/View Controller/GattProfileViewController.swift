@@ -8,7 +8,7 @@
 
 import UIKit
 
-class GattProfileViewController: UIViewController {
+class GattProfileViewController: MenuLevelViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
