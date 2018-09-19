@@ -27,7 +27,7 @@ class PeripheralScanViewModel: NSObject{
 extension PeripheralScanViewModel: BLEDiscoveryDelegate{
     
     func didUpdateManagedList(updatedList: [TrackedScanResult]) {
-        print("UPDATED PERIPHERAL LIST")
+        print("===========> UPDATED PERIPHERAL LIST")
         jableCollectionViewManager.data = updatedList
     }
     
