@@ -22,7 +22,7 @@ public class JABLENew: NSObject{
     }
     
     /*  Helper classes */
-    private let scanResultsManager = ScanResultManager()
+    //private let scanResultsManager = ScanResultManager()
     
     /*  Pending state variables */
     private var pendingScanRequest: ScanRequest?
@@ -186,11 +186,13 @@ extension JABLENew: CBCentralManagerDelegate{
         
     }
     
+    
     public func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String : Any], rssi RSSI: NSNumber) {
-        
         let advData = FriendlyAdvertisement(advertisementData: advertisementData, rssi: Int(truncating: RSSI), peripheral: peripheral)
         jableDelegate?.jable(foundPeripheral: peripheral, advertisementData: advData)
         print("RAW ADV DATA: \(advertisementData)")
+        
+        print("Services: \(advertisementData["kCBAdvDataServiceUUIDs"] as? [CBUUID])")
     }
     
     public func centralManager(_ central: CBCentralManager, didDisconnectPeripheral peripheral: CBPeripheral, error: Error?) {
@@ -247,7 +249,7 @@ extension JABLENew: CBCentralManagerDelegate{
             case CBManagerState.unauthorized: break
             case CBManagerState.unknown: break
             case CBManagerState.poweredOn:
-                print("Bluetooth Ready!")
+                //print("Bluetooth Ready!")
                 if let scanRequest = pendingScanRequest{
                     pendingScanRequest = nil
                     jableIsReady = true

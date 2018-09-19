@@ -8,17 +8,17 @@
 import Foundation
 import CoreBluetooth
 
-struct TrackedScanResult{
-    var rssiArray: [Int]
-    var currentAdvData: FriendlyAdvertisement
-    var lastSeen: Date
+public struct TrackedScanResult{
+    public var rssiArray: [Int]
+    public var currentAdvData: FriendlyAdvertisement
+    public var lastSeen: Date
 }
 
-class ScanResultManager: NSObject{
+open class ScanResultManager: NSObject{
     
     private var managedScanResult: [CBPeripheral : TrackedScanResult] = [:]
     
-    func newScanResult(peripheral: CBPeripheral, advData: FriendlyAdvertisement){
+    public func newScanResult(peripheral: CBPeripheral, advData: FriendlyAdvertisement) -> [TrackedScanResult]{
         
         if managedScanResult[peripheral] != nil{
             
@@ -33,5 +33,11 @@ class ScanResultManager: NSObject{
                 currentAdvData: advData,
                 lastSeen: Date())
         }
+        
+        let managedResult = managedScanResult.map { (value) -> TrackedScanResult in
+            return value.value
+        }
+        
+        return managedResult
     }
 }

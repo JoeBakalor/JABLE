@@ -14,7 +14,7 @@ class JableCollectionViewManager: NSObject{
     
     private weak var collectionView: UICollectionView?
     
-    var data: [FriendlyAdvertisement] = []
+    var data: [TrackedScanResult] = []
     
     init(collectionView: UICollectionView) {
         super.init()
@@ -27,7 +27,7 @@ class JableCollectionViewManager: NSObject{
         collectionView?.dataSource = self
         collectionView?.delegate = self
         collectionView?.register(JableCollectionViewCell.self, forCellWithReuseIdentifier: "jableCell")
-        Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(refresh), userInfo: nil, repeats: true)
+        Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(refresh), userInfo: nil, repeats: true)
     }
     
     @objc func refresh(){

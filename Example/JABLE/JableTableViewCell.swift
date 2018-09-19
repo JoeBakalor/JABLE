@@ -11,14 +11,23 @@ import JABLE
 
 class JableCollectionViewCell: UICollectionViewCell {
     
-    var cellData: FriendlyAdvertisement?{
+    var cellData: TrackedScanResult?{
         didSet{
-            if let advData = cellData{
-                self.nameLabel.text = advData.localName != nil ? " Name: \(advData.localName!)" : " Name: no name advertised"
+            if let advData = cellData?.currentAdvData{
+                if let localName = advData.localName{
+                    self.nameLabel.text = "Name: \(localName)"
+                } else if let friendlyName = advData.friendlyName{
+                    self.nameLabel.text = "Name: \(friendlyName)"
+                } else {
+                    self.nameLabel.text = "Name: unknown"
+                }
                 
                 if let connectable = advData.connectable{
-                    if connectable { self.connectableLabel.text = " Connectable: yes"
-                    } else { self.connectableLabel.text = " Connectable: no" }
+                    if connectable {
+                        self.connectableLabel.text = " Connectable: yes"
+                    } else {
+                        self.connectableLabel.text = " Connectable: no"
+                    }
                 } else { self.connectableLabel.text = " Connectable: unknown" }
                 
                 self.manufactureData.text = advData.manufacturerData != nil ? " Manufacture data: \(getHexString(unFormattedData: advData.manufacturerData!))" : " Manufacture data: not advertised"

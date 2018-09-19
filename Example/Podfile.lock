@@ -3,7 +3,7 @@ PODS:
   - JABLE (0.3.0)
 
 DEPENDENCIES:
-  - CorePlot (~> 2.2)
+  - CorePlot
   - JABLE (from `/Users/jbak688/Library/Mobile Documents/com~apple~CloudDocs/iOS Development/CodeLibraries/Pods/JABLE`)
 
 SPEC REPOS:
@@ -19,6 +19,6 @@ SPEC CHECKSUMS:
   CorePlot: cbe0c6e14220705e32e06a89c7d6a5a908b7d7d8
   JABLE: 1eb6b8fb4de185efdfd23dbb3b14f76a77d00eff
 
-PODFILE CHECKSUM: cdb93d4bc12485637f1e272d964fe8c0a207db3b
+PODFILE CHECKSUM: c18106e9006077a81bd4f08b1a146ed35ef901e5
 
 COCOAPODS: 1.5.3
