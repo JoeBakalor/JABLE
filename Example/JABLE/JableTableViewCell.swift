@@ -15,29 +15,36 @@ class JableCollectionViewCell: UICollectionViewCell {
         didSet{
             if let advData = cellData?.currentAdvData{
                 if let localName = advData.localName{
-                    self.nameLabel.text = "Name: \(localName)"
-                } else if let friendlyName = advData.friendlyName{
-                    self.nameLabel.text = "Name: \(friendlyName)"
-                } else {
-                    self.nameLabel.text = "Name: unknown"
+                    self.nameLabel.text = " Name: \(localName)"
+                }
+                else if let friendlyName = advData.friendlyName{
+                    self.nameLabel.text = " Name: \(friendlyName)"
+                }
+                else {
+                    self.nameLabel.text = " Name: unknown"
                 }
                 
                 if let connectable = advData.connectable{
-                    if connectable {
-                        self.connectableLabel.text = " Connectable: yes"
-                    } else {
-                        self.connectableLabel.text = " Connectable: no"
-                    }
+                    
+                    if connectable { self.connectableLabel.text = " Connectable: yes"
+                    } else { self.connectableLabel.text = " Connectable: no" }
+    
                 } else { self.connectableLabel.text = " Connectable: unknown" }
                 
                 self.manufactureData.text = advData.manufacturerData != nil ? " Manufacture data: \(getHexString(unFormattedData: advData.manufacturerData!))" : " Manufacture data: not advertised"
                 self.txPowerLabel.text = advData.transmitPowerLevel != nil ? " TX power: \(advData.transmitPowerLevel!)" : " Tx power: not advertised"
                 self.advServicesLabel.text = advData.services != nil ? " Services: \(advData.services!)" : " Services: none advertised"
             }
+            print("\n \(nameLabel.text) RSSI ARRAY: \(cellData?.rssiArray)")
+            if let rssiData = cellData?.rssiArray{
+                plotView.setPlotData(dataArray: rssiData)
+                self.setNeedsLayout()
+            }
+
         }
     }
     
-    private let plotView = JablePlotView()
+    private var plotView = JablePlotView()
     /*  LABEL SCROLL VIEWS*/
     private let nameScrollView = UIScrollView()
     private let connectableScrollView = UIScrollView()

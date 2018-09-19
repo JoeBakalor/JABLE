@@ -25,7 +25,6 @@
 		E01A7F56214FD21C00271C14 /* GattProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01A7F55214FD21C00271C14 /* GattProfileViewController.swift */; };
 		E03BC7E2214ABCD400291840 /* JablePlotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03BC7E1214ABCD400291840 /* JablePlotView.swift */; };
 		E03BC7E4214AF43E00291840 /* ScatterPlotController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03BC7E3214AF43E00291840 /* ScatterPlotController.swift */; };
-		E03BC7E5214AF54400291840 /* ScatterPlotController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03BC7E3214AF43E00291840 /* ScatterPlotController.swift */; };
 		E03BC7E9214C32E200291840 /* JablePlotStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03BC7E8214C32E100291840 /* JablePlotStyles.swift */; };
 		E05B92F021495FE200815B41 /* JableCollectionViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05B92EF21495FE200815B41 /* JableCollectionViewManager.swift */; };
 		E05B92F4214979BD00815B41 /* DeviceDiscoveryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05B92F3214979BD00815B41 /* DeviceDiscoveryViewModel.swift */; };
@@ -173,6 +172,7 @@
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
 				E0ECBE5E2149342F00646224 /* Bindable.swift */,
+				E03BC7E3214AF43E00291840 /* ScatterPlotController.swift */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -288,7 +288,6 @@
 				E0ECBE6B214957E700646224 /* JableTableViewCell.swift */,
 				E05B92EF21495FE200815B41 /* JableCollectionViewManager.swift */,
 				E03BC7E1214ABCD400291840 /* JablePlotView.swift */,
-				E03BC7E3214AF43E00291840 /* ScatterPlotController.swift */,
 				E03BC7E8214C32E100291840 /* JablePlotStyles.swift */,
 			);
 			name = JableUI;
@@ -497,7 +496,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				607FACEC1AFB9204008FA782 /* Tests.swift in Sources */,
-				E03BC7E5214AF54400291840 /* ScatterPlotController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

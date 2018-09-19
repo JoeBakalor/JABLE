@@ -49,6 +49,8 @@ extension JableCollectionViewManager: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "jableCell", for: indexPath) as! JableCollectionViewCell
         cell.cellData = data[indexPath.row]
+        //cell.setNeedsLayout()
+        //cell.setNeedsDisplay()
         return cell
     }
 }
@@ -62,5 +64,10 @@ extension JableCollectionViewManager: UICollectionViewDelegateFlowLayout{
 }
 
 extension JableCollectionViewManager: UICollectionViewDelegate{
+    
+//    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+//        //(cell as! JableCollectionViewCell).cellData = data[indexPath.row]
+//        //(cell as! JableCollectionViewCell).setNeedsLayout()
+//    }
     
 }

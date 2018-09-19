@@ -33,6 +33,19 @@ class JablePlotView: CPTGraphHostingView{
         self.initView()
     }
     
+    func setPlotData(dataArray: [Int]){
+
+        var contentArray = [plotDataType]()
+            for i in 0 ..< dataArray.count {
+                let x = Double(i) //* 0.3//05
+                let y = Double(dataArray[i] * -1)//100 * Double(arc4random()) / Double(UInt32.max) + 1.2
+                let dataPoint: plotDataType = [.X: x, .Y: y]
+                contentArray.append(dataPoint)
+        }
+        self.dataForPlot = contentArray
+        scatterPlot.reloadData()
+    }
+    
     internal func initView(){
         
         //set properties and add subviews
@@ -81,8 +94,8 @@ class JablePlotView: CPTGraphHostingView{
             x.minorTickLength = 0
             x.majorTickLength = 0
             //x.tickDirection = .positive
-            x.majorIntervalLength   = 0.5
-            x.minorTicksPerInterval = 5
+            x.majorIntervalLength   = 1//0.5
+            x.minorTicksPerInterval = 10
             x.orthogonalPosition    = 0//2.0
             x.labelExclusionRanges  = [
                 CPTPlotRange(location: 0.99, length: 0.02),
@@ -94,8 +107,8 @@ class JablePlotView: CPTGraphHostingView{
         
         plotSpace.allowsUserInteraction = false
         plotSpace.allowsMomentumX = true
-        plotSpace.yRange = CPTPlotRange(location:1.0, length:2.0)
-        plotSpace.xRange = CPTPlotRange(location:1.0, length:3.0)
+        plotSpace.yRange = CPTPlotRange(location:0.0, length:100.0)
+        plotSpace.xRange = CPTPlotRange(location:0.0, length: 9.0)
         graph.add(plotSpace)
         
         scatterPlot.delegate = self
@@ -105,16 +118,7 @@ class JablePlotView: CPTGraphHostingView{
         scatterPlot.areaFill = CPTFill(color: CPTColor.white().withAlphaComponent(0.25))
         scatterPlot.identifier    = NSString.init(string: "Blue Plot")
         graph.add(scatterPlot, to: plotSpace)
-        
-        // Add some initial data
-        var contentArray = [plotDataType]()
-        for i in 0 ..< 60 {
-            let x = 1.0 + Double(i) * 0.05
-            let y = 1.2 * Double(arc4random()) / Double(UInt32.max) + 1.2
-            let dataPoint: plotDataType = [.X: x, .Y: y]
-            contentArray.append(dataPoint)
-        }
-        self.dataForPlot = contentArray
+
     }
     
     override func layoutSubviews() {
@@ -144,6 +148,7 @@ extension JablePlotView: CPTScatterPlotDataSource{
                 return (num + 1.0) as NSNumber
             }
             else {
+                print("Plot Value: \(num)")
                 return num as NSNumber
             }
         }

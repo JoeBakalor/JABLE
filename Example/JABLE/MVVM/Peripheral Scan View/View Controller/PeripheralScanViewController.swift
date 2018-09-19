@@ -11,11 +11,11 @@ import UIKit
 class PeripheralScanViewController: MenuLevelViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
-    var viewModel: DeviceDiscoveryViewModel!
+    var viewModel: PeripheralScanViewModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.JableDarkGray
-        viewModel = DeviceDiscoveryViewModel(collectionView: collectionView)
+        viewModel = PeripheralScanViewModel(collectionView: collectionView)
     }
 }

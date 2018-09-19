@@ -33,6 +33,7 @@ class DeviceDiscoveryViewModel: NSObject{
     }
 }
 extension DeviceDiscoveryViewModel: BLEDiscoveryDelegate{
+    
     func didUpdateManagedList(updatedList: [TrackedScanResult]) {
         
     }

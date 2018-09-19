@@ -21,7 +21,7 @@ class BLEManager: NSObject{
         jable = JABLENew()
         jable.setDelegate(delegate: self)
         jable.startLookingForPeripherals(withServiceUUIDs: nil)
-        let timer = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(stop), userInfo: nil, repeats: false)
+        let timer = Timer.scheduledTimer(timeInterval: 10000, target: self, selector: #selector(stop), userInfo: nil, repeats: false)
     }
     
     @objc func stop(){
@@ -46,7 +46,7 @@ extension BLEManager: JABLEDelegateNew{
     
         print("Updated managed scan result")
         let upadatedResults = scanResultManager.newScanResult(peripheral: peripheral, advData: advertisementData)
-        bleDiscoveryDelegate!.didUpdateManagedList(updatedList: upadatedResults)
+        bleDiscoveryDelegate?.didUpdateManagedList(updatedList: upadatedResults)
         
         //bleDiscoveryDelegate?.didDiscoveryNewPeripheral(advData: advertisementData)
         //print("Found peripheral: \(advertisementData)")
