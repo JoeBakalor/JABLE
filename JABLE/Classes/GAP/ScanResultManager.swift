@@ -21,10 +21,13 @@ class ScanResultManager: NSObject{
     func newScanResult(peripheral: CBPeripheral, advData: FriendlyAdvertisement){
         
         if managedScanResult[peripheral] != nil{
+            
             managedScanResult[peripheral]?.currentAdvData = advData
             if let newRssi = advData.rssi { managedScanResult[peripheral]?.rssiArray.append(newRssi) }
             managedScanResult[peripheral]?.lastSeen = Date()
+            
         } else {
+            
             managedScanResult[peripheral] = TrackedScanResult(
                 rssiArray: advData.rssi != nil ? [advData.rssi!] : [],
                 currentAdvData: advData,

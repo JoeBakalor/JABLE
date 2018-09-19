@@ -179,26 +179,6 @@ extension JABLENew: JABLEapi{
 
 extension JABLENew: CBCentralManagerDelegate{
     
-    public func centralManagerDidUpdateState(_ central: CBCentralManager) {
-        if #available(iOS 10.0, *){
-            switch (central.state){
-            case CBManagerState.poweredOff: break
-            case CBManagerState.unauthorized: break
-            case CBManagerState.unknown: break
-            case CBManagerState.poweredOn:
-                print("Bluetooth Ready!");
-                if let scanRequest = pendingScanRequest{
-                    pendingScanRequest = nil
-                    jableIsReady = true
-                    self.startLookingForPeripherals(withServiceUUIDs: scanRequest.serviceUUIDs)
-                }
-                break
-            case CBManagerState.resetting: break
-            case CBManagerState.unsupported:break
-            }
-        }
-    }
-    
     public func centralManager(_ central: CBCentralManager, didConnect peripheral: CBPeripheral) {
         
         guard peripheral == peripheralPendingConnection?.peripheral else { print("We did something out of order "); return }
@@ -210,7 +190,7 @@ extension JABLENew: CBCentralManagerDelegate{
         
         let advData = FriendlyAdvertisement(advertisementData: advertisementData, rssi: Int(truncating: RSSI), peripheral: peripheral)
         jableDelegate?.jable(foundPeripheral: peripheral, advertisementData: advData)
-        
+        print("RAW ADV DATA: \(advertisementData)")
     }
     
     public func centralManager(_ central: CBCentralManager, didDisconnectPeripheral peripheral: CBPeripheral, error: Error?) {
@@ -260,6 +240,25 @@ extension JABLENew: CBCentralManagerDelegate{
         
     }
 
+    public func centralManagerDidUpdateState(_ central: CBCentralManager) {
+        if #available(iOS 10.0, *){
+            switch (central.state){
+            case CBManagerState.poweredOff: break
+            case CBManagerState.unauthorized: break
+            case CBManagerState.unknown: break
+            case CBManagerState.poweredOn:
+                print("Bluetooth Ready!")
+                if let scanRequest = pendingScanRequest{
+                    pendingScanRequest = nil
+                    jableIsReady = true
+                    self.startLookingForPeripherals(withServiceUUIDs: scanRequest.serviceUUIDs)
+                }
+                break
+            case CBManagerState.resetting: break
+            case CBManagerState.unsupported:break
+            }
+        }
+    }
 }
 
 
@@ -287,6 +286,7 @@ extension JABLENew: CBPeripheralDelegate{
         
         if let services = peripheral.services{
             activeGattDiscoveryProcess?.discoveryAgent.central(didFind: services)
+            jableDelegate?.jable(foundServices: services, forPeripheral: peripheral)
         }
     }
     
@@ -329,7 +329,6 @@ extension JABLENew: CBPeripheralDelegate{
     public func peripheral(_ peripheral: CBPeripheral, didUpdateValueFor descriptor: CBDescriptor, error: Error?) {
         
     }
-    
 }
 
 

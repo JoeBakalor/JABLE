@@ -14,9 +14,9 @@ class JABLEiDManager: NSObject{
     var currentAvailablePeripheralID: Int = 0
     
     func newPeripheralID() -> JABLEPeripheralID{
+        defer { currentAvailablePeripheralID += 1 }
+        
         let newID = currentAvailablePeripheralID
-        currentAvailablePeripheralID += 1
         return newID
     }
-    
 }

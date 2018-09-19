@@ -9,7 +9,6 @@ import Foundation
 import CoreBluetooth
 
 struct ScanFilter{
-    
     func shouldFilterResult(scanResult: FriendlyAdvertisement){
         
     }

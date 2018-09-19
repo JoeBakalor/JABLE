@@ -17,6 +17,7 @@ public struct FriendlyAdvertisement: CustomStringConvertible{
     public var solicitedServiceUUIDs: [CBUUID]?
     public var transmitPowerLevel: NSNumber?
     public var localName: String?
+    public var friendlyName: String?
     public var rssi: Int?
     public var timeStamp: Date?
     public var seen: Int = 0
@@ -30,9 +31,11 @@ public struct FriendlyAdvertisement: CustomStringConvertible{
         self.services               = advertisementData["kCBAdvDataServiceUUIDs"] as? [UUID]
         self.solicitedServiceUUIDs  = advertisementData["kCBAdvDataSolicitedServiceUUIDs"] as? [CBUUID]
         self.transmitPowerLevel     = advertisementData["kCBAdvDataTxPowerLevel"] as? NSNumber
-        self.localName              = peripheral.name//advertisementData["kCBAdvDataLocalName"] as? String
+        self.localName              = advertisementData["kCBAdvDataLocalName"] as? String
+        self.friendlyName           = peripheral.name
         self.rssi                   = RSSI
         self.timeStamp              = Date()
+        print("adv data raw: \(advertisementData)")
     }
     
     public var description: String{

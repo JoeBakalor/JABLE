@@ -109,7 +109,7 @@ public protocol JABLEDelegateNew{
      
      If nil is provided as the service uuid parameter, the scan results will include all peripherls found
      */
-    func jable(foundServices services: [CBService])
+    func jable(foundServices services: [CBService], forPeripheral peripheral: CBPeripheral)
     
     /**
      Intitiate scan for peripherals

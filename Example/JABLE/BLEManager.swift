@@ -12,6 +12,8 @@ class BLEManager: NSObject{
     var _discoveredPeripherals: [FriendlyAdvertisement] = []
     var bleDiscoveryDelegate: BLEDiscoveryDelegate?
     
+
+    
     override init() {
         super.init()
         print("Initialize JABLE")
@@ -34,6 +36,13 @@ protocol BLEDiscoveryDelegate{
 
 extension BLEManager: JABLEDelegateNew{
     
+    func jable(foundPeripheral peripheral: CBPeripheral, advertisementData: FriendlyAdvertisement, raw: [String : Any]) {
+        print("Raw adv data: \(peripheral)")
+    }
+    
+
+    
+    
     func jable(isReady: Void) {
         
     }
@@ -41,7 +50,7 @@ extension BLEManager: JABLEDelegateNew{
     func jable(foundPeripheral peripheral: CBPeripheral, advertisementData: FriendlyAdvertisement) {
         
         bleDiscoveryDelegate?.didDiscoveryNewPeripheral(advData: advertisementData)
-        print("Found peripheral: \(advertisementData)")
+        //print("Found peripheral: \(advertisementData)")
         _discoveredPeripherals.append(advertisementData)
         discoveredPeripherals.value = _discoveredPeripherals
         
@@ -55,7 +64,7 @@ extension BLEManager: JABLEDelegateNew{
         
     }
     
-    func jable(foundServices services: [CBService]) {
+    func jable(foundServices services: [CBService], forPeripheral peripheral: CBPeripheral) {
         
     }
     
