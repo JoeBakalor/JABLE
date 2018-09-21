@@ -8,7 +8,7 @@
 import Foundation
 import CoreBluetooth
 
-protocol JABLEapi{
+protocol JABLECentralAPI{
     
     /**
      Intitiate scan for peripherals

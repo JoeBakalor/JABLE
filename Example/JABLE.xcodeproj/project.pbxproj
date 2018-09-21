@@ -8,15 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
-		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		690A7030DBAD99E49C7C6740 /* Pods_JABLE_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FC2750518340E756D300C24 /* Pods_JABLE_Tests.framework */; };
 		CF64C77D2772D693CACAB7CF /* Pods_JABLE_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA3CF0D40C583C7E8FCA9794 /* Pods_JABLE_Example.framework */; };
-		E01A7F26214D846A00271C14 /* PeripheralScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01A7F25214D846A00271C14 /* PeripheralScanViewController.swift */; };
-		E01A7F2B214D84C000271C14 /* PeripheralScanViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01A7F2A214D84C000271C14 /* PeripheralScanViewModel.swift */; };
+		E01A7F26214D846A00271C14 /* CentralModeScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01A7F25214D846A00271C14 /* CentralModeScanViewController.swift */; };
+		E01A7F2B214D84C000271C14 /* CentralModeScanViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01A7F2A214D84C000271C14 /* CentralModeScanViewModel.swift */; };
 		E01A7F45214DA49E00271C14 /* AppNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01A7F44214DA49E00271C14 /* AppNavigationController.swift */; };
 		E01A7F47214DA4E600271C14 /* MenuLevelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01A7F46214DA4E600271C14 /* MenuLevelController.swift */; };
 		E01A7F49214DA52E00271C14 /* SideNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01A7F48214DA52E00271C14 /* SideNavigationViewController.swift */; };
@@ -24,15 +23,18 @@
 		E01A7F4F214DA70900271C14 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01A7F4E214DA70900271C14 /* HomeViewController.swift */; };
 		E01A7F56214FD21C00271C14 /* GattProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01A7F55214FD21C00271C14 /* GattProfileViewController.swift */; };
 		E03BC7E2214ABCD400291840 /* JablePlotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03BC7E1214ABCD400291840 /* JablePlotView.swift */; };
-		E03BC7E4214AF43E00291840 /* ScatterPlotController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03BC7E3214AF43E00291840 /* ScatterPlotController.swift */; };
 		E03BC7E9214C32E200291840 /* JablePlotStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03BC7E8214C32E100291840 /* JablePlotStyles.swift */; };
 		E05B92F021495FE200815B41 /* JableCollectionViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05B92EF21495FE200815B41 /* JableCollectionViewManager.swift */; };
-		E05B92F4214979BD00815B41 /* DeviceDiscoveryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05B92F3214979BD00815B41 /* DeviceDiscoveryViewModel.swift */; };
 		E05D1EF520654B0800E9385A /* GattExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05D1EF420654B0800E9385A /* GattExample.swift */; };
 		E0A4301E204A03640008F6F0 /* BLEManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A4301D204A03640008F6F0 /* BLEManager.swift */; };
+		E0C09C2B21548C9900D08090 /* JableCollectionViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C09C2A21548C9900D08090 /* JableCollectionViewCellModel.swift */; };
+		E0C09C3221550E0800D08090 /* OTAUpdatesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C09C3121550E0800D08090 /* OTAUpdatesViewController.swift */; };
+		E0C09C3421550E2100D08090 /* OTAUpdatesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C09C3321550E2100D08090 /* OTAUpdatesViewModel.swift */; };
 		E0DEB637214AAB6600A743D8 /* ColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DEB636214AAB6600A743D8 /* ColorExtensions.swift */; };
+		E0E3BB872153185F006A6139 /* JableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E3BB862153185F006A6139 /* JableButton.swift */; };
+		E0E3BB8B2153C407006A6139 /* MultiBindableTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E3BB8A2153C407006A6139 /* MultiBindableTest.swift */; };
 		E0ECBE5F2149342F00646224 /* Bindable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0ECBE5E2149342F00646224 /* Bindable.swift */; };
-		E0ECBE6C214957E700646224 /* JableTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0ECBE6B214957E700646224 /* JableTableViewCell.swift */; };
+		E0ECBE6C214957E700646224 /* JableCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0ECBE6B214957E700646224 /* JableCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,7 +53,6 @@
 		607FACD01AFB9204008FA782 /* JABLE_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JABLE_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		607FACD71AFB9204008FA782 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		607FACDA1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		607FACDC1AFB9204008FA782 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -64,8 +65,8 @@
 		AB861AC1599CEF598F3F7AB7 /* Pods-JABLE_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JABLE_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-JABLE_Example/Pods-JABLE_Example.release.xcconfig"; sourceTree = "<group>"; };
 		C48E591B0D127861D29AE2E1 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		DA3CF0D40C583C7E8FCA9794 /* Pods_JABLE_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JABLE_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E01A7F25214D846A00271C14 /* PeripheralScanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeripheralScanViewController.swift; sourceTree = "<group>"; };
-		E01A7F2A214D84C000271C14 /* PeripheralScanViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeripheralScanViewModel.swift; sourceTree = "<group>"; };
+		E01A7F25214D846A00271C14 /* CentralModeScanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CentralModeScanViewController.swift; sourceTree = "<group>"; };
+		E01A7F2A214D84C000271C14 /* CentralModeScanViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CentralModeScanViewModel.swift; sourceTree = "<group>"; };
 		E01A7F44214DA49E00271C14 /* AppNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppNavigationController.swift; sourceTree = "<group>"; };
 		E01A7F46214DA4E600271C14 /* MenuLevelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuLevelController.swift; sourceTree = "<group>"; };
 		E01A7F48214DA52E00271C14 /* SideNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideNavigationViewController.swift; sourceTree = "<group>"; };
@@ -73,15 +74,18 @@
 		E01A7F4E214DA70900271C14 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		E01A7F55214FD21C00271C14 /* GattProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GattProfileViewController.swift; sourceTree = "<group>"; };
 		E03BC7E1214ABCD400291840 /* JablePlotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JablePlotView.swift; sourceTree = "<group>"; };
-		E03BC7E3214AF43E00291840 /* ScatterPlotController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScatterPlotController.swift; sourceTree = "<group>"; };
 		E03BC7E8214C32E100291840 /* JablePlotStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JablePlotStyles.swift; sourceTree = "<group>"; };
 		E05B92EF21495FE200815B41 /* JableCollectionViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JableCollectionViewManager.swift; sourceTree = "<group>"; };
-		E05B92F3214979BD00815B41 /* DeviceDiscoveryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceDiscoveryViewModel.swift; sourceTree = "<group>"; };
 		E05D1EF420654B0800E9385A /* GattExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GattExample.swift; sourceTree = "<group>"; };
 		E0A4301D204A03640008F6F0 /* BLEManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLEManager.swift; sourceTree = "<group>"; };
+		E0C09C2A21548C9900D08090 /* JableCollectionViewCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JableCollectionViewCellModel.swift; sourceTree = "<group>"; };
+		E0C09C3121550E0800D08090 /* OTAUpdatesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTAUpdatesViewController.swift; sourceTree = "<group>"; };
+		E0C09C3321550E2100D08090 /* OTAUpdatesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTAUpdatesViewModel.swift; sourceTree = "<group>"; };
 		E0DEB636214AAB6600A743D8 /* ColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtensions.swift; sourceTree = "<group>"; };
+		E0E3BB862153185F006A6139 /* JableButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JableButton.swift; sourceTree = "<group>"; };
+		E0E3BB8A2153C407006A6139 /* MultiBindableTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiBindableTest.swift; sourceTree = "<group>"; };
 		E0ECBE5E2149342F00646224 /* Bindable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bindable.swift; sourceTree = "<group>"; };
-		E0ECBE6B214957E700646224 /* JableTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JableTableViewCell.swift; sourceTree = "<group>"; };
+		E0ECBE6B214957E700646224 /* JableCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JableCollectionViewCell.swift; sourceTree = "<group>"; };
 		F277B0CE5E00AB8DA00BF97F /* Pods-JABLE_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JABLE_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JABLE_Tests/Pods-JABLE_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -154,6 +158,7 @@
 				E03BC7E0214AB8F800291840 /* MVVM */,
 				E0A4301D204A03640008F6F0 /* BLEManager.swift */,
 				E05D1EF420654B0800E9385A /* GattExample.swift */,
+				E0ECBE6A214957AE00646224 /* JableUI */,
 				607FACD31AFB9204008FA782 /* Supporting Files */,
 			);
 			name = "Example for JABLE";
@@ -163,16 +168,12 @@
 		607FACD31AFB9204008FA782 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				E05B92F3214979BD00815B41 /* DeviceDiscoveryViewModel.swift */,
-				607FACD71AFB9204008FA782 /* ViewController.swift */,
-				E0ECBE6A214957AE00646224 /* JableUI */,
 				E0F35E10214AAADC0032F8F7 /* Extensions */,
 				607FACD41AFB9204008FA782 /* Info.plist */,
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
 				E0ECBE5E2149342F00646224 /* Bindable.swift */,
-				E03BC7E3214AF43E00291840 /* ScatterPlotController.swift */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -180,6 +181,7 @@
 		607FACE81AFB9204008FA782 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				E0E3BB8A2153C407006A6139 /* MultiBindableTest.swift */,
 				607FACEB1AFB9204008FA782 /* Tests.swift */,
 				607FACE91AFB9204008FA782 /* Supporting Files */,
 			);
@@ -204,19 +206,19 @@
 			name = "Podspec Metadata";
 			sourceTree = "<group>";
 		};
-		E01A7F27214D847200271C14 /* Peripheral Scan View */ = {
+		E01A7F27214D847200271C14 /* Central Mode Scan View */ = {
 			isa = PBXGroup;
 			children = (
-				E01A7F29214D84AA00271C14 /* View Model */,
 				E01A7F28214D849D00271C14 /* View Controller */,
+				E01A7F29214D84AA00271C14 /* View Model */,
 			);
-			path = "Peripheral Scan View";
+			path = "Central Mode Scan View";
 			sourceTree = "<group>";
 		};
 		E01A7F28214D849D00271C14 /* View Controller */ = {
 			isa = PBXGroup;
 			children = (
-				E01A7F25214D846A00271C14 /* PeripheralScanViewController.swift */,
+				E01A7F25214D846A00271C14 /* CentralModeScanViewController.swift */,
 			);
 			path = "View Controller";
 			sourceTree = "<group>";
@@ -224,7 +226,7 @@
 		E01A7F29214D84AA00271C14 /* View Model */ = {
 			isa = PBXGroup;
 			children = (
-				E01A7F2A214D84C000271C14 /* PeripheralScanViewModel.swift */,
+				E01A7F2A214D84C000271C14 /* CentralModeScanViewModel.swift */,
 			);
 			path = "View Model";
 			sourceTree = "<group>";
@@ -276,19 +278,79 @@
 			isa = PBXGroup;
 			children = (
 				E01A7F3F214D8A5500271C14 /* Home View */,
-				E01A7F27214D847200271C14 /* Peripheral Scan View */,
+				E0C09C3521550F8C00D08090 /* Central Mode */,
+				E0C09C36215511F300D08090 /* Peripheral Mode */,
+				E0C09C2921548AD800D08090 /* OTA View */,
 				E01A7F52214DAA1C00271C14 /* Gatt Profile View */,
 			);
 			path = MVVM;
 			sourceTree = "<group>";
 		};
+		E0C09C2921548AD800D08090 /* OTA View */ = {
+			isa = PBXGroup;
+			children = (
+				E0C09C2F21550DAE00D08090 /* View Controller */,
+				E0C09C3021550DBC00D08090 /* View Model */,
+			);
+			path = "OTA View";
+			sourceTree = "<group>";
+		};
+		E0C09C2C21548DDF00D08090 /* JableCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				E0C09C2A21548C9900D08090 /* JableCollectionViewCellModel.swift */,
+				E05B92EF21495FE200815B41 /* JableCollectionViewManager.swift */,
+				E0ECBE6B214957E700646224 /* JableCollectionViewCell.swift */,
+			);
+			name = JableCollectionView;
+			sourceTree = "<group>";
+		};
+		E0C09C2E21548E1C00D08090 /* JablePlotView */ = {
+			isa = PBXGroup;
+			children = (
+				E03BC7E8214C32E100291840 /* JablePlotStyles.swift */,
+				E03BC7E1214ABCD400291840 /* JablePlotView.swift */,
+			);
+			name = JablePlotView;
+			sourceTree = "<group>";
+		};
+		E0C09C2F21550DAE00D08090 /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E0C09C3121550E0800D08090 /* OTAUpdatesViewController.swift */,
+			);
+			path = "View Controller";
+			sourceTree = "<group>";
+		};
+		E0C09C3021550DBC00D08090 /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+				E0C09C3321550E2100D08090 /* OTAUpdatesViewModel.swift */,
+			);
+			path = "View Model";
+			sourceTree = "<group>";
+		};
+		E0C09C3521550F8C00D08090 /* Central Mode */ = {
+			isa = PBXGroup;
+			children = (
+				E01A7F27214D847200271C14 /* Central Mode Scan View */,
+			);
+			path = "Central Mode";
+			sourceTree = "<group>";
+		};
+		E0C09C36215511F300D08090 /* Peripheral Mode */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Peripheral Mode";
+			sourceTree = "<group>";
+		};
 		E0ECBE6A214957AE00646224 /* JableUI */ = {
 			isa = PBXGroup;
 			children = (
-				E0ECBE6B214957E700646224 /* JableTableViewCell.swift */,
-				E05B92EF21495FE200815B41 /* JableCollectionViewManager.swift */,
-				E03BC7E1214ABCD400291840 /* JablePlotView.swift */,
-				E03BC7E8214C32E100291840 /* JablePlotStyles.swift */,
+				E0C09C2E21548E1C00D08090 /* JablePlotView */,
+				E0C09C2C21548DDF00D08090 /* JableCollectionView */,
+				E0E3BB862153185F006A6139 /* JableButton.swift */,
 			);
 			name = JableUI;
 			sourceTree = "<group>";
@@ -468,7 +530,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E01A7F26214D846A00271C14 /* PeripheralScanViewController.swift in Sources */,
+				E01A7F26214D846A00271C14 /* CentralModeScanViewController.swift in Sources */,
+				E0C09C2B21548C9900D08090 /* JableCollectionViewCellModel.swift in Sources */,
+				E0C09C3421550E2100D08090 /* OTAUpdatesViewModel.swift in Sources */,
+				E0C09C3221550E0800D08090 /* OTAUpdatesViewController.swift in Sources */,
 				E0ECBE5F2149342F00646224 /* Bindable.swift in Sources */,
 				E03BC7E9214C32E200291840 /* JablePlotStyles.swift in Sources */,
 				E05D1EF520654B0800E9385A /* GattExample.swift in Sources */,
@@ -476,16 +541,14 @@
 				E05B92F021495FE200815B41 /* JableCollectionViewManager.swift in Sources */,
 				E01A7F47214DA4E600271C14 /* MenuLevelController.swift in Sources */,
 				E01A7F4B214DA5B500271C14 /* SideNavigationTableViewCell.swift in Sources */,
-				E01A7F2B214D84C000271C14 /* PeripheralScanViewModel.swift in Sources */,
-				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
-				E03BC7E4214AF43E00291840 /* ScatterPlotController.swift in Sources */,
+				E0E3BB872153185F006A6139 /* JableButton.swift in Sources */,
+				E01A7F2B214D84C000271C14 /* CentralModeScanViewModel.swift in Sources */,
 				E0A4301E204A03640008F6F0 /* BLEManager.swift in Sources */,
 				E01A7F45214DA49E00271C14 /* AppNavigationController.swift in Sources */,
 				E0DEB637214AAB6600A743D8 /* ColorExtensions.swift in Sources */,
-				E05B92F4214979BD00815B41 /* DeviceDiscoveryViewModel.swift in Sources */,
 				E01A7F4F214DA70900271C14 /* HomeViewController.swift in Sources */,
 				E01A7F49214DA52E00271C14 /* SideNavigationViewController.swift in Sources */,
-				E0ECBE6C214957E700646224 /* JableTableViewCell.swift in Sources */,
+				E0ECBE6C214957E700646224 /* JableCollectionViewCell.swift in Sources */,
 				E03BC7E2214ABCD400291840 /* JablePlotView.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 			);
@@ -495,6 +558,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E0E3BB8B2153C407006A6139 /* MultiBindableTest.swift in Sources */,
 				607FACEC1AFB9204008FA782 /* Tests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -637,6 +701,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 7NFJS9H6QK;
 				INFOPLIST_FILE = JABLE/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
@@ -653,6 +718,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 7NFJS9H6QK;
 				INFOPLIST_FILE = JABLE/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";

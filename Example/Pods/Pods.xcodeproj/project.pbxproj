@@ -35,7 +35,7 @@
 		1DD7A07691AB1230B3DF0E9D43371F7F /* _CPTFillGradient.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C3F8E396B22F18DE7E3A216648C5D82 /* _CPTFillGradient.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		1EFBB8447C8B0B83F844113CC7271D4A /* CPTLegendEntry.h in Headers */ = {isa = PBXBuildFile; fileRef = 815BC4E97DC4735FCA53F9FA7CE3B205 /* CPTLegendEntry.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		21DC46F598662C2D5936B5F9A4C8D600 /* CPTPlotGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B57320B0F433A1BEBBFE248FBE23EBA /* CPTPlotGroup.m */; };
-		2322E593746FD47B4F62246698618A9A /* JABLEapi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E59C6A6E76A5BBE49A7801BF398591A /* JABLEapi.swift */; };
+		2322E593746FD47B4F62246698618A9A /* JABLECentralAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E59C6A6E76A5BBE49A7801BF398591A /* JABLECentralAPI.swift */; };
 		23A8C39C4DEDF0605F9C7BE1B8272D1A /* CPTFill.h in Headers */ = {isa = PBXBuildFile; fileRef = 458D4AF44337BA558B8D32B0FEFDBB98 /* CPTFill.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		23B16C4343B17619981218B70D082DD6 /* _CPTMaskLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = A7AC08335D4CDE3E9E4FC456207B4227 /* _CPTMaskLayer.m */; };
 		24651DEE92F6F024CFE20DC4264E4C0F /* FriendlyAdvertisement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F8C2B79C31ED159168499F6F75ECEA6 /* FriendlyAdvertisement.swift */; };
@@ -81,7 +81,7 @@
 		47CD402EAC3FE69914EF8FBCEF61DF71 /* CPTGridLines.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B4DC08A203E77D6B462B82452CE2337 /* CPTGridLines.m */; };
 		4ADE41DCCF3A3E1ED6307B74BDAF5FB0 /* _CPTAnimationPlotRangePeriod.h in Headers */ = {isa = PBXBuildFile; fileRef = 169812C9157C2702298117A3F76E87ED /* _CPTAnimationPlotRangePeriod.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		4B7047E812C1139A9E4F07E012E3498A /* CPTPlatformSpecificCategories.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B3E668F3D19447C8A8EEF3F6C4339B /* CPTPlatformSpecificCategories.m */; };
-		4CE2D916A657251A2A645D77DA1287A9 /* JABLENew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9C4FD149BD8DF6724BF17D4DDCB02D /* JABLENew.swift */; };
+		4CE2D916A657251A2A645D77DA1287A9 /* JABLECentral.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9C4FD149BD8DF6724BF17D4DDCB02D /* JABLECentral.swift */; };
 		4FF43FC081E7A5BF42854D2B9D7B42FA /* CPTExceptions.h in Headers */ = {isa = PBXBuildFile; fileRef = A0564A945FC6D16FD49DA9D5AF533326 /* CPTExceptions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5031F1CD78CD210CDBAF14AF0695317E /* _CPTDarkGradientTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 2073D5A855FF03E849099787CEE95508 /* _CPTDarkGradientTheme.m */; };
 		513291DAA450FABB2776C19CB1BFE5C5 /* CPTFunctionDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = FC344ABED7E1A6688E24F079A46CC870 /* CPTFunctionDataSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -272,16 +272,16 @@
 		07B3681A16FAC4CEEBB74653047D30B9 /* CPTXYAxis.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CPTXYAxis.h; path = framework/Source/CPTXYAxis.h; sourceTree = "<group>"; };
 		0999DBCF9500A0CD30A15B57F34814A5 /* _CPTPlainBlackTheme.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = _CPTPlainBlackTheme.h; path = framework/Source/_CPTPlainBlackTheme.h; sourceTree = "<group>"; };
 		0A308573E8E4D954A4CC35C8B1BE403E /* CPTDebugQuickLook.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CPTDebugQuickLook.h; path = framework/Source/CPTDebugQuickLook.h; sourceTree = "<group>"; };
-		0A9C4FD149BD8DF6724BF17D4DDCB02D /* JABLENew.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JABLENew.swift; path = JABLE/Classes/JABLENew.swift; sourceTree = "<group>"; };
+		0A9C4FD149BD8DF6724BF17D4DDCB02D /* JABLECentral.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JABLECentral.swift; path = JABLE/Classes/JABLECentral.swift; sourceTree = "<group>"; };
 		0AA0D3A756DE02AD9EB74852FC8A6F40 /* CPTAxisLabel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CPTAxisLabel.m; path = framework/Source/CPTAxisLabel.m; sourceTree = "<group>"; };
 		0B365BB35095243ADD5EDCE0FC98851E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
 		0B77425917D8EA93CDEC30E04B50FB1A /* CPTAnimationOperation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CPTAnimationOperation.h; path = framework/Source/CPTAnimationOperation.h; sourceTree = "<group>"; };
 		0E8FF9752305FFF10899CB5A8ABEF459 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/Accelerate.framework; sourceTree = DEVELOPER_DIR; };
 		0E9E2C39CB7599F1239D2CDE72A45FBC /* CPTDerivedXYGraph.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CPTDerivedXYGraph.m; path = framework/Source/CPTDerivedXYGraph.m; sourceTree = "<group>"; };
-		0F423664F1B256FCB8C3240F1AC75234 /* Pods_JABLE_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_JABLE_Example.framework; path = "Pods-JABLE_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0F423664F1B256FCB8C3240F1AC75234 /* Pods_JABLE_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JABLE_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FCA70DC21AA34059B0822FB0AEC2A9C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		1118D8891566D5532C75ABC88E43EF0E /* CPTGradient.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CPTGradient.m; path = framework/Source/CPTGradient.m; sourceTree = "<group>"; };
-		12604BF48CB73E08239BF4BE27CAC1F2 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		12604BF48CB73E08239BF4BE27CAC1F2 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		13F3A4C2BFD54739075F3130E7503BF8 /* CPTExceptions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CPTExceptions.m; path = framework/Source/CPTExceptions.m; sourceTree = "<group>"; };
 		1510397D026160EFED479625500EB52A /* CPTBarPlot.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CPTBarPlot.m; path = framework/Source/CPTBarPlot.m; sourceTree = "<group>"; };
 		1520DEFB3DEA909DB779B838C528AD79 /* _CPTStocksTheme.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = _CPTStocksTheme.h; path = framework/Source/_CPTStocksTheme.h; sourceTree = "<group>"; };
@@ -307,7 +307,7 @@
 		2AC1C8C88E64E487A897A7036DA937E2 /* _CPTFillImage.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = _CPTFillImage.m; path = framework/Source/_CPTFillImage.m; sourceTree = "<group>"; };
 		2AE1F3F74CF8671226D0F6600833B8F4 /* Pods-JABLE_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-JABLE_Tests.modulemap"; sourceTree = "<group>"; };
 		2CC586279ABBD2E589FB6BE7E5E849ED /* CPTTimeFormatter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CPTTimeFormatter.h; path = framework/Source/CPTTimeFormatter.h; sourceTree = "<group>"; };
-		2E59C6A6E76A5BBE49A7801BF398591A /* JABLEapi.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JABLEapi.swift; sourceTree = "<group>"; };
+		2E59C6A6E76A5BBE49A7801BF398591A /* JABLECentralAPI.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JABLECentralAPI.swift; sourceTree = "<group>"; };
 		2F212055F529D34E0360962A1732D31A /* CPTBarPlot.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CPTBarPlot.h; path = framework/Source/CPTBarPlot.h; sourceTree = "<group>"; };
 		2F8C2B79C31ED159168499F6F75ECEA6 /* FriendlyAdvertisement.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FriendlyAdvertisement.swift; sourceTree = "<group>"; };
 		30B55B593D816C947376EBC2A810B8ED /* CPTAxis.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CPTAxis.h; path = framework/Source/CPTAxis.h; sourceTree = "<group>"; };
@@ -328,7 +328,7 @@
 		3C73B7FE91148C5648D51C3C68F982B1 /* CPTMutablePlotRange.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CPTMutablePlotRange.h; path = framework/Source/CPTMutablePlotRange.h; sourceTree = "<group>"; };
 		3C8212DD923FF706E18E287C63A5C028 /* _CPTPlainWhiteTheme.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = _CPTPlainWhiteTheme.h; path = framework/Source/_CPTPlainWhiteTheme.h; sourceTree = "<group>"; };
 		3CD3ACDE5DDD1E89AC7A1487A170E08B /* CorePlot.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CorePlot.h; path = framework/CocoaPods/CorePlot.h; sourceTree = "<group>"; };
-		3ED5FD762AF2FC6176EED93AE18BB7DE /* JABLE.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = JABLE.framework; path = JABLE.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3ED5FD762AF2FC6176EED93AE18BB7DE /* JABLE.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JABLE.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EEDF6C438FE09BB4A373490FFD325E9 /* CPTGraph.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CPTGraph.h; path = framework/Source/CPTGraph.h; sourceTree = "<group>"; };
 		3F3DD20624A506E613650FBA4A75FC9F /* CPTXYAxisSet.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CPTXYAxisSet.h; path = framework/Source/CPTXYAxisSet.h; sourceTree = "<group>"; };
 		401831D529FD58950222EC1DEABD11D6 /* CPTRangePlot.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CPTRangePlot.h; path = framework/Source/CPTRangePlot.h; sourceTree = "<group>"; };
@@ -338,7 +338,7 @@
 		41261D7B970A6AD10DF7C93BF85587E7 /* CPTConstraints.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CPTConstraints.h; path = framework/Source/CPTConstraints.h; sourceTree = "<group>"; };
 		4202C5E711CC9BE185EC4C440ADF9277 /* CPTAxisLabelGroup.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CPTAxisLabelGroup.h; path = framework/Source/CPTAxisLabelGroup.h; sourceTree = "<group>"; };
 		458D4AF44337BA558B8D32B0FEFDBB98 /* CPTFill.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CPTFill.h; path = framework/Source/CPTFill.h; sourceTree = "<group>"; };
-		465CA553B9722D8F951D013662CBABE2 /* JABLE.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; path = JABLE.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		465CA553B9722D8F951D013662CBABE2 /* JABLE.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; path = JABLE.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		466B57C1624ED90845985629CF955616 /* Pods-JABLE_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-JABLE_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		46DD86D6D5C595B8F62B93B266EA76B5 /* CPTAxisLabelGroup.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CPTAxisLabelGroup.m; path = framework/Source/CPTAxisLabelGroup.m; sourceTree = "<group>"; };
 		48DE4AD57C5F257FBFEA657BEEC9353D /* CPTFunctionDataSource.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CPTFunctionDataSource.m; path = framework/Source/CPTFunctionDataSource.m; sourceTree = "<group>"; };
@@ -368,7 +368,7 @@
 		63BE7A623C7CD52A06CEFA355553989F /* CPTTextStyle.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CPTTextStyle.h; path = framework/Source/CPTTextStyle.h; sourceTree = "<group>"; };
 		660D502FF0E2650CDCF102ACE94B64FF /* CPTTextLayer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CPTTextLayer.h; path = framework/Source/CPTTextLayer.h; sourceTree = "<group>"; };
 		69AA16909C6A3403D0A91F8D45880521 /* _CPTAnimationNSDecimalPeriod.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = _CPTAnimationNSDecimalPeriod.m; path = framework/Source/_CPTAnimationNSDecimalPeriod.m; sourceTree = "<group>"; };
-		6A6B032013D15A78F73F984FCD8ABD03 /* CorePlot.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = CorePlot.framework; path = CorePlot.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6A6B032013D15A78F73F984FCD8ABD03 /* CorePlot.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CorePlot.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D586A87CFC6414988074C2223769150 /* CorePlot-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CorePlot-umbrella.h"; sourceTree = "<group>"; };
 		6DEE3F2DC63152FA23F1608D558DEAD1 /* CPTTheme.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CPTTheme.h; path = framework/Source/CPTTheme.h; sourceTree = "<group>"; };
 		6EC694A6E92A36A36FF227F8542715FD /* CPTTextStylePlatformSpecific.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CPTTextStylePlatformSpecific.m; path = framework/iPhoneOnly/CPTTextStylePlatformSpecific.m; sourceTree = "<group>"; };
@@ -401,7 +401,7 @@
 		8E6B8B6ED92593BCC99A04C33B41E52C /* CPTResponder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CPTResponder.h; path = framework/Source/CPTResponder.h; sourceTree = "<group>"; };
 		8F4F80E34FD8C9B1659A06466AEE915C /* CPTImage.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CPTImage.m; path = framework/Source/CPTImage.m; sourceTree = "<group>"; };
 		917E933BB686B26FF19EBDDA539D2946 /* CPTLayerAnnotation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CPTLayerAnnotation.m; path = framework/Source/CPTLayerAnnotation.m; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		948449ACDDA30CB13C98DA4245C1454E /* ScanConfiguration.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ScanConfiguration.swift; sourceTree = "<group>"; };
 		955ACFC321D43EE87CA55CE7F007E49C /* CPTLayerAnnotation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CPTLayerAnnotation.h; path = framework/Source/CPTLayerAnnotation.h; sourceTree = "<group>"; };
 		96FEEFEA10F32C40DFEF077F253454C7 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -441,7 +441,7 @@
 		B15698791EE522D73ADFDF1692BAF112 /* CPTAnimationPeriod.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CPTAnimationPeriod.m; path = framework/Source/CPTAnimationPeriod.m; sourceTree = "<group>"; };
 		B164DBE2BFDD27D6EF2F7FCD9127878D /* JABLEiDManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JABLEiDManager.swift; sourceTree = "<group>"; };
 		B1DCAEB9D3A257AB38127E142B9770C0 /* CPTPlatformSpecificCategories.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CPTPlatformSpecificCategories.h; path = framework/iPhoneOnly/CPTPlatformSpecificCategories.h; sourceTree = "<group>"; };
-		B21095FAAFEACBBBD0D9C46EF94AB5B4 /* Pods_JABLE_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_JABLE_Tests.framework; path = "Pods-JABLE_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B21095FAAFEACBBBD0D9C46EF94AB5B4 /* Pods_JABLE_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JABLE_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2C6BC50BAA246AF17398E6F10417959 /* CPTXYPlotSpace.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CPTXYPlotSpace.h; path = framework/Source/CPTXYPlotSpace.h; sourceTree = "<group>"; };
 		B34B56BDA61FE782FE630EDF740EAD06 /* _CPTSlateTheme.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = _CPTSlateTheme.h; path = framework/Source/_CPTSlateTheme.h; sourceTree = "<group>"; };
 		B3E9940AA7C85DE948643BD9C0E8F3EE /* CPTMutableLineStyle.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CPTMutableLineStyle.h; path = framework/Source/CPTMutableLineStyle.h; sourceTree = "<group>"; };
@@ -457,7 +457,7 @@
 		BD45CCA27B7291D0206ACB67AA61F343 /* Pods-JABLE_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-JABLE_Example-resources.sh"; sourceTree = "<group>"; };
 		C12177A6A7BCE4A0EBB798C6F529E05B /* CPTColor.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CPTColor.m; path = framework/Source/CPTColor.m; sourceTree = "<group>"; };
 		C22E8993197BFB8F42341A3F15026CA3 /* JABLE-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "JABLE-dummy.m"; sourceTree = "<group>"; };
-		C28A93E8684211A0FE737F9BCE6A9576 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		C28A93E8684211A0FE737F9BCE6A9576 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		C325489752836C524850A547CF5AC5E4 /* _CPTAnimationPlotRangePeriod.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = _CPTAnimationPlotRangePeriod.m; path = framework/Source/_CPTAnimationPlotRangePeriod.m; sourceTree = "<group>"; };
 		C4AA6A6F23B32F297AE255A5C2C6347A /* _CPTConstraintsFixed.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = _CPTConstraintsFixed.m; path = framework/Source/_CPTConstraintsFixed.m; sourceTree = "<group>"; };
 		C4D528D024622A74FEC9F9E29DADD085 /* GattDiscoveryDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GattDiscoveryDelegate.swift; sourceTree = "<group>"; };
@@ -467,7 +467,7 @@
 		C9C3C7805C39CB1E52DAA96CA8497C8E /* CPTTradingRangePlot.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CPTTradingRangePlot.m; path = framework/Source/CPTTradingRangePlot.m; sourceTree = "<group>"; };
 		CC82AB47F9080295987220F6E5BBDDD6 /* _CPTPlainBlackTheme.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = _CPTPlainBlackTheme.m; path = framework/Source/_CPTPlainBlackTheme.m; sourceTree = "<group>"; };
 		CC9B297BAE749BF0FFEF5A992C863217 /* JABLE.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = JABLE.modulemap; sourceTree = "<group>"; };
-		CDE9A6B883FC4FEEB6B51FAD74E059C8 /* CorePlotProbes.d */ = {isa = PBXFileReference; includeInIndex = 1; name = CorePlotProbes.d; path = framework/TestResources/CorePlotProbes.d; sourceTree = "<group>"; };
+		CDE9A6B883FC4FEEB6B51FAD74E059C8 /* CorePlotProbes.d */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.dtrace; name = CorePlotProbes.d; path = framework/TestResources/CorePlotProbes.d; sourceTree = "<group>"; };
 		D08D1019FB0EF733811C991D4DC9F515 /* CPTNumericData.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CPTNumericData.m; path = framework/Source/CPTNumericData.m; sourceTree = "<group>"; };
 		D3D2D00539B0CEDCFF77085CB78F79F4 /* NSDecimalNumberExtensions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NSDecimalNumberExtensions.h; path = framework/Source/NSDecimalNumberExtensions.h; sourceTree = "<group>"; };
 		D61483FC519C1F77F304E62832DC6BE3 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -842,7 +842,6 @@
 				F2BB75212F57B73D3CD9670470D46E9E /* NSNumberExtensions.m */,
 				4108C988E7A7907FD3550593D6EB729D /* Support Files */,
 			);
-			name = CorePlot;
 			path = CorePlot;
 			sourceTree = "<group>";
 		};
@@ -916,7 +915,7 @@
 			isa = PBXGroup;
 			children = (
 				C4D528D024622A74FEC9F9E29DADD085 /* GattDiscoveryDelegate.swift */,
-				2E59C6A6E76A5BBE49A7801BF398591A /* JABLEapi.swift */,
+				2E59C6A6E76A5BBE49A7801BF398591A /* JABLECentralAPI.swift */,
 				B7793E0CB3723EFC88BE299884EEC059 /* JABLEDelegate.swift */,
 			);
 			name = Protocols;
@@ -947,7 +946,7 @@
 		E0B91CA36E22D2C3525629FBCEEE8097 /* JABLE */ = {
 			isa = PBXGroup;
 			children = (
-				0A9C4FD149BD8DF6724BF17D4DDCB02D /* JABLENew.swift */,
+				0A9C4FD149BD8DF6724BF17D4DDCB02D /* JABLECentral.swift */,
 				BDAD9B251A891E8B7A30BA532A162AEF /* GAP */,
 				B7BEF3F54982CA1DD5D63DC17A3A1909 /* GATT */,
 				233B5CD3773F4B2CEF9D967F067E1808 /* Helpers */,
@@ -1235,13 +1234,13 @@
 				BB95F081FDFAB91FEE1759395564EC6F /* GattDiscoveryDelegate.swift in Sources */,
 				E29C1A3E4002C854879C96AA4FF587C5 /* GattDiscoveryProcess.swift in Sources */,
 				B08D7715B72EB8ED4D4F7ACA087D5B10 /* JABLE-dummy.m in Sources */,
-				2322E593746FD47B4F62246698618A9A /* JABLEapi.swift in Sources */,
+				2322E593746FD47B4F62246698618A9A /* JABLECentralAPI.swift in Sources */,
 				58AB9E3E1E9489F1737AC819EB8814C6 /* JABLECharacteristic.swift in Sources */,
 				2DA5654066B1DCF485E3487BF540770E /* JABLEDelegate.swift in Sources */,
 				127497D2980FC43C96A097C45E5848A9 /* JABLEDescriptor.swift in Sources */,
 				614FA5CFF18FE810F33C3D653E5C2A7E /* JABLEGattProfile.swift in Sources */,
 				E15C4EE5A926403392EDC8657F4A416A /* JABLEiDManager.swift in Sources */,
-				4CE2D916A657251A2A645D77DA1287A9 /* JABLENew.swift in Sources */,
+				4CE2D916A657251A2A645D77DA1287A9 /* JABLECentral.swift in Sources */,
 				81DA687562B5D8733A696EFEB7F209CE /* JABLEService.swift in Sources */,
 				A82F391CFFF1DD0E4780847867E3A5CC /* JABLEStates.swift in Sources */,
 				65C70A331A8DA1301AD9221FB13F1FD1 /* ScanConfiguration.swift in Sources */,

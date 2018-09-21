@@ -6,7 +6,7 @@ import JABLE
 
 class BLEManager: NSObject{
     
-    private var jable: JABLENew!
+    private var jable: JABLECentral!
     
     var discoveredPeripherals: Bindable<[FriendlyAdvertisement]> = Bindable([])
     var _discoveredPeripherals: [FriendlyAdvertisement] = []
@@ -18,21 +18,21 @@ class BLEManager: NSObject{
     override init() {
         super.init()
         print("Initialize JABLE")
-        jable = JABLENew()
+        jable = JABLECentral()
         jable.setDelegate(delegate: self)
         jable.startLookingForPeripherals(withServiceUUIDs: nil)
-        let timer = Timer.scheduledTimer(timeInterval: 10000, target: self, selector: #selector(stop), userInfo: nil, repeats: false)
+        //let timer = Timer.scheduledTimer(timeInterval: 10000, target: self, selector: #selector(stop), userInfo: nil, repeats: false)
     }
     
     @objc func stop(){
         jable.stopLookingForPeripherals()
     }
-
 }
 
 protocol BLEDiscoveryDelegate{
     func didDiscoveryNewPeripheral(advData: FriendlyAdvertisement)
     func didUpdateManagedList(updatedList: [TrackedScanResult])
+    func processedScanResult(processedResult: TrackedScanResult)
 }
 
 
@@ -45,13 +45,14 @@ extension BLEManager: JABLEDelegateNew{
     func jable(foundPeripheral peripheral: CBPeripheral, advertisementData: FriendlyAdvertisement) {
     
         print("Updated managed scan result")
-        let upadatedResults = scanResultManager.newScanResult(peripheral: peripheral, advData: advertisementData)
-        bleDiscoveryDelegate?.didUpdateManagedList(updatedList: upadatedResults)
         
-        //bleDiscoveryDelegate?.didDiscoveryNewPeripheral(advData: advertisementData)
-        //print("Found peripheral: \(advertisementData)")
-        //_discoveredPeripherals.append(advertisementData)
-        //discoveredPeripherals.value = _discoveredPeripherals
+        //let upadatedResults = scanResultManager.newScanResult(peripheral: peripheral, advData: advertisementData)
+        //bleDiscoveryDelegate?.didUpdateManagedList(updatedList: upadatedResults)
+        
+        guard let processedResult = scanResultManager.processScanResult(peripheral: peripheral, advData: advertisementData) else { return }
+        print("BLE Manger processed scan result: \(processedResult)")
+        bleDiscoveryDelegate?.processedScanResult(processedResult: processedResult)
+        
     }
     
     func jable(completedGattDiscovery: Void) {

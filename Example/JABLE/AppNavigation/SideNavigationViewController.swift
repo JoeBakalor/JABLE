@@ -17,8 +17,10 @@ class SideNavigationViewControllerNew: UIViewController, UITableViewDelegate, UI
     var delegate: TeknestNavigation?
     
     let titles = [
-        "Peripheral Scan",
-        "GATT Profile",
+        "Central Mode",
+        "Peripheral Mode",
+        "OTA Updates",
+        "Help"
     ]
     
     let tableView = UITableView()
@@ -96,14 +98,13 @@ class SideNavigationViewControllerNew: UIViewController, UITableViewDelegate, UI
         let cell = SideNavigationTableViewCell()
         cell.titleText = titles[indexPath.row]
         return cell
-        
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("Side menu item selected ")
         switch indexPath.row{
-        case 0: delegate?.peripheralScanRequested()
-        case 1: delegate?.gattProfileRequested()
+        case 0: delegate?.centralModeRequested()
+        case 1: delegate?.peripheralModeRequested()
         default: break
         }
     }

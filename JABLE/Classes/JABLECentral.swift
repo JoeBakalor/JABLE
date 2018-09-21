@@ -10,7 +10,7 @@ import CoreBluetooth
 
 
 
-public class JABLENew: NSObject{
+public class JABLECentral: NSObject{
     
     struct PeripheralConnection{
         var peripheral: CBPeripheral
@@ -34,7 +34,7 @@ public class JABLENew: NSObject{
     
     /*  State variables */
     private var peripheralsToConnectQueue: [PeripheralConnection] = []
-    private var connectedPeripherals: [JABLEPeripheralID: PeripheralConnection] = [:]
+    private var connectedPeripherals: [Int: PeripheralConnection] = [:]
     private var centralController: CBCentralManager?
     private var activeGattDiscoveryProcess: GattDiscoveryProcess?
     private var pendingGattDiscoveryProcesses: [GattDiscoveryProcess] = []
@@ -57,12 +57,15 @@ public class JABLENew: NSObject{
     }
 }
 
-extension JABLENew: JABLEapi{
+extension JABLECentral: JABLECentralAPI{
     
+    /**/
     public func setDelegate(delegate: JABLEDelegateNew?){
         self.jableDelegate = delegate
     }
     
+    
+    /**/
     public func setup(gattProfile: JABLEGattProfile, forPeripheral peripheral: CBPeripheral) {
         
         guard activeGattDiscoveryProcess == nil else {
@@ -75,36 +78,31 @@ extension JABLENew: JABLEapi{
         
     }
     
+    /**/
     public func startLookingForPeripherals(withServiceUUIDs uuids: [CBUUID]?) {
         
-        guard jableIsReady
-            else {
-                pendingScanRequest =  ScanRequest(serviceUUIDs: uuids)
-            return
-            }
+        guard jableIsReady else { pendingScanRequest =  ScanRequest(serviceUUIDs: uuids); return }
         
         guard let validUUIDs = uuids
             else {
-                centralController?.scanForPeripherals(
-                    withServices: nil,
-                    options: [
-                        CBCentralManagerOptionShowPowerAlertKey: true,
-                        CBCentralManagerScanOptionAllowDuplicatesKey: false])
+            centralController?.scanForPeripherals(
+                withServices: nil,
+                options: [CBCentralManagerOptionShowPowerAlertKey: true,
+                          CBCentralManagerScanOptionAllowDuplicatesKey: true]);
             return
             }
         
-        centralController?.scanForPeripherals(
-            withServices: validUUIDs,
-            options: [CBCentralManagerOptionShowPowerAlertKey: true,
-            CBCentralManagerScanOptionAllowDuplicatesKey: false])
+        centralController?.scanForPeripherals( withServices: validUUIDs,
+                                               options: [CBCentralManagerOptionShowPowerAlertKey: true,
+                                                         CBCentralManagerScanOptionAllowDuplicatesKey: true])
     }
     
+    /**/
     public func stopLookingForPeripherals() {
-        
         centralController?.stopScan()
-        
     }
     
+    /**/
     public func connect(toPeripheral peripheral: CBPeripheral, withOptions connectionOptions: ConnectionOptions) {
         
         guard peripheralPendingConnection == nil && peripheralPendingReconnection == nil
@@ -117,7 +115,7 @@ extension JABLENew: JABLEapi{
         centralController?.connect(
             peripheral,
             options: [CBConnectPeripheralOptionStartDelayKey: true,
-                      CBConnectPeripheralOptionNotifyOnConnectionKey: false,
+                      CBConnectPeripheralOptionNotifyOnConnectionKey: true,
                       CBConnectPeripheralOptionNotifyOnDisconnectionKey: true,
                       CBConnectPeripheralOptionNotifyOnNotificationKey: false])
         
@@ -132,6 +130,7 @@ extension JABLENew: JABLEapi{
 
     }
     
+    /**/
     @objc private func cancelPeripheralConnection(){
         
         if let peripheral = peripheralPendingConnection?.peripheral{
@@ -141,52 +140,58 @@ extension JABLENew: JABLEapi{
             centralController?.cancelPeripheralConnection(peripheral)
             peripheralPendingReconnection = nil
         }
-        
     }
     
+    /**/
     public func diconnect(fromPeripheral peripheral: CBPeripheral) {
         centralController?.cancelPeripheralConnection(peripheral)
     }
     
+    /**/
     public func disconnectAll() {
         
     }
     
+    /**/
     public func discoverServices(withUUIDs uuids: [CBUUID]?, for peripheral: CBPeripheral) {
         peripheral.discoverServices(uuids)
     }
-    
+
+    /**/
     public func discoverCharacteristics(forService service: CBService, withUUIDS uuids: [CBUUID]?, for peripheral: CBPeripheral) {
         peripheral.discoverCharacteristics(uuids, for: service)
     }
     
+    /**/
     public func write(value: Data, toCharacteristic characteristic: CBCharacteristic, forPeripheral peripheral: CBPeripheral) {
-        
+        peripheral.writeValue(value, for: characteristic, type: .withoutResponse)
     }
     
+    /**/
     public func write(value: Data, toDescriptor descriptor: CBDescriptor, forPeripheral peripheral: CBPeripheral) {
-        
+        peripheral.writeValue(value, for: descriptor)
     }
     
+    /**/
     public func read(valueFor characteristic: CBCharacteristic, onPeripheral peripheral: CBPeripheral) {
-        
+        peripheral.readValue(for: characteristic)
     }
     
+    /**/
     public func RSSI() {
-        
+        //peripheral.readRSSI()
     }
 }
 
-extension JABLENew: CBCentralManagerDelegate{
+extension JABLECentral: CBCentralManagerDelegate{
     
+    /**/
     public func centralManager(_ central: CBCentralManager, didConnect peripheral: CBPeripheral) {
-        
         guard peripheral == peripheralPendingConnection?.peripheral else { print("We did something out of order "); return }
         connectedPeripherals[jableIDManager.newPeripheralID()] = peripheralPendingConnection
-        
     }
     
-    
+    /**/
     public func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String : Any], rssi RSSI: NSNumber) {
         let advData = FriendlyAdvertisement(advertisementData: advertisementData, rssi: Int(truncating: RSSI), peripheral: peripheral)
         jableDelegate?.jable(foundPeripheral: peripheral, advertisementData: advData)
@@ -195,6 +200,7 @@ extension JABLENew: CBCentralManagerDelegate{
         print("Services: \(advertisementData["kCBAdvDataServiceUUIDs"] as? [CBUUID])")
     }
     
+    /**/
     public func centralManager(_ central: CBCentralManager, didDisconnectPeripheral peripheral: CBPeripheral, error: Error?) {
         
         connectedPeripherals = connectedPeripherals.filter { (id, peripheralConnection) -> Bool in
@@ -234,14 +240,17 @@ extension JABLENew: CBCentralManagerDelegate{
         }
     }
     
+    /**/
     public func centralManager(_ central: CBCentralManager, didFailToConnect peripheral: CBPeripheral, error: Error?) {
         
     }
     
+    /**/
     public func centralManager(_ central: CBCentralManager, willRestoreState dict: [String : Any]) {
         
     }
 
+    /**/
     public func centralManagerDidUpdateState(_ central: CBCentralManager) {
         if #available(iOS 10.0, *){
             switch (central.state){
@@ -264,26 +273,32 @@ extension JABLENew: CBCentralManagerDelegate{
 }
 
 
-extension JABLENew: CBPeripheralDelegate{
+extension JABLECentral: CBPeripheralDelegate{
     
+    /**/
     public func peripheralDidUpdateName(_ peripheral: CBPeripheral) {
         
     }
     
+    /**/
     public func peripheral(_ peripheral: CBPeripheral, didModifyServices invalidatedServices: [CBService]) {
         
     }
     
+    /**/
     @available(iOS 11.0, *)
     public func peripheral(_ peripheral: CBPeripheral, didOpen channel: CBL2CAPChannel?, error: Error?) {
         
     }
     
+    /**/
     public func peripheral(_ peripheral: CBPeripheral, didReadRSSI RSSI: NSNumber, error: Error?) {
         
     }
     
-    /* DISCOVERY EVENTS */
+    /*=========================== DISCOVERY EVENTS ===============================*/
+    
+    /**/
     public func peripheral(_ peripheral: CBPeripheral, didDiscoverServices error: Error?) {
         
         if let services = peripheral.services{
@@ -292,6 +307,7 @@ extension JABLENew: CBPeripheralDelegate{
         }
     }
     
+    /**/
     public func peripheral(_ peripheral: CBPeripheral, didDiscoverCharacteristicsFor service: CBService, error: Error?) {
         
         if let characteristics = service.characteristics{
@@ -299,6 +315,7 @@ extension JABLENew: CBPeripheralDelegate{
         }
     }
     
+    /**/
     public func peripheral(_ peripheral: CBPeripheral, didDiscoverDescriptorsFor characteristic: CBCharacteristic, error: Error?) {
         
         if let descriptors = characteristic.descriptors{
@@ -306,28 +323,36 @@ extension JABLENew: CBPeripheralDelegate{
         }
     }
     
+    /**/
     public func peripheral(_ peripheral: CBPeripheral, didDiscoverIncludedServicesFor service: CBService, error: Error?) {
         
     }
     
-    /*  WRITE CALLBACKS */
+    /*=========================== WRITE CALLBACKS ===============================*/
+    
+    /**/
     public func peripheral(_ peripheral: CBPeripheral, didWriteValueFor characteristic: CBCharacteristic, error: Error?) {
         
     }
     
+    /**/
     public func peripheral(_ peripheral: CBPeripheral, didWriteValueFor descriptor: CBDescriptor, error: Error?) {
         
     }
     
+    /**/
     public func peripheral(_ peripheral: CBPeripheral, didUpdateNotificationStateFor characteristic: CBCharacteristic, error: Error?) {
         
     }
     
-    /*  VALUE UPDATE EVENTS */
+    /*=========================== VALUE UPDATE EVENTS ===============================*/
+    
+    /**/
     public func peripheral(_ peripheral: CBPeripheral, didUpdateValueFor characteristic: CBCharacteristic, error: Error?) {
         
     }
     
+    /**/
     public func peripheral(_ peripheral: CBPeripheral, didUpdateValueFor descriptor: CBDescriptor, error: Error?) {
         
     }

@@ -17,8 +17,9 @@
 import UIKit
 
 protocol TeknestNavigation {
-    func peripheralScanRequested()
-    func gattProfileRequested()
+    func centralModeRequested()
+    func peripheralModeRequested()
+    func otaUpdatesRequested()
 //    func dashboardRequested()
 //    func myInventionsRequested()
 //    func devicesRequested()
@@ -93,20 +94,25 @@ class AppNavigationController: UINavigationController {
 }
 
 extension AppNavigationController: TeknestNavigation {
-    
+
     func load(_ viewController:UIViewController){
         self.setViewControllers([viewController], animated: true)
         hideSideMenu()
     }
     
-    func peripheralScanRequested() {
+    func centralModeRequested() {
         print("Peripheral scan view requested ")
-        load(UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "peripheralScanViewController"))
+        load(UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "centralModeScanViewController"))
     }
     
-    func gattProfileRequested() {
+    func peripheralModeRequested() {
         print("Gatt profile view requested ")
         load(UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "gattProfileViewController"))
+    }
+    
+    func otaUpdatesRequested() {
+        print("OTA view requested ")
+        load(UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "otaUpdatesViewController"))
     }
     
 //    func dashboardRequested() {

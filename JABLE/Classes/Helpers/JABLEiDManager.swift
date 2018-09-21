@@ -7,16 +7,24 @@
 
 import Foundation
 
-typealias JABLEPeripheralID = Int
+let globalIdManager = JABLEiDManager()
 
 class JABLEiDManager: NSObject{
     
-    var currentAvailablePeripheralID: Int = 0
+    private var currentAvailablePeripheralID: Int = 0
+    private var currentAvailableScanResultID: Int = 0
     
-    func newPeripheralID() -> JABLEPeripheralID{
+    func newPeripheralID() -> Int{
         defer { currentAvailablePeripheralID += 1 }
         
         let newID = currentAvailablePeripheralID
+        return newID
+    }
+    
+    func newScanResultID() -> Int{
+        defer { currentAvailableScanResultID += 1 }
+        
+        let newID = currentAvailableScanResultID
         return newID
     }
 }

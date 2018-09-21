@@ -8,14 +8,14 @@
 
 import UIKit
 
-class PeripheralScanViewController: MenuLevelViewController {
+class CentralModeScanViewController: MenuLevelViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
-    var viewModel: PeripheralScanViewModel!
+    var viewModel: CentralModeScanViewModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor.JableDarkGray
-        viewModel = PeripheralScanViewModel(collectionView: collectionView)
+        self.view.backgroundColor = UIColor.lightGray
+        viewModel = CentralModeScanViewModel(collectionView: collectionView)
     }
 }

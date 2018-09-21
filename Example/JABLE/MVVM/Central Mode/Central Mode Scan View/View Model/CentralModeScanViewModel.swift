@@ -9,10 +9,10 @@
 import Foundation
 import JABLE
 
-class PeripheralScanViewModel: NSObject{
+class CentralModeScanViewModel: NSObject{
     
     private var bleManager: BLEManager!
-    private weak var jableCollectionViewManager: JableCollectionViewManager!
+    private var jableCollectionViewManager: JableCollectionViewManager!
     weak var collectionView: UICollectionView?
     
     init(collectionView: UICollectionView) {
@@ -24,11 +24,17 @@ class PeripheralScanViewModel: NSObject{
     }
 }
 
-extension PeripheralScanViewModel: BLEDiscoveryDelegate{
+extension CentralModeScanViewModel: BLEDiscoveryDelegate{
+
+    func processedScanResult(processedResult: TrackedScanResult) {
+        
+        jableCollectionViewManager.processNewData(newData: processedResult)
+    }
+    
     
     func didUpdateManagedList(updatedList: [TrackedScanResult]) {
         print("===========> UPDATED PERIPHERAL LIST")
-        jableCollectionViewManager.data = updatedList
+        //jableCollectionViewManager.data = updatedList
     }
     
     

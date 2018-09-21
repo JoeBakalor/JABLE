@@ -13,13 +13,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
         
         let nav = AppNavigationController()
-        //        nav.viewControllers = [ContainerViewController()]
-        nav.viewControllers = [UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "peripheralScanViewController")]
+    
+        nav.viewControllers = [UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "centralModeScanViewController")]
         window = UIWindow(frame: UIScreen.main.bounds)
         window!.rootViewController = nav
         window!.makeKeyAndVisible()

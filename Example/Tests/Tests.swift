@@ -1,6 +1,5 @@
 import XCTest
-import JABLE
-
+@testable import JABLE
 class Tests: XCTestCase {
     
     override func setUp() {
