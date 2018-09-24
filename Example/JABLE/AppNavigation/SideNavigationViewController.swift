@@ -7,8 +7,9 @@
 //
 
 import Foundation
-
 import UIKit
+
+let USE_NEW_NAV = true
 
 class SideNavigationViewControllerNew: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -23,11 +24,10 @@ class SideNavigationViewControllerNew: UIViewController, UITableViewDelegate, UI
         "Help"
     ]
     
-    let tableView = UITableView()
-    let backgroundView = UIImageView()
-    
-    let backgroundRoundRects = [CAShapeLayer(), CAShapeLayer()]
-    let backgroundLayer = CALayer()
+    let tableView               = UITableView()
+    let backgroundView          = UIImageView()
+    let backgroundRoundRects    = [CAShapeLayer(), CAShapeLayer()]
+    let backgroundLayer         = CALayer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,12 +40,11 @@ class SideNavigationViewControllerNew: UIViewController, UITableViewDelegate, UI
         
         backgroundRoundRects.forEach({
             backgroundLayer.addSublayer($0)
-            $0.fillColor = UIColor.white.withAlphaComponent(0.666).cgColor
+            $0.fillColor = UIColor.white.withAlphaComponent(0.75).cgColor
         })
         
         self.view.addSubview(tableView)
         tableView.layer.addSublayer(backgroundLayer)
-        
     }
     
     override func viewDidLayoutSubviews() {
@@ -76,16 +75,30 @@ class SideNavigationViewControllerNew: UIViewController, UITableViewDelegate, UI
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        
+        if USE_NEW_NAV{
+            return 2
+        } else {
+            return 1
+        }
+        
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return titles.count
+        
+        if USE_NEW_NAV{
+            switch section{
+            case 0: return 1
+            default: return titles.count
+            }
+        } else {
+            return titles.count
+        }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch indexPath.section{
         case 0: return 200 * 0.5
-        default: return 30
+        default: return 60
         }
     }
     
@@ -95,17 +108,47 @@ class SideNavigationViewControllerNew: UIViewController, UITableViewDelegate, UI
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = SideNavigationTableViewCell()
-        cell.titleText = titles[indexPath.row]
-        return cell
+        
+        if USE_NEW_NAV{
+            switch indexPath.section {
+            case 0:
+                let cell = NavigationHeaderViewCell()
+                //cell.imageView?.image = #imageLiteral(resourceName: "alpaca")
+                return cell
+            default:
+                let cell = SideNavigationTableViewCell()
+                cell.titleText = titles[indexPath.row]
+                return cell
+            }
+        } else {
+            let cell = SideNavigationTableViewCell()
+            cell.titleText = titles[indexPath.row]
+            return cell
+        }
+        
+
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("Side menu item selected ")
-        switch indexPath.row{
-        case 0: delegate?.centralModeRequested()
-        case 1: delegate?.peripheralModeRequested()
-        default: break
+        
+        
+        if USE_NEW_NAV{
+            switch indexPath.section {
+            case 0: break
+            default:
+                switch indexPath.row{
+                case 0: delegate?.centralModeRequested()
+                case 1: delegate?.peripheralModeRequested()
+                default: break
+                }
+            }
+        } else {
+            print("Side menu item selected ")
+            switch indexPath.row{
+            case 0: delegate?.centralModeRequested()
+            case 1: delegate?.peripheralModeRequested()
+            default: break
+            }
         }
     }
     

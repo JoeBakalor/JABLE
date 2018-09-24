@@ -20,14 +20,6 @@ protocol TeknestNavigation {
     func centralModeRequested()
     func peripheralModeRequested()
     func otaUpdatesRequested()
-//    func dashboardRequested()
-//    func myInventionsRequested()
-//    func devicesRequested()
-//    func browseProjectsRequested()
-//    func browseLessonsRequested()
-//    func helpRequested()
-//    func demoRequested()
-//    func updatesRequested()
 }
 
 class AppNavigationController: UINavigationController {
@@ -57,14 +49,10 @@ class AppNavigationController: UINavigationController {
         self.navigationBar.shadowImage = UIImage()
         self.navigationBar.isTranslucent = true
         
-        if #available(iOS 10.0, *) {
-            blurView.effect = UIBlurEffect(style: .regular)
-        } else {
-            // Fallback on earlier versions
-        }
-        
+        blurView.effect = UIBlurEffect(style: .regular)
         blurView.frame = self.view.bounds
         blurView.alpha = 0.0
+        
         let tap = UITapGestureRecognizer()
         tap.addTarget(self, action: #selector(hideSideMenu))
         blurView.addGestureRecognizer(tap)
@@ -74,7 +62,7 @@ class AppNavigationController: UINavigationController {
         self.view.addSubview(blurView)
         self.view.addSubview(sideNavigation.view)
         
-        sideNavigation.view.frame = CGRect(origin: sideNavHideOrigin, size: CGSize(width: 360, height: self.view.bounds.size.height))
+        sideNavigation.view.frame = CGRect(origin: sideNavHideOrigin, size: CGSize(width: self.view.bounds.width*0.65, height: self.view.bounds.size.height))
     }
     
     @objc func hideSideMenu(){
@@ -101,12 +89,12 @@ extension AppNavigationController: TeknestNavigation {
     }
     
     func centralModeRequested() {
-        print("Peripheral scan view requested ")
+        print("Central mode view requested ")
         load(UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "centralModeScanViewController"))
     }
     
     func peripheralModeRequested() {
-        print("Gatt profile view requested ")
+        print("Peripheral mode view requested ")
         load(UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "gattProfileViewController"))
     }
     

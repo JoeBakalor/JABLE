@@ -30,6 +30,16 @@
 		E0C09C2B21548C9900D08090 /* JableCollectionViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C09C2A21548C9900D08090 /* JableCollectionViewCellModel.swift */; };
 		E0C09C3221550E0800D08090 /* OTAUpdatesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C09C3121550E0800D08090 /* OTAUpdatesViewController.swift */; };
 		E0C09C3421550E2100D08090 /* OTAUpdatesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C09C3321550E2100D08090 /* OTAUpdatesViewModel.swift */; };
+		E0C09C38215516C500D08090 /* NavigationHeaderViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C09C37215516C500D08090 /* NavigationHeaderViewCell.swift */; };
+		E0C09C3F2155347600D08090 /* GATTExplorerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C09C3E2155347600D08090 /* GATTExplorerViewController.swift */; };
+		E0C09C412155348C00D08090 /* GATTExplorerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C09C402155348C00D08090 /* GATTExplorerViewModel.swift */; };
+		E0C09C452155355F00D08090 /* GATTTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C09C442155355F00D08090 /* GATTTableViewModel.swift */; };
+		E0C09C472155369100D08090 /* GATTView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C09C462155369100D08090 /* GATTView.swift */; };
+		E0C09C49215537DE00D08090 /* GATTTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C09C48215537DE00D08090 /* GATTTableViewCell.swift */; };
+		E0C09C4B2155384300D08090 /* GATTTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C09C4A2155384300D08090 /* GATTTableViewController.swift */; };
+		E0C09C4D21553E1200D08090 /* GattTableSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C09C4C21553E1200D08090 /* GattTableSectionHeaderView.swift */; };
+		E0C09C4F21554C5900D08090 /* GATTTableViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C09C4E21554C5900D08090 /* GATTTableViewCellModel.swift */; };
+		E0C09C512155A94D00D08090 /* JABLEPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C09C502155A94D00D08090 /* JABLEPopupView.swift */; };
 		E0DEB637214AAB6600A743D8 /* ColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DEB636214AAB6600A743D8 /* ColorExtensions.swift */; };
 		E0E3BB872153185F006A6139 /* JableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E3BB862153185F006A6139 /* JableButton.swift */; };
 		E0E3BB8B2153C407006A6139 /* MultiBindableTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E3BB8A2153C407006A6139 /* MultiBindableTest.swift */; };
@@ -81,6 +91,16 @@
 		E0C09C2A21548C9900D08090 /* JableCollectionViewCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JableCollectionViewCellModel.swift; sourceTree = "<group>"; };
 		E0C09C3121550E0800D08090 /* OTAUpdatesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTAUpdatesViewController.swift; sourceTree = "<group>"; };
 		E0C09C3321550E2100D08090 /* OTAUpdatesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTAUpdatesViewModel.swift; sourceTree = "<group>"; };
+		E0C09C37215516C500D08090 /* NavigationHeaderViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationHeaderViewCell.swift; sourceTree = "<group>"; };
+		E0C09C3E2155347600D08090 /* GATTExplorerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GATTExplorerViewController.swift; sourceTree = "<group>"; };
+		E0C09C402155348C00D08090 /* GATTExplorerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GATTExplorerViewModel.swift; sourceTree = "<group>"; };
+		E0C09C442155355F00D08090 /* GATTTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GATTTableViewModel.swift; sourceTree = "<group>"; };
+		E0C09C462155369100D08090 /* GATTView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GATTView.swift; sourceTree = "<group>"; };
+		E0C09C48215537DE00D08090 /* GATTTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GATTTableViewCell.swift; sourceTree = "<group>"; };
+		E0C09C4A2155384300D08090 /* GATTTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GATTTableViewController.swift; sourceTree = "<group>"; };
+		E0C09C4C21553E1200D08090 /* GattTableSectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GattTableSectionHeaderView.swift; sourceTree = "<group>"; };
+		E0C09C4E21554C5900D08090 /* GATTTableViewCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GATTTableViewCellModel.swift; sourceTree = "<group>"; };
+		E0C09C502155A94D00D08090 /* JABLEPopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JABLEPopupView.swift; sourceTree = "<group>"; };
 		E0DEB636214AAB6600A743D8 /* ColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtensions.swift; sourceTree = "<group>"; };
 		E0E3BB862153185F006A6139 /* JableButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JableButton.swift; sourceTree = "<group>"; };
 		E0E3BB8A2153C407006A6139 /* MultiBindableTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiBindableTest.swift; sourceTree = "<group>"; };
@@ -153,11 +173,10 @@
 		607FACD21AFB9204008FA782 /* Example for JABLE */ = {
 			isa = PBXGroup;
 			children = (
+				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				E01A7F43214DA43D00271C14 /* AppNavigation */,
 				E03BC7E0214AB8F800291840 /* MVVM */,
-				E0A4301D204A03640008F6F0 /* BLEManager.swift */,
-				E05D1EF420654B0800E9385A /* GattExample.swift */,
 				E0ECBE6A214957AE00646224 /* JableUI */,
 				607FACD31AFB9204008FA782 /* Supporting Files */,
 			);
@@ -170,7 +189,6 @@
 			children = (
 				E0F35E10214AAADC0032F8F7 /* Extensions */,
 				607FACD41AFB9204008FA782 /* Info.plist */,
-				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
 				E0ECBE5E2149342F00646224 /* Bindable.swift */,
@@ -246,6 +264,7 @@
 				E01A7F46214DA4E600271C14 /* MenuLevelController.swift */,
 				E01A7F48214DA52E00271C14 /* SideNavigationViewController.swift */,
 				E01A7F4A214DA5B500271C14 /* SideNavigationTableViewCell.swift */,
+				E0C09C37215516C500D08090 /* NavigationHeaderViewCell.swift */,
 			);
 			path = AppNavigation;
 			sourceTree = "<group>";
@@ -277,6 +296,7 @@
 		E03BC7E0214AB8F800291840 /* MVVM */ = {
 			isa = PBXGroup;
 			children = (
+				E0C09C432155352700D08090 /* Models */,
 				E01A7F3F214D8A5500271C14 /* Home View */,
 				E0C09C3521550F8C00D08090 /* Central Mode */,
 				E0C09C36215511F300D08090 /* Peripheral Mode */,
@@ -334,6 +354,7 @@
 			isa = PBXGroup;
 			children = (
 				E01A7F27214D847200271C14 /* Central Mode Scan View */,
+				E0C09C3B2155340B00D08090 /* GATT Explorer View */,
 			);
 			path = "Central Mode";
 			sourceTree = "<group>";
@@ -345,12 +366,61 @@
 			path = "Peripheral Mode";
 			sourceTree = "<group>";
 		};
+		E0C09C3B2155340B00D08090 /* GATT Explorer View */ = {
+			isa = PBXGroup;
+			children = (
+				E0C09C3C2155342000D08090 /* View Controller */,
+				E0C09C3D2155343700D08090 /* View Model */,
+			);
+			path = "GATT Explorer View";
+			sourceTree = "<group>";
+		};
+		E0C09C3C2155342000D08090 /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E0C09C3E2155347600D08090 /* GATTExplorerViewController.swift */,
+			);
+			path = "View Controller";
+			sourceTree = "<group>";
+		};
+		E0C09C3D2155343700D08090 /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+				E0C09C402155348C00D08090 /* GATTExplorerViewModel.swift */,
+			);
+			path = "View Model";
+			sourceTree = "<group>";
+		};
+		E0C09C42215534D100D08090 /* JableGATTView */ = {
+			isa = PBXGroup;
+			children = (
+				E0C09C442155355F00D08090 /* GATTTableViewModel.swift */,
+				E0C09C462155369100D08090 /* GATTView.swift */,
+				E0C09C48215537DE00D08090 /* GATTTableViewCell.swift */,
+				E0C09C4A2155384300D08090 /* GATTTableViewController.swift */,
+				E0C09C4C21553E1200D08090 /* GattTableSectionHeaderView.swift */,
+				E0C09C4E21554C5900D08090 /* GATTTableViewCellModel.swift */,
+			);
+			name = JableGATTView;
+			sourceTree = "<group>";
+		};
+		E0C09C432155352700D08090 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E0A4301D204A03640008F6F0 /* BLEManager.swift */,
+				E05D1EF420654B0800E9385A /* GattExample.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		E0ECBE6A214957AE00646224 /* JableUI */ = {
 			isa = PBXGroup;
 			children = (
+				E0C09C42215534D100D08090 /* JableGATTView */,
 				E0C09C2E21548E1C00D08090 /* JablePlotView */,
 				E0C09C2C21548DDF00D08090 /* JableCollectionView */,
 				E0E3BB862153185F006A6139 /* JableButton.swift */,
+				E0C09C502155A94D00D08090 /* JABLEPopupView.swift */,
 			);
 			name = JableUI;
 			sourceTree = "<group>";
@@ -533,24 +603,34 @@
 				E01A7F26214D846A00271C14 /* CentralModeScanViewController.swift in Sources */,
 				E0C09C2B21548C9900D08090 /* JableCollectionViewCellModel.swift in Sources */,
 				E0C09C3421550E2100D08090 /* OTAUpdatesViewModel.swift in Sources */,
+				E0C09C49215537DE00D08090 /* GATTTableViewCell.swift in Sources */,
 				E0C09C3221550E0800D08090 /* OTAUpdatesViewController.swift in Sources */,
 				E0ECBE5F2149342F00646224 /* Bindable.swift in Sources */,
 				E03BC7E9214C32E200291840 /* JablePlotStyles.swift in Sources */,
+				E0C09C4F21554C5900D08090 /* GATTTableViewCellModel.swift in Sources */,
 				E05D1EF520654B0800E9385A /* GattExample.swift in Sources */,
+				E0C09C4D21553E1200D08090 /* GattTableSectionHeaderView.swift in Sources */,
 				E01A7F56214FD21C00271C14 /* GattProfileViewController.swift in Sources */,
 				E05B92F021495FE200815B41 /* JableCollectionViewManager.swift in Sources */,
 				E01A7F47214DA4E600271C14 /* MenuLevelController.swift in Sources */,
 				E01A7F4B214DA5B500271C14 /* SideNavigationTableViewCell.swift in Sources */,
+				E0C09C472155369100D08090 /* GATTView.swift in Sources */,
+				E0C09C452155355F00D08090 /* GATTTableViewModel.swift in Sources */,
 				E0E3BB872153185F006A6139 /* JableButton.swift in Sources */,
+				E0C09C512155A94D00D08090 /* JABLEPopupView.swift in Sources */,
 				E01A7F2B214D84C000271C14 /* CentralModeScanViewModel.swift in Sources */,
 				E0A4301E204A03640008F6F0 /* BLEManager.swift in Sources */,
 				E01A7F45214DA49E00271C14 /* AppNavigationController.swift in Sources */,
+				E0C09C3F2155347600D08090 /* GATTExplorerViewController.swift in Sources */,
 				E0DEB637214AAB6600A743D8 /* ColorExtensions.swift in Sources */,
 				E01A7F4F214DA70900271C14 /* HomeViewController.swift in Sources */,
 				E01A7F49214DA52E00271C14 /* SideNavigationViewController.swift in Sources */,
+				E0C09C412155348C00D08090 /* GATTExplorerViewModel.swift in Sources */,
 				E0ECBE6C214957E700646224 /* JableCollectionViewCell.swift in Sources */,
+				E0C09C38215516C500D08090 /* NavigationHeaderViewCell.swift in Sources */,
 				E03BC7E2214ABCD400291840 /* JablePlotView.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
+				E0C09C4B2155384300D08090 /* GATTTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -30,8 +30,6 @@ class BLEManager: NSObject{
 }
 
 protocol BLEDiscoveryDelegate{
-    func didDiscoveryNewPeripheral(advData: FriendlyAdvertisement)
-    func didUpdateManagedList(updatedList: [TrackedScanResult])
     func processedScanResult(processedResult: TrackedScanResult)
 }
 
@@ -44,13 +42,8 @@ extension BLEManager: JABLEDelegateNew{
     
     func jable(foundPeripheral peripheral: CBPeripheral, advertisementData: FriendlyAdvertisement) {
     
-        print("Updated managed scan result")
-        
-        //let upadatedResults = scanResultManager.newScanResult(peripheral: peripheral, advData: advertisementData)
-        //bleDiscoveryDelegate?.didUpdateManagedList(updatedList: upadatedResults)
-        
         guard let processedResult = scanResultManager.processScanResult(peripheral: peripheral, advData: advertisementData) else { return }
-        print("BLE Manger processed scan result: \(processedResult)")
+        //print("BLE Manger processed scan result: \(processedResult)")
         bleDiscoveryDelegate?.processedScanResult(processedResult: processedResult)
         
     }

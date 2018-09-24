@@ -1,15 +1,22 @@
 //
-//  SideNavigationTableViewCell.swift
+//  GATTTableViewCell.swift
 //  JABLE_Example
 //
-//  Created by Joe Bakalor on 9/15/18.
+//  Created by Joe Bakalor on 9/21/18.
 //  Copyright © 2018 CocoaPods. All rights reserved.
 //
 
 import Foundation
 import UIKit
 
-class SideNavigationTableViewCell: UITableViewCell {
+class GATTTableViewCell: UITableViewCell {
+    
+    enum CellPosition{
+        case FIRST
+        case LAST
+        case MIDDLE
+    }
+    var cellPosition: CellPosition?
     
     var titleText:String?{
         didSet{
@@ -25,7 +32,7 @@ class SideNavigationTableViewCell: UITableViewCell {
     ]
     let attrUnselected: [NSAttributedStringKey : Any] = [
         NSAttributedStringKey.font : UIFont.systemFont(ofSize: 24),
-        NSAttributedStringKey.underlineStyle : 0,
+        NSAttributedStringKey.underlineStyle : NSUnderlineStyle.styleNone.rawValue,
         NSAttributedStringKey.foregroundColor : UIColor.black
     ]
     
@@ -34,7 +41,7 @@ class SideNavigationTableViewCell: UITableViewCell {
         initView()
     }
     convenience init(){
-        self.init(style: .default, reuseIdentifier: "SideNavigationCell")
+        self.init(style: .default, reuseIdentifier: "GATTTableCell")
         initView()
     }
     required init?(coder aDecoder: NSCoder) {
@@ -81,6 +88,5 @@ class SideNavigationTableViewCell: UITableViewCell {
             textLabel.frame.origin = CGPoint(x: 40, y: self.bounds.size.height*0.5 - textLabel.frame.size.height*0.5)
         }
     }
-    
     
 }

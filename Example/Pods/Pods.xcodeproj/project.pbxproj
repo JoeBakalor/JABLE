@@ -210,6 +210,8 @@
 		DDFF81496801A484CC6BA761538B1451 /* CPTLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = E9A9A43680E683176DC25BFF2D4919A0 /* CPTLayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DE010CB1CB6FF9753F888B482FFC84C8 /* CPTRangePlot.m in Sources */ = {isa = PBXBuildFile; fileRef = AE49B6C0010F54CD23EAFF4BFCF0E4F2 /* CPTRangePlot.m */; };
 		DE42A26BFF336816DA3AF9EC1BA93E62 /* CPTFill.m in Sources */ = {isa = PBXBuildFile; fileRef = ABD16493387B772D9DDC7C9CB4462086 /* CPTFill.m */; };
+		E0C09C3A21552CC800D08090 /* JABLEPeripheralAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C09C3921552CC800D08090 /* JABLEPeripheralAPI.swift */; };
+		E0C09C532155B27D00D08090 /* JABLEPeripheral.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C09C522155B27D00D08090 /* JABLEPeripheral.swift */; };
 		E15C4EE5A926403392EDC8657F4A416A /* JABLEiDManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B164DBE2BFDD27D6EF2F7FCD9127878D /* JABLEiDManager.swift */; };
 		E19C5DE41A08DF66B2CF9A512BFBA20E /* CPTAxisLabelGroup.h in Headers */ = {isa = PBXBuildFile; fileRef = 4202C5E711CC9BE185EC4C440ADF9277 /* CPTAxisLabelGroup.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E29C1A3E4002C854879C96AA4FF587C5 /* GattDiscoveryProcess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010653148A3C303A51BE6A49A5ED44BE /* GattDiscoveryProcess.swift */; };
@@ -483,6 +485,8 @@
 		DCFFAA8778FEE2207605A319BEC1835C /* NSCoderExtensions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NSCoderExtensions.h; path = framework/Source/NSCoderExtensions.h; sourceTree = "<group>"; };
 		DDC789B6D2734271A20C5DF51D26E1EC /* Pods-JABLE_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-JABLE_Example-umbrella.h"; sourceTree = "<group>"; };
 		DEBD304E435AE8D671BBAC8515398EE9 /* CPTPlotRange.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CPTPlotRange.h; path = framework/Source/CPTPlotRange.h; sourceTree = "<group>"; };
+		E0C09C3921552CC800D08090 /* JABLEPeripheralAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JABLEPeripheralAPI.swift; sourceTree = "<group>"; };
+		E0C09C522155B27D00D08090 /* JABLEPeripheral.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JABLEPeripheral.swift; sourceTree = "<group>"; };
 		E3C81270A34A3AA1F98CC174CAF652CA /* CPTColorSpace.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CPTColorSpace.h; path = framework/Source/CPTColorSpace.h; sourceTree = "<group>"; };
 		E5F70F368A06E3CFCE9E66A50029B2F6 /* CPTLineCap.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CPTLineCap.h; path = framework/Source/CPTLineCap.h; sourceTree = "<group>"; };
 		E7A12EC3CB90AE19EA41AD8018630087 /* CPTMutablePlotRange.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CPTMutablePlotRange.m; path = framework/Source/CPTMutablePlotRange.m; sourceTree = "<group>"; };
@@ -917,6 +921,7 @@
 				C4D528D024622A74FEC9F9E29DADD085 /* GattDiscoveryDelegate.swift */,
 				2E59C6A6E76A5BBE49A7801BF398591A /* JABLECentralAPI.swift */,
 				B7793E0CB3723EFC88BE299884EEC059 /* JABLEDelegate.swift */,
+				E0C09C3921552CC800D08090 /* JABLEPeripheralAPI.swift */,
 			);
 			name = Protocols;
 			path = JABLE/Classes/Protocols;
@@ -946,6 +951,7 @@
 		E0B91CA36E22D2C3525629FBCEEE8097 /* JABLE */ = {
 			isa = PBXGroup;
 			children = (
+				E0C09C522155B27D00D08090 /* JABLEPeripheral.swift */,
 				0A9C4FD149BD8DF6724BF17D4DDCB02D /* JABLECentral.swift */,
 				BDAD9B251A891E8B7A30BA532A162AEF /* GAP */,
 				B7BEF3F54982CA1DD5D63DC17A3A1909 /* GATT */,
@@ -1192,6 +1198,11 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0930;
 				LastUpgradeCheck = 0930;
+				TargetAttributes = {
+					DE8C7C227ACE26864DC8DA02CCA66BAA = {
+						LastSwiftMigration = 1000;
+					};
+				};
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -1276,6 +1287,7 @@
 				C5501279ADA85FE7F88BACEE1EE0B9E6 /* _CPTXYTheme.m in Sources */,
 				80B71769CB16EAA46BA16612014264C2 /* CorePlot-dummy.m in Sources */,
 				382C1285BB931D2A740054FD3ECD9876 /* CorePlotProbes.d in Sources */,
+				E0C09C3A21552CC800D08090 /* JABLEPeripheralAPI.swift in Sources */,
 				3E96EC9EDECAE779EBBA9B43FC47400C /* CPTAnimation.m in Sources */,
 				7BF5DE2A1F3009723C8992FB21F82DF9 /* CPTAnimationOperation.m in Sources */,
 				2C8AE7747106103E66AE0BD1795403FB /* CPTAnimationPeriod.m in Sources */,
@@ -1326,6 +1338,7 @@
 				F94995F1CF0F76E327756209A9E85C13 /* CPTPlatformSpecificDefines.m in Sources */,
 				C34087E63BB237247A442F647D52273D /* CPTPlatformSpecificFunctions.m in Sources */,
 				3AAA179F85C6140DC78335EBA62C8221 /* CPTPlot.m in Sources */,
+				E0C09C532155B27D00D08090 /* JABLEPeripheral.swift in Sources */,
 				55031941E2F00B77392A39FC6AB85243 /* CPTPlotArea.m in Sources */,
 				A6D2079040A44F50D59E5B60E2C01CA9 /* CPTPlotAreaFrame.m in Sources */,
 				21DC46F598662C2D5936B5F9A4C8D600 /* CPTPlotGroup.m in Sources */,
@@ -1454,6 +1467,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DC20F2B5F227F5DA0D1C541AEECA4588 /* CorePlot.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -1590,6 +1604,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DC20F2B5F227F5DA0D1C541AEECA4588 /* CorePlot.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -1610,6 +1625,7 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";

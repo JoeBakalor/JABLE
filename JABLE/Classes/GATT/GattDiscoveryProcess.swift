@@ -10,10 +10,10 @@ import CoreBluetooth
 
 struct GattDiscoveryProcess{
     
-    var unprocessedServices: [CBService] = []
-    var unprocessedCharacteristics: [CBCharacteristic] = []
-    var gattProfile: JABLEGattProfile
-    var discoveryAgent: GattDiscoveryAgent
+    var unprocessedServices         : [CBService] = []
+    var unprocessedCharacteristics  : [CBCharacteristic] = []
+    var gattProfile                 : JABLEGattProfile
+    var discoveryAgent              : GattDiscoveryAgent
     
     init(gatt: JABLEGattProfile, peripheral: CBPeripheral) {
         self.gattProfile = gatt

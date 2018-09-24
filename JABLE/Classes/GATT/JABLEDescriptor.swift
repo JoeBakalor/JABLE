@@ -10,8 +10,8 @@ import CoreBluetooth
 
 public class JABLEDescriptor{
     
-    public var uuid: CBUUID
-    weak public var assignToDescriptor: CBDescriptor?
+    public var uuid                     : CBUUID
+    weak public var assignToDescriptor  : CBDescriptor?
     
     public init(descriptorUUID: CBUUID, assignTo descriptor: CBDescriptor){
         self.uuid = descriptorUUID

@@ -38,65 +38,36 @@ class JableCollectionViewCell: UICollectionViewCell {
                 else {
                     self.connectableLabel.text = " Connectable: unknown"
                 }
-                
-                self.manufactureData.text = advData.manufacturerData != nil ? " Manufacture data: \(getHexString(unFormattedData: advData.manufacturerData!))" : " Manufacture data: not advertised"
+                let newManData = advData.manufacturerData != nil ? " Manufacture data: \(getHexString(unFormattedData: advData.manufacturerData!))" : " Manufacture data: not advertised"
+                if newManData != manufactureData.text{
+                    manufactureData.text = newManData
+                }
+                //self.manufactureData.text = advData.manufacturerData != nil ? " Manufacture data: \(getHexString(unFormattedData: advData.manufacturerData!))" : " Manufacture data: not advertised"
                 self.txPowerLabel.text = advData.transmitPowerLevel != nil ? " TX power: \(advData.transmitPowerLevel!)" : " Tx power: not advertised"
-                self.advServicesLabel.text = advData.services != nil ? " Services: \(advData.services!)" : " Services: none advertised"
+                
+                let newServiceData = advData.services != nil ? " Services: \(advData.services!)" : " Services: none advertised"
+                if newServiceData != advServicesLabel.text{
+                    self.advServicesLabel.text = newServiceData
+                }
+                //self.advServicesLabel.text = advData.services != nil ? " Services: \(advData.services!)" : " Services: none advertised"
                 
                 if let rssi = advData.rssi{
                     self.currentRssiValue.text = "\(rssi)"
                 }
             }
-            print("\n \(nameLabel.text) RSSI ARRAY: \(cellData?.rssiArray)")
+            //print("\n \(nameLabel.text) RSSI ARRAY: \(cellData?.rssiArray)")
             if let rssiData = cellModel?.data.rssiArray{
                 plotView.setPlotData(dataArray: rssiData)
                 self.setNeedsLayout()
             }
         }
     }
-    
-    
-    var cellData: TrackedScanResult?{
-        didSet{
-            if let advData = cellData?.currentAdvData{
-                
-                if let localName = advData.localName{
-                    self.nameLabel.text = " Name: \(localName)"
-                }
-                else if let friendlyName = advData.friendlyName{
-                    self.nameLabel.text = " Name: \(friendlyName)"
-                }
-                else {
-                    self.nameLabel.text = " Name: unknown"
-                }
-                
-                if let connectable = advData.connectable{
-                    if connectable {
-                        self.connectableLabel.text = " Connectable: yes"
-                    }
-                    else {
-                        self.connectableLabel.text = " Connectable: no"
-                    }
-                }
-                else {
-                    self.connectableLabel.text = " Connectable: unknown"
-                }
-                
-                self.manufactureData.text = advData.manufacturerData != nil ? " Manufacture data: \(getHexString(unFormattedData: advData.manufacturerData!))" : " Manufacture data: not advertised"
-                self.txPowerLabel.text = advData.transmitPowerLevel != nil ? " TX power: \(advData.transmitPowerLevel!)" : " Tx power: not advertised"
-                self.advServicesLabel.text = advData.services != nil ? " Services: \(advData.services!)" : " Services: none advertised"
-                
-                if let rssi = advData.rssi{
-                    self.currentRssiValue.text = "\(rssi)"
-                }
-            }
-            print("\n \(nameLabel.text) RSSI ARRAY: \(cellData?.rssiArray)")
-            if let rssiData = cellData?.rssiArray{
-                plotView.setPlotData(dataArray: rssiData)
-                self.setNeedsLayout()
-            }
-        }
-    }
+
+    private let tapGestureRecognizers = [UITapGestureRecognizer(),
+                                         UITapGestureRecognizer(),
+                                         UITapGestureRecognizer(),
+                                         UITapGestureRecognizer(),
+                                         UITapGestureRecognizer()]
     
     private var plotView = JablePlotView()
     
@@ -141,17 +112,11 @@ class JableCollectionViewCell: UICollectionViewCell {
     
     func initView(){
         
-        let tap = UITapGestureRecognizer()
-        tap.addTarget(self, action: #selector(toggleOptionsView))
-        self.addGestureRecognizer(tap)
-        
         self.backgroundColor        = UIColor.JableBlueTwo
         self.clipsToBounds          = true
         self.layer.borderWidth      = 2
         self.layer.borderColor      = UIColor.JableBlueOne.cgColor
         self.layer.cornerRadius     = 5
-        
-        setupBlurView()
         
         plotView.clipsToBounds = true
         plotView.layer.cornerRadius = 5
@@ -170,10 +135,19 @@ class JableCollectionViewCell: UICollectionViewCell {
             label.textColor = UIColor.white
         }
         
+        tapGestureRecognizers.forEach {
+            $0.numberOfTapsRequired = 1
+            $0.numberOfTouchesRequired = 1
+            $0.addTarget(self, action: #selector(passThroughTap))
+        }
+
+        var idx = 0
         [nameScrollView, connectableScrollView, manufactureDataScrollView, txPowerScrollView, advServicesScrollView].forEach { (scrollView) in
             scrollView.backgroundColor      = .JableBlueFour
             scrollView.layer.cornerRadius   = 3
-            self.addSubview(scrollView)
+            scrollView.addGestureRecognizer(tapGestureRecognizers[idx])
+            self.contentView.addSubview(scrollView)
+            idx += 1
         }
         
         [connectButton, trackPeripheralButton].forEach {
@@ -187,20 +161,8 @@ class JableCollectionViewCell: UICollectionViewCell {
         txPowerScrollView.addSubview(txPowerLabel)
         advServicesScrollView.addSubview(advServicesLabel)
         
-        self.addSubview(plotView)
-        self.addSubview(currentRssiValue)
-        self.addSubview(blurEffectView)
-        self.addSubview(connectButton)
-        //self.addSubview(cancelButton)
-        self.addSubview(trackPeripheralButton)
-    }
-    
-    func setupBlurView(){
-        let blurEffect = UIBlurEffect(style: .dark)
-        blurEffectView.effect = blurEffect
-        blurEffectView.frame = self.bounds
-        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        blurEffectView.alpha = 0.0
+        self.contentView.addSubview(plotView)
+        self.contentView.addSubview(currentRssiValue)
     }
     
     override func layoutSubviews() {
@@ -280,11 +242,17 @@ class JableCollectionViewCell: UICollectionViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
-        nameScrollView.scrollsToTop = true
-        connectableScrollView.scrollsToTop = true
-        manufactureDataScrollView.scrollsToTop = true
-        txPowerScrollView.scrollsToTop = true
-        advServicesScrollView.scrollsToTop = true
+        //nameScrollView.scrollsToTop = true
+        //connectableScrollView.scrollsToTop = true
+        //manufactureDataScrollView.scrollsToTop = true
+        //txPowerScrollView.scrollsToTop = true
+        //advServicesScrollView.scrollsToTop = true
+    }
+    
+    @objc func passThroughTap(){
+        let collectionView = self.superview as! UICollectionView
+        guard let indexPath = collectionView.indexPath(for: self) else { return }
+        collectionView.delegate?.collectionView!(collectionView, didSelectItemAt: indexPath)
     }
     
     @objc func toggleOptionsView(){

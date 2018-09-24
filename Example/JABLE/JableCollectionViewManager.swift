@@ -12,18 +12,19 @@ import JABLE
 
 let USE_NEW_CELL_MODEL = true
 
+protocol JableCollectionManagerDelegate{
+    func userSelected(scanResult: TrackedScanResult)
+}
+
 class JableCollectionViewManager: NSObject{
     
-    private weak var collectionView: UICollectionView?
-    
-    /*by scan result id*/
+    private var collectionView: UICollectionView!
+    private var jableCollectionManagerDelegate: JableCollectionManagerDelegate!
     var collectionViewData: [Int : JableCollectionViewCellModel] = [:]
-    //var data: [Int : (trackedResult: TrackedScanResult, collectionIndex: Int)] = [:]
     
-    /* by index id */
-    
-    init(collectionView: UICollectionView) {
+    init(collectionView: UICollectionView, delegate: JableCollectionManagerDelegate) {
         super.init()
+        self.jableCollectionManagerDelegate = delegate
         self.collectionView = collectionView
         setupCollectionView()
     }
@@ -41,44 +42,22 @@ class JableCollectionViewManager: NSObject{
     }
     
     func processNewData(newData: TrackedScanResult){
-        
-        /*if !USE_NEW_CELL_MODEL{
-        if data[newData.resultID] != nil{ /*  UPDDATE DATA */
-            
-            data[newData.resultID]?.trackedResult = newData
-            if let collectionIndex = data[newData.resultID]?.collectionIndex{
+
+        if collectionViewData[newData.resultID] != nil{
+            collectionViewData[newData.resultID]?.data = newData
+            if let collectionIndex = collectionViewData[newData.resultID]?.collectionIndex{
                 self.collectionView?.reloadItems(at: [IndexPath(item: collectionIndex, section: 0)])
             }
         }
-        else { /*  ADD NEW DATA */
-            let index = data.count
-            
-            data[newData.resultID] = (trackedResult: newData, collectionIndex: index)
-            self.collectionView?.insertItems(at: [IndexPath(item: index, section: 0)])
-        }
-        }
-        else {*/
-            
-            if collectionViewData[newData.resultID] != nil{
-                
-                collectionViewData[newData.resultID]?.data = newData
-                if let collectionIndex = collectionViewData[newData.resultID]?.collectionIndex{
-                    self.collectionView?.reloadItems(at: [IndexPath(item: collectionIndex, section: 0)])
-                }
-            }
-            else {
-                
-                let index = collectionViewData.count
-                collectionViewData[newData.resultID] = JableCollectionViewCellModel(
-                    data: newData,
-                    collectionIndex: index,
-                    optionsViewShown: false)
-                
+        else {
+            let index = collectionViewData.count
+            collectionViewData[newData.resultID] = JableCollectionViewCellModel(
+                data: newData,
+                collectionIndex: index,
+                optionsViewShown: false)
                 
                 self.collectionView?.insertItems(at: [IndexPath(item: index, section: 0)])
-                
-            }
-        //}
+        }
     }
     
 }
@@ -90,31 +69,14 @@ extension JableCollectionViewManager: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        //if USE_NEW_CELL_MODEL{
-            return collectionViewData.count
-        //}
-        /*else {
-            return data.count
-        }*/
-        
+        return collectionViewData.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        //if USE_NEW_CELL_MODEL{
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "jableCell", for: indexPath) as! JableCollectionViewCell
-            cell.cellModel = collectionViewData[indexPath.row]
-            //cell.cellData = collectionViewData[indexPath.row]?.data//data[indexPath.row]?.trackedResult
-            collectionViewData[indexPath.row]?.collectionIndex = indexPath.row//data[indexPath.row]?.collectionIndex = indexPath.row
-            return cell
-        //}
-        /*else {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "jableCell", for: indexPath) as! JableCollectionViewCell
-            cell.cellData = data[indexPath.row]?.trackedResult
-            data[indexPath.row]?.collectionIndex = indexPath.row
-            return cell
-        }*/
-
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "jableCell", for: indexPath) as! JableCollectionViewCell
+        cell.cellModel = collectionViewData[indexPath.row]
+        collectionViewData[indexPath.row]?.collectionIndex = indexPath.row
+        return cell
     }
 }
 
@@ -126,4 +88,11 @@ extension JableCollectionViewManager: UICollectionViewDelegateFlowLayout{
 }
 
 extension JableCollectionViewManager: UICollectionViewDelegate{
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        guard let scanResult = collectionViewData[indexPath.row]?.data else { return }
+        print("User Selected \(scanResult)")
+        jableCollectionManagerDelegate.userSelected(scanResult: scanResult)
+    }
 }

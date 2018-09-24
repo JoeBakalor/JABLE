@@ -21,28 +21,25 @@ public class JABLECentral: NSObject{
         var serviceUUIDs: [CBUUID]?
     }
     
-    /*  Helper classes */
-    //private let scanResultsManager = ScanResultManager()
-    
     /*  Pending state variables */
-    private var pendingScanRequest: ScanRequest?
-    private var peripheralPendingReconnection: PeripheralConnection?
-    private var peripheralPendingConnection: PeripheralConnection?
+    private var pendingScanRequest              : ScanRequest?
+    private var peripheralPendingReconnection   : PeripheralConnection?
+    private var peripheralPendingConnection     : PeripheralConnection?
     
     /*  Delegates */
-    private var jableDelegate: JABLEDelegateNew?
+    private var jableDelegate                   : JABLEDelegateNew?
     
     /*  State variables */
-    private var peripheralsToConnectQueue: [PeripheralConnection] = []
-    private var connectedPeripherals: [Int: PeripheralConnection] = [:]
-    private var centralController: CBCentralManager?
-    private var activeGattDiscoveryProcess: GattDiscoveryProcess?
-    private var pendingGattDiscoveryProcesses: [GattDiscoveryProcess] = []
-    private var jableIsReady = false
+    private var peripheralsToConnectQueue       : [PeripheralConnection] = []
+    private var connectedPeripherals            : [Int: PeripheralConnection] = [:]
+    private var centralController               : CBCentralManager?
+    private var activeGattDiscoveryProcess      : GattDiscoveryProcess?
+    private var pendingGattDiscoveryProcesses   : [GattDiscoveryProcess] = []
+    private var jableIsReady                    = false
     
     /*  Timers */
-    private var connectionTimeoutTimer: Timer?
-    private var reconnectionTimeoutTimer: Timer?
+    private var connectionTimeoutTimer          : Timer?
+    private var reconnectionTimeoutTimer        : Timer?
     
     /*  Manage and assign peripheral IDs */
     private var jableIDManager: JABLEiDManager!
@@ -64,7 +61,6 @@ extension JABLECentral: JABLECentralAPI{
         self.jableDelegate = delegate
     }
     
-    
     /**/
     public func setup(gattProfile: JABLEGattProfile, forPeripheral peripheral: CBPeripheral) {
         
@@ -83,14 +79,13 @@ extension JABLECentral: JABLECentralAPI{
         
         guard jableIsReady else { pendingScanRequest =  ScanRequest(serviceUUIDs: uuids); return }
         
-        guard let validUUIDs = uuids
-            else {
+        guard let validUUIDs = uuids else {
             centralController?.scanForPeripherals(
                 withServices: nil,
                 options: [CBCentralManagerOptionShowPowerAlertKey: true,
                           CBCentralManagerScanOptionAllowDuplicatesKey: true]);
             return
-            }
+        }
         
         centralController?.scanForPeripherals( withServices: validUUIDs,
                                                options: [CBCentralManagerOptionShowPowerAlertKey: true,
@@ -106,10 +101,7 @@ extension JABLECentral: JABLECentralAPI{
     public func connect(toPeripheral peripheral: CBPeripheral, withOptions connectionOptions: ConnectionOptions) {
         
         guard peripheralPendingConnection == nil && peripheralPendingReconnection == nil
-            else {
-                peripheralsToConnectQueue.append(PeripheralConnection(peripheral: peripheral, connectionOptions: connectionOptions))
-            return
-            }
+        else { peripheralsToConnectQueue.append(PeripheralConnection(peripheral: peripheral, connectionOptions: connectionOptions)); return }
         
         peripheralPendingConnection = PeripheralConnection(peripheral: peripheral, connectionOptions: connectionOptions)
         centralController?.connect(
@@ -127,7 +119,6 @@ extension JABLECentral: JABLECentralAPI{
                 userInfo: nil,
                 repeats: false)
         }
-
     }
     
     /**/
@@ -178,7 +169,7 @@ extension JABLECentral: JABLECentralAPI{
     }
     
     /**/
-    public func RSSI() {
+    public func RSSI(forPeripheral: CBPeripheral) {
         //peripheral.readRSSI()
     }
 }
@@ -195,9 +186,6 @@ extension JABLECentral: CBCentralManagerDelegate{
     public func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String : Any], rssi RSSI: NSNumber) {
         let advData = FriendlyAdvertisement(advertisementData: advertisementData, rssi: Int(truncating: RSSI), peripheral: peripheral)
         jableDelegate?.jable(foundPeripheral: peripheral, advertisementData: advData)
-        print("RAW ADV DATA: \(advertisementData)")
-        
-        print("Services: \(advertisementData["kCBAdvDataServiceUUIDs"] as? [CBUUID])")
     }
     
     /**/
@@ -245,10 +233,6 @@ extension JABLECentral: CBCentralManagerDelegate{
         
     }
     
-    /**/
-    public func centralManager(_ central: CBCentralManager, willRestoreState dict: [String : Any]) {
-        
-    }
 
     /**/
     public func centralManagerDidUpdateState(_ central: CBCentralManager) {

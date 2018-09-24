@@ -12,10 +12,10 @@ public class GattDiscoveryAgent: NSObject{
 
     var gattDiscoveryCompleted: Bindable<Bool> =  Bindable(false)
     
-    weak private var peripheral: CBPeripheral?
-    weak private var gattProfile: JABLEGattProfile?
-    private var unprocessedServices: [CBService] = []
-    private var unprocessedCharacteristics: [CBCharacteristic] = []
+    weak private var peripheral                 : CBPeripheral?
+    weak private var gattProfile                : JABLEGattProfile?
+    private var unprocessedServices             : [CBService] = []
+    private var unprocessedCharacteristics      : [CBCharacteristic] = []
     
     init(gattProfile: JABLEGattProfile, peripheral: CBPeripheral){
         self.gattProfile = gattProfile
@@ -91,8 +91,6 @@ extension GattDiscoveryAgent{
             processGattServices()
         }
     }
-    
-    
 }
 
 

@@ -4,8 +4,8 @@ target 'JABLE_Example' do
   pod 'JABLE', :path => '/Users/jbak688/Library/Mobile Documents/com~apple~CloudDocs/iOS Development/CodeLibraries/Pods/JABLE', :branch => 'develop'
   pod 'CorePlot'#, '~> 2.2'
   target 'JABLE_Tests' do
-    inherit! :search_paths
+    pod 'JABLE', :path => '/Users/jbak688/Library/Mobile Documents/com~apple~CloudDocs/iOS Development/CodeLibraries/Pods/JABLE', :branch => 'develop'
+    #inherit! :search_paths
 
-    
   end
 end

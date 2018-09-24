@@ -37,6 +37,7 @@ class GattExample: JABLEGattProfile{
     var accelerometer                   : Bindable<[Float]?>    = Bindable(nil)
     var gyroscope                       : Bindable<[Float]?>    = Bindable(nil)
     var magnetometer                    : Bindable<[Float]?>    = Bindable(nil)
+    
     var txChar                          : Bindable<Any?>        = Bindable(nil)
     var rxChar                          : Bindable<Any?>        = Bindable(nil)
     

@@ -243,7 +243,7 @@ protocol JABLECentralAPI{
      
      If nil is provided as the service uuid parameter, the scan results will include all peripherls found
      */
-    func RSSI()
+    func RSSI(forPeripheral: CBPeripheral)
 }
 
 

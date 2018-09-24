@@ -9,37 +9,31 @@
 import Foundation
 import JABLE
 
+let bleManager = BLEManager()
+
 class CentralModeScanViewModel: NSObject{
     
-    private var bleManager: BLEManager!
-    private var jableCollectionViewManager: JableCollectionViewManager!
-    weak var collectionView: UICollectionView?
+    var selectedScanResult: Bindable<TrackedScanResult?> = Bindable(nil)
     
+    private var jableCollectionViewManager: JableCollectionViewManager!
     init(collectionView: UICollectionView) {
         super.init()
-        self.collectionView = collectionView
-        bleManager = BLEManager()
-        jableCollectionViewManager = JableCollectionViewManager(collectionView: collectionView)
+        jableCollectionViewManager = JableCollectionViewManager(collectionView: collectionView, delegate: self)
         bleManager.bleDiscoveryDelegate = self
     }
 }
 
 extension CentralModeScanViewModel: BLEDiscoveryDelegate{
-
+    
     func processedScanResult(processedResult: TrackedScanResult) {
-        
         jableCollectionViewManager.processNewData(newData: processedResult)
     }
+}
+
+extension CentralModeScanViewModel: JableCollectionManagerDelegate{
     
-    
-    func didUpdateManagedList(updatedList: [TrackedScanResult]) {
-        print("===========> UPDATED PERIPHERAL LIST")
-        //jableCollectionViewManager.data = updatedList
-    }
-    
-    
-    func didDiscoveryNewPeripheral(advData: FriendlyAdvertisement) {
-        //jableCollectionViewManager.data.append(advData)
+    func userSelected(scanResult: TrackedScanResult) {
+        selectedScanResult.value = scanResult
     }
     
 }

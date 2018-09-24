@@ -10,9 +10,9 @@ import CoreBluetooth
 
 open class JABLEService{
     
-    public var uuid: CBUUID
-    public var characteristics: [JABLECharacteristic]
-    weak public var assignToService: CBService?
+    public var uuid                 : CBUUID
+    public var characteristics      : [JABLECharacteristic]
+    weak public var assignToService : CBService? 
     
     public init(serviceUUID: CBUUID, assignTo service: CBService?, characteristics: [JABLECharacteristic]){
         self.uuid = serviceUUID

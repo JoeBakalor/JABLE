@@ -10,6 +10,7 @@ import Foundation
 
 open class JABLEGattProfile{
     public var services: [JABLEService]
+    
     public init(services: [JABLEService]){
         self.services = services
     }

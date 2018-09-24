@@ -28,10 +28,12 @@ open class ScanResultManager: NSObject{
             managedScanResult[peripheral]?.currentAdvData = advData
             
             if let newRssi = advData.rssi {
+                
                 if let rssiCount = managedScanResult[peripheral]?.rssiArray.count{
                     if rssiCount < 10{
                         managedScanResult[peripheral]?.rssiArray.append(newRssi)
-                    } else {
+                    }
+                    else {
                         managedScanResult[peripheral]?.rssiArray.removeFirst()
                         managedScanResult[peripheral]?.rssiArray.append(newRssi)
                     }
