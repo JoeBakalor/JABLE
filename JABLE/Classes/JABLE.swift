@@ -97,11 +97,8 @@ let useImproved = true
 //MARK: Use JABLE when GATT structure is known
 open class JABLE: NSObject, GattDiscoveryCompletionDelegate, JABLE_API
 {
-    
-    
     fileprivate var _connectedPeripheral: CBPeripheral?
     fileprivate var _connectedPeripherals: CBPeripheral?
-    
     fileprivate var _gattDiscoveryDelegate: GattDiscoveryDelegate?
     fileprivate var _jableCentralController: JABLE_CentralController!
     fileprivate var _jableGattProfile: JABLE_GATT?
@@ -142,7 +139,7 @@ open class JABLE: NSObject, GattDiscoveryCompletionDelegate, JABLE_API
      a peripheral GATT profile.  JABLE also provide automated GATT profile discovery
      
      */
-    public init(jableDelegate: JABLEDelegate?, gattProfile: inout JABLE_GATT.JABLE_GATTProfile?, autoGattDiscovery: Bool){
+    public init(jableDelegate: JABLEDelegate?, gattProfile: JABLE_GATT.JABLE_GATTProfile?, autoGattDiscovery: Bool){
         
         super.init()
         
@@ -154,13 +151,13 @@ open class JABLE: NSObject, GattDiscoveryCompletionDelegate, JABLE_API
         //INIT CENTRAL CONTROLLER WITHOUT GATT STRUCTURE, WE WILL DO THIS OURSELVES
         _jableCentralController = JABLE_CentralController(gapEventDelegate: self, gattEventDelegate: self, gattDiscoveryDelegate: self)
         
-        
+        _autoDiscovery = autoGattDiscovery
         //Check if auto gatt discovery is enabled and gatt profile is not nil
-        guard autoGattDiscovery == true && gattProfile != nil else { return }
+        guard gattProfile != nil else { return }
         
         //Initialize JABLE_GATT
         _autoDiscovery = true
-        _jableGattProfile = JABLE_GATT(gattProfile: &gattProfile!, gattDiscoveryCompetionDelegate: self)//JABLE_GATT(gattProfile: &gattProfile!, gattDiscoveryCompetionDelegate: self)//, controller: self)
+        _jableGattProfile = JABLE_GATT(gattProfile: gattProfile!, gattDiscoveryCompetionDelegate: self)//JABLE_GATT(gattProfile: &gattProfile!, gattDiscoveryCompetionDelegate: self)//, controller: self)
         
         for includedService in (gattProfile?.services)!{
             _serviceDiscoveryUuids.append(includedService.uuid)
@@ -169,15 +166,19 @@ open class JABLE: NSObject, GattDiscoveryCompletionDelegate, JABLE_API
         print("JABLE: Started")
     }
     
-    public func setNewGatt(gattProfile: inout JABLE_GATT.JABLE_GATTProfile?){
+    public func setNewGatt(gattProfile: JABLE_GATT.JABLE_GATTProfile?){
         
         _jableGattProfile = nil
-        _jableGattProfile = JABLE_GATT(gattProfile: &gattProfile!, gattDiscoveryCompetionDelegate: self)
+        _jableGattProfile = JABLE_GATT(gattProfile: gattProfile!, gattDiscoveryCompetionDelegate: self)
         
     }
     
     public func setJableDelegate(jableDelegate: JABLEDelegate){
         _jableDelegate = jableDelegate
+    }
+    
+    public func getCentralManagerInstance() -> CBCentralManager{
+        return _jableCentralController.getCentralManagerInstance()
     }
     
     /**
@@ -573,7 +574,7 @@ extension JABLE: GapEventDelegate
     
     internal func centralController(foundPeripheral peripheral: CBPeripheral, with advertisementData: [String : Any], rssi RSSI: Int){
         
-        //print("JABLE: FOUND PERIPHERAL")
+        //print("JABLE: FOUND PERIPHERAL \(advertisementData)")
         var friendlyAdvertisementData = FriendlyAdvdertismentData()
         if true{
             
@@ -610,7 +611,17 @@ extension JABLE: GapEventDelegate
             let localName             = advertisementData["kCBAdvDataLocalName"] as? String
             //            print("LOCAL NAME = \(String(describing: localName))")
             
-            friendlyAdvertisementData.localName = localName
+            if let name = localName{
+                friendlyAdvertisementData.localName = name
+            }
+            else if let name = peripheral.name {
+                friendlyAdvertisementData.localName = name
+            }
+            else{
+                friendlyAdvertisementData.localName = "Unkonwn"
+            }
+            
+            //friendlyAdvertisementData.localName = localName
             friendlyAdvertisementData.rssi = RSSI
             friendlyAdvertisementData.timeStamp = Date()
         }
@@ -651,12 +662,17 @@ extension JABLE: GapEventDelegate
     
     internal func centralController(connectedTo peripheral: CBPeripheral){
         
+        print("Connected To \(peripheral)")
+        
         _connectedPeripheral = peripheral
         _jableDelegate.jable(connectedTo: peripheral)//jable(connectedTo peripheral: peripheral)
         if _autoDiscovery{
             _discoveringServicesFor = peripheral
             print("JABLE: START AUTO GATT DISCOVERY")
             _jableCentralController.discoverServices(with: nil, for: peripheral)//.startScanningForPeripherals(withServiceUUIDS: nil)
+        }
+        else {
+            print("Auto Discovery Disabled")
         }
     }
     

@@ -97,6 +97,9 @@ public class JABLE_CentralController: NSObject
         _centralManager = CBCentralManager(delegate: self, queue: nil, options: [CBCentralManagerOptionShowPowerAlertKey: true])
     }
     
+    public func getCentralManagerInstance() -> CBCentralManager{
+        return self._centralManager
+    }
     
 }
 
@@ -359,14 +362,14 @@ extension JABLE_CentralController
         //Check if service UUIDs have been specified
         guard let uuids = UUIDS else {
             
-            //print("JABLE_CentralController: START SCANNING")
+            print("JABLE_CentralController: START SCANNING")
             //Otherwise scan for all peripherals
-            _centralManager.scanForPeripherals(withServices: nil, options: [CBCentralManagerOptionShowPowerAlertKey: true, CBCentralManagerScanOptionAllowDuplicatesKey: true])
+            _centralManager.scanForPeripherals(withServices: nil, options: [CBCentralManagerOptionShowPowerAlertKey: true, CBCentralManagerScanOptionAllowDuplicatesKey: false])
             return
         }
         
         //Scan for peripherals with included services
-        _centralManager.scanForPeripherals(withServices: uuids, options: [CBCentralManagerOptionShowPowerAlertKey: true, CBCentralManagerScanOptionAllowDuplicatesKey: true])
+        _centralManager.scanForPeripherals(withServices: uuids, options: [CBCentralManagerOptionShowPowerAlertKey: true, CBCentralManagerScanOptionAllowDuplicatesKey: false])
     }
     
     /**
@@ -536,7 +539,7 @@ extension JABLE_CentralController: CBCentralManagerDelegate
          */
         
         //Call GAP Event delegate method
-        //print("JABLE_CentralController: FOUND PERIPHERAL")
+        //print("JABLE_CentralController: FOUND PERIPHERAL \(advertisementData)")
         _gapEventDelegate.centralController(foundPeripheral: peripheral, with: advertisementData, rssi: RSSI.intValue)
     }
     
