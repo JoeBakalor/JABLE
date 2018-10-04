@@ -57,9 +57,9 @@ public class JABLE_GattClient: NSObject, CBPeripheralDelegate
      nothing
      
      - parameters:
-        - peripheral: the peripheral to create a gatt client instance for
-        - gattEventDelegate: the delegate to recieve GATT events
-        - gattDiscoveryDelegate: the delegate to reviece GATT discovery process events
+     - peripheral: the peripheral to create a gatt client instance for
+     - gattEventDelegate: the delegate to recieve GATT events
+     - gattDiscoveryDelegate: the delegate to reviece GATT discovery process events
      
      Additional details
      
@@ -184,7 +184,7 @@ extension JABLE_GattClient
      
      */
     func writeCharacteristicValue(forCharacteristic characteristic: CBCharacteristic, value: Data, withResponse: Bool){//,dataType: enum(HEX, ASCII, ETC){
-    
+        
         _gattServer?.writeValue(value, for: characteristic, type: .withResponse)
     }
     
@@ -349,6 +349,7 @@ public extension JABLE_GattClient
         _gattEventDelegate?.gattClient(wroteValueForD: descriptor, error: error)
     }
 }
+
 
 
 

@@ -73,9 +73,9 @@ public class JABLE_CentralController: NSObject
      Nothing
      
      - parameters:
-        - gapEventDelegate: The delegate to recieve GAP events
-        - gattEventDelegate: The delegate to recieve GATT events
-        - gattDiscoveryDelegate: The delegate to recieve GATT discovery process events
+     - gapEventDelegate: The delegate to recieve GAP events
+     - gattEventDelegate: The delegate to recieve GATT events
+     - gattDiscoveryDelegate: The delegate to recieve GATT discovery process events
      
      Additional details
      
@@ -489,7 +489,7 @@ extension JABLE_CentralController: CBCentralManagerDelegate
     public func centralManager(_ central: CBCentralManager, didConnect peripheral: CBPeripheral)
     {
         //Initialize internal GATT Client instance
-
+        
         //_gattClientInstance = JABLE_GattClient(withPeripheral: peripheral, gattEventDelegate: _gattEventDelegate , gattDiscoveryDelegate: _gattDiscoveryDelegate)
         
         
@@ -587,6 +587,7 @@ extension JABLE_CentralController: CBCentralManagerDelegate
         }
     }
 }
+
 
 
 

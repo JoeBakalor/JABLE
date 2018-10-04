@@ -87,7 +87,7 @@ public class JABLE_GATT: NSObject{
     fileprivate var _centralController              : JABLE?
     fileprivate var _gattDiscoveryCompletionDelegate: GattDiscoveryCompletionDelegate!
     fileprivate var _gattProfile                    : JABLE_GATTProfile?
-
+    
     
     init(gattProfile: inout JABLE_GATTProfile, gattDiscoveryCompetionDelegate: GattDiscoveryCompletionDelegate){
         super.init()
@@ -171,6 +171,7 @@ extension JABLE_GATT: GattUpdateDelegate{
     }
     
 }
+
 
 
 
