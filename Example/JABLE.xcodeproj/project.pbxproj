@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		27B1780A8E364C03CD51C290 /* Pods_JABLE_Example_JABLE_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD3DE58B9BAE0965B8E7B17E /* Pods_JABLE_Example_JABLE_Tests.framework */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
@@ -72,6 +73,7 @@
 		750479AEA23B4AD50EC2FB43 /* Pods-JABLE_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JABLE_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-JABLE_Tests/Pods-JABLE_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		755F42DFD84DF55132A6697E /* JABLE.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = JABLE.podspec; path = ../JABLE.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		8FC2750518340E756D300C24 /* Pods_JABLE_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JABLE_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		965EBF67BD77951A241A328B /* Pods-JABLE_Example-JABLE_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JABLE_Example-JABLE_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-JABLE_Example-JABLE_Tests/Pods-JABLE_Example-JABLE_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		AB861AC1599CEF598F3F7AB7 /* Pods-JABLE_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JABLE_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-JABLE_Example/Pods-JABLE_Example.release.xcconfig"; sourceTree = "<group>"; };
 		C48E591B0D127861D29AE2E1 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		DA3CF0D40C583C7E8FCA9794 /* Pods_JABLE_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JABLE_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -106,7 +108,9 @@
 		E0E3BB8A2153C407006A6139 /* MultiBindableTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiBindableTest.swift; sourceTree = "<group>"; };
 		E0ECBE5E2149342F00646224 /* Bindable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bindable.swift; sourceTree = "<group>"; };
 		E0ECBE6B214957E700646224 /* JableCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JableCollectionViewCell.swift; sourceTree = "<group>"; };
+		E3F777429E32DC7C668D187B /* Pods-JABLE_Example-JABLE_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JABLE_Example-JABLE_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JABLE_Example-JABLE_Tests/Pods-JABLE_Example-JABLE_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		F277B0CE5E00AB8DA00BF97F /* Pods-JABLE_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JABLE_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JABLE_Tests/Pods-JABLE_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		FD3DE58B9BAE0965B8E7B17E /* Pods_JABLE_Example_JABLE_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JABLE_Example_JABLE_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +127,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				690A7030DBAD99E49C7C6740 /* Pods_JABLE_Tests.framework in Frameworks */,
+				27B1780A8E364C03CD51C290 /* Pods_JABLE_Example_JABLE_Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -136,6 +141,8 @@
 				AB861AC1599CEF598F3F7AB7 /* Pods-JABLE_Example.release.xcconfig */,
 				F277B0CE5E00AB8DA00BF97F /* Pods-JABLE_Tests.debug.xcconfig */,
 				750479AEA23B4AD50EC2FB43 /* Pods-JABLE_Tests.release.xcconfig */,
+				E3F777429E32DC7C668D187B /* Pods-JABLE_Example-JABLE_Tests.debug.xcconfig */,
+				965EBF67BD77951A241A328B /* Pods-JABLE_Example-JABLE_Tests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -145,6 +152,7 @@
 			children = (
 				DA3CF0D40C583C7E8FCA9794 /* Pods_JABLE_Example.framework */,
 				8FC2750518340E756D300C24 /* Pods_JABLE_Tests.framework */,
+				FD3DE58B9BAE0965B8E7B17E /* Pods_JABLE_Example_JABLE_Tests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -463,6 +471,7 @@
 				607FACE11AFB9204008FA782 /* Sources */,
 				607FACE21AFB9204008FA782 /* Frameworks */,
 				607FACE31AFB9204008FA782 /* Resources */,
+				E804D6AA08E29D0A21BEF54D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -566,7 +575,7 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-JABLE_Tests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-JABLE_Example-JABLE_Tests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -591,6 +600,26 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JABLE_Example/Pods-JABLE_Example-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E804D6AA08E29D0A21BEF54D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-JABLE_Example-JABLE_Tests/Pods-JABLE_Example-JABLE_Tests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/CorePlot/CorePlot.framework",
+				"${BUILT_PRODUCTS_DIR}/JABLE/JABLE.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CorePlot.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JABLE.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JABLE_Example-JABLE_Tests/Pods-JABLE_Example-JABLE_Tests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -810,7 +839,7 @@
 		};
 		607FACF31AFB9204008FA782 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F277B0CE5E00AB8DA00BF97F /* Pods-JABLE_Tests.debug.xcconfig */;
+			baseConfigurationReference = E3F777429E32DC7C668D187B /* Pods-JABLE_Example-JABLE_Tests.debug.xcconfig */;
 			buildSettings = {
 				DEVELOPMENT_TEAM = 7NFJS9H6QK;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -832,7 +861,7 @@
 		};
 		607FACF41AFB9204008FA782 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 750479AEA23B4AD50EC2FB43 /* Pods-JABLE_Tests.release.xcconfig */;
+			baseConfigurationReference = 965EBF67BD77951A241A328B /* Pods-JABLE_Example-JABLE_Tests.release.xcconfig */;
 			buildSettings = {
 				DEVELOPMENT_TEAM = 7NFJS9H6QK;
 				FRAMEWORK_SEARCH_PATHS = (

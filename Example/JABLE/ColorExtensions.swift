@@ -11,6 +11,11 @@ import UIKit
 
 extension UIColor{
     
+    /**/
+    static var JableBlue: UIColor{
+         return UIColor(red: 39/255, green: 118/255, blue: 188/255, alpha: 1)
+    }
+    
     /*  Device node colors */
     static var JableBlueOne: UIColor{
         return UIColor(red: 0/255, green: 128/255, blue: 179/255, alpha: 1.0)

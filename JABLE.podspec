@@ -37,6 +37,6 @@ TODO: JBLE is a BLE central mode library that provides automation for GATT disco
   # }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
+  s.frameworks = 'CoreBluetooth'
   # s.dependency 'AFNetworking', '~> 2.3'
 end

@@ -57,11 +57,10 @@ class AppNavigationController: UINavigationController {
         tap.addTarget(self, action: #selector(hideSideMenu))
         blurView.addGestureRecognizer(tap)
         
-        sideNavigation.delegate = self
-        
         self.view.addSubview(blurView)
         self.view.addSubview(sideNavigation.view)
         
+        sideNavigation.delegate = self
         sideNavigation.view.frame = CGRect(origin: sideNavHideOrigin, size: CGSize(width: self.view.bounds.width*0.65, height: self.view.bounds.size.height))
     }
     

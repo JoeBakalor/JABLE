@@ -11,5 +11,4 @@ import Foundation
 
 class GATTTableViewModel: NSObject{
     var gattTableData: [(sectionData: GATTTableViewCellModel, isExpanded: Bool)] = []
-    
 }

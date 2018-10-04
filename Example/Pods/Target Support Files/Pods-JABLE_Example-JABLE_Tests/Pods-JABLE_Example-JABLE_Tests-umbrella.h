@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double Pods_JABLE_TestsVersionNumber;
-FOUNDATION_EXPORT const unsigned char Pods_JABLE_TestsVersionString[];
+FOUNDATION_EXPORT double Pods_JABLE_Example_JABLE_TestsVersionNumber;
+FOUNDATION_EXPORT const unsigned char Pods_JABLE_Example_JABLE_TestsVersionString[];
 
