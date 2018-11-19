@@ -418,12 +418,16 @@ extension JABLE_CentralController
         
         //Save reference to peripheral we are trying to connect
         _peripheralPendingConnection = peripheral
-        
+        if #available(iOS 10.0, *) {
         //Initiate connection to specificied peripheral
-        _centralManager.connect(peripheral, options: [CBConnectPeripheralOptionStartDelayKey: true,
+            _centralManager.connect(peripheral, options: [CBConnectPeripheralOptionStartDelayKey: true,
                                                       CBConnectPeripheralOptionNotifyOnConnectionKey: false,
                                                       CBConnectPeripheralOptionNotifyOnDisconnectionKey: true,
                                                       CBConnectPeripheralOptionNotifyOnNotificationKey: false])
+        }
+        else {
+            _centralManager.connect(peripheral, options: nil)
+        }
         //Set connection timeout timer
         _connectionTimeoutTimer = Timer.scheduledTimer(timeInterval: TimeInterval(timeout), target: self, selector: #selector(_cancelConnectionAttempt), userInfo: nil, repeats: false)
     }
