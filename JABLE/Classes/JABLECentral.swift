@@ -65,31 +65,36 @@ extension JABLECentral: JABLECentralAPI{
     public func setup(gattProfile: JABLEGattProfile, forPeripheral peripheral: CBPeripheral) {
         
         guard activeGattDiscoveryProcess == nil else {
-            pendingGattDiscoveryProcesses.append(GattDiscoveryProcess(gatt: gattProfile, peripheral: peripheral))
-            return
-        }
+            pendingGattDiscoveryProcesses.append(
+                GattDiscoveryProcess(
+                    gatt: gattProfile,
+                    peripheral: peripheral)); return }
         
-        activeGattDiscoveryProcess = GattDiscoveryProcess(gatt: gattProfile, peripheral: peripheral)
+        activeGattDiscoveryProcess = GattDiscoveryProcess(
+            gatt: gattProfile,
+            peripheral: peripheral)
+        
         peripheral.discoverServices(nil)
-        
     }
     
     /**/
     public func startLookingForPeripherals(withServiceUUIDs uuids: [CBUUID]?) {
         
-        guard jableIsReady else { pendingScanRequest =  ScanRequest(serviceUUIDs: uuids); return }
+        guard jableIsReady else {
+            pendingScanRequest =  ScanRequest(serviceUUIDs: uuids); return }
         
         guard let validUUIDs = uuids else {
             centralController?.scanForPeripherals(
                 withServices: nil,
-                options: [CBCentralManagerOptionShowPowerAlertKey: true,
-                          CBCentralManagerScanOptionAllowDuplicatesKey: true]);
-            return
-        }
+                options: [
+                    CBCentralManagerOptionShowPowerAlertKey: true,
+                    CBCentralManagerScanOptionAllowDuplicatesKey: true]); return }
         
-        centralController?.scanForPeripherals( withServices: validUUIDs,
-                                               options: [CBCentralManagerOptionShowPowerAlertKey: true,
-                                                         CBCentralManagerScanOptionAllowDuplicatesKey: true])
+        centralController?.scanForPeripherals(
+            withServices: validUUIDs,
+            options: [
+                CBCentralManagerOptionShowPowerAlertKey: true,
+                CBCentralManagerScanOptionAllowDuplicatesKey: true])
     }
     
     /**/
@@ -98,18 +103,28 @@ extension JABLECentral: JABLECentralAPI{
     }
     
     /**/
-    public func connect(toPeripheral peripheral: CBPeripheral, withOptions connectionOptions: ConnectionOptions) {
+    public func connect(toPeripheral peripheral: CBPeripheral, withOptions connectionOptions: ConnectionOptions){
         
-        guard peripheralPendingConnection == nil && peripheralPendingReconnection == nil
-        else { peripheralsToConnectQueue.append(PeripheralConnection(peripheral: peripheral, connectionOptions: connectionOptions)); return }
         
-        peripheralPendingConnection = PeripheralConnection(peripheral: peripheral, connectionOptions: connectionOptions)
+        var test = Observable("TEST")
+        
+        guard peripheralPendingConnection == nil && peripheralPendingReconnection == nil else {
+            peripheralsToConnectQueue.append(
+                PeripheralConnection(
+                    peripheral: peripheral,
+                    connectionOptions: connectionOptions)); return }
+        
+        peripheralPendingConnection = PeripheralConnection(
+            peripheral: peripheral,
+            connectionOptions: connectionOptions)
+        
         centralController?.connect(
             peripheral,
-            options: [CBConnectPeripheralOptionStartDelayKey: true,
-                      CBConnectPeripheralOptionNotifyOnConnectionKey: true,
-                      CBConnectPeripheralOptionNotifyOnDisconnectionKey: true,
-                      CBConnectPeripheralOptionNotifyOnNotificationKey: false])
+            options: [
+                CBConnectPeripheralOptionStartDelayKey: true,
+                CBConnectPeripheralOptionNotifyOnConnectionKey: true,
+                CBConnectPeripheralOptionNotifyOnDisconnectionKey: true,
+                CBConnectPeripheralOptionNotifyOnNotificationKey: false])
         
         if let connectionTimeout = connectionOptions.connectionTimeout{
             connectionTimeoutTimer = Timer.scheduledTimer(
@@ -123,11 +138,12 @@ extension JABLECentral: JABLECentralAPI{
     
     /**/
     @objc private func cancelPeripheralConnection(){
-        
+    
         if let peripheral = peripheralPendingConnection?.peripheral{
             centralController?.cancelPeripheralConnection(peripheral)
             peripheralPendingConnection = nil
-        } else if let peripheral = peripheralPendingReconnection?.peripheral{
+        }
+        else if let peripheral = peripheralPendingReconnection?.peripheral{
             centralController?.cancelPeripheralConnection(peripheral)
             peripheralPendingReconnection = nil
         }
@@ -192,27 +208,26 @@ extension JABLECentral: CBCentralManagerDelegate{
     public func centralManager(_ central: CBCentralManager, didDisconnectPeripheral peripheral: CBPeripheral, error: Error?) {
         
         connectedPeripherals = connectedPeripherals.filter { (id, peripheralConnection) -> Bool in
-
             if peripheral == peripheralConnection.peripheral {
                 
-                if peripheralConnection.connectionOptions.shouldAttemptReconnection && peripheralConnection.connectionOptions.retries == 0{
+                if peripheralConnection.connectionOptions.shouldAttemptReconnection
+                   && peripheralConnection.connectionOptions.retries == 0 {
                     
                     connectedPeripherals[id]?.connectionOptions.retries += 1
                     
                     if peripheralPendingConnection != nil {
-                        
                         peripheralsToConnectQueue.append(PeripheralConnection(
                             peripheral: peripheral,
                             connectionOptions: (connectedPeripherals[id]?.connectionOptions)!))
-                        
-                    } else {
-                        
+                    }
+                    else {
                         peripheralPendingReconnection = PeripheralConnection(
                             peripheral: peripheral,
                             connectionOptions: (connectedPeripherals[id]?.connectionOptions)!)
                         
-                        self.connect(toPeripheral: (peripheralPendingConnection?.peripheral)!,
-                                     withOptions: (peripheralPendingConnection?.connectionOptions)!)
+                        self.connect(
+                            toPeripheral: (peripheralPendingConnection?.peripheral)!,
+                            withOptions: (peripheralPendingConnection?.connectionOptions)!)
                 
                         if let reconnectionTimeout = peripheralConnection.connectionOptions.reconnectionTimeout{
                             reconnectionTimeoutTimer = Timer.scheduledTimer(
@@ -242,13 +257,15 @@ extension JABLECentral: CBCentralManagerDelegate{
             case CBManagerState.unauthorized: break
             case CBManagerState.unknown: break
             case CBManagerState.poweredOn:
-                //print("Bluetooth Ready!")
+                
+                jableIsReady = true
                 if let scanRequest = pendingScanRequest{
                     pendingScanRequest = nil
-                    jableIsReady = true
-                    self.startLookingForPeripherals(withServiceUUIDs: scanRequest.serviceUUIDs)
-                }
-                break
+                    self.startLookingForPeripherals(
+                        withServiceUUIDs:
+                        scanRequest.serviceUUIDs)
+                }; break
+                
             case CBManagerState.resetting: break
             case CBManagerState.unsupported:break
             }
@@ -287,7 +304,9 @@ extension JABLECentral: CBPeripheralDelegate{
         
         if let services = peripheral.services{
             activeGattDiscoveryProcess?.discoveryAgent.central(didFind: services)
-            jableDelegate?.jable(foundServices: services, forPeripheral: peripheral)
+            jableDelegate?.jable(
+                foundServices: services,
+                forPeripheral: peripheral)
         }
     }
     

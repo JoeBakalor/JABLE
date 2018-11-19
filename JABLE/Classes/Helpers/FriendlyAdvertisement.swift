@@ -9,19 +9,20 @@ import Foundation
 import CoreBluetooth
 
 public struct FriendlyAdvertisement: CustomStringConvertible{
-    public var connectable: Bool?
-    public var manufacturerData: NSData?
-    public var overflowServiceUUIDs: [CBUUID]?
-    public var serviceData: [CBUUID: NSData]?
-    public var services: [CBUUID]?
-    public var solicitedServiceUUIDs: [CBUUID]?
-    public var transmitPowerLevel: NSNumber?
-    public var localName: String?
-    public var friendlyName: String?
-    public var rssi: Int?
-    public var timeStamp: Date?
-    public var seen: Int = 0
-    public var advIntervalEstimate: Double?
+    
+    public var connectable              : Bool?
+    public var manufacturerData         : NSData?
+    public var overflowServiceUUIDs     : [CBUUID]?
+    public var serviceData              : [CBUUID: NSData]?
+    public var services                 : [CBUUID]?
+    public var solicitedServiceUUIDs    : [CBUUID]?
+    public var transmitPowerLevel       : NSNumber?
+    public var localName                : String?
+    public var friendlyName             : String?
+    public var rssi                     : Int?
+    public var timeStamp                : Date?
+    public var seen                     : Int = 0
+    public var advIntervalEstimate      : Double?
     
     init(advertisementData: [String : Any], rssi RSSI: Int, peripheral: CBPeripheral){
         self.connectable            = advertisementData["kCBAdvDataIsConnectable"] as? NSNumber == 1 ? true : false
@@ -51,6 +52,18 @@ public struct FriendlyAdvertisement: CustomStringConvertible{
         let timeStampPrintValue             = self.timeStamp != nil ? "\(self.timeStamp!)" : noValue
         let advIntervalEstimatePrintValue   = self.advIntervalEstimate != nil ? "\(self.advIntervalEstimate!)" : noValue
         
-        return ("\n\r   Conectable: \(connectablePrintValue)\n\r   Manufacturer Data: \(manufacturerDataPrintValue)\n\r   Overflow Service UUIDs: \(overflowServiceUUIDsPrintValue)\n\r   ServiceData: \(serviceDataPrintValue)\n\r   Services: \(servicesPrintValue)\n\r   Solicited Service UUIDs: \(solicitedServiceUUIDsPrintValue)\n\r   Transmit Power Level: \(transmitPowerLevelPrintValue)\n\r   Local Name: \(localNamePrintValue)\n\r   RSSI: \(rssiPrintValue)\n\r  Adv Estimate: \(advIntervalEstimatePrintValue)\n\r TimeStamp: \(timeStampPrintValue)")
+        return ("""
+            Conectable: \(connectablePrintValue)
+            Manufacturer Data: \(manufacturerDataPrintValue)
+            Overflow Service UUIDs: \(overflowServiceUUIDsPrintValue)
+            ServiceData: \(serviceDataPrintValue)
+            Services: \(servicesPrintValue)
+            Solicited Service UUIDs: \(solicitedServiceUUIDsPrintValue)
+            Transmit Power Level: \(transmitPowerLevelPrintValue)
+            Local Name: \(localNamePrintValue)
+            RSSI: \(rssiPrintValue)
+            Adv Estimate: \(advIntervalEstimatePrintValue)
+            TimeStamp: \(timeStampPrintValue)
+            """)
     }
 }

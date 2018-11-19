@@ -33,7 +33,7 @@ class MultiBindableTest: XCTestCase {
     
     func testMultiBindingModel(){
         
-        let multiBindableValue: MultiBindable<Int> = MultiBindable(0)
+        let multiBindableValue: Observable<Int> = Observable(0)
         
         let bindIDOne = multiBindableValue.bind { (newValue) in
             print("\nBinding One Updated to \(newValue)")

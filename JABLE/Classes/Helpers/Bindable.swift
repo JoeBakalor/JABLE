@@ -36,17 +36,38 @@ class Bindable<T>{
     }
 }
 
-class MultiBindable<T>{
+class Connection<T>{
     
     typealias Listener = (T) -> Void
+    var listener: Listener?
+    
+    var value: T{
+        didSet{
+            listener?(value)
+        }
+    }
+    
+    init(_ value: T){
+        self.value = value
+    }
+    
+    func onChange(listener: Listener?){
+        self.listener = listener
+        listener?(value)
+    }
+}
+
+class Observable<T>{
+    
+    typealias Observer = (T) -> Void
     typealias BindingID = Int
     
-    var listeners: [Int: Listener?] = [:]
+    var observers: [Int: Observer?] = [:]
     var currentBindingID: Int = 0
     
     var value: T{
         didSet{
-            listeners.forEach { (binding) in
+            observers.forEach { (binding) in
                 binding.value?(value)
             }
         }
@@ -56,20 +77,60 @@ class MultiBindable<T>{
         self.value = value
     }
     
-    func bind(listener: Listener?) -> BindingID{
-        
+    func bind(observer: Observer?) -> BindingID{
         defer { currentBindingID += 1 }
-        
-        listeners[currentBindingID] = listener
-        listener?(value)
+        observers[currentBindingID] = observer
+        observer?(value)
         return currentBindingID
     }
     
     func deleteBinding(withID id: BindingID){
-        listeners.removeValue(forKey: id)
+        observers.removeValue(forKey: id)
     }
     
     func removeAllBindings(){
-        listeners = [:]
+        observers = [:]
+    }
+}
+
+class ObservableT<T>{
+    
+    typealias _observer = (T) -> Void
+    var observer: _observer?
+}
+
+class SequenceType<T>{
+//
+//    typealias observer = (T) -> Void
+////
+////    let sequenceObservers: [String: ObservableT?] = [
+////        "EVENT_X" : nil,
+////        "EVENT_Y" : nil,
+////        "EVENT_Z" : nil
+////    ]
+//
+//
+//    var value: T?{
+//        didSet{
+//
+//        }
+//    }
+//    init(_ value: T) {
+//        self.value = value
+//    }
+//
+//    func onEvent(handler: observer) -> SequenceType<T>{
+//        sequenceObservers["EVENT_X"] = handler
+//        return self
+//    }
+//
+//    func onNotEvent() -> SequenceType<T>{
+//        return self
+//    }
+}
+
+class test{
+    init() {
+        //let test = SequenceType("TEST").onEvent().onNotEvent()
     }
 }
