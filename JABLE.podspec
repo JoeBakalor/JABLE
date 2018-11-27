@@ -27,10 +27,13 @@ TODO: JBLE is a BLE central mode library that provides automation for GATT disco
   s.author           = { 'jmbakalor@gmail.com' => 'jmbakalor@gmail.com' }
   s.source           = { :git => 'https://github.com/jmb2k6/JABLE.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
-
+  
   s.ios.deployment_target = '8.0'
 
   s.source_files = 'JABLE/Classes/**/*'
+  
+  s.weak_framework      = 'CoreBluetooth'
+  #s.f
   
   # s.resource_bundles = {
   #   'JABLE' => ['JABLE/Assets/*.png']
