@@ -1,10 +1,3 @@
-//
-//  JABLE_CentralController.swift
-//  JABLE
-//
-//  Created by Joe Bakalor on 2/21/18.
-//
-
 
 //
 //  BLECentralController.swift
