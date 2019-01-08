@@ -36,7 +36,7 @@ public class JABLE_GATT: NSObject{
     
     public typealias Completion<T> = (T) -> Void
     
-    public struct JABLE_Descriptor{
+    public class JABLE_Descriptor{
         
         var uuid: CBUUID
         var completion: Completion<CBDescriptor>?
@@ -47,7 +47,7 @@ public class JABLE_GATT: NSObject{
         }
     }
     
-    public struct JABLE_Characteristic{
+    public class JABLE_Characteristic{
         
         public var uuid: CBUUID
         public var descriptors: [JABLE_Descriptor]?
@@ -60,7 +60,7 @@ public class JABLE_GATT: NSObject{
         }
     }
     
-    public struct JABLE_Service{
+    public class JABLE_Service{
         
         public var uuid: CBUUID
         public var completion: Completion<CBService>?
@@ -73,7 +73,7 @@ public class JABLE_GATT: NSObject{
         }
     }
     
-    public struct JABLE_GATTProfile{
+    public class JABLE_GATTProfile{
         
         public var services: [JABLE_Service]
         
@@ -85,9 +85,9 @@ public class JABLE_GATT: NSObject{
     fileprivate var _centralController              : JABLE?
     fileprivate var _gattDiscoveryCompletionDelegate: GattDiscoveryCompletionDelegate!
     fileprivate var _gattProfile                    : JABLE_GATTProfile?
-
     
-    init(gattProfile: inout JABLE_GATTProfile, gattDiscoveryCompetionDelegate: GattDiscoveryCompletionDelegate){
+    
+    init(gattProfile: JABLE_GATTProfile, gattDiscoveryCompetionDelegate: GattDiscoveryCompletionDelegate){
         super.init()
         
         _gattProfile = gattProfile
@@ -169,6 +169,7 @@ extension JABLE_GATT: GattUpdateDelegate{
     }
     
 }
+
 
 
 
