@@ -13,8 +13,8 @@
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
-		690A7030DBAD99E49C7C6740 /* Pods_JABLE_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FC2750518340E756D300C24 /* Pods_JABLE_Tests.framework */; };
 		CF64C77D2772D693CACAB7CF /* Pods_JABLE_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA3CF0D40C583C7E8FCA9794 /* Pods_JABLE_Example.framework */; };
+		E0064EA921E4D4FF007B90D7 /* PeripheralActionPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0064EA821E4D4FF007B90D7 /* PeripheralActionPopupView.swift */; };
 		E01A7F26214D846A00271C14 /* CentralModeScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01A7F25214D846A00271C14 /* CentralModeScanViewController.swift */; };
 		E01A7F2B214D84C000271C14 /* CentralModeScanViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01A7F2A214D84C000271C14 /* CentralModeScanViewModel.swift */; };
 		E01A7F45214DA49E00271C14 /* AppNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01A7F44214DA49E00271C14 /* AppNavigationController.swift */; };
@@ -70,13 +70,12 @@
 		607FACE51AFB9204008FA782 /* JABLE_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JABLE_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
-		750479AEA23B4AD50EC2FB43 /* Pods-JABLE_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JABLE_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-JABLE_Tests/Pods-JABLE_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		755F42DFD84DF55132A6697E /* JABLE.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = JABLE.podspec; path = ../JABLE.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		8FC2750518340E756D300C24 /* Pods_JABLE_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JABLE_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		965EBF67BD77951A241A328B /* Pods-JABLE_Example-JABLE_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JABLE_Example-JABLE_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-JABLE_Example-JABLE_Tests/Pods-JABLE_Example-JABLE_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		AB861AC1599CEF598F3F7AB7 /* Pods-JABLE_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JABLE_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-JABLE_Example/Pods-JABLE_Example.release.xcconfig"; sourceTree = "<group>"; };
 		C48E591B0D127861D29AE2E1 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		DA3CF0D40C583C7E8FCA9794 /* Pods_JABLE_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JABLE_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E0064EA821E4D4FF007B90D7 /* PeripheralActionPopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeripheralActionPopupView.swift; sourceTree = "<group>"; };
 		E01A7F25214D846A00271C14 /* CentralModeScanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CentralModeScanViewController.swift; sourceTree = "<group>"; };
 		E01A7F2A214D84C000271C14 /* CentralModeScanViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CentralModeScanViewModel.swift; sourceTree = "<group>"; };
 		E01A7F44214DA49E00271C14 /* AppNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppNavigationController.swift; sourceTree = "<group>"; };
@@ -109,7 +108,6 @@
 		E0ECBE5E2149342F00646224 /* Bindable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bindable.swift; sourceTree = "<group>"; };
 		E0ECBE6B214957E700646224 /* JableCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JableCollectionViewCell.swift; sourceTree = "<group>"; };
 		E3F777429E32DC7C668D187B /* Pods-JABLE_Example-JABLE_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JABLE_Example-JABLE_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JABLE_Example-JABLE_Tests/Pods-JABLE_Example-JABLE_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		F277B0CE5E00AB8DA00BF97F /* Pods-JABLE_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JABLE_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JABLE_Tests/Pods-JABLE_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		FD3DE58B9BAE0965B8E7B17E /* Pods_JABLE_Example_JABLE_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JABLE_Example_JABLE_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -126,7 +124,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				690A7030DBAD99E49C7C6740 /* Pods_JABLE_Tests.framework in Frameworks */,
 				27B1780A8E364C03CD51C290 /* Pods_JABLE_Example_JABLE_Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -139,8 +136,6 @@
 			children = (
 				10A9D40C981FE99CE6F27AD1 /* Pods-JABLE_Example.debug.xcconfig */,
 				AB861AC1599CEF598F3F7AB7 /* Pods-JABLE_Example.release.xcconfig */,
-				F277B0CE5E00AB8DA00BF97F /* Pods-JABLE_Tests.debug.xcconfig */,
-				750479AEA23B4AD50EC2FB43 /* Pods-JABLE_Tests.release.xcconfig */,
 				E3F777429E32DC7C668D187B /* Pods-JABLE_Example-JABLE_Tests.debug.xcconfig */,
 				965EBF67BD77951A241A328B /* Pods-JABLE_Example-JABLE_Tests.release.xcconfig */,
 			);
@@ -151,7 +146,6 @@
 			isa = PBXGroup;
 			children = (
 				DA3CF0D40C583C7E8FCA9794 /* Pods_JABLE_Example.framework */,
-				8FC2750518340E756D300C24 /* Pods_JABLE_Tests.framework */,
 				FD3DE58B9BAE0965B8E7B17E /* Pods_JABLE_Example_JABLE_Tests.framework */,
 			);
 			name = Frameworks;
@@ -232,9 +226,18 @@
 			name = "Podspec Metadata";
 			sourceTree = "<group>";
 		};
+		E0064EA721E4D35E007B90D7 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E0064EA821E4D4FF007B90D7 /* PeripheralActionPopupView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		E01A7F27214D847200271C14 /* Central Mode Scan View */ = {
 			isa = PBXGroup;
 			children = (
+				E0064EA721E4D35E007B90D7 /* Views */,
 				E01A7F28214D849D00271C14 /* View Controller */,
 				E01A7F29214D84AA00271C14 /* View Model */,
 			);
@@ -648,6 +651,7 @@
 				E0E3BB872153185F006A6139 /* JableButton.swift in Sources */,
 				E0C09C512155A94D00D08090 /* JABLEPopupView.swift in Sources */,
 				E01A7F2B214D84C000271C14 /* CentralModeScanViewModel.swift in Sources */,
+				E0064EA921E4D4FF007B90D7 /* PeripheralActionPopupView.swift in Sources */,
 				E0A4301E204A03640008F6F0 /* BLEManager.swift in Sources */,
 				E01A7F45214DA49E00271C14 /* AppNavigationController.swift in Sources */,
 				E0C09C3F2155347600D08090 /* GATTExplorerViewController.swift in Sources */,
@@ -810,7 +814,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 7NFJS9H6QK;
 				INFOPLIST_FILE = JABLE/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
@@ -827,7 +831,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 7NFJS9H6QK;
 				INFOPLIST_FILE = JABLE/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";

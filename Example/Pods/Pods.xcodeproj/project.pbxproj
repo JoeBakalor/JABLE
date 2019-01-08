@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		00549EB7F54CBD2E127143BCA82C28AC /* JABLE-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0B34D0895B49D83C45B4CB73A20DAED6 /* JABLE-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		028908D3DB1E0E400C9AF6FBA8501F44 /* CPTGraph.h in Headers */ = {isa = PBXBuildFile; fileRef = 3EEDF6C438FE09BB4A373490FFD325E9 /* CPTGraph.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		02C0E170B04FC72832A7B81AEC730C30 /* CPTPlatformSpecificDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = D997022D04809C7113422D513C6720E5 /* CPTPlatformSpecificDefines.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0451C95193D9754C614F81500542FC8A /* CPTGridLineGroup.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A406D9172E283372F2A5779585261A1 /* CPTGridLineGroup.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		048F06D54736CB67915801AF30EB7328 /* NSNumberExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = F2BB75212F57B73D3CD9670470D46E9E /* NSNumberExtensions.m */; };
 		07B93BB9849DA0C9E6982F6A93DA3138 /* CPTNumericData+TypeConversion.h in Headers */ = {isa = PBXBuildFile; fileRef = BC564C2E537D409A8722AF6D75585D32 /* CPTNumericData+TypeConversion.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		09A533D9FE6B925ED7234583FBEEC1C5 /* JABLE-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F713C5D97D824386022F8A1D58425CC7 /* JABLE-dummy.m */; };
 		0D08AAE20FD520DE1F075C785F010B39 /* CPTXYPlotSpace.m in Sources */ = {isa = PBXBuildFile; fileRef = 07990EF6586B351292F4B30E2ECB84ED /* CPTXYPlotSpace.m */; };
 		0F23538062B03DED836FB21F5D9D8906 /* CorePlot-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D586A87CFC6414988074C2223769150 /* CorePlot-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0F65DECB2270037AD2B6A7AFEB07722A /* _CPTAnimationPlotRangePeriod.m in Sources */ = {isa = PBXBuildFile; fileRef = C325489752836C524850A547CF5AC5E4 /* _CPTAnimationPlotRangePeriod.m */; };
@@ -23,36 +23,39 @@
 		1389C6CDC8116A4DE3E35948AA49FB01 /* _CPTAnimationNSNumberPeriod.m in Sources */ = {isa = PBXBuildFile; fileRef = A692110B8767354FA4BCF4B6A85929DC /* _CPTAnimationNSNumberPeriod.m */; };
 		155D0428AC64DC9322BDCAAA89F02AE5 /* CPTUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 377A294B642A4C34B2054B6F9D26BA4F /* CPTUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		164197A580CC9ABCEE253AB67921B4B9 /* CPTTextStylePlatformSpecific.h in Headers */ = {isa = PBXBuildFile; fileRef = F24B42CB17A916353E5337C52BB9C3F3 /* CPTTextStylePlatformSpecific.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		165EA640955CFD2169B17E86E814F511 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E8FF9752305FFF10899CB5A8ABEF459 /* Accelerate.framework */; };
+		165EA640955CFD2169B17E86E814F511 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 356BAC187D68D9C391964EFF19998497 /* Accelerate.framework */; };
 		198247B009AE40D5E329611FC43677F8 /* CPTAxisSet.h in Headers */ = {isa = PBXBuildFile; fileRef = 401F599168DCFCC4717AB46BC617C691 /* CPTAxisSet.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		19C289DC226DBDBE103A42AFEA67633B /* CPTColorSpace.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B63DD488956DB90ADEE8E57AA815195 /* CPTColorSpace.m */; };
-		19E17C9AEC6BE8BB0CA2E277FF41CA1F /* GattDiscoveryProcess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C3665B6EE88D09BDE1F87440785DD0 /* GattDiscoveryProcess.swift */; };
 		19EAEA30D1211C56FD167E3E5564B12B /* CPTDebugQuickLook.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A308573E8E4D954A4CC35C8B1BE403E /* CPTDebugQuickLook.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1A9B352799073781F8B80E9B1FD3033C /* _CPTFillImage.h in Headers */ = {isa = PBXBuildFile; fileRef = B53E993822502865A3A191CB611AB9AE /* _CPTFillImage.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		1AADEBDCF3B54C191B721009A150DD5F /* CPTMutableLineStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 825E65F07F304A283B3A6B253C21F345 /* CPTMutableLineStyle.m */; };
 		1B7E24BAF5D828E6C00A2DDA5602597F /* CPTGradient.h in Headers */ = {isa = PBXBuildFile; fileRef = 5CB88B8C87CAA0FB491C06B828324D84 /* CPTGradient.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1BC0310471F08E88D4005F4601D1B5DE /* CPTAxisLabel.h in Headers */ = {isa = PBXBuildFile; fileRef = C8D486AB4CFEC43427EB918C68CCA762 /* CPTAxisLabel.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1CB6157BE9AAB376B94F3AE22E343399 /* CPTUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BEE56039F473A58797D24902291DD7E /* CPTUtilities.m */; };
-		1CE982C98E83FBC1BA222BF918033410 /* JABLEStates.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41240FD91806F24C17C39581EA09C5E /* JABLEStates.swift */; };
-		1D34A5BA83F7F052FC641494A0AB4551 /* ScanConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53BBA300BAE6420CCB7C936AAD26B39 /* ScanConfiguration.swift */; };
+		1CD166056DB9C7BAECD03C9AC2CB05B3 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C46C8398BC86F11F38B8276E78D74FDF /* CoreBluetooth.framework */; };
 		1DD7A07691AB1230B3DF0E9D43371F7F /* _CPTFillGradient.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C3F8E396B22F18DE7E3A216648C5D82 /* _CPTFillGradient.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		1DFFB1A1742451088F3CA491B45FFFDF /* JABLEDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AABC95119E66F83DE50BF8A6CC9B6C4 /* JABLEDescriptor.swift */; };
 		1EFBB8447C8B0B83F844113CC7271D4A /* CPTLegendEntry.h in Headers */ = {isa = PBXBuildFile; fileRef = 815BC4E97DC4735FCA53F9FA7CE3B205 /* CPTLegendEntry.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		21DC46F598662C2D5936B5F9A4C8D600 /* CPTPlotGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B57320B0F433A1BEBBFE248FBE23EBA /* CPTPlotGroup.m */; };
 		23A8C39C4DEDF0605F9C7BE1B8272D1A /* CPTFill.h in Headers */ = {isa = PBXBuildFile; fileRef = 458D4AF44337BA558B8D32B0FEFDBB98 /* CPTFill.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		23B16C4343B17619981218B70D082DD6 /* _CPTMaskLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = A7AC08335D4CDE3E9E4FC456207B4227 /* _CPTMaskLayer.m */; };
+		23E41D51B908FDE5D631414CFA99F7F0 /* JABLEPeripheralAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F840BE8C90419AA3B9396B2CB448FC53 /* JABLEPeripheralAPI.swift */; };
 		2503FFF10C7F6D3F999B2E3DFC4EAE11 /* CPTPlotArea.h in Headers */ = {isa = PBXBuildFile; fileRef = 8214B7A3150882B962CAE0D0F5AC096A /* CPTPlotArea.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		250C24643D266259DB6DE8A9243CCBB0 /* _CPTFillColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 15612455DA45206A4D706B96993D0D84 /* _CPTFillColor.m */; };
 		25A5EF982E9894C0F13AA4CBF7F7A97A /* CPTDefinitions.h in Headers */ = {isa = PBXBuildFile; fileRef = F44229132BEA2F79581EAC5C430C026B /* CPTDefinitions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		26C78B403BC4965587C084C5AA249C86 /* CPTAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C96B11C758E67B74EE5D377A0840C9 /* CPTAnnotation.m */; };
+		29373612B8385773619856B4BF39C68F /* GattDiscoveryAgent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D23F0107517161D05491B257E4197BA3 /* GattDiscoveryAgent.swift */; };
 		2C8AE7747106103E66AE0BD1795403FB /* CPTAnimationPeriod.m in Sources */ = {isa = PBXBuildFile; fileRef = B15698791EE522D73ADFDF1692BAF112 /* CPTAnimationPeriod.m */; };
 		2D251187441A1B6FE338ABA2B58175F8 /* _CPTConstraintsRelative.m in Sources */ = {isa = PBXBuildFile; fileRef = AE03E22092D40E2D295639695223D3BF /* _CPTConstraintsRelative.m */; };
 		2EDE25B4066DE51BBD73E3202BEA9943 /* _CPTAnimationCGFloatPeriod.m in Sources */ = {isa = PBXBuildFile; fileRef = 7433CD166E903687F8EFCE22666800C6 /* _CPTAnimationCGFloatPeriod.m */; };
 		2FF4EA5F6D5CC7AF7077D12AA82F0432 /* CPTLayerAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 917E933BB686B26FF19EBDDA539D2946 /* CPTLayerAnnotation.m */; };
 		31CB38FF5CB957A6764A583156CC7EBD /* CPTFunctionDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 48DE4AD57C5F257FBFEA657BEEC9353D /* CPTFunctionDataSource.m */; };
 		31D7C38B55748540A9C9A557C0CE9EE4 /* CPTTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 387815FBFF950F81C8F210298E7D74A9 /* CPTTheme.m */; };
-		335AA4CF5A9F054F090BC5D57023512E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B365BB35095243ADD5EDCE0FC98851E /* QuartzCore.framework */; };
+		335AA4CF5A9F054F090BC5D57023512E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F79643DE9B61E8D9F26281C7EF9A49FD /* QuartzCore.framework */; };
 		335B783CB8967C7F6183F60F2C700E51 /* CPTPlatformSpecificFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = BD399EA2199DA06C8CB5AB736FF30368 /* CPTPlatformSpecificFunctions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		33AFA9C5E8CC0FE597D2027435EB20B4 /* CharacteristicProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D412C2184BD8587DC10CD40FAB8C68C5 /* CharacteristicProperties.swift */; };
 		34AC0CC8CD195E29DFE87A43F2133A5E /* CPTMutablePlotRange.h in Headers */ = {isa = PBXBuildFile; fileRef = 3C73B7FE91148C5648D51C3C68F982B1 /* CPTMutablePlotRange.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		36ED7303971967E44442261481BD3FEB /* GattDiscoveryProcess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C3665B6EE88D09BDE1F87440785DD0 /* GattDiscoveryProcess.swift */; };
 		380E1F1D09C5252C08DD1A5487196BB3 /* NSNumberExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 8DA4B43E82ED73EF8811ED2EF76E9091 /* NSNumberExtensions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		382C1285BB931D2A740054FD3ECD9876 /* CorePlotProbes.d in Sources */ = {isa = PBXBuildFile; fileRef = CDE9A6B883FC4FEEB6B51FAD74E059C8 /* CorePlotProbes.d */; };
 		3832987F32174D6FCF16DE91511F3813 /* _CPTAnimationCGPointPeriod.m in Sources */ = {isa = PBXBuildFile; fileRef = ADEF73C4B6E329555D3ACCA1FC179D84 /* _CPTAnimationCGPointPeriod.m */; };
@@ -61,7 +64,7 @@
 		39EDBA10388CFA33012211B9571B942F /* CPTImage.h in Headers */ = {isa = PBXBuildFile; fileRef = 8BE80B2ACBD05D14313948C0AB3B9BC3 /* CPTImage.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3AAA179F85C6140DC78335EBA62C8221 /* CPTPlot.m in Sources */ = {isa = PBXBuildFile; fileRef = 028F38F569774FCEDF755BCD271E37AA /* CPTPlot.m */; };
 		3B105CB9E710D3E1131813BBB4D8ED65 /* CPTPieChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FCAAF2AF5916A69003C34F30BE1A9D9 /* CPTPieChart.m */; };
-		3C6088478F33DB617EB431D69E0781B1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FCA70DC21AA34059B0822FB0AEC2A9C /* Foundation.framework */; };
+		3C6088478F33DB617EB431D69E0781B1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA4BF4BA9EADCE988A96731097A9FAD2 /* Foundation.framework */; };
 		3E96EC9EDECAE779EBBA9B43FC47400C /* CPTAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D3D36A157973DA006634DC72938735C /* CPTAnimation.m */; };
 		3EB11CA12918E119C32061BA5999E1F5 /* _CPTAnimationCGRectPeriod.m in Sources */ = {isa = PBXBuildFile; fileRef = 251BB8EF35C0940103AA30783E5AAE9E /* _CPTAnimationCGRectPeriod.m */; };
 		3EB21FB587920243CFCE372958F80BE6 /* _CPTMaskLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 581DBE26CF0D9DE817C5E7E0E8293B50 /* _CPTMaskLayer.h */; settings = {ATTRIBUTES = (Private, ); }; };
@@ -69,12 +72,16 @@
 		3F678F77806348921144DEDE13CBE124 /* CPTColor.h in Headers */ = {isa = PBXBuildFile; fileRef = A51855B2FEC386142B37CFFA8A128DE7 /* CPTColor.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3F80C35328543034209A3C8F6621FF17 /* CPTPlotSpaceAnnotation.h in Headers */ = {isa = PBXBuildFile; fileRef = 059D106C53BED23D0E811E3563393D5C /* CPTPlotSpaceAnnotation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		401477B35A68A554F819BE989D03D4CF /* CPTLineCap.h in Headers */ = {isa = PBXBuildFile; fileRef = E5F70F368A06E3CFCE9E66A50029B2F6 /* CPTLineCap.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		417FF4D6C8ECBF1305A4B80E2617DA04 /* ConnectionOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7C165615CA324D89289CDCDBC9E097 /* ConnectionOptions.swift */; };
+		422A627E59F1E5CAF872FE8065BEF15E /* GattDiscoveryDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EF7030263C72D96BD255C6EC393155 /* GattDiscoveryDelegate.swift */; };
 		4268FA6470805557BB8042BA7F99BC1C /* CPTBorderedLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 87C4B4BAF92F3B6CF90AB9D1B446DC1B /* CPTBorderedLayer.m */; };
+		43BE969F78DBCCF7083646536D863C02 /* JABLECentralAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E119FD7959429963FF26E8EA1689C12 /* JABLECentralAPI.swift */; };
 		450B5D6BFB96D46AD18EA4A2DA89A35C /* CPTColor.m in Sources */ = {isa = PBXBuildFile; fileRef = C12177A6A7BCE4A0EBB798C6F529E05B /* CPTColor.m */; };
 		46179F0741DB3DD6C3DEBE86EEA2E776 /* CPTScatterPlot.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A89FB0E732803FB3E9A872D145E1267 /* CPTScatterPlot.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		46D67268A4A1AFEA3AAEC7DCE8512489 /* GattDiscoveryDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EF7030263C72D96BD255C6EC393155 /* GattDiscoveryDelegate.swift */; };
 		46EE56F043B007E1B0600CCF34F8DF13 /* _CPTAnimationTimingFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = DAB4E95289A1E72324F510AB138F2C81 /* _CPTAnimationTimingFunctions.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		47CD402EAC3FE69914EF8FBCEF61DF71 /* CPTGridLines.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B4DC08A203E77D6B462B82452CE2337 /* CPTGridLines.m */; };
+		481732BC42AC67A24663515F589FE792 /* JABLEDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE9BA9BFAD0B634397CD9497C731A87 /* JABLEDelegate.swift */; };
+		48DEA52BF29A84A83BA10B9B615FB193 /* JABLEGattProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33B031EBECA38A9F24C11C62926B91E /* JABLEGattProfile.swift */; };
 		4ADE41DCCF3A3E1ED6307B74BDAF5FB0 /* _CPTAnimationPlotRangePeriod.h in Headers */ = {isa = PBXBuildFile; fileRef = 169812C9157C2702298117A3F76E87ED /* _CPTAnimationPlotRangePeriod.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		4B7047E812C1139A9E4F07E012E3498A /* CPTPlatformSpecificCategories.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B3E668F3D19447C8A8EEF3F6C4339B /* CPTPlatformSpecificCategories.m */; };
 		4FF43FC081E7A5BF42854D2B9D7B42FA /* CPTExceptions.h in Headers */ = {isa = PBXBuildFile; fileRef = A0564A945FC6D16FD49DA9D5AF533326 /* CPTExceptions.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -82,7 +89,6 @@
 		513291DAA450FABB2776C19CB1BFE5C5 /* CPTFunctionDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = FC344ABED7E1A6688E24F079A46CC870 /* CPTFunctionDataSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		51DB345B739AE99CC4CDB09E3871C3EB /* _CPTBorderLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 85472ED2D63E73A542FF74DADAD1D581 /* _CPTBorderLayer.m */; };
 		522F26C14E50DA8F185837D2EFF34772 /* CPTLineCap.m in Sources */ = {isa = PBXBuildFile; fileRef = D6E5203651E12719D8697C3E2D54D367 /* CPTLineCap.m */; };
-		525659C4405F07E64D34DA2DA514E64D /* CharacteristicProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D412C2184BD8587DC10CD40FAB8C68C5 /* CharacteristicProperties.swift */; };
 		528CA8199E763C37AF92654C1AF0257F /* CPTPlot.h in Headers */ = {isa = PBXBuildFile; fileRef = 4107AB4C024D126D97AACFB1B2C28B6D /* CPTPlot.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		53DCF200A6B613CB8632EA69530F6E40 /* _CPTConstraintsRelative.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C7337FF1589406569DA011743BD7582 /* _CPTConstraintsRelative.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		55031941E2F00B77392A39FC6AB85243 /* CPTPlotArea.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A5DA725C9AC0C2A85CF4783F29D61F /* CPTPlotArea.m */; };
@@ -97,23 +103,22 @@
 		617E481396CC5361CA63DFF63D3CA18F /* CPTXYAxis.h in Headers */ = {isa = PBXBuildFile; fileRef = 07B3681A16FAC4CEEBB74653047D30B9 /* CPTXYAxis.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		624F3F88C6C1664E620248B7256DD17A /* NSDecimalNumberExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = D3D2D00539B0CEDCFF77085CB78F79F4 /* NSDecimalNumberExtensions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6344339AC1851AF267610E077FABE5DA /* Pods-JABLE_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 672F78E4AA8BF9AA7FB41F99B10F9722 /* Pods-JABLE_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		65784E5BDAEE17DF47CF84FB62D25AD2 /* JABLEStates.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41240FD91806F24C17C39581EA09C5E /* JABLEStates.swift */; };
 		66D158C23DC10F6BBE79BF5DF1F710F2 /* CPTAxisSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 385581B803E6106E0882AD77D667B763 /* CPTAxisSet.m */; };
 		66D933290D0E2EA1CB98AD3A5C7BF6C7 /* CPTAnimationPeriod.h in Headers */ = {isa = PBXBuildFile; fileRef = 204FF97D2F2541DB7EC758A922A27823 /* CPTAnimationPeriod.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		678BE7E60FA6386FD7B4CBA8E436DC6A /* _CPTSlateTheme.h in Headers */ = {isa = PBXBuildFile; fileRef = B34B56BDA61FE782FE630EDF740EAD06 /* _CPTSlateTheme.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		6A8F43DE3930A482C9FAC00919506393 /* CPTLineStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = FC93439B88241C20C3C3B46E6BE00184 /* CPTLineStyle.m */; };
-		6CDCF003A646331ED2691E9F94AF050D /* JABLEGattProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33B031EBECA38A9F24C11C62926B91E /* JABLEGattProfile.swift */; };
+		6C5ED1D90AB9FCD7A7EF2B28D3DFAB35 /* ScanResultManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A40ABE7FD96B56C5BAE99FC6A59380D /* ScanResultManager.swift */; };
+		6DE83BF3BDFDAF9D7FA200BDB00B0834 /* JABLE-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F713C5D97D824386022F8A1D58425CC7 /* JABLE-dummy.m */; };
 		6E00EC4F4DD458B732F8D0EBE96323EE /* _CPTAnimationNSDecimalPeriod.h in Headers */ = {isa = PBXBuildFile; fileRef = FFBA3FCDF234C0F3565FA6B7DE0BC93F /* _CPTAnimationNSDecimalPeriod.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		700E9130AFA6AC6E14B95EEE92A19654 /* CPTAxis.m in Sources */ = {isa = PBXBuildFile; fileRef = 38A84A13C3959B4F47E9255D8D82BC8A /* CPTAxis.m */; };
 		7105148075A63EB697974B679B3A74F8 /* CPTTradingRangePlot.h in Headers */ = {isa = PBXBuildFile; fileRef = 3348D480E6D9A677B261AD35B4A208AA /* CPTTradingRangePlot.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		71E163945E5C004940D64B2C81F2097D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FCA70DC21AA34059B0822FB0AEC2A9C /* Foundation.framework */; };
+		71E163945E5C004940D64B2C81F2097D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA4BF4BA9EADCE988A96731097A9FAD2 /* Foundation.framework */; };
 		72CD03B2A0345111195909970EE15D8F /* CPTTradingRangePlot.m in Sources */ = {isa = PBXBuildFile; fileRef = C9C3C7805C39CB1E52DAA96CA8497C8E /* CPTTradingRangePlot.m */; };
-		736A544B4898345840DBA0E1AB0DF526 /* JABLEService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0345973DD8711DE5CB8970C94886BE /* JABLEService.swift */; };
 		741799C89CF60554E738CF27221251C8 /* _CPTAnimationCGSizePeriod.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D26A1D1ABC02BD87CDE597A2B17B518 /* _CPTAnimationCGSizePeriod.m */; };
-		7528438FA2545CE5C0F42043AB72A403 /* JABLEPeripheralAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F840BE8C90419AA3B9396B2CB448FC53 /* JABLEPeripheralAPI.swift */; };
 		7574BDE9E8F472D3570948D392B77A84 /* CPTMutableTextStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = F28E999192699CC40D4F76978D8A011D /* CPTMutableTextStyle.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		75D3A5EC77BAE19704C67E7B9F0FC860 /* NSDecimalNumberExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = A24E7CDCCC41FD100984571D8BFC5FEE /* NSDecimalNumberExtensions.m */; };
 		774A307D68F509968AE212BA5D31ED28 /* _CPTFillImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AC1C8C88E64E487A897A7036DA937E2 /* _CPTFillImage.m */; };
-		783CEF26E94620AB5392F168D2C37F7A /* JABLECharacteristic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8B5FC91A3B032BBF19A50DD923BABD /* JABLECharacteristic.swift */; };
 		7A07B04B237318940652323EBF4CA4F0 /* CPTPlotSpaceAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D4BF1587FA26563FBAEB324BB6EEA67 /* CPTPlotSpaceAnnotation.m */; };
 		7AFF5108499812B0A0BEFB19BA5DA18D /* _CPTXYTheme.h in Headers */ = {isa = PBXBuildFile; fileRef = B7E499B9593604D8ED757B164ABB86A9 /* _CPTXYTheme.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		7B92791B3647E85E0ED6CB38E0FA85D5 /* CPTTextStylePlatformSpecific.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EC694A6E92A36A36FF227F8542715FD /* CPTTextStylePlatformSpecific.m */; };
@@ -126,12 +131,10 @@
 		814FB9D2472EE048AC0B58D093592125 /* CPTShadow.h in Headers */ = {isa = PBXBuildFile; fileRef = F0EEB3DBA3277302EF2D5A8BC7ACDD81 /* CPTShadow.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		81B53A1F1D7959CCBCB407AC4FF92D11 /* _CPTSlateTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 41177480CB9C47A796D7B597CF56CB71 /* _CPTSlateTheme.m */; };
 		83F932A14C5A16FECACB37BB8BAC958B /* CPTPlatformSpecificCategories.h in Headers */ = {isa = PBXBuildFile; fileRef = B1DCAEB9D3A257AB38127E142B9770C0 /* CPTPlatformSpecificCategories.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8401EB965AC21AD5A3B7A653EE96E574 /* JABLE-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0B34D0895B49D83C45B4CB73A20DAED6 /* JABLE-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		86C87F52A6EA0BE01F4E5457BBC005D2 /* ConnectionOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7C165615CA324D89289CDCDBC9E097 /* ConnectionOptions.swift */; };
 		8753227C13A5B76FE2AB572C5A4D8CDA /* CPTGraph.m in Sources */ = {isa = PBXBuildFile; fileRef = 731AB0F578B5B4707FA4AC01275E6E8D /* CPTGraph.m */; };
 		87B6E6BFE64A2241828154BC9FB94F7C /* CPTXYAxis.m in Sources */ = {isa = PBXBuildFile; fileRef = B6F8A8C1BA38D0C497B8CFC3D6A05B9B /* CPTXYAxis.m */; };
-		882D6CCDB50B22C67D67EF46D417AE52 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FCA70DC21AA34059B0822FB0AEC2A9C /* Foundation.framework */; };
-		88FDD92053591F37A480DB797E6B64C2 /* Bindable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A559CEB2877D42F1392FEAEA8B51483 /* Bindable.swift */; };
+		882D6CCDB50B22C67D67EF46D417AE52 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA4BF4BA9EADCE988A96731097A9FAD2 /* Foundation.framework */; };
+		895F9408EB66893FDC087A4D61A84FC1 /* ScanConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53BBA300BAE6420CCB7C936AAD26B39 /* ScanConfiguration.swift */; };
 		898364C362D3DC5094351A532208D858 /* _CPTAnimationNSDecimalPeriod.m in Sources */ = {isa = PBXBuildFile; fileRef = 69AA16909C6A3403D0A91F8D45880521 /* _CPTAnimationNSDecimalPeriod.m */; };
 		89952D8B10CD4C1C3C09F48AAE1B3032 /* _CPTPlainBlackTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = CC82AB47F9080295987220F6E5BBDDD6 /* _CPTPlainBlackTheme.m */; };
 		89F638EB2AFA1895CB7E512AECE5F54F /* CPTGridLines.h in Headers */ = {isa = PBXBuildFile; fileRef = EC036D43344D477845CD2F82198EFB9E /* CPTGridLines.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -139,12 +142,14 @@
 		8B5719D44041AA20D8E3792229B6679B /* CPTPieChart.h in Headers */ = {isa = PBXBuildFile; fileRef = F09FC8B6EA1BF443177DC3901D0681F7 /* CPTPieChart.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8BE05576BC48A0345A657C52D81EFEDF /* CPTNumericDataType.h in Headers */ = {isa = PBXBuildFile; fileRef = EC8816AE555B3B83D3DB1BE54F9A5B3C /* CPTNumericDataType.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8CB6E725A7504524815F2345EE3E7785 /* CPTPlotAreaFrame.h in Headers */ = {isa = PBXBuildFile; fileRef = 982D9385B9716E6C3C88B0A5E30AC6A3 /* CPTPlotAreaFrame.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8EBBC2B473071FB3CC89124DF2FD1148 /* JABLECentral.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA1B71287CA9555AC2E9CE42CFE270A /* JABLECentral.swift */; };
 		8F9D90BDCDE25B78EAB3B520C8E6468B /* CPTBarPlot.m in Sources */ = {isa = PBXBuildFile; fileRef = 1510397D026160EFED479625500EB52A /* CPTBarPlot.m */; };
 		90C83F5762C58EB03528CE3F169561CD /* _CPTBorderLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 159C5DFB264A2DD24D88459988BD68EF /* _CPTBorderLayer.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		917577E7D36D4CEF32C49F5562B1248A /* CPTNumericData.m in Sources */ = {isa = PBXBuildFile; fileRef = D08D1019FB0EF733811C991D4DC9F515 /* CPTNumericData.m */; };
 		91F0BDD19690D84C37B2EF42CBEC509D /* CPTAxisLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AA0D3A756DE02AD9EB74852FC8A6F40 /* CPTAxisLabel.m */; };
 		938EB23A5765BFF93EA1975B5EE3B81C /* CPTPlotSpace.m in Sources */ = {isa = PBXBuildFile; fileRef = A5EDA80E5AD88C0F706759802693AC51 /* CPTPlotSpace.m */; };
 		93C58AFCFE3D9882FD8C07FF09410BA6 /* _CPTConstraintsFixed.h in Headers */ = {isa = PBXBuildFile; fileRef = C51AD2AC82A6A695BB36D4EB62D8746A /* _CPTConstraintsFixed.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		940744427757FBAB2A7B3587375EB9D7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA4BF4BA9EADCE988A96731097A9FAD2 /* Foundation.framework */; };
 		960DBD78EE68C327698C7EDBCEA40D5B /* CPTTextLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 660D502FF0E2650CDCF102ACE94B64FF /* CPTTextLayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		96A992910936109C55F46243C06284A9 /* CPTAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = EEE1E465F7B5F6AF931028D3FE6C81D3 /* CPTAnimation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9C6A0376A5FA8752E94C6767923C5C3A /* CPTTextStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 607E7DE22930602A104C997791452DA3 /* CPTTextStyle.m */; };
@@ -158,6 +163,7 @@
 		A6D2079040A44F50D59E5B60E2C01CA9 /* CPTPlotAreaFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 630F9B075ED55756588A0FDEC03ECDEC /* CPTPlotAreaFrame.m */; };
 		A72D3B2A39827A917FADE2142560EEDF /* _CPTAnimationCGRectPeriod.h in Headers */ = {isa = PBXBuildFile; fileRef = FE851B48397653E4AF2D5A4DC26C6BD8 /* _CPTAnimationCGRectPeriod.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		A74CAAA2EA22CDF59BED5E42DC42D5FF /* _CPTStocksTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = F87B5A74EF1BDCC3B4EB87855BB98B88 /* _CPTStocksTheme.m */; };
+		A8DA1FDE8BE0D9C45009ECA2BBDF4A90 /* JABLEService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0345973DD8711DE5CB8970C94886BE /* JABLEService.swift */; };
 		ACEFCF1F091DC108AA5DB1CFE27FEA55 /* CPTMutableShadow.m in Sources */ = {isa = PBXBuildFile; fileRef = 242B5F5D8B173B4686879AFB4A3CDE9D /* CPTMutableShadow.m */; };
 		AD000E93B5FAA8B8340C8DB369E8D5C3 /* CPTBarPlot.h in Headers */ = {isa = PBXBuildFile; fileRef = 2F212055F529D34E0360962A1732D31A /* CPTBarPlot.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AE2A3B07F0D769B11C32F61D2EFA9946 /* CPTMutableNumericData+TypeConversion.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A1E8FF8D1E8326CEA971A66C20BE63A /* CPTMutableNumericData+TypeConversion.m */; };
@@ -173,13 +179,13 @@
 		B84E97133641B2245203956FD70BD734 /* CPTTimeFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = FADE1A202A18CECBABF6F55ADC784173 /* CPTTimeFormatter.m */; };
 		B9408A80CC748DDA0338CC9F524073DE /* CPTRangePlot.h in Headers */ = {isa = PBXBuildFile; fileRef = 401831D529FD58950222EC1DEABD11D6 /* CPTRangePlot.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B97B67409B1A9DF17C4BF21A49691D35 /* CPTXYGraph.m in Sources */ = {isa = PBXBuildFile; fileRef = A338792414178DF26100FB8E6AB07FCF /* CPTXYGraph.m */; };
+		B97E246BB03DB79CC3A9D3B4E6C5AA92 /* JABLECharacteristic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8B5FC91A3B032BBF19A50DD923BABD /* JABLECharacteristic.swift */; };
 		BB6D9F6956C0DE95FF9327A0492E47EA /* _CPTAnimationCGSizePeriod.h in Headers */ = {isa = PBXBuildFile; fileRef = 381BAC2671004214B7C00D49D9719100 /* _CPTAnimationCGSizePeriod.h */; settings = {ATTRIBUTES = (Private, ); }; };
-		BC1B57D384F5AEF49128F8AE82C69EA3 /* GattDiscoveryAgent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D23F0107517161D05491B257E4197BA3 /* GattDiscoveryAgent.swift */; };
 		BE45CE5C52F9613AEF1A71CE4390A764 /* _CPTAnimationCGFloatPeriod.h in Headers */ = {isa = PBXBuildFile; fileRef = 3C2878F8A7AA6007EF19995B3685436C /* _CPTAnimationCGFloatPeriod.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		BED3E632B926EF31DF2D935DF5FE2358 /* CPTLimitBand.h in Headers */ = {isa = PBXBuildFile; fileRef = AF9477C30BE5B77B1FCB67DA166C0C36 /* CPTLimitBand.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BEF6FC33DFB122D8B090BAA95C24F036 /* _CPTConstraintsFixed.m in Sources */ = {isa = PBXBuildFile; fileRef = C4AA6A6F23B32F297AE255A5C2C6347A /* _CPTConstraintsFixed.m */; };
 		C033B3CE5270E7D40C85CBB7BEB2D66C /* CPTTimeFormatter.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CC586279ABBD2E589FB6BE7E5E849ED /* CPTTimeFormatter.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C26F8271E7C51877C0FA2F1577AB9253 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4986B896CC5606CC135E608D8B5250E2 /* UIKit.framework */; };
+		C26F8271E7C51877C0FA2F1577AB9253 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8290FA78FDE891DBC5FD3B2E8F8DC5DB /* UIKit.framework */; };
 		C2FE616B7A11D815848A91D1CAF7F249 /* CPTMutableNumericData+TypeConversion.h in Headers */ = {isa = PBXBuildFile; fileRef = B12BEBF75AB533E095ED0EE2F510615C /* CPTMutableNumericData+TypeConversion.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C34087E63BB237247A442F647D52273D /* CPTPlatformSpecificFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = C70D419079436859BE34C148B56B73F9 /* CPTPlatformSpecificFunctions.m */; };
 		C5501279ADA85FE7F88BACEE1EE0B9E6 /* _CPTXYTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 189C85C82759C439BD4F967CE1CAD828 /* _CPTXYTheme.m */; };
@@ -188,14 +194,13 @@
 		C8B2B5DA036BA7C87402B5F8BBC1E016 /* CPTScatterPlot.m in Sources */ = {isa = PBXBuildFile; fileRef = AD1AA451AFC7F5A12DA497BB987EDA1C /* CPTScatterPlot.m */; };
 		CBC0B672D3022F64A7ABE22546888A47 /* _CPTAnimationCGPointPeriod.h in Headers */ = {isa = PBXBuildFile; fileRef = 56858D33A7BB5B95B78E10FC1A45EEB1 /* _CPTAnimationCGPointPeriod.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		CC3BED3600BDA9F8160F2E8FFD39098E /* CPTLayerAnnotation.h in Headers */ = {isa = PBXBuildFile; fileRef = 955ACFC321D43EE87CA55CE7F007E49C /* CPTLayerAnnotation.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		CCB1CCBA7556A779D0FD719EBC85DC74 /* JABLEDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE9BA9BFAD0B634397CD9497C731A87 /* JABLEDelegate.swift */; };
 		CD81B1DBAB4ACB57C1696625FAC9F46C /* CPTDerivedXYGraph.h in Headers */ = {isa = PBXBuildFile; fileRef = 6EEFE365D3475C15A8F666527877CF03 /* CPTDerivedXYGraph.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		CF16BB21043C38EA26AD24D989FDCB5F /* JABLEiDManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE77255A3EA603745E80AF46E468BFA9 /* JABLEiDManager.swift */; };
 		D027D0829AF0CA938AED64525DB4E31E /* CPTXYAxisSet.m in Sources */ = {isa = PBXBuildFile; fileRef = F2146749AF8F75BC70CB199671EDEA44 /* CPTXYAxisSet.m */; };
 		D10293B5AE586D7D1A3CD10239F34368 /* CorePlot.h in Headers */ = {isa = PBXBuildFile; fileRef = 3CD3ACDE5DDD1E89AC7A1487A170E08B /* CorePlot.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D133DBE642CA5CF947F41C0369EBFA2A /* JABLEiDManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE77255A3EA603745E80AF46E468BFA9 /* JABLEiDManager.swift */; };
+		D31BBA55F84221EC1D989B812F7B679A /* Bindable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A559CEB2877D42F1392FEAEA8B51483 /* Bindable.swift */; };
 		D37CDA97C07699EB27D78092FF9E8616 /* CPTMutableLineStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = B3E9940AA7C85DE948643BD9C0E8F3EE /* CPTMutableLineStyle.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D4298274F61CE9A072D27331B23EA03A /* CPTTextStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = 63BE7A623C7CD52A06CEFA355553989F /* CPTTextStyle.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D6C29F2A75EEA659477560FF8C25A41E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FCA70DC21AA34059B0822FB0AEC2A9C /* Foundation.framework */; };
 		D734FEE9E8D20C1DD031FC08095DCD59 /* _CPTDarkGradientTheme.h in Headers */ = {isa = PBXBuildFile; fileRef = 16E815F74EC672133C768A354AEB9E50 /* _CPTDarkGradientTheme.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		D84AA5628EEF35ECE2083F70CA844148 /* CPTTheme.h in Headers */ = {isa = PBXBuildFile; fileRef = 6DEE3F2DC63152FA23F1608D558DEAD1 /* CPTTheme.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D8CCDCF1FFC7C01E07985CE117CE5BA6 /* CPTPlotSymbol.h in Headers */ = {isa = PBXBuildFile; fileRef = 603E202F4263CC82E12CFA99EA2D1142 /* CPTPlotSymbol.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -203,27 +208,22 @@
 		DA3D6197E11892299A59DFBEAA7B2A53 /* CPTPlotRange.h in Headers */ = {isa = PBXBuildFile; fileRef = DEBD304E435AE8D671BBAC8515398EE9 /* CPTPlotRange.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DA4A9D476C2E02712DBE7B667A24A37B /* CPTAnnotation.h in Headers */ = {isa = PBXBuildFile; fileRef = 51C98B655682A107A133FB1CCBEBA891 /* CPTAnnotation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DB3C4A812C4F8D4C2E25DEF5E662E48D /* _CPTPlainWhiteTheme.h in Headers */ = {isa = PBXBuildFile; fileRef = 3C8212DD923FF706E18E287C63A5C028 /* _CPTPlainWhiteTheme.h */; settings = {ATTRIBUTES = (Private, ); }; };
-		DC6DBFBE620B8459BD7AE0ED16CF4A09 /* JABLECentral.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA1B71287CA9555AC2E9CE42CFE270A /* JABLECentral.swift */; };
 		DC84CEFED4EC6F6E9253389328AFCE37 /* CPTAxis.h in Headers */ = {isa = PBXBuildFile; fileRef = 30B55B593D816C947376EBC2A810B8ED /* CPTAxis.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DDFF81496801A484CC6BA761538B1451 /* CPTLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = E9A9A43680E683176DC25BFF2D4919A0 /* CPTLayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DE010CB1CB6FF9753F888B482FFC84C8 /* CPTRangePlot.m in Sources */ = {isa = PBXBuildFile; fileRef = AE49B6C0010F54CD23EAFF4BFCF0E4F2 /* CPTRangePlot.m */; };
-		DE165626AD819FA3B373A9F4F1881734 /* ScanFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D89BCA89449FB978664B76920DDD52D /* ScanFilter.swift */; };
 		DE42A26BFF336816DA3AF9EC1BA93E62 /* CPTFill.m in Sources */ = {isa = PBXBuildFile; fileRef = ABD16493387B772D9DDC7C9CB4462086 /* CPTFill.m */; };
-		E00CB6BD217F6A53003DCA73 /* CoreBluetoothExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E00CB6BC217F6A53003DCA73 /* CoreBluetoothExtensions.swift */; };
 		E19C5DE41A08DF66B2CF9A512BFBA20E /* CPTAxisLabelGroup.h in Headers */ = {isa = PBXBuildFile; fileRef = 4202C5E711CC9BE185EC4C440ADF9277 /* CPTAxisLabelGroup.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E2E11FB6DF80CE6A24335E820A86EB19 /* _CPTFillColor.h in Headers */ = {isa = PBXBuildFile; fileRef = 9BAB208791580C52AE3E3D1B4421A6D6 /* _CPTFillColor.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		E4EAF3FB380EF7558C576C8771F0BEA2 /* FriendlyAdvertisement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914C50BAEF8761AFEF841224B0CB8D92 /* FriendlyAdvertisement.swift */; };
 		E82E42BA7877B308485D2C0586ACD87A /* CPTResponder.h in Headers */ = {isa = PBXBuildFile; fileRef = 8E6B8B6ED92593BCC99A04C33B41E52C /* CPTResponder.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E88F97C71C5A95B460B4F3EB0B926699 /* JABLECentralAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E119FD7959429963FF26E8EA1689C12 /* JABLECentralAPI.swift */; };
 		E8A44A24DF30759030413FE03DA22494 /* Pods-JABLE_Example-JABLE_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9FC6408C298FF7B4E255C1BD7DBCA2D5 /* Pods-JABLE_Example-JABLE_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E8AD0FE6415177D5E4096A99CA08F587 /* CPTXYGraph.h in Headers */ = {isa = PBXBuildFile; fileRef = 370EB86F277FE54F707AF7501C11AD5F /* CPTXYGraph.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		EDC37B4DA88375BD6C2DB505150CEBD5 /* FriendlyAdvertisement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914C50BAEF8761AFEF841224B0CB8D92 /* FriendlyAdvertisement.swift */; };
 		EDD24131BCFC7E8E3863F628AB0DBC50 /* CPTCalendarFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ED31A20A0C9BAB788301E8B48E4F1F5 /* CPTCalendarFormatter.m */; };
 		EE552F2510A920DE72527A46FEA722B3 /* Pods-JABLE_Example-JABLE_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A14EAB043F678682BAAAEBB5E9FAB9E /* Pods-JABLE_Example-JABLE_Tests-dummy.m */; };
 		EE8B4B5DA32DF52359844F0EDE471493 /* CPTPlotRange.m in Sources */ = {isa = PBXBuildFile; fileRef = FE32CF333074426E65E9B0D8A4EAC152 /* CPTPlotRange.m */; };
 		EFCEBBF82C283D61CEF57DF424E4D113 /* CPTMutableShadow.h in Headers */ = {isa = PBXBuildFile; fileRef = A9D9CCD6841B38A17C603625E5D1D96D /* CPTMutableShadow.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F08494E36653D3CDF388FB1849219EC4 /* CPTAnnotationHostLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 8543C02C09CC75335393AAB04F249476 /* CPTAnnotationHostLayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F1B8D881B9B6969B7FCE5A0146E28F19 /* ScanResultManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A40ABE7FD96B56C5BAE99FC6A59380D /* ScanResultManager.swift */; };
-		F263BB46AC974DF102E67236EF05C045 /* JABLEDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AABC95119E66F83DE50BF8A6CC9B6C4 /* JABLEDescriptor.swift */; };
+		F1C5519D390999F58A1B143ECB83A6E4 /* ScanFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D89BCA89449FB978664B76920DDD52D /* ScanFilter.swift */; };
 		F416A58561511DB6D8A8E34B2D627530 /* CPTConstraints.h in Headers */ = {isa = PBXBuildFile; fileRef = 41261D7B970A6AD10DF7C93BF85587E7 /* CPTConstraints.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F4AA544A8AE09FB824B8B72F2146FF3B /* CPTLineStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = FBB7F96EC2557BB73E4BD891E6D0373B /* CPTLineStyle.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F4C16B7405B73EAAB6A28C1133B85C37 /* NSCoderExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3283AE414FFDF251AA08529347C8E991 /* NSCoderExtensions.m */; };
@@ -258,14 +258,14 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 6B4967959BE70F36052BDEB2633952D2;
+			remoteGlobalIDString = 45E31C77CF0D9E8D1B330D879AD33E00;
 			remoteInfo = JABLE;
 		};
 		E5C1D940D8FF4F2753ED5627B00789BC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 6B4967959BE70F36052BDEB2633952D2;
+			remoteGlobalIDString = 45E31C77CF0D9E8D1B330D879AD33E00;
 			remoteInfo = JABLE;
 		};
 /* End PBXContainerItemProxy section */
@@ -283,11 +283,8 @@
 		0A308573E8E4D954A4CC35C8B1BE403E /* CPTDebugQuickLook.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CPTDebugQuickLook.h; path = framework/Source/CPTDebugQuickLook.h; sourceTree = "<group>"; };
 		0AA0D3A756DE02AD9EB74852FC8A6F40 /* CPTAxisLabel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CPTAxisLabel.m; path = framework/Source/CPTAxisLabel.m; sourceTree = "<group>"; };
 		0B34D0895B49D83C45B4CB73A20DAED6 /* JABLE-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "JABLE-umbrella.h"; sourceTree = "<group>"; };
-		0B365BB35095243ADD5EDCE0FC98851E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
 		0B77425917D8EA93CDEC30E04B50FB1A /* CPTAnimationOperation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CPTAnimationOperation.h; path = framework/Source/CPTAnimationOperation.h; sourceTree = "<group>"; };
-		0E8FF9752305FFF10899CB5A8ABEF459 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/Accelerate.framework; sourceTree = DEVELOPER_DIR; };
 		0E9E2C39CB7599F1239D2CDE72A45FBC /* CPTDerivedXYGraph.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CPTDerivedXYGraph.m; path = framework/Source/CPTDerivedXYGraph.m; sourceTree = "<group>"; };
-		0FCA70DC21AA34059B0822FB0AEC2A9C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		1118D8891566D5532C75ABC88E43EF0E /* CPTGradient.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CPTGradient.m; path = framework/Source/CPTGradient.m; sourceTree = "<group>"; };
 		13F3A4C2BFD54739075F3130E7503BF8 /* CPTExceptions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CPTExceptions.m; path = framework/Source/CPTExceptions.m; sourceTree = "<group>"; };
 		1510397D026160EFED479625500EB52A /* CPTBarPlot.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CPTBarPlot.m; path = framework/Source/CPTBarPlot.m; sourceTree = "<group>"; };
@@ -310,7 +307,7 @@
 		291BAC1812E94A21DFAE66436DBBADE4 /* CPTConstraints.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CPTConstraints.m; path = framework/Source/CPTConstraints.m; sourceTree = "<group>"; };
 		2A359E979BB763E28D8F9FE5B06E77E6 /* CPTDefinitions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CPTDefinitions.m; path = framework/Source/CPTDefinitions.m; sourceTree = "<group>"; };
 		2A559CEB2877D42F1392FEAEA8B51483 /* Bindable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Bindable.swift; sourceTree = "<group>"; };
-		2A6A4BF0C63CF4130C300ED1B5CD91CF /* Pods_JABLE_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JABLE_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A6A4BF0C63CF4130C300ED1B5CD91CF /* Pods_JABLE_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_JABLE_Example.framework; path = "Pods-JABLE_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2AC1C8C88E64E487A897A7036DA937E2 /* _CPTFillImage.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = _CPTFillImage.m; path = framework/Source/_CPTFillImage.m; sourceTree = "<group>"; };
 		2C425BD43DDEE3BC39A0A8596955A751 /* Pods-JABLE_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-JABLE_Example-dummy.m"; sourceTree = "<group>"; };
 		2CC586279ABBD2E589FB6BE7E5E849ED /* CPTTimeFormatter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CPTTimeFormatter.h; path = framework/Source/CPTTimeFormatter.h; sourceTree = "<group>"; };
@@ -319,6 +316,7 @@
 		30B55B593D816C947376EBC2A810B8ED /* CPTAxis.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CPTAxis.h; path = framework/Source/CPTAxis.h; sourceTree = "<group>"; };
 		3283AE414FFDF251AA08529347C8E991 /* NSCoderExtensions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NSCoderExtensions.m; path = framework/Source/NSCoderExtensions.m; sourceTree = "<group>"; };
 		3348D480E6D9A677B261AD35B4A208AA /* CPTTradingRangePlot.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CPTTradingRangePlot.h; path = framework/Source/CPTTradingRangePlot.h; sourceTree = "<group>"; };
+		356BAC187D68D9C391964EFF19998497 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/Accelerate.framework; sourceTree = DEVELOPER_DIR; };
 		36C96B11C758E67B74EE5D377A0840C9 /* CPTAnnotation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CPTAnnotation.m; path = framework/Source/CPTAnnotation.m; sourceTree = "<group>"; };
 		36EF7030263C72D96BD255C6EC393155 /* GattDiscoveryDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GattDiscoveryDelegate.swift; sourceTree = "<group>"; };
 		370EB86F277FE54F707AF7501C11AD5F /* CPTXYGraph.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CPTXYGraph.h; path = framework/Source/CPTXYGraph.h; sourceTree = "<group>"; };
@@ -350,7 +348,6 @@
 		46DD86D6D5C595B8F62B93B266EA76B5 /* CPTAxisLabelGroup.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CPTAxisLabelGroup.m; path = framework/Source/CPTAxisLabelGroup.m; sourceTree = "<group>"; };
 		489068904E408AED94BD389EB874F0BE /* Pods-JABLE_Example-JABLE_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-JABLE_Example-JABLE_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		48DE4AD57C5F257FBFEA657BEEC9353D /* CPTFunctionDataSource.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CPTFunctionDataSource.m; path = framework/Source/CPTFunctionDataSource.m; sourceTree = "<group>"; };
-		4986B896CC5606CC135E608D8B5250E2 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		4A1E8FF8D1E8326CEA971A66C20BE63A /* CPTMutableNumericData+TypeConversion.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "CPTMutableNumericData+TypeConversion.m"; path = "framework/Source/CPTMutableNumericData+TypeConversion.m"; sourceTree = "<group>"; };
 		4A8B9F8FF5091B39C63DECC8C8739F7B /* CPTPlatformSpecificDefines.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CPTPlatformSpecificDefines.m; path = framework/iPhoneOnly/CPTPlatformSpecificDefines.m; sourceTree = "<group>"; };
 		4AABC95119E66F83DE50BF8A6CC9B6C4 /* JABLEDescriptor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JABLEDescriptor.swift; sourceTree = "<group>"; };
@@ -365,7 +362,7 @@
 		56858D33A7BB5B95B78E10FC1A45EEB1 /* _CPTAnimationCGPointPeriod.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = _CPTAnimationCGPointPeriod.h; path = framework/Source/_CPTAnimationCGPointPeriod.h; sourceTree = "<group>"; };
 		57EA1B017BA87087FFE88625F7E4BBB6 /* _CPTPlainWhiteTheme.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = _CPTPlainWhiteTheme.m; path = framework/Source/_CPTPlainWhiteTheme.m; sourceTree = "<group>"; };
 		581DBE26CF0D9DE817C5E7E0E8293B50 /* _CPTMaskLayer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = _CPTMaskLayer.h; path = framework/Source/_CPTMaskLayer.h; sourceTree = "<group>"; };
-		59CCC98B4ED30ACAB4CD8495AC0942F5 /* CorePlot.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CorePlot.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		59CCC98B4ED30ACAB4CD8495AC0942F5 /* CorePlot.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = CorePlot.framework; path = CorePlot.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		59D7312E223B3E2A3A996BF2B471F029 /* CPTPlotSpace.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CPTPlotSpace.h; path = framework/Source/CPTPlotSpace.h; sourceTree = "<group>"; };
 		5CB88B8C87CAA0FB491C06B828324D84 /* CPTGradient.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CPTGradient.h; path = framework/Source/CPTGradient.h; sourceTree = "<group>"; };
 		5D3D36A157973DA006634DC72938735C /* CPTAnimation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CPTAnimation.m; path = framework/Source/CPTAnimation.m; sourceTree = "<group>"; };
@@ -393,12 +390,13 @@
 		7ED31A20A0C9BAB788301E8B48E4F1F5 /* CPTCalendarFormatter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CPTCalendarFormatter.m; path = framework/Source/CPTCalendarFormatter.m; sourceTree = "<group>"; };
 		7F5D94448CBBE14973E271B002081AA3 /* CPTImagePlatformSpecific.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CPTImagePlatformSpecific.m; path = framework/iPhoneOnly/CPTImagePlatformSpecific.m; sourceTree = "<group>"; };
 		8005609E66605527CEB70521BD3006B2 /* Pods-JABLE_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-JABLE_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
-		807BEDABAA6B145BD1AB80DF8CC2B04D /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		807BEDABAA6B145BD1AB80DF8CC2B04D /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
 		814D4549324FBCD67A7A168010677F45 /* Pods-JABLE_Example-JABLE_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-JABLE_Example-JABLE_Tests-frameworks.sh"; sourceTree = "<group>"; };
 		815BC4E97DC4735FCA53F9FA7CE3B205 /* CPTLegendEntry.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CPTLegendEntry.h; path = framework/Source/CPTLegendEntry.h; sourceTree = "<group>"; };
 		8214B7A3150882B962CAE0D0F5AC096A /* CPTPlotArea.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CPTPlotArea.h; path = framework/Source/CPTPlotArea.h; sourceTree = "<group>"; };
 		8238148FB23DCBA96047AE2198B247AA /* CPTAxisTitle.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CPTAxisTitle.h; path = framework/Source/CPTAxisTitle.h; sourceTree = "<group>"; };
 		825E65F07F304A283B3A6B253C21F345 /* CPTMutableLineStyle.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CPTMutableLineStyle.m; path = framework/Source/CPTMutableLineStyle.m; sourceTree = "<group>"; };
+		8290FA78FDE891DBC5FD3B2E8F8DC5DB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		8543C02C09CC75335393AAB04F249476 /* CPTAnnotationHostLayer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CPTAnnotationHostLayer.h; path = framework/Source/CPTAnnotationHostLayer.h; sourceTree = "<group>"; };
 		85472ED2D63E73A542FF74DADAD1D581 /* _CPTBorderLayer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = _CPTBorderLayer.m; path = framework/Source/_CPTBorderLayer.m; sourceTree = "<group>"; };
 		86BB50B28560A35426E4D01D9E14A402 /* CPTLegend.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CPTLegend.h; path = framework/Source/CPTLegend.h; sourceTree = "<group>"; };
@@ -416,7 +414,7 @@
 		8F4F80E34FD8C9B1659A06466AEE915C /* CPTImage.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CPTImage.m; path = framework/Source/CPTImage.m; sourceTree = "<group>"; };
 		914C50BAEF8761AFEF841224B0CB8D92 /* FriendlyAdvertisement.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FriendlyAdvertisement.swift; sourceTree = "<group>"; };
 		917E933BB686B26FF19EBDDA539D2946 /* CPTLayerAnnotation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CPTLayerAnnotation.m; path = framework/Source/CPTLayerAnnotation.m; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		955ACFC321D43EE87CA55CE7F007E49C /* CPTLayerAnnotation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CPTLayerAnnotation.h; path = framework/Source/CPTLayerAnnotation.h; sourceTree = "<group>"; };
 		96FEEFEA10F32C40DFEF077F253454C7 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		982D9385B9716E6C3C88B0A5E30AC6A3 /* CPTPlotAreaFrame.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CPTPlotAreaFrame.h; path = framework/Source/CPTPlotAreaFrame.h; sourceTree = "<group>"; };
@@ -451,7 +449,7 @@
 		AE7C165615CA324D89289CDCDBC9E097 /* ConnectionOptions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ConnectionOptions.swift; sourceTree = "<group>"; };
 		AF9477C30BE5B77B1FCB67DA166C0C36 /* CPTLimitBand.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CPTLimitBand.h; path = framework/Source/CPTLimitBand.h; sourceTree = "<group>"; };
 		B0D5743034BE819DBCB114812D3183D3 /* Pods-JABLE_Example-JABLE_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-JABLE_Example-JABLE_Tests-resources.sh"; sourceTree = "<group>"; };
-		B0D6F580DA1AA29C2DDDD879BD3A992F /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		B0D6F580DA1AA29C2DDDD879BD3A992F /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
 		B12BEBF75AB533E095ED0EE2F510615C /* CPTMutableNumericData+TypeConversion.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "CPTMutableNumericData+TypeConversion.h"; path = "framework/Source/CPTMutableNumericData+TypeConversion.h"; sourceTree = "<group>"; };
 		B15698791EE522D73ADFDF1692BAF112 /* CPTAnimationPeriod.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CPTAnimationPeriod.m; path = framework/Source/CPTAnimationPeriod.m; sourceTree = "<group>"; };
 		B1DCAEB9D3A257AB38127E142B9770C0 /* CPTPlatformSpecificCategories.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CPTPlatformSpecificCategories.h; path = framework/iPhoneOnly/CPTPlatformSpecificCategories.h; sourceTree = "<group>"; };
@@ -469,6 +467,7 @@
 		C205172DB7B0750ACA8E7A4C1BD1AC92 /* Pods-JABLE_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JABLE_Example.release.xcconfig"; sourceTree = "<group>"; };
 		C325489752836C524850A547CF5AC5E4 /* _CPTAnimationPlotRangePeriod.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = _CPTAnimationPlotRangePeriod.m; path = framework/Source/_CPTAnimationPlotRangePeriod.m; sourceTree = "<group>"; };
 		C41240FD91806F24C17C39581EA09C5E /* JABLEStates.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JABLEStates.swift; sourceTree = "<group>"; };
+		C46C8398BC86F11F38B8276E78D74FDF /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/CoreBluetooth.framework; sourceTree = DEVELOPER_DIR; };
 		C4AA6A6F23B32F297AE255A5C2C6347A /* _CPTConstraintsFixed.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = _CPTConstraintsFixed.m; path = framework/Source/_CPTConstraintsFixed.m; sourceTree = "<group>"; };
 		C51AD2AC82A6A695BB36D4EB62D8746A /* _CPTConstraintsFixed.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = _CPTConstraintsFixed.h; path = framework/Source/_CPTConstraintsFixed.h; sourceTree = "<group>"; };
 		C53BBA300BAE6420CCB7C936AAD26B39 /* ScanConfiguration.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ScanConfiguration.swift; sourceTree = "<group>"; };
@@ -476,7 +475,7 @@
 		C8D486AB4CFEC43427EB918C68CCA762 /* CPTAxisLabel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CPTAxisLabel.h; path = framework/Source/CPTAxisLabel.h; sourceTree = "<group>"; };
 		C9C3C7805C39CB1E52DAA96CA8497C8E /* CPTTradingRangePlot.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CPTTradingRangePlot.m; path = framework/Source/CPTTradingRangePlot.m; sourceTree = "<group>"; };
 		CC82AB47F9080295987220F6E5BBDDD6 /* _CPTPlainBlackTheme.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = _CPTPlainBlackTheme.m; path = framework/Source/_CPTPlainBlackTheme.m; sourceTree = "<group>"; };
-		CDE9A6B883FC4FEEB6B51FAD74E059C8 /* CorePlotProbes.d */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.dtrace; name = CorePlotProbes.d; path = framework/TestResources/CorePlotProbes.d; sourceTree = "<group>"; };
+		CDE9A6B883FC4FEEB6B51FAD74E059C8 /* CorePlotProbes.d */ = {isa = PBXFileReference; includeInIndex = 1; name = CorePlotProbes.d; path = framework/TestResources/CorePlotProbes.d; sourceTree = "<group>"; };
 		CE1E2FE41F696C7F4E9F042079EFD6C4 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE77255A3EA603745E80AF46E468BFA9 /* JABLEiDManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JABLEiDManager.swift; sourceTree = "<group>"; };
 		CFE9BA9BFAD0B634397CD9497C731A87 /* JABLEDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JABLEDelegate.swift; sourceTree = "<group>"; };
@@ -484,18 +483,18 @@
 		D23F0107517161D05491B257E4197BA3 /* GattDiscoveryAgent.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GattDiscoveryAgent.swift; sourceTree = "<group>"; };
 		D3D2D00539B0CEDCFF77085CB78F79F4 /* NSDecimalNumberExtensions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NSDecimalNumberExtensions.h; path = framework/Source/NSDecimalNumberExtensions.h; sourceTree = "<group>"; };
 		D412C2184BD8587DC10CD40FAB8C68C5 /* CharacteristicProperties.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CharacteristicProperties.swift; sourceTree = "<group>"; };
-		D4BCCF4AC46129BEA83FB1710024E54A /* JABLE.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JABLE.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D4BCCF4AC46129BEA83FB1710024E54A /* JABLE.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = JABLE.framework; path = JABLE.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6D50383FFE4525C4F8B743D79385BB6 /* CPTLegend.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CPTLegend.m; path = framework/Source/CPTLegend.m; sourceTree = "<group>"; };
 		D6E5203651E12719D8697C3E2D54D367 /* CPTLineCap.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CPTLineCap.m; path = framework/Source/CPTLineCap.m; sourceTree = "<group>"; };
 		D71646CC51657CD66AC3CEEE80F0D9E4 /* _CPTAnimationNSNumberPeriod.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = _CPTAnimationNSNumberPeriod.h; path = framework/Source/_CPTAnimationNSNumberPeriod.h; sourceTree = "<group>"; };
 		D79D54B12A88BA2864C00AA1FD65EE26 /* _CPTFillGradient.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = _CPTFillGradient.m; path = framework/Source/_CPTFillGradient.m; sourceTree = "<group>"; };
 		D997022D04809C7113422D513C6720E5 /* CPTPlatformSpecificDefines.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CPTPlatformSpecificDefines.h; path = framework/iPhoneOnly/CPTPlatformSpecificDefines.h; sourceTree = "<group>"; };
 		DA0F7BF75F7E04EEE6E21FCDE780FE97 /* CorePlot-CocoaTouch.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "CorePlot-CocoaTouch.h"; path = "framework/CorePlot-CocoaTouch.h"; sourceTree = "<group>"; };
+		DA4BF4BA9EADCE988A96731097A9FAD2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		DAB4E95289A1E72324F510AB138F2C81 /* _CPTAnimationTimingFunctions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = _CPTAnimationTimingFunctions.h; path = framework/Source/_CPTAnimationTimingFunctions.h; sourceTree = "<group>"; };
 		DC20F2B5F227F5DA0D1C541AEECA4588 /* CorePlot.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CorePlot.xcconfig; sourceTree = "<group>"; };
 		DCFFAA8778FEE2207605A319BEC1835C /* NSCoderExtensions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NSCoderExtensions.h; path = framework/Source/NSCoderExtensions.h; sourceTree = "<group>"; };
 		DEBD304E435AE8D671BBAC8515398EE9 /* CPTPlotRange.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CPTPlotRange.h; path = framework/Source/CPTPlotRange.h; sourceTree = "<group>"; };
-		E00CB6BC217F6A53003DCA73 /* CoreBluetoothExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreBluetoothExtensions.swift; sourceTree = "<group>"; };
 		E33B031EBECA38A9F24C11C62926B91E /* JABLEGattProfile.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JABLEGattProfile.swift; sourceTree = "<group>"; };
 		E3C81270A34A3AA1F98CC174CAF652CA /* CPTColorSpace.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CPTColorSpace.h; path = framework/Source/CPTColorSpace.h; sourceTree = "<group>"; };
 		E5F70F368A06E3CFCE9E66A50029B2F6 /* CPTLineCap.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CPTLineCap.h; path = framework/Source/CPTLineCap.h; sourceTree = "<group>"; };
@@ -513,16 +512,17 @@
 		F2BB75212F57B73D3CD9670470D46E9E /* NSNumberExtensions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NSNumberExtensions.m; path = framework/Source/NSNumberExtensions.m; sourceTree = "<group>"; };
 		F44229132BEA2F79581EAC5C430C026B /* CPTDefinitions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CPTDefinitions.h; path = framework/Source/CPTDefinitions.h; sourceTree = "<group>"; };
 		F4E74618B6285C48ACCBEE97962D1A33 /* CPTLimitBand.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CPTLimitBand.m; path = framework/Source/CPTLimitBand.m; sourceTree = "<group>"; };
-		F54B10EE88D58BB30016B85D0B302E8C /* JABLE.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; path = JABLE.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		F54B10EE88D58BB30016B85D0B302E8C /* JABLE.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; path = JABLE.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		F6E347887D0BD32A0217ADA33D475FAB /* CPTMutableNumericData.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CPTMutableNumericData.m; path = framework/Source/CPTMutableNumericData.m; sourceTree = "<group>"; };
 		F713C5D97D824386022F8A1D58425CC7 /* JABLE-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "JABLE-dummy.m"; sourceTree = "<group>"; };
+		F79643DE9B61E8D9F26281C7EF9A49FD /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
 		F840BE8C90419AA3B9396B2CB448FC53 /* JABLEPeripheralAPI.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JABLEPeripheralAPI.swift; sourceTree = "<group>"; };
 		F86B89211C72FFA0B107B6E759281698 /* CPTShadow.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CPTShadow.m; path = framework/Source/CPTShadow.m; sourceTree = "<group>"; };
 		F87B5A74EF1BDCC3B4EB87855BB98B88 /* _CPTStocksTheme.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = _CPTStocksTheme.m; path = framework/Source/_CPTStocksTheme.m; sourceTree = "<group>"; };
 		FA8C2502B16061CCDFDF68A89C74B06E /* CorePlot-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CorePlot-prefix.pch"; sourceTree = "<group>"; };
 		FAA464C09C75D4C93885314D6538A9A6 /* Pods-JABLE_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JABLE_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		FADE1A202A18CECBABF6F55ADC784173 /* CPTTimeFormatter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CPTTimeFormatter.m; path = framework/Source/CPTTimeFormatter.m; sourceTree = "<group>"; };
-		FB4EB5926105E14BEF8618DCF88990A1 /* Pods_JABLE_Example_JABLE_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JABLE_Example_JABLE_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB4EB5926105E14BEF8618DCF88990A1 /* Pods_JABLE_Example_JABLE_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_JABLE_Example_JABLE_Tests.framework; path = "Pods-JABLE_Example-JABLE_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBB7F96EC2557BB73E4BD891E6D0373B /* CPTLineStyle.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CPTLineStyle.h; path = framework/Source/CPTLineStyle.h; sourceTree = "<group>"; };
 		FC344ABED7E1A6688E24F079A46CC870 /* CPTFunctionDataSource.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CPTFunctionDataSource.h; path = framework/Source/CPTFunctionDataSource.h; sourceTree = "<group>"; };
 		FC93439B88241C20C3C3B46E6BE00184 /* CPTLineStyle.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CPTLineStyle.m; path = framework/Source/CPTLineStyle.m; sourceTree = "<group>"; };
@@ -538,6 +538,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				71E163945E5C004940D64B2C81F2097D /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0F45D833343A6C19E8CC8221D208AFC2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1CD166056DB9C7BAECD03C9AC2CB05B3 /* CoreBluetooth.framework in Frameworks */,
+				940744427757FBAB2A7B3587375EB9D7 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -560,14 +569,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9D234E0F9CF6E66395A5CB72F3BBFC34 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D6C29F2A75EEA659477560FF8C25A41E /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -581,6 +582,18 @@
 			);
 			name = Protocols;
 			path = JABLE/Classes/Protocols;
+			sourceTree = "<group>";
+		};
+		08DCE92D93AA0EB8D9E8DBF416A10C60 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				356BAC187D68D9C391964EFF19998497 /* Accelerate.framework */,
+				C46C8398BC86F11F38B8276E78D74FDF /* CoreBluetooth.framework */,
+				DA4BF4BA9EADCE988A96731097A9FAD2 /* Foundation.framework */,
+				F79643DE9B61E8D9F26281C7EF9A49FD /* QuartzCore.framework */,
+				8290FA78FDE891DBC5FD3B2E8F8DC5DB /* UIKit.framework */,
+			);
+			name = iOS;
 			sourceTree = "<group>";
 		};
 		10FA372D8A17872DBC6C15A1A1D2B42C /* Products */ = {
@@ -603,14 +616,6 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		14B8B9B15ECBE87983FF987239AB2D7B /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				DA84F9D053321A8C26C572C4BD669874 /* iOS */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		14D3536F8C26E2FC623D31FB2D456222 /* GAP */ = {
 			isa = PBXGroup;
 			children = (
@@ -623,6 +628,14 @@
 			path = JABLE/Classes/GAP;
 			sourceTree = "<group>";
 		};
+		20B56609144CE204DFA8221F742B2D76 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				08DCE92D93AA0EB8D9E8DBF416A10C60 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		285F8BAA4E41CA331F3817C32D7D26C5 /* JABLE */ = {
 			isa = PBXGroup;
 			children = (
@@ -633,7 +646,6 @@
 				BFA60060EEC0379962DA6BD695E5E46C /* Pod */,
 				076FC41EB9BE3DC0DAB3BFB3E6AFADB3 /* Protocols */,
 				D32622018467DFFF217C2FE3F021BC74 /* States */,
-				E00CB6BB217F6A13003DCA73 /* Extensions */,
 				789DB246947E56D825009EC88675BE0D /* Support Files */,
 			);
 			name = JABLE;
@@ -725,7 +737,7 @@
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
 				737213698D71EDC2AB7E6EC902F4430E /* Development Pods */,
-				14B8B9B15ECBE87983FF987239AB2D7B /* Frameworks */,
+				20B56609144CE204DFA8221F742B2D76 /* Frameworks */,
 				C6B5F2080B6BE131AE139178221CD998 /* Pods */,
 				10FA372D8A17872DBC6C15A1A1D2B42C /* Products */,
 				1300934D551DC1590EA915E979409ACF /* Targets Support Files */,
@@ -931,6 +943,7 @@
 				F2BB75212F57B73D3CD9670470D46E9E /* NSNumberExtensions.m */,
 				4108C988E7A7907FD3550593D6EB729D /* Support Files */,
 			);
+			name = CorePlot;
 			path = CorePlot;
 			sourceTree = "<group>";
 		};
@@ -977,26 +990,6 @@
 			);
 			name = States;
 			path = JABLE/Classes/States;
-			sourceTree = "<group>";
-		};
-		DA84F9D053321A8C26C572C4BD669874 /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				0E8FF9752305FFF10899CB5A8ABEF459 /* Accelerate.framework */,
-				0FCA70DC21AA34059B0822FB0AEC2A9C /* Foundation.framework */,
-				0B365BB35095243ADD5EDCE0FC98851E /* QuartzCore.framework */,
-				4986B896CC5606CC135E608D8B5250E2 /* UIKit.framework */,
-			);
-			name = iOS;
-			sourceTree = "<group>";
-		};
-		E00CB6BB217F6A13003DCA73 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				E00CB6BC217F6A53003DCA73 /* CoreBluetoothExtensions.swift */,
-			);
-			name = Extensions;
-			path = Example/Pods/Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1116,11 +1109,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D2E9B284A9A9740DE0FC863E03A65A40 /* Headers */ = {
+		DFC9807CD75205B9C43B744CAC11689C /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8401EB965AC21AD5A3B7A653EE96E574 /* JABLE-umbrella.h in Headers */,
+				00549EB7F54CBD2E127143BCA82C28AC /* JABLE-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1135,13 +1128,13 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		6B4967959BE70F36052BDEB2633952D2 /* JABLE */ = {
+		45E31C77CF0D9E8D1B330D879AD33E00 /* JABLE */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 68E19D9B0D55CB5DEB30C6CAC8585313 /* Build configuration list for PBXNativeTarget "JABLE" */;
+			buildConfigurationList = 323A4C37330FF645BB295E3DF00A22B1 /* Build configuration list for PBXNativeTarget "JABLE" */;
 			buildPhases = (
-				020377F1A335CABB2030C50A3520FCB8 /* Sources */,
-				9D234E0F9CF6E66395A5CB72F3BBFC34 /* Frameworks */,
-				D2E9B284A9A9740DE0FC863E03A65A40 /* Headers */,
+				D65B4E9DECAE7C8A06F8524D63A344F7 /* Sources */,
+				0F45D833343A6C19E8CC8221D208AFC2 /* Frameworks */,
+				DFC9807CD75205B9C43B744CAC11689C /* Headers */,
 			);
 			buildRules = (
 			);
@@ -1215,11 +1208,6 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0930;
 				LastUpgradeCheck = 0930;
-				TargetAttributes = {
-					DE8C7C227ACE26864DC8DA02CCA66BAA = {
-						LastSwiftMigration = 1000;
-					};
-				};
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -1234,7 +1222,7 @@
 			projectRoot = "";
 			targets = (
 				DE8C7C227ACE26864DC8DA02CCA66BAA /* CorePlot */,
-				6B4967959BE70F36052BDEB2633952D2 /* JABLE */,
+				45E31C77CF0D9E8D1B330D879AD33E00 /* JABLE */,
 				AB6C8EBD714473D6FDE06B5E538CE726 /* Pods-JABLE_Example */,
 				99416760E57DF87D1531ED96364E23C3 /* Pods-JABLE_Example-JABLE_Tests */,
 			);
@@ -1242,34 +1230,6 @@
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		020377F1A335CABB2030C50A3520FCB8 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				88FDD92053591F37A480DB797E6B64C2 /* Bindable.swift in Sources */,
-				525659C4405F07E64D34DA2DA514E64D /* CharacteristicProperties.swift in Sources */,
-				86C87F52A6EA0BE01F4E5457BBC005D2 /* ConnectionOptions.swift in Sources */,
-				EDC37B4DA88375BD6C2DB505150CEBD5 /* FriendlyAdvertisement.swift in Sources */,
-				BC1B57D384F5AEF49128F8AE82C69EA3 /* GattDiscoveryAgent.swift in Sources */,
-				46D67268A4A1AFEA3AAEC7DCE8512489 /* GattDiscoveryDelegate.swift in Sources */,
-				19E17C9AEC6BE8BB0CA2E277FF41CA1F /* GattDiscoveryProcess.swift in Sources */,
-				09A533D9FE6B925ED7234583FBEEC1C5 /* JABLE-dummy.m in Sources */,
-				DC6DBFBE620B8459BD7AE0ED16CF4A09 /* JABLECentral.swift in Sources */,
-				E88F97C71C5A95B460B4F3EB0B926699 /* JABLECentralAPI.swift in Sources */,
-				783CEF26E94620AB5392F168D2C37F7A /* JABLECharacteristic.swift in Sources */,
-				CCB1CCBA7556A779D0FD719EBC85DC74 /* JABLEDelegate.swift in Sources */,
-				F263BB46AC974DF102E67236EF05C045 /* JABLEDescriptor.swift in Sources */,
-				6CDCF003A646331ED2691E9F94AF050D /* JABLEGattProfile.swift in Sources */,
-				CF16BB21043C38EA26AD24D989FDCB5F /* JABLEiDManager.swift in Sources */,
-				7528438FA2545CE5C0F42043AB72A403 /* JABLEPeripheralAPI.swift in Sources */,
-				736A544B4898345840DBA0E1AB0DF526 /* JABLEService.swift in Sources */,
-				1CE982C98E83FBC1BA222BF918033410 /* JABLEStates.swift in Sources */,
-				1D34A5BA83F7F052FC641494A0AB4551 /* ScanConfiguration.swift in Sources */,
-				DE165626AD819FA3B373A9F4F1881734 /* ScanFilter.swift in Sources */,
-				F1B8D881B9B6969B7FCE5A0146E28F19 /* ScanResultManager.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		18873C3C60F08233F39CC619719D03F5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1371,7 +1331,6 @@
 				31D7C38B55748540A9C9A557C0CE9EE4 /* CPTTheme.m in Sources */,
 				B84E97133641B2245203956FD70BD734 /* CPTTimeFormatter.m in Sources */,
 				72CD03B2A0345111195909970EE15D8F /* CPTTradingRangePlot.m in Sources */,
-				E00CB6BD217F6A53003DCA73 /* CoreBluetoothExtensions.swift in Sources */,
 				1CB6157BE9AAB376B94F3AE22E343399 /* CPTUtilities.m in Sources */,
 				87B6E6BFE64A2241828154BC9FB94F7C /* CPTXYAxis.m in Sources */,
 				D027D0829AF0CA938AED64525DB4E31E /* CPTXYAxisSet.m in Sources */,
@@ -1380,6 +1339,34 @@
 				F4C16B7405B73EAAB6A28C1133B85C37 /* NSCoderExtensions.m in Sources */,
 				75D3A5EC77BAE19704C67E7B9F0FC860 /* NSDecimalNumberExtensions.m in Sources */,
 				048F06D54736CB67915801AF30EB7328 /* NSNumberExtensions.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D65B4E9DECAE7C8A06F8524D63A344F7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D31BBA55F84221EC1D989B812F7B679A /* Bindable.swift in Sources */,
+				33AFA9C5E8CC0FE597D2027435EB20B4 /* CharacteristicProperties.swift in Sources */,
+				417FF4D6C8ECBF1305A4B80E2617DA04 /* ConnectionOptions.swift in Sources */,
+				E4EAF3FB380EF7558C576C8771F0BEA2 /* FriendlyAdvertisement.swift in Sources */,
+				29373612B8385773619856B4BF39C68F /* GattDiscoveryAgent.swift in Sources */,
+				422A627E59F1E5CAF872FE8065BEF15E /* GattDiscoveryDelegate.swift in Sources */,
+				36ED7303971967E44442261481BD3FEB /* GattDiscoveryProcess.swift in Sources */,
+				6DE83BF3BDFDAF9D7FA200BDB00B0834 /* JABLE-dummy.m in Sources */,
+				8EBBC2B473071FB3CC89124DF2FD1148 /* JABLECentral.swift in Sources */,
+				43BE969F78DBCCF7083646536D863C02 /* JABLECentralAPI.swift in Sources */,
+				B97E246BB03DB79CC3A9D3B4E6C5AA92 /* JABLECharacteristic.swift in Sources */,
+				481732BC42AC67A24663515F589FE792 /* JABLEDelegate.swift in Sources */,
+				1DFFB1A1742451088F3CA491B45FFFDF /* JABLEDescriptor.swift in Sources */,
+				48DEA52BF29A84A83BA10B9B615FB193 /* JABLEGattProfile.swift in Sources */,
+				D133DBE642CA5CF947F41C0369EBFA2A /* JABLEiDManager.swift in Sources */,
+				23E41D51B908FDE5D631414CFA99F7F0 /* JABLEPeripheralAPI.swift in Sources */,
+				A8DA1FDE8BE0D9C45009ECA2BBDF4A90 /* JABLEService.swift in Sources */,
+				65784E5BDAEE17DF47CF84FB62D25AD2 /* JABLEStates.swift in Sources */,
+				895F9408EB66893FDC087A4D61A84FC1 /* ScanConfiguration.swift in Sources */,
+				F1C5519D390999F58A1B143ECB83A6E4 /* ScanFilter.swift in Sources */,
+				6C5ED1D90AB9FCD7A7EF2B28D3DFAB35 /* ScanResultManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1409,19 +1396,156 @@
 		4D7A10D4C97CABE0FA7D1BD4A064909F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = JABLE;
-			target = 6B4967959BE70F36052BDEB2633952D2 /* JABLE */;
+			target = 45E31C77CF0D9E8D1B330D879AD33E00 /* JABLE */;
 			targetProxy = B7D37EBFE8D8705E6D657E3748714248 /* PBXContainerItemProxy */;
 		};
 		7B882577B74A59DE9AF3DDA9EE92549D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = JABLE;
-			target = 6B4967959BE70F36052BDEB2633952D2 /* JABLE */;
+			target = 45E31C77CF0D9E8D1B330D879AD33E00 /* JABLE */;
 			targetProxy = E5C1D940D8FF4F2753ED5627B00789BC /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		0E12B7268EF0862DFEEB8B6B0BD7C9F4 /* Debug */ = {
+		0164E81953551C3C74CA1472A4764745 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BA157B184F71E732751E41E1180EB79C /* JABLE.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/JABLE/JABLE-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/JABLE/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/JABLE/JABLE.modulemap";
+				PRODUCT_MODULE_NAME = JABLE;
+				PRODUCT_NAME = JABLE;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		14024E34A36A74E87EE4587C2EEBEAEB /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C205172DB7B0750ACA8E7A4C1BD1AC92 /* Pods-JABLE_Example.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-JABLE_Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-JABLE_Example/Pods-JABLE_Example.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		42CA2DBCFC08A658C39064562F17162B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DC20F2B5F227F5DA0D1C541AEECA4588 /* CorePlot.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/CorePlot/CorePlot-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/CorePlot/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/CorePlot/CorePlot.modulemap";
+				PRODUCT_MODULE_NAME = CorePlot;
+				PRODUCT_NAME = CorePlot;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		52B83F933C0C688268F21BD0A41C841D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FAA464C09C75D4C93885314D6538A9A6 /* Pods-JABLE_Example.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-JABLE_Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-JABLE_Example/Pods-JABLE_Example.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		691EE0234A3BA1A3B057D3A4C23C9CCC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -1474,7 +1598,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1484,250 +1608,7 @@
 			};
 			name = Debug;
 		};
-		150D2C9AF778664FD87AE4BD8F297EB7 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3C0D9D966D8B5557ECA8823536167E31 /* Pods-JABLE_Example-JABLE_Tests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-JABLE_Example-JABLE_Tests/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-JABLE_Example-JABLE_Tests/Pods-JABLE_Example-JABLE_Tests.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		42CA2DBCFC08A658C39064562F17162B /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = DC20F2B5F227F5DA0D1C541AEECA4588 /* CorePlot.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/CorePlot/CorePlot-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/CorePlot/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/CorePlot/CorePlot.modulemap";
-				PRODUCT_MODULE_NAME = CorePlot;
-				PRODUCT_NAME = CorePlot;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		5B93D0E76F3550D6837500DBCDC80C34 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = FAA464C09C75D4C93885314D6538A9A6 /* Pods-JABLE_Example.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-JABLE_Example/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-JABLE_Example/Pods-JABLE_Example.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		5E9D04B2C6CD069426E4D01A0BD3FAE9 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = C205172DB7B0750ACA8E7A4C1BD1AC92 /* Pods-JABLE_Example.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-JABLE_Example/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-JABLE_Example/Pods-JABLE_Example.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		8A2BF89632C4450A9CF731BD1BAC7B7A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = DC20F2B5F227F5DA0D1C541AEECA4588 /* CorePlot.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/CorePlot/CorePlot-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/CorePlot/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/CorePlot/CorePlot.modulemap";
-				PRODUCT_MODULE_NAME = CorePlot;
-				PRODUCT_NAME = CorePlot;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		BACAB32752CB7152B1086D073D298BD5 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = BA157B184F71E732751E41E1180EB79C /* JABLE.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/JABLE/JABLE-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/JABLE/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/JABLE/JABLE.modulemap";
-				PRODUCT_MODULE_NAME = JABLE;
-				PRODUCT_NAME = JABLE;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		BE9A2B516956307133499B820C1443DB /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4D914E646B5ACFEDE39919A049FB101B /* Pods-JABLE_Example-JABLE_Tests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-JABLE_Example-JABLE_Tests/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-JABLE_Example-JABLE_Tests/Pods-JABLE_Example-JABLE_Tests.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		CD8324D57CD462761E218EEA4EA91EC7 /* Release */ = {
+		703082A85162812D3B777E668767AD25 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -1777,7 +1658,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
@@ -1785,7 +1666,38 @@
 			};
 			name = Release;
 		};
-		E80A2B7B3D9B2DAC2841E1041F9E2A29 /* Debug */ = {
+		8A2BF89632C4450A9CF731BD1BAC7B7A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DC20F2B5F227F5DA0D1C541AEECA4588 /* CorePlot.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/CorePlot/CorePlot-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/CorePlot/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/CorePlot/CorePlot.modulemap";
+				PRODUCT_MODULE_NAME = CorePlot;
+				PRODUCT_NAME = CorePlot;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		A7E8631BF729154D0B18AC0A25CCFF86 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BA157B184F71E732751E41E1180EB79C /* JABLE.xcconfig */;
 			buildSettings = {
@@ -1817,14 +1729,95 @@
 			};
 			name = Debug;
 		};
+		C4DBF33FE5A041B532199003FAC3CB83 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3C0D9D966D8B5557ECA8823536167E31 /* Pods-JABLE_Example-JABLE_Tests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-JABLE_Example-JABLE_Tests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-JABLE_Example-JABLE_Tests/Pods-JABLE_Example-JABLE_Tests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		D33ED5477BDBB9CE346BC8B85061B3A8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4D914E646B5ACFEDE39919A049FB101B /* Pods-JABLE_Example-JABLE_Tests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-JABLE_Example-JABLE_Tests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-JABLE_Example-JABLE_Tests/Pods-JABLE_Example-JABLE_Tests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				0E12B7268EF0862DFEEB8B6B0BD7C9F4 /* Debug */,
-				CD8324D57CD462761E218EEA4EA91EC7 /* Release */,
+				691EE0234A3BA1A3B057D3A4C23C9CCC /* Debug */,
+				703082A85162812D3B777E668767AD25 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		323A4C37330FF645BB295E3DF00A22B1 /* Build configuration list for PBXNativeTarget "JABLE" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A7E8631BF729154D0B18AC0A25CCFF86 /* Debug */,
+				0164E81953551C3C74CA1472A4764745 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1838,20 +1831,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		68E19D9B0D55CB5DEB30C6CAC8585313 /* Build configuration list for PBXNativeTarget "JABLE" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				E80A2B7B3D9B2DAC2841E1041F9E2A29 /* Debug */,
-				BACAB32752CB7152B1086D073D298BD5 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		757A812E791ECF7D39779BDBA76528CA /* Build configuration list for PBXNativeTarget "Pods-JABLE_Example-JABLE_Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				BE9A2B516956307133499B820C1443DB /* Debug */,
-				150D2C9AF778664FD87AE4BD8F297EB7 /* Release */,
+				D33ED5477BDBB9CE346BC8B85061B3A8 /* Debug */,
+				C4DBF33FE5A041B532199003FAC3CB83 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1859,8 +1843,8 @@
 		808BD32757FB906A4712323F0D590AD0 /* Build configuration list for PBXNativeTarget "Pods-JABLE_Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				5B93D0E76F3550D6837500DBCDC80C34 /* Debug */,
-				5E9D04B2C6CD069426E4D01A0BD3FAE9 /* Release */,
+				52B83F933C0C688268F21BD0A41C841D /* Debug */,
+				14024E34A36A74E87EE4587C2EEBEAEB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
