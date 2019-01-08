@@ -413,10 +413,7 @@ extension JABLE_CentralController
         _peripheralPendingConnection = peripheral
         if #available(iOS 10.0, *) {
         //Initiate connection to specificied peripheral
-            _centralManager.connect(peripheral, options: [CBConnectPeripheralOptionStartDelayKey: true,
-                                                      CBConnectPeripheralOptionNotifyOnConnectionKey: false,
-                                                      CBConnectPeripheralOptionNotifyOnDisconnectionKey: true,
-                                                      CBConnectPeripheralOptionNotifyOnNotificationKey: false])
+            _centralManager.connect(peripheral, options: nil)
         }
         else {
             _centralManager.connect(peripheral, options: nil)
