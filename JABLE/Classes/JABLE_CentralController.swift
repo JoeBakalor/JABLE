@@ -384,7 +384,6 @@ extension JABLE_CentralController
      
      */
     func stopScanning(){
-        
         _centralManager.stopScan()
     }
     
@@ -440,12 +439,8 @@ extension JABLE_CentralController
      Additional details
      
      */
-    func disconnect(){
-        
-        if let peripheral = _connectedPeripheral {
-            
-            _centralManager.cancelPeripheralConnection(peripheral)
-        }
+    func disconnect(from peripheral: CBPeripheral){
+        _centralManager.cancelPeripheralConnection(peripheral)
     }
     
     /**

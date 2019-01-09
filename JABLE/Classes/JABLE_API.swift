@@ -12,7 +12,7 @@ protocol JABLE_API{
     func startScanningForPeripherals(withServiceUUIDs uuids: [CBUUID]?)
     func stopScanning()
     func connect(toPeripheral peripheral: CBPeripheral, withTimeout timeout: Int)
-    func diconnect()
+    func diconnect(peripheral: CBPeripheral)
     func discoverServices(with uuids: [CBUUID]?, for peripheral: CBPeripheral)
     func discoverCharacteristics(forService service: CBService, withUUIDS uuids: [CBUUID]?, for peripheral: CBPeripheral)
     func write(value: Data, toCharacteristic characteristic: CBCharacteristic)

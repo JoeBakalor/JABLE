@@ -80,16 +80,12 @@ public struct JABLECharacteristicProperties{
     public var write = false//characteristic.properties.contains(.write)
     public var indicate = false//characteristic.properties.contains(.indicate)
     public var notify = false//characteristic.properties.contains(.notify)
-    
     public var broadcast = false//characteristic.properties.contains(.broadcast)
     public var writeWithoutResponse = false//characteristic.properties.contains(.writeWithoutResponse)
-    
     public var indicateEncryptionRequired = false//characteristic.properties.contains(.indicateEncryptionRequired)
     public var authenticatedSignedWrites = false//characteristic.properties.contains(.authenticatedSignedWrites)
-    
     public var extendedProperties = false//characteristic.properties.contains(.extendedProperties)
     public var notifyEncryptionRequired = false//characteristic.properties.contains(.notifyEncryptionRequired)
-    
 }
 
 let useImproved = true
@@ -142,8 +138,6 @@ open class JABLE: NSObject, GattDiscoveryCompletionDelegate, JABLE_API
     public init(jableDelegate: JABLEDelegate?, gattProfile: JABLE_GATT.JABLE_GATTProfile?, autoGattDiscovery: Bool){
         
         super.init()
-        
-        //test = gattProfile
         
         //Set JABLE delegate
         _jableDelegate = jableDelegate
@@ -336,10 +330,10 @@ open class JABLE: NSObject, GattDiscoveryCompletionDelegate, JABLE_API
      If there is not a valid connection, nothing
      
      */
-    public func diconnect(){
+    public func diconnect(peripheral: CBPeripheral){
         
         guard _connectedPeripheral != nil else { return }
-        _jableCentralController.disconnect()
+        _jableCentralController.disconnect(from: peripheral)
     }
     
     
