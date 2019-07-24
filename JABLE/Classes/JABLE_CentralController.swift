@@ -358,7 +358,7 @@ extension JABLE_CentralController
      
      */
     func startScanningForPeripherals(withServiceUUIDS UUIDS: [CBUUID]?){
-        
+        _centralManager.delegate = self
         //Check if service UUIDs have been specified
         guard let uuids = UUIDS else {
             
@@ -415,7 +415,7 @@ extension JABLE_CentralController
      
      */
     func attemptConnection(toPeriperal peripheral: CBPeripheral, timeout: Int){
-        
+        _centralManager.delegate = self
         //Save reference to peripheral we are trying to connect
         _peripheralPendingConnection = peripheral
         if #available(iOS 10.0, *) {
