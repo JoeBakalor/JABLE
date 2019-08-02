@@ -593,10 +593,13 @@ extension JABLE_CentralController: CBCentralManagerDelegate
             // Fallback on earlier versions
             switch central.state{
             case .unauthorized:
+                _gapEventDelegate.centralController(updatedBluetoothStatusTo: .unauthorized)
                 print("This app is not authorised to use Bluetooth low energy")
             case .poweredOff:
+                _gapEventDelegate.centralController(updatedBluetoothStatusTo: .off)
                 print("Bluetooth is currently powered off.")
             case .poweredOn:
+                _gapEventDelegate.centralController(updatedBluetoothStatusTo: .on)
                 print("Bluetooth is currently powered on and available to use.")
             default:break
             }
